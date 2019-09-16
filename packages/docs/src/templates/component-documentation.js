@@ -95,7 +95,7 @@ const ComponentDocumentation = props => {
 
       <p>
         <a
-          href={`https://github.com/czaas/mb-design-system/tree/master/packages/${componentName}`}
+          href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
           target="_blank"
         >
           GitHub Source
