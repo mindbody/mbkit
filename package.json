@@ -1,0 +1,78 @@
+{
+    "name": "root",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "postinstall": "yarn lerna clean --yes && yarn lerna bootstrap",
+        "test": "jest --env=jsdom",
+        "build:all": "yarn build:modules && yarn build:docs",
+        "build:types": "yarn make-dir packages/docs/generated && react-docgen packages -x tsx -e index.tsx -i docs -i dist -o packages/docs/generated/component-prop-types.json --pretty",
+        "build:modules": "yarn lerna run build",
+        "build:docs": "yarn build:types && yarn lerna run docs:prod",
+        "docs:serve": "yarn lerna run docs:serve",
+        "lerna:version": "yarn lerna version  --no-git-reset --conventional-commits --loglevel=error --yes",
+        "lerna:publish": "yarn lerna publish --no-git-reset --from-git",
+        "commit": "git-cz"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@commitlint/cli": "^8.1.0",
+        "@commitlint/config-conventional": "^8.1.0",
+        "@commitlint/config-lerna-scopes": "^8.1.0",
+        "@testing-library/dom": "^6.2.0",
+        "@testing-library/jest-dom": "^4.1.0",
+        "@testing-library/react": "^9.1.4",
+        "@types/jest": "^24.0.18",
+        "@types/node": "^12.7.4",
+        "@types/react": "^16.9.2",
+        "@types/react-dom": "^16.9.0",
+        "@typescript-eslint/eslint-plugin": "^2.2.0",
+        "@typescript-eslint/parser": "^2.2.0",
+        "commitizen": "^4.0.3",
+        "concurrently": "^4.1.2",
+        "cz-conventional-changelog": "^3.0.2",
+        "eslint": "^6.3.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.14.3",
+        "husky": "^3.0.5",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^24.9.0",
+        "lerna": "^3.16.4",
+        "make-dir-cli": "^2.0.0",
+        "markdown-to-jsx": "^6.10.3",
+        "node-sass": "^4.12.0",
+        "parcel-bundler": "^1.12.3",
+        "prettier": "^1.18.2",
+        "prism-react-renderer": "^0.1.7",
+        "react": "^16.9.0",
+        "react-docgen": "^4.1.1",
+        "react-dom": "^16.9.0",
+        "react-live": "^2.2.0",
+        "rollup": "^1.20.3",
+        "rollup-plugin-eslint": "^7.0.0",
+        "rollup-plugin-postcss": "^2.0.3",
+        "rollup-plugin-typescript2": "^0.24.0",
+        "ts-jest": "^24.0.2",
+        "typescript": "^3.6.2",
+        "yargs": "^14.0.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}

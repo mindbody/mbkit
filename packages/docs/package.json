@@ -1,0 +1,58 @@
+{
+  "name": "@mindbody/docs",
+  "private": true,
+  "description": "Design system documentation for MINDBODY",
+  "version": "0.3.0",
+  "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
+  "scripts": {
+    "docs:dev": "yarn clean && gatsby develop",
+    "docs:prod": "yarn clean && gatsby build",
+    "docs:serve": "gatsby serve",
+    "clean": "rm -rf .cache",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@mdx-js/react": "^1.4.0",
+    "add": "^2.0.6",
+    "classnames": "^2.2.6",
+    "esm": "^3.2.25",
+    "gatsby": "^2.13.73",
+    "gatsby-image": "^2.2.10",
+    "gatsby-plugin-manifest": "^2.2.6",
+    "gatsby-plugin-offline": "^2.2.7",
+    "gatsby-plugin-react-helmet": "^3.1.4",
+    "gatsby-plugin-sass": "^2.1.13",
+    "gatsby-plugin-sharp": "^2.2.13",
+    "gatsby-source-contentful": "^2.1.25",
+    "gatsby-source-filesystem": "^2.1.11",
+    "gatsby-transformer-sharp": "^2.2.7",
+    "markdown-to-jsx": "^6.10.3",
+    "node-sass": "^4.12.0",
+    "normalize.css": "^8.0.1",
+    "prism-react-renderer": "^0.1.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "react-live": "^2.2.0",
+    "yarn": "^1.17.3"
+  },
+  "devDependencies": {
+    "gatsby-plugin-layout": "^1.1.6",
+    "prettier": "^1.18.2",
+    "react-docs-markdown": "^0.8.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

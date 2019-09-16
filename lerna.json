@@ -1,0 +1,14 @@
+{
+    "packages": ["packages/*"],
+    "npmClient": "yarn",
+    "version": "independent",
+    "useWorkspaces": true,
+    "command": {
+        "publish": {
+            "conventionalCommits": true
+        },
+        "version": {
+            "message": "chore: version bump"
+        }
+    }
+}

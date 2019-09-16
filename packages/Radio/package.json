@@ -1,0 +1,22 @@
+{
+    "name": "@mindbody/radio",
+    "version": "1.0.7",
+    "source": "src/index.tsx",
+    "main": "dist/Radio.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "../../shared/build-tools/build-package.js",
+        "dev": "../../shared/build-tools/dev-package.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/react": "^16.9.2",
+        "react": "^16.9.0"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0"
+    },
+    "gitHead": "d6fecb21e8dad48b0cd7db5c019d2c14bac7ff72"
+}

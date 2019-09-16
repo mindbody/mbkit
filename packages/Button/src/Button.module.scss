@@ -1,0 +1,11 @@
+.button {
+    &.redBg {
+        background: #ff0000;
+        color: #fff;
+    }
+
+    &.big {
+        padding: 20px;
+        font-size: 20px;
+    }
+}

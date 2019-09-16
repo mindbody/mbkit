@@ -1,0 +1,47 @@
+
+.menu {
+    width: 100%;
+    max-width: 280px;
+    
+    ul,
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    li {
+      display: block;
+      ul {
+        margin-left: 16px;
+      }
+    }
+  
+    &__item {
+      position: relative;
+      &__toggleChildren {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+  
+        &:before {
+          content: '›';
+          display: block;
+          width: 100%;
+          height: 100%;
+          transition: transform .2s ease-out;
+        }
+  
+        &Opened {
+          &:before {
+            transform: rotate(90deg) translateY(-10%);
+          }
+        }
+      }
+    }
+  }
+  
