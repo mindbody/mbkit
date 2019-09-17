@@ -13,6 +13,7 @@ export function SiteMapNav(props) {
         try {
             let items = [];
             const itemsSorted = allPages.allSitePage.edges.sort((a, b) => a.node.path.length - b.node.path.length);
+
             itemsSorted.forEach(page => {
                 const { path } = page.node;
                 if (path.includes('404')) {
@@ -52,13 +53,15 @@ export function SiteMapNav(props) {
                         });
                         break;
                     default:
-                        console.log(path);
+                    // console.log(path);
                 }
             });
 
             setMenuItems(items);
             setVisibleChildren(items.map(item => ({ title: item.title, isVisible: true })));
-        } catch (e) {}
+        } catch (e) {
+            console.log(e);
+        }
     }, [allPages]);
 
     return <Nav menu={menuItems} visibleChildren={visibleChildren} setVisibleChildren={setVisibleChildren} {...rest} />;

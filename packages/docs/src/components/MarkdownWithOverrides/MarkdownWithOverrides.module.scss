@@ -1,0 +1,16 @@
+.codeEditorWrapper {
+    .codeEditor {
+        font-size: 14px;
+        
+        & > div {
+            border-radius: 3px;
+        }
+    }
+    .codePreview {
+        padding: 0 16px;
+    }
+    @media screen and (min-width: 769px) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
