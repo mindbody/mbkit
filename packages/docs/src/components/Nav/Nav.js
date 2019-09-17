@@ -8,6 +8,7 @@ const noop = () => {};
 export function SiteMapNav(props) {
     const { allPages, ...rest } = props;
     const [menuItems, setMenuItems] = React.useState([]);
+    const [visibleChildren, setVisibleChildren] = React.useState([]);
     React.useEffect(() => {
         try {
             let items = [];
@@ -32,13 +33,10 @@ export function SiteMapNav(props) {
                         // if doesn't exist, create it
                         // else add to child
                         const childTitle = depth[2];
-                        let found = false;
 
                         items = items.map(item => {
-                            const { title = '', menu = [], to = '' } = item;
+                            const { title = '', menu = [] } = item;
                             if (title === sectionTitle) {
-                                found = true;
-
                                 return {
                                     ...item,
                                     menu: [
@@ -52,21 +50,6 @@ export function SiteMapNav(props) {
                             }
                             return item;
                         });
-
-                        if (!found) {
-                            depth.pop();
-                            const parentPath = depth.join('/');
-                            items.push({
-                                title: sectionTitle,
-                                to: parentPath,
-                                menu: [
-                                    {
-                                        title: childTitle,
-                                        to: path,
-                                    },
-                                ],
-                            });
-                        }
                         break;
                     default:
                         console.log(path);
@@ -74,18 +57,15 @@ export function SiteMapNav(props) {
             });
 
             setMenuItems(items);
+            setVisibleChildren(items.map(item => ({ title: item.title, isVisible: true })));
         } catch (e) {}
     }, [allPages]);
 
-    return <Nav menu={menuItems} {...rest} />;
+    return <Nav menu={menuItems} visibleChildren={visibleChildren} setVisibleChildren={setVisibleChildren} {...rest} />;
 }
 
 export default function Nav(props) {
-    const { menu = [], className, onClick = noop, ...rest } = props;
-
-    const [visibleChildren, setVisibleChildren] = React.useState(
-        menu.map(item => ({ isVisible: true, title: item.title })),
-    );
+    const { menu = [], className, onClick = noop, visibleChildren, setVisibleChildren, ...rest } = props;
 
     React.useEffect(() => {
         if (menu.length > 0 && visibleChildren.length === 0) {
@@ -136,14 +116,21 @@ export default function Nav(props) {
                                         </Link>
                                     )) ||
                                         item.title}{' '}
-                                    {/* {hasChildren && (
-                  <button
-                    onClick={() => handleVisibleChange(item)}
-                    className={buttonClassnames}
-                  />
-                )} */}
+                                    {hasChildren && (
+                                        <button
+                                            onClick={() => handleVisibleChange(item)}
+                                            className={buttonClassnames}
+                                        />
+                                    )}
                                 </div>
-                                {hasChildren && <Nav menu={item.menu} onClick={onClick} />}
+                                {hasChildren && isVisible && (
+                                    <Nav
+                                        menu={item.menu}
+                                        visibleChildren={visibleChildren}
+                                        setVisibleChildren={setVisibleChildren}
+                                        onClick={onClick}
+                                    />
+                                )}
                             </li>
                         );
                     })}
