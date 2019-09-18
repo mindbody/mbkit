@@ -107,8 +107,6 @@ const ComponentDocumentation = props => {
             />
             <h1>{componentName}</h1>
 
-            <p>Current Version: {pkgJson.version}</p>
-
             <p>
                 <a
                     href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
@@ -122,6 +120,14 @@ const ComponentDocumentation = props => {
             {documentToReactComponents(designDocs)}
 
             <h3>Implementation Details</h3>
+
+            <p>Current Version: {pkgJson.version}</p>
+
+            <p>
+                <a href={`/coverage/lcov-report/${componentName}/src/index.html`} target="_blank">
+                    Code coverage
+                </a>
+            </p>
 
             {relatedComponents.map(component => (
                 <PropDocumentation key={component.name} name={component.name} allDocs={propDocs} />
