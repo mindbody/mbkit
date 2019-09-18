@@ -4,6 +4,7 @@ import components from '../../generated/components.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import vsDark from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
+import SEO from '../components/seo';
 const docsToMarkdown = require('react-docs-markdown');
 
 const defaultOverrides = {
@@ -100,6 +101,10 @@ const ComponentDocumentation = props => {
 
     return (
         <>
+            <SEO
+                title={componentName}
+                description={`${componentName} in our component library at version ${pkgJson.version}`}
+            />
             <h1>{componentName}</h1>
 
             <p>Current Version: {pkgJson.version}</p>

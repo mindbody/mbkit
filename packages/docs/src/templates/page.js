@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import SEO from '../components/seo';
 
 const PageTemplate = props => {
     const { title, content } = props.pageContext.page;
@@ -24,6 +25,7 @@ const PageTemplate = props => {
     };
     return (
         <>
+            <SEO title={title} />
             <h1>{title}</h1>
             {documentToReactComponents(content.json, options)}
         </>
