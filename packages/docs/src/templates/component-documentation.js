@@ -4,6 +4,7 @@ import components from '../../generated/components.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import vsDark from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
+import SEO from '../components/seo';
 const docsToMarkdown = require('react-docs-markdown');
 
 const defaultOverrides = {
@@ -100,23 +101,31 @@ const ComponentDocumentation = props => {
 
     return (
         <>
+            <SEO
+                title={componentName}
+                description={`${componentName} in our component library at version ${pkgJson.version}`}
+            />
             <h1>{componentName}</h1>
 
-            <p>Current Version: {pkgJson.version}</p>
+            <h2>Documentation</h2>
+            {documentToReactComponents(designDocs)}
+
+            <h3>Implementation Details</h3>
 
             <p>
                 <a
                     href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
                     target="_blank"
                 >
-                    GitHub Source
+                    Version {pkgJson.version} on GitHub
                 </a>
             </p>
 
-            <h2>Documentation</h2>
-            {documentToReactComponents(designDocs)}
-
-            <h3>Implementation Details</h3>
+            <p>
+                <a href={`/coverage/lcov-report/${componentName}/src/index.html`} target="_blank">
+                    View line by line code coverage
+                </a>
+            </p>
 
             {relatedComponents.map(component => (
                 <PropDocumentation key={component.name} name={component.name} allDocs={propDocs} />
@@ -132,4 +141,5 @@ const ComponentDocumentation = props => {
         </>
     );
 };
+
 export default ComponentDocumentation;
