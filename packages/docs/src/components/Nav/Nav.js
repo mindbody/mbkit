@@ -5,60 +5,76 @@ const classnames = require('classnames');
 
 const noop = () => {};
 
+// Recursive function that takes current item and finds direct children,
+// then compares child to see if they have any matching children till there are no more children
+function findMatchingChildren(currentNavItem, allPages) {
+    // filter items based on included values
+    const matchingItems = allPages.filter(_item => {
+        const isDirectChild = _item.path.split('/').length - 1 === currentNavItem.to.split('/').length;
+        const matchingPaths = _item.path.includes(currentNavItem.to);
+
+        return matchingPaths && isDirectChild;
+    });
+
+    const menu = matchingItems.map(item => ({ title: item.title, to: item.path }));
+
+    return {
+        ...currentNavItem,
+        menu: menu.map(menuItem => findMatchingChildren(menuItem, allPages)),
+    };
+}
+
+function getTitleFromPath(path) {
+    const pathSplit = path.split('/');
+    return pathSplit[pathSplit.length - 1].replace(/\//g, '').replace(/-/g, ' ');
+}
+
 export function SiteMapNav(props) {
     const { allPages, ...rest } = props;
     const [menuItems, setMenuItems] = React.useState([]);
     const [visibleChildren, setVisibleChildren] = React.useState([]);
     React.useEffect(() => {
         try {
-            let items = [];
+            let sitemap = [];
+
+            // sort for order
             const itemsSorted = allPages.allSitePage.edges.sort((a, b) => a.node.path.length - b.node.path.length);
+            // removing `node` as key
+            const itemsFlattened = itemsSorted.map(item => ({
+                title: getTitleFromPath(item.node.path),
+                path: item.node.path,
+            }));
+            // remove 404 pages
+            const allPagesExcept404 = itemsFlattened.filter(item => !item.path.includes('404'));
 
-            itemsSorted.forEach(page => {
-                const { path } = page.node;
-                if (path.includes('404')) {
-                    return;
-                }
+            allPagesExcept404.forEach(item => {
+                const isTopLevelNav = item.path.split('/').length === 2;
 
-                const depth = path.split('/');
-                const sectionTitle = depth[1] === '' ? 'Home' : depth[1].replace(/-/gi, ' ');
-
-                switch (depth.length) {
-                    // Top level nav
-                    case 2:
-                        items.push({ to: path, title: sectionTitle });
-                        break;
-                    // secondary level nav
-                    case 3:
-                        // find parent;
-                        // if doesn't exist, create it
-                        // else add to child
-                        const childTitle = depth[2];
-
-                        items = items.map(item => {
-                            const { title = '', menu = [] } = item;
-                            if (title === sectionTitle) {
-                                return {
-                                    ...item,
-                                    menu: [
-                                        ...menu,
-                                        {
-                                            title: childTitle.replace(/-/g, ' '),
-                                            to: path,
-                                        },
-                                    ],
-                                };
-                            }
-                            return item;
+                if (isTopLevelNav) {
+                    if (item.path === '/') {
+                        sitemap.push({
+                            title: 'Home',
+                            to: item.path,
                         });
-                        break;
-                    default:
-                    // console.log(path);
+                        return;
+                    }
+                    sitemap.push({
+                        title: item.title,
+                        to: item.path,
+                    });
                 }
             });
+            // iterate over all top level nav items and recursively find children
+            sitemap = sitemap.map(item => {
+                if (item.to === '/') {
+                    return item;
+                }
 
-            setMenuItems(items);
-            setVisibleChildren(items.map(item => ({ title: item.title, isVisible: true })));
+                return findMatchingChildren(item, allPagesExcept404);
+            });
+
+            setMenuItems(sitemap);
+            setVisibleChildren(itemsFlattened.map(item => ({ title: item.title, isVisible: true })));
         } catch (e) {
             console.log(e);
         }
