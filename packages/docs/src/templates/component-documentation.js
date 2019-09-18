@@ -107,25 +107,23 @@ const ComponentDocumentation = props => {
             />
             <h1>{componentName}</h1>
 
-            <p>
-                <a
-                    href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
-                    target="_blank"
-                >
-                    GitHub Source
-                </a>
-            </p>
-
             <h2>Documentation</h2>
             {documentToReactComponents(designDocs)}
 
             <h3>Implementation Details</h3>
 
-            <p>Current Version: {pkgJson.version}</p>
+            <p>
+                <a
+                    href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
+                    target="_blank"
+                >
+                    Version {pkgJson.version} on GitHub
+                </a>
+            </p>
 
             <p>
                 <a href={`/coverage/lcov-report/${componentName}/src/index.html`} target="_blank">
-                    Code coverage
+                    View line by line code coverage
                 </a>
             </p>
 
@@ -143,4 +141,5 @@ const ComponentDocumentation = props => {
         </>
     );
 };
+
 export default ComponentDocumentation;
