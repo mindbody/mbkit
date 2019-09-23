@@ -117,7 +117,10 @@ export default function Nav(props) {
         <nav className={navClassName} {...rest}>
             <ul>
                 {menu
-                    .sort((a, b) => a.to[0] > b.to[0])
+                    .sort((a, b) => {
+                        if (a.title === 'Home' || b.title === 'Home') return 1;
+                        return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
+                    })
                     .map(item => {
                         const hasChildren = item.menu && item.menu.length > 0;
                         const { isVisible } = visibleChildren.find(c => c.title === item.title) || {};
