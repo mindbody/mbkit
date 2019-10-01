@@ -31,12 +31,12 @@ export function recursiveCssVariableCreator(props: RecursiveCssVariableCreator):
         .join('');
 }
 
-export type ThemeStyles = {
+export type ThemeStylesProps = {
     theme: Theme;
     children: ReactChild;
 };
 export const styleTagTestId = 'theme-styles-tag';
-const ThemeStyles: React.FC<ThemeStyles> = (props: ThemeStyles) => {
+const ThemeStyles: React.FC<ThemeStylesProps> = (props: ThemeStylesProps) => {
     const { children } = props;
     const { theme } = React.useContext(ThemeContext);
     const cssVariables = recursiveCssVariableCreator({ theme });
