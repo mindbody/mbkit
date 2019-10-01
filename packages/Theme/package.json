@@ -1,8 +1,9 @@
 {
-    "name": "@mindbody/radio",
-    "version": "1.0.7",
+    "name": "@mindbody/theme",
+    "version": "2.0.0",
     "source": "src/index.tsx",
-    "main": "dist/Radio.js",
+    "main": "dist/Theme.js",
+    "types": "dist/Theme.d.ts",
     "publishConfig": {
         "access": "public"
     },
@@ -13,10 +14,11 @@
     "license": "MIT",
     "devDependencies": {
         "@types/react": "^16.9.2",
-        "react": "^16.9.0"
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
     },
     "peerDependencies": {
-        "react": "^16.9.0"
-    },
-    "gitHead": "d6fecb21e8dad48b0cd7db5c019d2c14bac7ff72"
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
+    }
 }
