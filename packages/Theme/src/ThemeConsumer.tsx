@@ -1,9 +1,9 @@
 import React from 'react';
 import ThemeContext, { Theme } from './ThemeContext';
 
-export type ThemeConsumer = {
+export type ThemeConsumerProps = {
     children: (props: { theme: Theme }) => React.ReactNode;
 };
-const ThemeConsumer: React.FC<ThemeConsumer> = (props: ThemeConsumer) => <ThemeContext.Consumer {...props} />;
+const ThemeConsumer: React.FC<ThemeConsumerProps> = (props: ThemeConsumerProps) => <ThemeContext.Consumer {...props} />;
 
 export default ThemeConsumer;
