@@ -121,11 +121,13 @@ const ComponentDocumentation = props => {
                 </a>
             </p>
 
-            <p>
-                <a href={`/coverage/lcov-report/${componentName}/src/index.html`} target="_blank">
-                    View line by line code coverage
-                </a>
-            </p>
+            {relatedComponents.map(component => (
+                <p>
+                    <a href={`/coverage/lcov-report/${component.name}.tsx.html`} target="_blank">
+                        View line by line code coverage for {component.name}
+                    </a>
+                </p>
+            ))}
 
             {relatedComponents.map(component => (
                 <PropDocumentation key={component.name} name={component.name} allDocs={propDocs} />
