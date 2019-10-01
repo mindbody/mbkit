@@ -14,9 +14,11 @@
     "license": "MIT",
     "devDependencies": {
         "@types/react": "^16.9.2",
-        "react": "^16.9.0"
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
     },
     "peerDependencies": {
-        "react": "^16.9.0"
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
     }
 }
