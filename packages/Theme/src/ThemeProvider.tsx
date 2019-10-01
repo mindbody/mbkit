@@ -15,7 +15,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props: ThemeProviderProps) 
 
     return (
         <ThemeContext.Provider value={{ theme }}>
-            <ThemeStyles theme={theme}>{child}</ThemeStyles>
+            <ThemeStyles>{child}</ThemeStyles>
         </ThemeContext.Provider>
     );
 };
