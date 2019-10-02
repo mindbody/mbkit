@@ -38,7 +38,8 @@ const ThemeStyles: React.FC<ThemeStylesProps> = (props: ThemeStylesProps) => {
     const { theme } = React.useContext(ThemeContext);
     const cssVariables = recursiveCssVariableCreator({ theme });
     const themeClassScope = `ThemeProvider_${theme.name.replace(/ /g, '-')}`;
-    const styles = `.${themeClassScope} { ${cssVariables} }`;
+    const fontImport = theme.font.url ? `@import url(${theme.font.url})` : '';
+    const styles = `.${themeClassScope} { ${cssVariables} } ${fontImport}`;
 
     return (
         <>
