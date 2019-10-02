@@ -123,7 +123,12 @@ const ComponentDocumentation = props => {
 
             {relatedComponents.map(component => (
                 <p>
-                    <a href={`/coverage/lcov-report/${pkgJson.name}/src/${component.name}.tsx`} target="_blank">
+                    <a
+                        href={`/coverage/lcov-report/${pkgJson.name.replace('@mindbody/', '')}/src/${
+                            component.name
+                        }.tsx`}
+                        target="_blank"
+                    >
                         View line by line code coverage for {component.name}
                     </a>
                 </p>
