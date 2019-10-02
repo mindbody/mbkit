@@ -2,13 +2,15 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './Typography.scss';
 
-export interface HeadingProps extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
+export type HeadingProps = {
     /** This will be the actual rendered element. Keep your headings and content semantic */
     as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     /** Use this when you need to render some heading element but it needs to look a different size */
     size?: 1 | 2 | 3 | 4 | 5 | 6;
-}
-const Heading: React.FC<HeadingProps> = (props: HeadingProps & Partial<HTMLHeadingElement>) => {
+};
+const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>> = (
+    props: HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>,
+) => {
     const { as, className = '', size, ...rest } = props;
     const Component = as;
     const computedSize = size !== undefined ? `h${size}` : as;
