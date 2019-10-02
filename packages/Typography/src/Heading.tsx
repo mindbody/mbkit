@@ -7,11 +7,13 @@ export type HeadingProps = {
     as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     /** Use this when you need to render some heading element but it needs to look a different size */
     size?: 1 | 2 | 3 | 4 | 5 | 6;
+    /** Sets the text color. By default we use our brand foreground */
+    color?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'meta';
 };
 const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>> = (
     props: HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>,
 ) => {
-    const { as, className = '', size, ...rest } = props;
+    const { as, className = '', color = 'default', size, ...rest } = props;
     const Component = as;
     const computedSize = size !== undefined ? `h${size}` : as;
 
@@ -22,8 +24,11 @@ const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingEleme
         [styles.h4]: computedSize === 'h4',
         [styles.h5]: computedSize === 'h5',
         [styles.h6]: computedSize === 'h6',
+        [styles.bold]: true,
+        [styles[`${color}Color`]]: true,
         [className]: className,
     });
+
     return <Component {...rest} className={classNames} />;
 };
 
