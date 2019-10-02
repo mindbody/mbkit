@@ -13,6 +13,20 @@ export type Theme = {
     success: ThemeColors;
     warning: ThemeColors;
     error: ThemeColors;
+
+    font: {
+        family: string;
+        url?: string;
+        spec: {
+            [key: string]: FontSizes;
+        };
+    };
+};
+
+export type FontSizes = {
+    size: string;
+    lineHeight: string;
+    margin?: string;
 };
 
 export type ThemeColors = {
@@ -57,6 +71,66 @@ export const baseTheme: Theme = {
         1: '#992D38',
         2: '#BD3845',
         3: '#FAEBED',
+    },
+    font: {
+        family: `'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'`,
+        url: 'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+        spec: {
+            // 1-6 are headings
+            1: {
+                size: '2.5rem',
+                lineHeight: '3rem',
+                margin: '1rem 0',
+            },
+            2: {
+                size: '2rem',
+                lineHeight: '3rem',
+                margin: '1rem 0',
+            },
+            3: {
+                size: '1.5rem',
+                lineHeight: '2rem',
+                margin: '1rem 0',
+            },
+            4: {
+                size: '1.25rem',
+                lineHeight: '1.5rem',
+                margin: '1rem 0',
+            },
+            5: {
+                size: '1rem',
+                lineHeight: '1.5rem',
+                margin: '1rem 0',
+            },
+            6: {
+                size: '.75rem',
+                lineHeight: '1rem',
+                margin: '1rem 0',
+            },
+            // default paragraph size
+            7: {
+                size: '1rem',
+                lineHeight: '1.5rem',
+                margin: '1rem 0',
+            },
+            // meta sizes
+            8: {
+                size: '.75rem',
+                lineHeight: '1.125rem',
+                margin: '.25rem 0',
+            },
+            // "subheading"
+            9: {
+                size: '1.25rem',
+                lineHeight: '2rem',
+                margin: '1rem 0',
+            },
+            // tooltip
+            10: {
+                size: '.6875rem',
+                lineHeight: '1rem',
+            },
+        },
     },
 };
 

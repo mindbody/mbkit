@@ -10,8 +10,11 @@ export type ThemeProviderProps = {
 };
 
 const ThemeProvider: React.FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
-    const { theme = baseTheme, children } = props;
-    const child = typeof children === 'function' ? children({ theme }) : children;
+    const theme = {
+        ...baseTheme,
+        ...props.theme,
+    };
+    const child = typeof props.children === 'function' ? props.children({ theme }) : props.children;
 
     return (
         <ThemeContext.Provider value={{ theme }}>
