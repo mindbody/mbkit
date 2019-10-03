@@ -13,6 +13,17 @@
     font-style: italic;
 }
 
+.link {
+    color: var(--secondary-1, #004C57);
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--secondary-2, #004C57);
+        text-decoration: none;
+    }
+}
+
 .h1 {
     @include get-font-spec(1, 2.5rem, 3rem);
 }
