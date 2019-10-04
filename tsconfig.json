@@ -13,7 +13,9 @@
         "resolveJsonModule": true,
         "typeRoots": ["node_modules/@types", "typings"],
         "lib": ["dom", "dom.iterable", "es5", "es6", "esnext"],
-        "keyofStringsOnly": true
+        "keyofStringsOnly": true,
+        "allowJs": true,
+        "checkJs": false
     },
     "exclude": ["node_modules", "packages/docs"]
 }

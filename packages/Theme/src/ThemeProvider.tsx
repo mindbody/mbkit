@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import ThemeStyles from './ThemeStyles';
 import ThemeContext, { Theme, baseTheme } from './ThemeContext';
+import theme from './base-theme.json';
 
 export type ThemeProviderProps = {
     /** Theme object of colors */
