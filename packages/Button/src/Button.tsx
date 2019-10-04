@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = 
     props: ButtonProps & React.HTMLAttributes<HTMLButtonElement>,
 ) => {
     const { variant, size = '3', loading, className = '', onClick = noop, children, disabled = false, ...rest } = props;
-    const buttonRef = React.useRef<HTMLButtonElement>(null);
+    const buttonRef = React.useRef<HTMLSpanElement>(null);
     function generateRipple(e: React.MouseEvent<HTMLButtonElement>) {
         // disable ripple if in these states
         if (variant === 'incognito' || disabled || loading) {
