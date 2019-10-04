@@ -5,12 +5,16 @@ import theme from 'prism-react-renderer/themes/vsDark';
 import styles from './MarkdownWithOverrides.module.scss';
 
 const CodeEditorPreview = props => {
+    const [showEditor, setShowEditor] = React.useState(false);
     return (
         <div className={styles.codeEditorWrapper}>
+            <button onClick={() => setShowEditor(!showEditor)}>{'Toggle Editor'}</button>
             <LiveProvider code={props.children} scope={props.scope} theme={theme}>
-                <div className={styles.codeEditor}>
-                    <LiveEditor />
-                </div>
+                {showEditor && (
+                    <div className={styles.codeEditor}>
+                        <LiveEditor />
+                    </div>
+                )}
                 <div className={styles.codePreview}>
                     <LiveError />
                     <LivePreview />
