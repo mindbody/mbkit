@@ -54,7 +54,7 @@ Default button size with outlined colors
 </div>
 ```
 
-All varians with icons. 
+All variants with icons. 
 
 TODO: once icon component is generated, update these examples
 
@@ -244,6 +244,60 @@ TODO: once icon component is generated, update these examples
             </svg>
             Disabled State
         </Button>
+    </div>
+</div>
+```
+
+All variants with loading indicators
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `repeat(6, auto)`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Button variant="primary" loading>Primary</Button>
+    </div>
+    <div>
+        <Button variant="secondaryOutlined" loading>Secondary Outlined</Button>
+    </div>
+    <div>
+        <Button variant="tertiaryOutlined" loading>Tertiary</Button>
+    </div>
+    <div>
+        <Button variant="incognito" loading>Incognito</Button>
+    </div>
+    <div>
+        <Button variant="offCard" loading>Off Card</Button>
+    </div>
+    <div>
+        <Button variant="secondary" loading disabled>Disabled Loading</Button>
+    </div>
+</div>
+```
+
+Different sizes
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `repeat(6, auto)`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Button variant="primary" size={1}>Size 1</Button>
+    </div>
+    <div>
+        <Button variant="primary" size={2}>Size 2</Button>
+    </div>
+    <div>
+        <Button variant="primary" size={3}>Size 3 (Default)</Button>
+    </div>
+    <div>
+        <Button variant="primary" size={4}>Size 4</Button>
     </div>
 </div>
 ```
