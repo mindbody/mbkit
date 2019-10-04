@@ -1,5 +1,5 @@
 // @ts-ignore
-import generateScssVariables from '../tools/generate-scss-variables.js';
+import generateScssVariables from '../tools/recursive-generate-scss-variables.js';
 
 describe('scss variable generator', () => {
     it('should take a JSON-like object and convert it to SCSS variables', () => {
