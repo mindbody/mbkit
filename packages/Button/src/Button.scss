@@ -118,6 +118,7 @@ $rippleTiming: 466;
     border: 1px solid transparent;
     cursor: pointer;
     margin: 0;
+    padding: 0;
     font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
     transition: background .2s ease-out, color .2s ease-out, fill .2s ease-out;
     overflow: hidden;
@@ -129,6 +130,12 @@ $rippleTiming: 466;
     }
     .children {
         z-index: 1;
+        width: 100%;
+        height: 100%;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     svg {
@@ -148,22 +155,22 @@ $rippleTiming: 466;
         z-index: 1;
     }
     
-    &.size4 {
+    &.size4 .children {
         padding: 4px 24px;
         min-width: 76px;
         font-size: .75rem;
     }
-    &.size3 {
+    &.size3 .children {
         padding: 8px 32px;
         min-width: 96px;
         font-size: .875rem;
     }
-    &.size2 {
+    &.size2 .children {
         padding: 16px 40px;
         min-width: 116px;
         font-size: 1rem;
     }
-    &.size1 {
+    &.size1 .children {
         padding: 32px 64px;
         min-width: 136px;
         font-size: 1.5rem;

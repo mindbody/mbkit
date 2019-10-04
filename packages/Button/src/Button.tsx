@@ -20,17 +20,7 @@ const noop = () => {};
 const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = (
     props: ButtonProps & React.HTMLAttributes<HTMLButtonElement>,
 ) => {
-    const {
-        variant,
-        size = '3',
-        loading,
-        className = '',
-        onClick = noop,
-        children,
-        onMouseDown,
-        disabled = false,
-        ...rest
-    } = props;
+    const { variant, size = '3', loading, className = '', onClick = noop, children, disabled = false, ...rest } = props;
     const buttonRef = React.useRef<HTMLButtonElement>(null);
     function generateRipple(e: React.MouseEvent<HTMLButtonElement>) {
         // disable ripple if in these states
@@ -56,12 +46,6 @@ const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = 
             btn.removeChild(ripple);
         }, Number(styles.rippleTiming));
     }
-    function handleMouseDown(e: React.MouseEvent<HTMLButtonElement>) {
-        if (typeof onMouseDown === 'function') {
-            onMouseDown(e);
-        }
-        generateRipple(e);
-    }
 
     const classNames = classnames({
         [styles.button]: true,
@@ -70,16 +54,15 @@ const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = 
         [styles.loading]: loading,
         [className]: className,
     });
+
+    // setting onMouseDown on span because when clicked it doesn't add the focus ring
+    // focus ring still set when tabbed to the button element
     return (
-        <button
-            {...rest}
-            ref={buttonRef}
-            className={classNames}
-            onClick={loading ? noop : onClick}
-            onMouseDown={handleMouseDown}
-            disabled={disabled}
-        >
-            <span className={styles.children}>{children}</span>
+        <button {...rest} className={classNames} onClick={loading ? noop : onClick} disabled={disabled}>
+            {/* eslint-disable-next-line */}
+            <span tabIndex={-1} onMouseDown={generateRipple} className={styles.children} ref={buttonRef}>
+                {children}
+            </span>
             {loading && <div className={styles.loader}>Loading...</div>}
         </button>
     );
