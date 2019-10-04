@@ -10,25 +10,7 @@
 
 const fs = require('fs');
 const theme = require('../base-theme.json');
-
-function generateScssVariables({ theme, varSeed = '--', scssSeed = '' }) {
-    return Object.keys(theme)
-        .map(key => {
-            const nextValue = theme[key];
-
-            if (typeof nextValue === 'object') {
-                return generateScssVariables({
-                    theme: nextValue,
-                    varSeed: `${varSeed}${key}-`,
-                    scssSeed: `${scssSeed}${key}-`,
-                });
-            }
-
-            return `$${scssSeed}${key}: var(${varSeed}${key}, ${nextValue});
-`;
-        })
-        .join('');
-}
+const generateScssVariables = require('./recursive-generate-scss-variables.js');
 
 const scss = generateScssVariables({ theme });
 fs.writeFileSync(`${__dirname}/../../dist/base-theme.scss`, scss, err => {
