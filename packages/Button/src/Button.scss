@@ -1,0 +1,247 @@
+$primary: var(--primary-1, #993100);
+$secondary: var(--secondary-1, #004C57);
+$tertiary: var(--neutral-2, #5A5E66);
+$black: var(--neutral-1, #0B0B0D);
+$white: var(--neutral-7, #ffffff);
+$neutral3: var(--neutral-3, #8F96A1);
+$neutral4: var(--neutral-4, #CBD0D7);
+
+$rippleTiming: 466;
+
+:export {
+    rippleTiming: $rippleTiming;
+}
+
+@mixin loader($color, $background) {
+    .loader {
+        &,
+        &:before,
+        &:after {
+          border-radius: 50%;
+        }
+        
+        color: $color;
+        font-size: 4px;
+        text-indent: -999px;
+        overflow: hidden;
+        width: 18px;
+        height: 18px;
+        box-shadow: inset 0 0 0 2px;
+        transform: translate3d(-50%, -50%, 0) rotate(180deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        
+        &:before,
+        &:after {
+          position: absolute;
+          content: '';  
+          width: 10px;
+          height: 20px;
+          background: $background;
+          top: -1px;
+        }
+        
+        &:before {
+          border-radius: 20px 0 0 20px;  
+          left: -1px;
+          transform-origin: 11px 11px;
+          animation: spin 1s infinite ease .75s;
+        }
+        &:after {
+          border-radius: 0 20px 20px 0;
+          left: 9px;
+          transform-origin: 0px 9px;
+          animation: spin 1s infinite ease;    
+        }
+      }
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+}
+@mixin disabled() {
+    &[disabled]:not([disabled="false"]) {
+        @content;
+    }
+}
+@mixin buttonStyles($background, $border: $background, $color: $white, $svg: $white) {
+    border-color: $border;
+    background: $background;
+    color: $color;
+    
+    .ripple {
+        background-color: $background;
+    }
+
+    svg g {
+        fill: $svg;
+    }
+
+    @include loader($color, $background);
+}
+@mixin buttonHover($background, $border: $background, $color: $black, $svg: $tertiary) {
+    &:not(.loading):not([disabled]):hover {
+        border-color: $border;
+        background: $background;
+        color: $color;
+        
+        svg g {
+            fill: $svg;
+        }
+    }
+}
+@mixin buttonDisabled {
+    @include disabled {
+        cursor: not-allowed;
+        background: $neutral4; 
+        border-color: $neutral4;
+        color: $neutral3;
+        svg g {
+            fill: $neutral3;
+        }
+
+        @include loader($neutral3, $neutral4);
+    }
+}
+
+.button {
+    position: relative;
+    text-align: center;
+    appearance: none;
+    border-radius: var(--radius, 3px);
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 0;
+    font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+    transition: background .2s ease-out, color .2s ease-out, fill .2s ease-out;
+    overflow: hidden;
+
+    &, .children {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .children {
+        z-index: 1;
+    }
+
+    svg {
+        margin: 0 4px;
+    }
+
+    .ripple {
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        border-radius: 50%;
+        opacity: .3;
+        transform: scale(.1);
+        left: 0;
+        top: 0;
+        animation: grow #{$rippleTiming}ms cubic-bezier(0, 0, 0.66, 1);
+        z-index: 1;
+    }
+    
+    &.size4 {
+        padding: 4px 24px;
+        min-width: 76px;
+        font-size: .75rem;
+    }
+    &.size3 {
+        padding: 8px 32px;
+        min-width: 96px;
+        font-size: .875rem;
+    }
+    &.size2 {
+        padding: 16px 40px;
+        min-width: 116px;
+        font-size: 1rem;
+    }
+    &.size1 {
+        padding: 32px 64px;
+        min-width: 136px;
+        font-size: 1.5rem;
+    }
+
+    &.primary {
+        @include buttonStyles($primary);
+        @include buttonHover($white, $primary);
+    }
+    &.secondary {
+        @include buttonStyles($secondary);
+        @include buttonHover($white, $secondary);
+    }
+    &.tertiary {
+        @include buttonStyles($tertiary);
+        @include buttonHover($white, $tertiary);
+    }
+    &.primaryOutlined {
+        @include buttonStyles($white, $primary, $black, $tertiary);
+        @include buttonHover($primary, $primary, $white, $white);
+    }
+    &.secondaryOutlined {
+        @include buttonStyles($white, $secondary, $black, $tertiary);
+        @include buttonHover($secondary, $secondary, $white, $white);
+    }
+    &.tertiaryOutlined {
+        @include buttonStyles($white, $tertiary, $black, $tertiary);
+        @include buttonHover($tertiary, $tertiary, $white, $white);
+    }
+    &.offCard {
+        @include buttonStyles($white, $white, $black, $tertiary);
+        @include buttonHover($tertiary, $tertiary, $white, $white);
+    }
+    &.incognito {
+        @include buttonStyles($white, $white, $black, $tertiary);
+        @include buttonStyles($white, $white, $black, $tertiary);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &.loading {
+        cursor: not-allowed;
+
+        .children {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    @include buttonDisabled();
+
+    svg g.loading {
+        fill: none !important;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px #6096e6bf;
+    }
+}
+
+
+
+
+@keyframes grow {
+    0% {
+        opacity: .5;
+        transform: scale(.1);
+    }
+    20% {
+        transform: scale(1);
+    }
+    80% {
+        opacity: .3;
+        transform: scale(50);
+    }
+    100% {
+        opacity: 0;
+    }
+}
