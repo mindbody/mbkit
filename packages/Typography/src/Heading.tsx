@@ -26,5 +26,3 @@ export const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadi
     });
     return <Component {...rest} className={classNames} />;
 };
-
-export default Heading;

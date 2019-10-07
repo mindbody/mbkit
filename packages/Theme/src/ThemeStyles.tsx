@@ -1,6 +1,7 @@
 import React, { ReactChild } from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeContext } from './ThemeContext';
+import { recursiveCssVariableCreator } from './tools/recursive-css-variable-creator';
 
 export const Head: React.FC = props => {
     if (typeof window === `undefined`) {
@@ -8,26 +9,6 @@ export const Head: React.FC = props => {
     }
     return ReactDOM.createPortal(props.children, document.head);
 };
-
-export type RecursiveCssVariableCreator = {
-    // typescript complains if this is type `Theme` because of the mapping on when getting `nextValue` because it can't infer the type
-    theme: any;
-    seed?: string;
-};
-
-export function recursiveCssVariableCreator(props: RecursiveCssVariableCreator): string {
-    const { theme, seed = '--' } = props;
-    return Object.keys(theme)
-        .map(key => {
-            const nextValue = theme[key];
-            if (typeof nextValue === 'object') {
-                return recursiveCssVariableCreator({ theme: nextValue, seed: `${seed}${key}-` });
-            }
-
-            return `${seed}${key}: ${nextValue};`;
-        })
-        .join('');
-}
 
 export type ThemeStylesProps = {
     children: ReactChild;
