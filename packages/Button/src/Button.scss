@@ -7,6 +7,7 @@ $neutral3: var(--neutral-3, #8F96A1);
 $neutral4: var(--neutral-4, #CBD0D7);
 
 $rippleTiming: 466;
+$loadingSpeed: 650;
 
 :export {
     rippleTiming: $rippleTiming;
@@ -46,13 +47,13 @@ $rippleTiming: 466;
           border-radius: 20px 0 0 20px;  
           left: -1px;
           transform-origin: 11px 11px;
-          animation: spin 1s infinite ease .75s;
+          animation: spin #{$loadingSpeed}ms infinite ease #{$loadingSpeed * .75}ms;
         }
         &:after {
           border-radius: 0 20px 20px 0;
           left: 9px;
           transform-origin: 0px 9px;
-          animation: spin 1s infinite ease;    
+          animation: spin #{$loadingSpeed}ms infinite ease;    
         }
       }
       
