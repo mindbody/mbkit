@@ -14,7 +14,7 @@
         "postinstall": "yarn lerna clean --yes && yarn lerna bootstrap",
         "test": "jest --env=jsdom --coverage --coverageDirectory packages/docs/static/coverage",
         "build:all": "yarn test && yarn build:modules && yarn build:docs",
-        "build:types": "yarn make-dir packages/docs/generated && react-docgen packages -x tsx -e index.tsx -i docs -i dist -o packages/docs/generated/component-prop-types.json --pretty",
+        "build:types": "yarn make-dir packages/docs/generated && react-docgen packages -x tsx -e index.tsx -i Theme -i docs -i dist -o packages/docs/generated/component-prop-types.json --pretty",
         "build:modules": "yarn lerna run build",
         "build:docs": "yarn build:types && yarn lerna run docs:prod",
         "docs:serve": "yarn lerna run docs:serve",
