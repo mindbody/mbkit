@@ -2,8 +2,8 @@
     "name": "@mindbody/typography",
     "version": "2.0.0",
     "source": "src/index.tsx",
-    "main": "dist/Typography.js",
-    "types": "dist/Typography/src/Typography.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/Typography/src/index.d.ts",
     "publishConfig": {
         "access": "public"
     },

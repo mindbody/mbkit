@@ -8,7 +8,7 @@ export type HeadingProps = {
     /** Use this when you need to render some heading element but it needs to look a different size */
     size?: 1 | 2 | 3 | 4 | 5 | 6;
 };
-const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>> = (
+export const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>> = (
     props: HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>,
 ) => {
     const { as, className = '', size, ...rest } = props;
