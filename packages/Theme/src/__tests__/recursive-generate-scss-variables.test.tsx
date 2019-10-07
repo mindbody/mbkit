@@ -44,7 +44,7 @@ describe('scss variable generator', () => {
             },
             font: {
                 family: "'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'",
-                url: 'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+                url: "'https://fonts.googleapis.com/css?family=Lato:300,400,700'",
                 spec: {
                     '1': {
                         size: '2.5rem',
@@ -125,7 +125,7 @@ $error-1: var(--error-1, #992D38);
 $error-2: var(--error-2, #BD3845);
 $error-3: var(--error-3, #FAEBED);
 $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-$font-url: var(--font-url, https://fonts.googleapis.com/css?family=Lato:300,400,700);
+$font-url: var(--font-url, 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
 $font-spec-1-size: var(--font-spec-1-size, 2.5rem);
 $font-spec-1-lineHeight: var(--font-spec-1-lineHeight, 3rem);
 $font-spec-1-margin: var(--font-spec-1-margin, 1rem 0);

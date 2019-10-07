@@ -39,7 +39,7 @@
     },
     "font": {
       "family": "'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'",
-      "url": "https://fonts.googleapis.com/css?family=Lato:300,400,700",
+      "url": "'https://fonts.googleapis.com/css?family=Lato:300,400,700'",
       "spec": {
         "1": {
           "size": "2.5rem",
