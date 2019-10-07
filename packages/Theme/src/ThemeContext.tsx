@@ -36,6 +36,4 @@ export type ThemeColors = {
 
 export const baseTheme: Theme = { ...theme };
 
-const ThemeContext: React.Context<{ theme: Theme }> = React.createContext({ theme: baseTheme });
-
-export default ThemeContext;
+export const ThemeContext: React.Context<{ theme: Theme }> = React.createContext({ theme: baseTheme });

@@ -1,6 +1,6 @@
 import React, { ReactChild } from 'react';
 import ReactDOM from 'react-dom';
-import ThemeContext from './ThemeContext';
+import { ThemeContext } from './ThemeContext';
 
 export const Head: React.FC = props => {
     if (typeof window === `undefined`) {
@@ -33,7 +33,7 @@ export type ThemeStylesProps = {
     children: ReactChild;
 };
 export const styleTagTestId = 'theme-styles-tag';
-const ThemeStyles: React.FC<ThemeStylesProps> = (props: ThemeStylesProps) => {
+export const ThemeStyles: React.FC<ThemeStylesProps> = (props: ThemeStylesProps) => {
     const { children } = props;
     const { theme } = React.useContext(ThemeContext);
     const cssVariables = recursiveCssVariableCreator({ theme });
@@ -53,5 +53,3 @@ const ThemeStyles: React.FC<ThemeStylesProps> = (props: ThemeStylesProps) => {
         </>
     );
 };
-
-export default ThemeStyles;
