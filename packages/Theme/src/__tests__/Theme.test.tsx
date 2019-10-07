@@ -1,10 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ThemeProvider from '../ThemeProvider';
 import { baseTheme } from '../ThemeContext';
 import { styleTagTestId, recursiveCssVariableCreator } from '../ThemeStyles';
-import Theme from '../index';
-const { ThemeConsumer, ThemeContext } = Theme;
+import { ThemeConsumer, ThemeContext, ThemeProvider } from '../index';
 
 describe('Theme', () => {
     describe('ThemeContext', () => {

@@ -13,7 +13,7 @@ const theme = require('../base-theme.json');
 const generateScssVariables = require('./recursive-generate-scss-variables.js');
 
 const scss = generateScssVariables({ theme });
-fs.writeFileSync(`${__dirname}/../../dist/base-theme.scss`, scss, err => {
+fs.writeFileSync(`${__dirname}/../../dist/theme.scss`, scss, err => {
     if (!err) {
         console.log('SCSS variables created');
     }

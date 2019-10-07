@@ -99,8 +99,7 @@ describe('scss variable generator', () => {
             },
         };
 
-        const expectedOutput = `$name: var(--name, mindbody);
-$foreground: var(--foreground, #0B0B0D);
+        const expectedOutput = `$foreground: var(--foreground, #0B0B0D);
 $background: var(--background, #ffffff);
 $radius: var(--radius, 3px);
 $neutral-1: var(--neutral-1, #0B0B0D);

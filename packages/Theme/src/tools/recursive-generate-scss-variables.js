@@ -3,6 +3,10 @@ function generateScssVariables({ theme, varSeed = '--', scssSeed = '' }) {
         .map(key => {
             const nextValue = theme[key];
 
+            if (key === 'name') {
+                return '';
+            }
+
             if (typeof nextValue === 'object') {
                 return generateScssVariables({
                     theme: nextValue,
