@@ -5,7 +5,7 @@ import theme from 'prism-react-renderer/themes/vsDark';
 import styles from './MarkdownWithOverrides.module.scss';
 
 const CodeEditorPreview = props => {
-    const [showEditor, setShowEditor] = React.useState(false);
+    const [showEditor, setShowEditor] = React.useState(true);
     return (
         <div className={styles.codeEditorWrapper}>
             <button onClick={() => setShowEditor(!showEditor)}>{'Toggle Editor'}</button>
