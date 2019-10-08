@@ -120,4 +120,52 @@ describe('Heading', () => {
         expect(heading.classList).toContain('customClassName');
         expect(spy).toHaveBeenCalledTimes(1);
     });
+    it('should contain the corresponding color class name', () => {
+        const { getByTestId } = render(
+            <>
+                <Heading as="h1" data-testid="test1">
+                    Text
+                </Heading>
+                <Heading as="h1" data-testid="test2" color="primary">
+                    Text
+                </Heading>
+                <Heading as="h1" data-testid="test3" color="error">
+                    Text
+                </Heading>
+                <Heading as="h1" data-testid="test4" color="info">
+                    Text
+                </Heading>
+                <Heading as="h1" data-testid="test5" color="meta">
+                    Text
+                </Heading>
+                <Heading as="h1" data-testid="test6" color="success">
+                    Text
+                </Heading>
+                <Heading as="h1" data-testid="test7" color="warning">
+                    Text
+                </Heading>
+            </>,
+        );
+
+        const defaultColor = getByTestId('test1');
+        expect(defaultColor.classList).toContain('defaultColor');
+
+        const primary = getByTestId('test2');
+        expect(primary.classList).toContain('primaryColor');
+
+        const error = getByTestId('test3');
+        expect(error.classList).toContain('errorColor');
+
+        const info = getByTestId('test4');
+        expect(info.classList).toContain('infoColor');
+
+        const meta = getByTestId('test5');
+        expect(meta.classList).toContain('metaColor');
+
+        const success = getByTestId('test6');
+        expect(success.classList).toContain('successColor');
+
+        const warning = getByTestId('test7');
+        expect(warning.classList).toContain('warningColor');
+    });
 });
