@@ -33,13 +33,13 @@ const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = 
             return;
         }
 
-        const posX = e.pageX - btn.getBoundingClientRect().left;
-        const posY = e.pageY - btn.getBoundingClientRect().top;
+        const posX = e.clientX - btn.getBoundingClientRect().left;
+        const posY = e.clientY - btn.getBoundingClientRect().top;
         const ripple = document.createElement('div');
         ripple.className = styles.ripple;
 
-        ripple.style.top = `${posY - 4}px`;
-        ripple.style.left = `${posX - 4}px`;
+        ripple.style.top = `${posY - 6}px`;
+        ripple.style.left = `${posX - 6}px`;
         btn.appendChild(ripple);
 
         setTimeout(() => {
