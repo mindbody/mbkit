@@ -71,6 +71,13 @@ $loadingSpeed: 650;
         @content;
     }
 }
+@mixin svgTargetFill() {
+    svg g:not([fill~="#"]),
+    svg path:not([fill~="#"]),
+    svg use:not([fill~="#"]) { 
+        @content;
+    }
+}
 @mixin buttonStyles($background, $border: $background, $color: $white, $svg: $white) {
     border-color: $border;
     background: $background;
@@ -80,7 +87,7 @@ $loadingSpeed: 650;
         background-color: $background;
     }
 
-    svg g {
+    @include svgTargetFill {
         fill: $svg;
     }
 
@@ -92,7 +99,7 @@ $loadingSpeed: 650;
         background: $background;
         color: $color;
         
-        svg g {
+        @include svgTargetFill {
             fill: $svg;
         }
     }
@@ -103,7 +110,8 @@ $loadingSpeed: 650;
         background: $neutral4; 
         border-color: $neutral4;
         color: $neutral3;
-        svg g {
+
+        @include svgTargetFill {
             fill: $neutral3;
         }
 
