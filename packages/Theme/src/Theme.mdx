@@ -43,3 +43,9 @@ Inspect the output and find the scoped selector. On it you will see the CSS vari
 ### When should I use a custom theme?
 
 If you are working in a legacy product and want to match it's styling, you can override the values of the theme and see the common components reflect this.
+
+### Can I use theme values as SCSS variables?
+
+Yes! After you've installed this package as a dependency you can add this line "@import '~@mindbody/theme/dist/theme.scss';" in any of your scss files and it will allow you to consume the SCSS variables. Variable names follow the JSON structure just like the CSS variables. 
+
+For example: "$primary-1" will output "var(--primary-1, #993100)"

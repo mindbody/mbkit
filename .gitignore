@@ -2,6 +2,7 @@ generated.*
 generated
 dist
 .vscode
+base-theme.scss
 
 # microbundle
 .rts2*

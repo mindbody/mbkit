@@ -10,7 +10,7 @@ export type HeadingProps = {
     /** Sets the text color. By default we use our brand foreground */
     color?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'meta';
 };
-const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>> = (
+export const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>> = (
     props: HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingElement>,
 ) => {
     const { as, className = '', color = 'default', size, ...rest } = props;
@@ -31,5 +31,3 @@ const Heading: React.FC<HeadingProps & React.HtmlHTMLAttributes<HTMLHeadingEleme
 
     return <Component {...rest} className={classNames} />;
 };
-
-export default Heading;

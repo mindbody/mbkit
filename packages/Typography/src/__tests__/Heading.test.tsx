@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Heading from '../Heading';
+import { Heading } from '../Heading';
 
 describe('Heading', () => {
     it('should render the text that is passed down', () => {
