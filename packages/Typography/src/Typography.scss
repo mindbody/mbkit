@@ -1,0 +1,40 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--font-family, 'Lato');
+    font-weight: bold;
+}
+
+.h1 {
+    font-size: var(--font-spec-1-size, 2.5rem); 
+    line-height: var(--font-spec-1-lineHeight, 3rem);
+    margin: var(--font-spec-1-margin, 1rem 0);
+}
+.h2 {
+    font-size: var(--font-spec-2-size, 2rem);
+    line-height: var(--font-spec-2-lineHeight, 3rem);
+    margin: var(--font-spec-2-margin, 1rem 0);
+}
+.h3 {
+    font-size: var(--font-spec-3-size, 1.5rem);
+    line-height: var(--font-spec-3-lineHeight, 2rem);
+    margin: var(--font-spec-3-margin, 1rem 0);
+}
+.h4 {
+    font-size: var(--font-spec-4-size, 1.25rem);
+    line-height: var(--font-spec-4-lineHeight, 1.5rem);
+    margin: var(--font-spec-4-margin, 1rem 0);
+}
+.h5 {
+    font-size: var(--font-spec-5-size, 1rem);
+    line-height: var(--font-spec-5-lineHeight, 1.5rem);
+    margin: var(--font-spec-5-margin, 1rem 0);
+}
+.h6 {
+    font-size: var(--font-spec-6-size, .75rem);
+    line-height: var(--font-spec-6-lineHeight, 1rem);
+    margin: var(--font-spec-6-margin, 1rem 0);
+}

@@ -1,0 +1,25 @@
+# Typography Dev Docs
+
+## Heading
+
+Basic usage
+
+```tsx
+<>
+    <Heading as="h1">This is an h1</Heading>
+    <Heading as="h2">This is an h2</Heading>
+    <Heading as="h3">This is an h3</Heading>
+    <Heading as="h4">This is an h4</Heading>
+    <Heading as="h5">This is an h5</Heading>
+    <Heading as="h6">This is an h6</Heading>
+</>
+```
+
+Need a h1 size but want to render an h6? Try using the "size" prop
+
+```tsx
+<>
+    <Heading as="h6" size={1}>I look massive, but semantically I am as small as it gets</Heading>
+    <Heading as="h1" size={6}>I look tiny, but semantically I am the most important</Heading>
+</>
+```

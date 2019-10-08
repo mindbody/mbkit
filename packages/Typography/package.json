@@ -1,8 +1,9 @@
 {
-    "name": "@mindbody/radio",
-    "version": "1.0.7",
+    "name": "@mindbody/typography",
+    "version": "2.0.0",
     "source": "src/index.tsx",
-    "main": "dist/Radio.js",
+    "main": "dist/Typography.js",
+    "types": "dist/Typography/src/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
@@ -12,11 +13,14 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "@types/classnames": "^2.2.9",
         "@types/react": "^16.9.2",
         "react": "^16.9.0"
     },
     "peerDependencies": {
         "react": "^16.9.0"
     },
-    "gitHead": "d6fecb21e8dad48b0cd7db5c019d2c14bac7ff72"
+    "dependencies": {
+        "classnames": "^2.2.6"
+    }
 }
