@@ -17,7 +17,7 @@ export type ButtonProps = {
     disabled?: boolean;
 };
 const noop = () => {};
-const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = (
+export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = (
     props: ButtonProps & React.HTMLAttributes<HTMLButtonElement>,
 ) => {
     const { variant, size = '3', loading, className = '', onClick = noop, children, disabled = false, ...rest } = props;
@@ -67,5 +67,3 @@ const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = 
         </button>
     );
 };
-
-export default Button;

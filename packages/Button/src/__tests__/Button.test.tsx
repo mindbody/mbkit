@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Button, { ButtonProps } from '../Button';
+import { Button, ButtonProps } from '../Button';
 
 describe('Button', () => {
     it('should allow user to set text and onClick props and work as expected', () => {
