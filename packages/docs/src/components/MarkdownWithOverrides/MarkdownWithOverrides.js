@@ -7,20 +7,24 @@ import styles from './MarkdownWithOverrides.module.scss';
 const CodeEditorPreview = props => {
     const [showEditor, setShowEditor] = React.useState(true);
     return (
-        <div className={styles.codeEditorWrapper}>
+        <>
             <button onClick={() => setShowEditor(!showEditor)}>{'Toggle Editor'}</button>
-            <LiveProvider code={props.children} scope={props.scope} theme={theme}>
-                {showEditor && (
-                    <div className={styles.codeEditor}>
-                        <LiveEditor />
+            <div className={styles.codeEditorWrapper}>
+                <LiveProvider code={props.children} scope={props.scope} theme={theme}>
+                    {showEditor ? (
+                        <div className={styles.codeEditor}>
+                            <LiveEditor />
+                        </div>
+                    ) : (
+                        <div />
+                    )}
+                    <div className={styles.codePreview}>
+                        <LiveError />
+                        <LivePreview />
                     </div>
-                )}
-                <div className={styles.codePreview}>
-                    <LiveError />
-                    <LivePreview />
-                </div>
-            </LiveProvider>
-        </div>
+                </LiveProvider>
+            </div>
+        </>
     );
 };
 
