@@ -3,17 +3,19 @@
     "version": "2.0.0",
     "source": "src/index.tsx",
     "main": "dist/Theme.js",
-    "types": "dist/Theme.d.ts",
+    "types": "dist/Theme/src/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
-        "build": "../../shared/build-tools/build-package.js",
-        "dev": "../../shared/build-tools/dev-package.js"
+        "build": "../../shared/build-tools/build-package.js && yarn generate:scss",
+        "dev": "../../shared/build-tools/dev-package.js",
+        "generate:scss": "./src/tools/generate-scss-variables.js"
     },
     "license": "MIT",
     "devDependencies": {
         "@types/react": "^16.9.2",
+        "fs": "^0.0.1-security",
         "react": "^16.9.0",
         "react-dom": "^16.9.0"
     },

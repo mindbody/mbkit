@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import ThemeStyles from './ThemeStyles';
-import ThemeContext, { Theme, baseTheme } from './ThemeContext';
+import { ThemeStyles } from './ThemeStyles';
+import { ThemeContext, Theme, baseTheme } from './ThemeContext';
 
 export type ThemeProviderProps = {
     /** Theme object of colors */
@@ -9,7 +9,7 @@ export type ThemeProviderProps = {
     children: ReactNode | ((props: { theme: Theme }) => ReactNode);
 };
 
-const ThemeProvider: React.FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
     const theme = {
         ...baseTheme,
         ...props.theme,
@@ -22,5 +22,3 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props: ThemeProviderProps) 
         </ThemeContext.Provider>
     );
 };
-
-export default ThemeProvider;

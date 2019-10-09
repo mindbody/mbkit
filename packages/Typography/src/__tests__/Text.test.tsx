@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Text from '../Text';
+import { Text } from '../Text';
 
 describe('Text', () => {
     it('should render and allow you to pass content and render it', () => {

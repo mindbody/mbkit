@@ -15,7 +15,7 @@ export type TextProps = {
     color?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'meta';
 };
 
-const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (
+export const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (
     props: TextProps & React.HTMLAttributes<HTMLElement>,
 ) => {
     const { as = 'p' as any, color = 'default', size = 8, bold, italic, className = '', ...rest } = props;
@@ -39,5 +39,3 @@ const Text: React.FC<TextProps & React.HTMLAttributes<HTMLElement>> = (
     });
     return <Component {...rest} className={classNames} />;
 };
-
-export default Text;
