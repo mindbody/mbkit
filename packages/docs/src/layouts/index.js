@@ -4,11 +4,12 @@ import styles from './index.module.scss';
 import { SiteMapNav } from '../components/Nav/Nav';
 import { useNetlifyIdentity } from 'react-netlify-identity';
 import { UserAuth } from '../auth/UserAuth';
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
+import '@reach/skip-nav/styles.css';
+const classnames = require('classnames');
 
 const url = 'https://friendly-bose-a575fc.netlify.com/';
 export const IdentityContext = React.createContext();
-
-const classnames = require('classnames');
 
 const query = graphql`
     query {
@@ -40,18 +41,26 @@ const Layout = props => {
     return (
         <IdentityContext.Provider value={identity}>
             {identity.isLoggedIn && identity.isConfirmedUser ? (
-                <div className={layoutStyles}>
-                    <div className={styles.navContainer}>
-                        <nav className={styles.nav}>
-                            <StaticQuery
-                                query={query}
-                                render={data => <SiteMapNav allPages={data} onClick={handleLinkClick} />}
+                <>
+                    <SkipNavLink />
+                    <div className={layoutStyles}>
+                        <div className={styles.navContainer}>
+                            <nav className={styles.nav}>
+                                <StaticQuery
+                                    query={query}
+                                    render={data => <SiteMapNav allPages={data} onClick={handleLinkClick} />}
+                                />
+                            </nav>
+                            <button
+                                className={styles.mobileNavButton}
+                                onClick={e => setMobileNavOpen(!mobileNavOpen)}
                             />
-                        </nav>
-                        <button className={styles.mobileNavButton} onClick={e => setMobileNavOpen(!mobileNavOpen)} />
+                        </div>
+                        <SkipNavContent>
+                            <main className={styles.main}>{props.children}</main>
+                        </SkipNavContent>
                     </div>
-                    <main className={styles.main}>{props.children}</main>
-                </div>
+                </>
             ) : (
                 <UserAuth />
             )}
