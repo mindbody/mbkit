@@ -2,6 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styles from './index.module.scss';
 import { SiteMapNav } from '../components/Nav/Nav';
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
+import '@reach/skip-nav/styles.css';
 const classnames = require('classnames');
 
 const query = graphql`
@@ -30,18 +32,23 @@ const Layout = props => {
         }
     }
     return (
-        <div className={layoutStyles}>
-            <div className={styles.navContainer}>
-                <nav className={styles.nav}>
-                    <StaticQuery
-                        query={query}
-                        render={data => <SiteMapNav allPages={data} onClick={handleLinkClick} />}
-                    />
-                </nav>
-                <button className={styles.mobileNavButton} onClick={e => setMobileNavOpen(!mobileNavOpen)} />
+        <>
+            <SkipNavLink />
+            <div className={layoutStyles}>
+                <div className={styles.navContainer}>
+                    <nav className={styles.nav}>
+                        <StaticQuery
+                            query={query}
+                            render={data => <SiteMapNav allPages={data} onClick={handleLinkClick} />}
+                        />
+                    </nav>
+                    <button className={styles.mobileNavButton} onClick={e => setMobileNavOpen(!mobileNavOpen)} />
+                </div>
+                <SkipNavContent>
+                    <main className={styles.main}>{props.children}</main>
+                </SkipNavContent>
             </div>
-            <main className={styles.main}>{props.children}</main>
-        </div>
+        </>
     );
 };
 
