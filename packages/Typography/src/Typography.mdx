@@ -1,0 +1,80 @@
+# Typography Dev Docs
+
+## Text
+
+Basic usage with size and descriptions of what they are typically used for.
+
+```tsx
+<>
+    <Text>By default this is a paragraph text and margin, but these props will allow you to make it look like anything you want. Note when you want to use a heading consider using the "Heading" component instead of trying to mock the size as you want your application to stay semantic.</Text>
+    
+    <Text size={1}>Size 1</Text>
+    <Text size={2}>Size 2</Text>
+    <Text size={3} bold as="span">Size 3</Text>
+    <Text size={4}>Size 4</Text>
+    <Text size={5}>Size 5</Text>
+    <Text size={6}>Size 6</Text>
+    <Text size={7}>This is a "SubHeading" which often follows the h1 but the content is more informational than an actual header.</Text>
+    <Text>Size 8 is the default paragraph size and default "size" prop</Text>
+    <Text size={9}>This size is used for meta text. This can be a placeholder or error text. If you show this conditionally don't forget to add your aria labels! </Text>
+    <Text size={10}>This size is used in Tipsy's or Quicknotes for displaying simple help or directions</Text>
+</>
+```
+
+Additionally, you can render any element you want using the "as" prop
+
+```tsx
+<Text as="label" size={9} color="meta">This is a label now <br /><input defaultValue="Edit this text" /></Text>
+```
+
+Or any brand color you want via a prop
+
+```tsx
+<>
+    <Text>This is the default color</Text>
+    <Text color="primary">This is the "primary" brand color</Text>
+    <Text color="info">This is the info or "secondary" brand color</Text>
+    <Text color="success">This is the "success" color</Text>
+    <Text color="warning">This is the "warning" color</Text>
+    <Text color="error">This is the "error" color</Text>
+    <Text color="meta">This is the "meta" color</Text>
+</>
+```
+
+## Heading
+
+Basic usage
+
+```tsx
+<>
+    <Heading as="h1">This is an h1</Heading>
+    <Heading as="h2">This is an h2</Heading>
+    <Heading as="h3">This is an h3</Heading>
+    <Heading as="h4">This is an h4</Heading>
+    <Heading as="h5">This is an h5</Heading>
+    <Heading as="h6">This is an h6</Heading>
+</>
+```
+
+Need a h1 size but want to render an h6? Try using the "size" prop
+
+```tsx
+<>
+    <Heading as="h6" size={1}>I look massive, but semantically I am as small as it gets</Heading>
+    <Heading as="h1" size={6}>I look tiny, but semantically I am the most important</Heading>
+</>
+```
+
+Also has colors!
+
+```tsx
+<>
+    <Heading as="h2">This is the default color</Heading>
+    <Heading as="h2" color="primary">This is the "primary" brand color</Heading>
+    <Heading as="h2" color="info">This is the "info" color</Heading>
+    <Heading as="h2" color="success">This is the "success" color</Heading>
+    <Heading as="h2" color="warning">This is the "warning" color</Heading>
+    <Heading as="h2" color="error">This is the "error" color</Heading>
+    <Heading as="h2" color="meta">This is the "meta" color</Heading>
+</>
+```

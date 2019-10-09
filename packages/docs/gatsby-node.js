@@ -191,7 +191,7 @@ function generateComponentsFile(componentMap) {
         .map(comp => {
             // if the first letter of component is capitalized, add it
             if (isComponent(comp)) {
-                return `import ${comp} from '${componentMap[comp]}';`;
+                return `import * as ${comp} from '${componentMap[comp]}';`;
             }
             return '';
         })

@@ -1,6 +1,7 @@
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import { eslint } from 'rollup-plugin-eslint';
+import json from 'rollup-plugin-json';
 
 const consumerPath = process.cwd();
 const pkg = require(`${consumerPath}/package.json`);
@@ -15,6 +16,11 @@ export default {
     ],
     external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
     plugins: [
+        json({
+            exclude: ['node_modules'],
+            preferConst: true,
+            indent: '  ',
+        }),
         eslint({
             config: `${__dirname}/../../.eslintrc`,
             ignorePath: `${__dirname}/../../.eslintignore`,
