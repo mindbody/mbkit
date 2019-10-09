@@ -122,7 +122,7 @@ const ComponentDocumentation = props => {
             </p>
 
             {relatedComponents.map(component => (
-                <p>
+                <p key={component.name}>
                     <a
                         href={`/coverage/lcov-report/${pkgJson.name.replace('@mindbody/', '')}/src/${
                             component.name
