@@ -1,12 +1,13 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Glyph, allGlyphs } from '../Glyph';
+import * as Glyphs from '../Glyph';
 
 describe('Icon', () => {
+    const { GlyphAdd } = Glyphs;
     it('should render with all props passed to it', () => {
         const spy = jest.fn();
         const { getByTestId } = render(
-            <Glyph name="add" data-testid="test" className="testing" width="24" height="24" onClick={spy} />,
+            <GlyphAdd data-testid="test" className="testing" width="24" height="24" onClick={spy} />,
         );
 
         const glyph = getByTestId('test');
@@ -20,12 +21,12 @@ describe('Icon', () => {
     it('should render with the color passed to it', () => {
         const { getByTestId } = render(
             <>
-                <Glyph data-testid="test1" color="primary" name="add" />
-                <Glyph data-testid="test2" color="warning" name="add" />
-                <Glyph data-testid="test3" color="success" name="add" />
-                <Glyph data-testid="test4" color="error" name="add" />
-                <Glyph data-testid="test5" color="info" name="add" />
-                <Glyph data-testid="test6" color="meta" name="add" />
+                <GlyphAdd data-testid="test1" color="primary" />
+                <GlyphAdd data-testid="test2" color="warning" />
+                <GlyphAdd data-testid="test3" color="success" />
+                <GlyphAdd data-testid="test4" color="error" />
+                <GlyphAdd data-testid="test5" color="info" />
+                <GlyphAdd data-testid="test6" color="meta" />
             </>,
         );
         const icon1 = getByTestId('test1');
@@ -46,38 +47,32 @@ describe('Icon', () => {
         const icon6 = getByTestId('test6');
         expect(icon6.classList).toContain('metaColor');
     });
-    it('should render all icons and there should be no duplicate ids', () => {
-        const { getByTestId } = render(
-            <div data-testid="container">
-                {allGlyphs.map(name => (
-                    <Glyph name={name} key={name} data-testid={name} />
-                ))}
-            </div>,
-        );
+    it(`should render all glyphs multiple times with no duplicate id's`, () => {
+        type AllIcons = {
+            [key: string]: React.ReactNode;
+        };
 
-        // Icon renders with a <path element
-        allGlyphs.forEach(name => {
-            const icon = getByTestId(name);
-
-            expect(icon.innerHTML).toContain(`<path`);
-        });
-    });
-    it('should render multiple of the same icon with no duplicate ids', () => {
-        const duplicateIcons = [...allGlyphs, ...allGlyphs, ...allGlyphs];
+        const renderAllIcons = () =>
+            Object.keys(Glyphs).map(key => {
+                const Comp: React.ReactNode = (Glyphs as AllIcons)[key];
+                if (typeof Comp === 'function') {
+                    return Comp({ key });
+                }
+                return null;
+            });
 
         const { getByTestId } = render(
             <div data-testid="container">
-                {duplicateIcons.map((name, i) => (
-                    <Glyph name={name} key={`${name}-${i}`} data-testid={`${name}-${i}`} />
-                ))}
+                {renderAllIcons()}
+                {renderAllIcons()}
+                {renderAllIcons()}
             </div>,
         );
 
-        // No id's should be duplicate
         const container = getByTestId('container');
         const ids = Array.from(container.querySelectorAll('[id]'));
-        ids.forEach(el => {
-            expect(container.querySelectorAll(`[id="${el.id}"]`).length).toBe(1);
-        });
+        const svgs = Array.from(container.querySelectorAll('svg'));
+        ids.forEach(element => expect(container.querySelectorAll(`[id="${element.id}"]`).length).toBe(1));
+        expect(svgs.length).toBe(Object.keys(Glyphs).length * 3);
     });
 });
