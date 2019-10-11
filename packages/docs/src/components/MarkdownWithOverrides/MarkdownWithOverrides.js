@@ -1,6 +1,7 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+
 import theme from 'prism-react-renderer/themes/vsDark';
 import styles from './MarkdownWithOverrides.module.scss';
 
@@ -54,6 +55,19 @@ const MarkdownWithOverrides = ({ children, overrides }) => (
     <Markdown
         options={{
             overrides: {
+                CodePreview: props => {
+                    return (
+                        <LiveProvider
+                            code={props.children[0]}
+                            theme={theme}
+                            disabled={true}
+                            noInline={true}
+                            language={props.language || 'tsx'}
+                        >
+                            <LiveEditor />
+                        </LiveProvider>
+                    );
+                },
                 code: props => <CodeEditorPreview scope={overrides} children={props.children} />,
                 pre: props => <div {...props} />,
                 ...overrides,

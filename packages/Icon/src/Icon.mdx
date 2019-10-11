@@ -1,0 +1,64 @@
+# Dev Documentation
+
+Icons
+
+```tsx
+<>
+    <Icon name="add" width="64" height="64" />
+    <Icon name="add" />
+    <Icon name="add" width="16" height="16" />
+    <br />
+    <Icon name="call" width="64" height="64" />
+    <Icon name="call" />
+    <Icon name="call" width="16" height="16" />
+
+    <br />
+    <Icon name="add" color="primary" />
+    <Icon name="call" color="success" />
+    <Icon name="call" color="warning" />
+    <Icon name="call" color="info" />
+    <Icon name="call" color="meta" />
+    <Icon name="chat" color="error" />
+</>
+```
+
+All Icons
+
+
+```tsx
+<div style={{ display: 'grid', gridGap: '16px', gridTemplateColumns: 'repeat(auto-fill, 100px)', fontSize: '.75rem', textAlign: 'center' }}>
+    {allIcons.map(name => (
+        <div key={name}>
+            <Icon name={name} />
+            <br />
+            {name}
+        </div>
+    ))}
+</div>
+```
+
+All Glyphs
+
+```tsx
+<div style={{ display: 'grid', gridGap: '16px', gridTemplateColumns: 'repeat(auto-fill, 100px)', fontSize: '.75rem', textAlign: 'center' }}>
+    {allGlyphs.map(name => (
+        <div key={name}>
+            <Glyph name={name} />
+            <br />
+            {name}
+        </div>
+    ))}
+</div>
+```
+
+## Targeting icons with SCSS 
+
+This snippet targets all path, g, and use elements where they have a fill prop that contains a pound sign which indicates that it is using a hex code. 
+
+<CodePreview language="scss">
+    svg g:not([fill~="#"]),
+    svg path:not([fill~="#"]),
+    svg use:not([fill~="#"]) { 
+        fill: #ffffff;
+    }
+</CodePreview>
