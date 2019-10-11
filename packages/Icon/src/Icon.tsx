@@ -46,7 +46,7 @@ export type IconProps = {
         | 'support'
         | 'settings'
         | 'send-message'
-        | 'acupuncture' // started here
+        | 'acupuncture'
         | 'bank'
         | 'business'
         | 'cash'
