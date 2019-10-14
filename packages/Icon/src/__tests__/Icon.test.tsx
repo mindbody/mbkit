@@ -4,6 +4,18 @@ import * as Icons from '../Icon';
 
 describe('Icon', () => {
     const { IconAdd } = Icons;
+    type AllIcons = {
+        [key: string]: React.ReactNode;
+    };
+
+    const renderAllIcons = (withProps = {}) =>
+        Object.keys(Icons).map(key => {
+            const Comp: React.ReactNode = (Icons as AllIcons)[key];
+            if (typeof Comp === 'function') {
+                return Comp({ key, ...withProps });
+            }
+            return null;
+        });
 
     it('should render with all props passed to it', () => {
         const spy = jest.fn();
@@ -49,19 +61,6 @@ describe('Icon', () => {
         expect(icon6.classList).toContain('metaColor');
     });
     it(`should render all icons multiple times with no duplicate id's`, () => {
-        type AllIcons = {
-            [key: string]: React.ReactNode;
-        };
-
-        const renderAllIcons = () =>
-            Object.keys(Icons).map(key => {
-                const Comp: React.ReactNode = (Icons as AllIcons)[key];
-                if (typeof Comp === 'function') {
-                    return Comp({ key });
-                }
-                return null;
-            });
-
         const { getByTestId } = render(
             <div data-testid="container">
                 {renderAllIcons()}
@@ -75,5 +74,34 @@ describe('Icon', () => {
         const svgs = Array.from(container.querySelectorAll('svg'));
         ids.forEach(element => expect(container.querySelectorAll(`[id="${element.id}"]`).length).toBe(1));
         expect(svgs.length).toBe(Object.keys(Icons).length * 3);
+    });
+    it('should pass all class names and other props passed to every icon', () => {
+        const spy = jest.fn();
+        const totalNumberOfIcons = Object.keys(Icons).length;
+
+        const { getByTestId } = render(
+            <div data-testid="container">
+                {renderAllIcons({
+                    className: 'customClassName',
+                    onClick: spy,
+                    width: '100',
+                    height: '82',
+                    'data-random-test-attribute': 'is passed correctly',
+                })}
+            </div>,
+        );
+
+        const container = getByTestId('container');
+        const componentsWithClassName = Array.from(container.querySelectorAll('.customClassName'));
+        componentsWithClassName.forEach(comp => {
+            fireEvent.click(comp);
+
+            // normally you don't want to pass different size width/height but here we are just testing that the prop is being passed correctly
+            expect(comp.getAttribute('width')).toBe('100');
+            expect(comp.getAttribute('height')).toBe('82');
+            expect(comp.getAttribute('data-random-test-attribute')).toBe('is passed correctly');
+        });
+        expect(componentsWithClassName.length).toBe(totalNumberOfIcons);
+        expect(spy).toHaveBeenCalledTimes(totalNumberOfIcons);
     });
 });
