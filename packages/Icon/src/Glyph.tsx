@@ -385,7 +385,7 @@ export const GlyphPreviewHidden: React.FC<GlyphProps> = (props: GlyphProps) => (
         )}
     </BaseGlyph>
 );
-export const Glyphpreview: React.FC<GlyphProps> = (props: GlyphProps) => (
+export const GlyphPreview: React.FC<GlyphProps> = (props: GlyphProps) => (
     <BaseGlyph {...props}>
         {({ id }) => (
             <g id={`Icons/Glyphs/Preview-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">

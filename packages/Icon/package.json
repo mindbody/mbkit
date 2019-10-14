@@ -1,8 +1,8 @@
 {
     "name": "@mindbody/icon",
-    "version": "1.2.3",
+    "version": "1.0.0",
     "source": "src/index.tsx",
-    "main": "dist/index.js",
+    "main": "dist/Icon.js",
     "types": "dist/Icon/src/index.d.ts",
     "publishConfig": {
         "access": "public"

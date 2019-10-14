@@ -55,7 +55,8 @@ const MarkdownWithOverrides = ({ children, overrides }) => (
     <Markdown
         options={{
             overrides: {
-                CodePreview: props => {
+                RenderOnly: props => props.children,
+                EditorOnly: props => {
                     return (
                         <LiveProvider
                             code={props.children[0]}
@@ -68,8 +69,9 @@ const MarkdownWithOverrides = ({ children, overrides }) => (
                         </LiveProvider>
                     );
                 },
-                code: props => <CodeEditorPreview scope={overrides} children={props.children} />,
+                code: props => <CodeEditorPreview {...props} scope={overrides} children={props.children} />,
                 pre: props => <div {...props} />,
+                // CodePreview: props => <CodeEditorPreview {...props} scope={overrides} children={props.children} />,
                 ...overrides,
             },
         }}
