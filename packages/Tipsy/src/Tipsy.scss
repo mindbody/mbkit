@@ -7,12 +7,10 @@
     border: none;
     font-size: var(--font-spec-10-size, .6875rem);
     line-height: var(--font-spec-10-lineHeight, 1rem);
+    box-shadow: none;
 }
 .tipsyCaret {
     position: 'absolute';
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--neutral-2, #5A5E66);
 }

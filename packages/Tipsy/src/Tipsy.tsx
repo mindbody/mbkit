@@ -27,7 +27,7 @@ export type TipsyProps = React.HTMLAttributes<ReactElement> & {
 };
 
 const additionalSpacing = 8;
-const bumpOffTheWallSpace = 8;
+const bumpOffTheWallSpace = 4;
 
 export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
     const { children, label, ariaLabel, position = 'top-left' } = props;
@@ -148,7 +148,7 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
     return (
         <>
             {cloneElement(children, trigger)}
-            {/* {isVisible && (
+            {isVisible && (
                 <Portal>
                     <div
                         style={{
@@ -158,7 +158,7 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
                         className={styles.tipsyCaret}
                     />
                 </Portal>
-            )} */}
+            )}
             <TooltipPopup
                 {...tooltip}
                 className={styles.tipsy}
@@ -171,10 +171,51 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
 };
 
 function getCaretPosition(position: PositionType, triggerRect: DOMRect) {
-    let style = {};
+    const hiddenTriangle = '8px solid transparent';
+    const triangleBorder = '8px solid var(--neutral-2, #5A5E66)';
+    const style: any = {};
+
+    if (!triggerRect) {
+        return style;
+    }
+
     switch (position) {
+        case 'bottom-center':
+        case 'bottom-left':
+        case 'bottom-right':
+            style.left = triggerRect.left - 8 + triggerRect.width / 2;
+            style.top = triggerRect.bottom + window.scrollY + additionalSpacing / 2;
+            style.borderLeft = hiddenTriangle;
+            style.borderRight = hiddenTriangle;
+            style.borderBottom = triangleBorder;
+            break;
+        case 'top-center':
         case 'top-left':
-            style = {};
+        case 'top-right':
+            style.left = triggerRect.left - 8 + triggerRect.width / 2;
+            style.top = triggerRect.top + window.scrollY - additionalSpacing - additionalSpacing / 2;
+            style.borderLeft = hiddenTriangle;
+            style.borderRight = hiddenTriangle;
+            style.borderTop = triangleBorder;
+            break;
+        case 'left-bottom':
+        case 'left-center':
+        case 'left-top':
+            style.left = triggerRect.left - 8 - 2;
+            style.top = triggerRect.top + window.scrollY;
+            style.borderTop = hiddenTriangle;
+            style.borderBottom = hiddenTriangle;
+            style.borderLeft = triangleBorder;
+            break;
+        case 'right-bottom':
+        case 'right-center':
+        case 'right-top':
+            style.left = triggerRect.right + 2;
+            style.top = triggerRect.top + window.scrollY;
+            style.borderTop = hiddenTriangle;
+            style.borderBottom = hiddenTriangle;
+            style.borderRight = triangleBorder;
+            break;
     }
 
     return style;
