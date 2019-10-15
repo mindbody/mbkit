@@ -1,0 +1,232 @@
+import React, { ReactElement, cloneElement, ReactNode } from 'react';
+import { useTooltip, TooltipPopup } from '@reach/tooltip';
+import Portal from '@reach/portal';
+import styles from './Tipsy.scss';
+import '@reach/tooltip/styles.css';
+
+type PositionType =
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right'
+    | 'left-top'
+    | 'left-center'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-center'
+    | 'right-bottom';
+
+export type TipsyProps = React.HTMLAttributes<ReactElement> & {
+    children: ReactElement;
+    label: ReactNode;
+    ariaLabel?: string;
+    /** This position will be the initial anchor point of where the tipsy starts. Collision detection will automatically reverse the side if it detects that it will overflow the window */
+    position?: PositionType;
+};
+
+const additionalSpacing = 8;
+const bumpOffTheWallSpace = 8;
+
+export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
+    const { children, label, ariaLabel, position = 'top-left' } = props;
+    const [trigger, tooltip] = useTooltip();
+    const [activePosition, setActivePosition] = React.useState<PositionType>(position);
+    const { isVisible, triggerRect } = tooltip;
+
+    React.useEffect(() => {
+        // After disappearing, reset back to original position
+        if (!isVisible) {
+            setActivePosition(position);
+        }
+    }, [isVisible]);
+
+    function getTooltipPosition(position: PositionType) {
+        switch (position) {
+            case 'top-left':
+                return topLeft;
+            case 'top-center':
+                return topCenter;
+            case 'top-right':
+                return topRight;
+            case 'bottom-left':
+                return bottomLeft;
+            case 'bottom-center':
+                return bottomCenter;
+            case 'bottom-right':
+                return bottomRight;
+            case 'left-top':
+                return leftTop;
+            case 'left-center':
+                return leftCenter;
+            case 'left-bottom':
+                return leftBottom;
+            case 'right-top':
+                return rightTop;
+            case 'right-center':
+                return rightCenter;
+            case 'right-bottom':
+                return rightBottom;
+        }
+    }
+
+    function leftTop(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+        const left = triggerRect.left - tooltipRect.width - additionalSpacing;
+        const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+        if (left < 0) {
+            setActivePosition('right-top');
+            return rightTop(triggerRect, tooltipRect);
+        }
+        return {
+            top: triggerRect.top + window.scrollY,
+            left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        } as DOMRect;
+    }
+    function leftCenter(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+        const left = triggerRect.left - tooltipRect.width - additionalSpacing;
+        const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+        if (left < 0) {
+            setActivePosition('right-center');
+            return rightCenter(triggerRect, tooltipRect);
+        }
+        return {
+            top: triggerRect.top + window.scrollY + triggerRect.height / 2 - tooltipRect.height / 2,
+            left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        } as DOMRect;
+    }
+    function leftBottom(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+        const left = triggerRect.left - tooltipRect.width - additionalSpacing;
+        const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+        if (left < 0) {
+            setActivePosition('right-bottom');
+            return rightBottom(triggerRect, tooltipRect);
+        }
+        return {
+            top: triggerRect.bottom - tooltipRect.height + window.scrollY,
+            left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        } as DOMRect;
+    }
+
+    function rightTop(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+        const left = triggerRect.right + additionalSpacing;
+        const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+        if (left > maxLeft) {
+            setActivePosition('left-top');
+            return leftTop(triggerRect, tooltipRect);
+        }
+        return {
+            top: triggerRect.top + window.scrollY,
+            left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        } as DOMRect;
+    }
+    function rightCenter(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+        const left = triggerRect.right + additionalSpacing;
+        const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+        if (left > maxLeft) {
+            setActivePosition('left-center');
+            return leftCenter(triggerRect, tooltipRect);
+        }
+        return {
+            top: triggerRect.top + window.scrollY + triggerRect.height / 2 - tooltipRect.height / 2,
+            left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        } as DOMRect;
+    }
+    function rightBottom(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+        const left = triggerRect.right + additionalSpacing;
+        const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+        if (left > maxLeft) {
+            setActivePosition('left-bottom');
+            return leftBottom(triggerRect, tooltipRect);
+        }
+        return {
+            top: triggerRect.bottom - tooltipRect.height + window.scrollY,
+            left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        } as DOMRect;
+    }
+
+    return (
+        <>
+            {cloneElement(children, trigger)}
+            {/* {isVisible && (
+                <Portal>
+                    <div
+                        style={{
+                            ...getCaretPosition(activePosition, triggerRect),
+                            position: 'absolute',
+                        }}
+                        className={styles.tipsyCaret}
+                    />
+                </Portal>
+            )} */}
+            <TooltipPopup
+                {...tooltip}
+                className={styles.tipsy}
+                label={label}
+                ariaLabel={ariaLabel}
+                position={getTooltipPosition(activePosition)}
+            />
+        </>
+    );
+};
+
+function getCaretPosition(position: PositionType, triggerRect: DOMRect) {
+    let style = {};
+    switch (position) {
+        case 'top-left':
+            style = {};
+    }
+
+    return style;
+}
+
+function topLeft(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+    const left = triggerRect.left;
+    const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+    return {
+        top: triggerRect.top + window.scrollY - tooltipRect.height - additionalSpacing,
+        left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft),
+    } as DOMRect;
+}
+function topCenter(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+    const triggerCenter = triggerRect.left + triggerRect.width / 2;
+    const left = triggerCenter - tooltipRect.width / 2;
+    const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+    return {
+        top: triggerRect.top + window.scrollY - tooltipRect.height - additionalSpacing,
+        left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+    } as DOMRect;
+}
+function topRight(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+    const left = triggerRect.right - tooltipRect.width;
+    const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+    return {
+        top: triggerRect.top + window.scrollY - tooltipRect.height - additionalSpacing,
+        left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+    } as DOMRect;
+}
+function bottomLeft(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+    const left = triggerRect.left;
+    const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+    return {
+        top: triggerRect.bottom + window.scrollY + additionalSpacing,
+        left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+    } as DOMRect;
+}
+function bottomCenter(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+    const triggerCenter = triggerRect.left + triggerRect.width / 2;
+    const left = triggerCenter - tooltipRect.width / 2;
+    const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+    return {
+        left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+        top: triggerRect.bottom + window.scrollY + additionalSpacing,
+    } as DOMRect;
+}
+function bottomRight(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
+    const left = triggerRect.right - tooltipRect.width;
+    const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
+    return {
+        top: triggerRect.bottom + window.scrollY + additionalSpacing,
+        left: Math.min(Math.max(bumpOffTheWallSpace, left), maxLeft) + window.scrollX,
+    } as DOMRect;
+}

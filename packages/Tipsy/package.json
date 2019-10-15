@@ -1,0 +1,27 @@
+{
+    "name": "@mindbody/tipsy",
+    "version": "1.0.0",
+    "source": "src/index.tsx",
+    "main": "dist/Tipsy.js",
+    "types": "dist/Tipsy/src/Tipsy.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "../../shared/build-tools/build-package.js",
+        "dev": "../../shared/build-tools/dev-package.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/reach__tooltip": "^0.2.0",
+        "@types/react": "^16.9.2",
+        "react": "^16.9.0",
+        "@reach/portal": "^0.3.0",
+        "@reach/tooltip": "^0.3.0"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0",
+        "@reach/portal": "^0.3.0",
+        "@reach/tooltip": "^0.3.0"
+    }
+}
