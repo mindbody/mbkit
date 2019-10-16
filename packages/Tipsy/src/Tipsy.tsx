@@ -1,8 +1,11 @@
 import React, { ReactElement, cloneElement, ReactNode } from 'react';
 import { useTooltip, TooltipPopup } from '@reach/tooltip';
+import { useTransition, animated } from 'react-spring';
 import Portal from '@reach/portal';
-import styles from './Tipsy.scss';
+import tipsyStyles from './Tipsy.scss';
 import '@reach/tooltip/styles.css';
+
+const AnimatedTooltipPopup = animated(TooltipPopup);
 
 type PositionType =
     | 'top-left'
@@ -41,6 +44,13 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
             setActivePosition(position);
         }
     }, [isVisible]);
+
+    const transitions = useTransition(isVisible ? tooltip : false, null, {
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
+        config: { mass: 1, tension: 800, friction: 60 },
+    });
 
     function getTooltipPosition(position: PositionType) {
         switch (position) {
@@ -148,24 +158,33 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
     return (
         <>
             {cloneElement(children, trigger)}
-            {isVisible && (
-                <Portal>
-                    <div
-                        style={{
-                            ...getCaretPosition(activePosition, triggerRect),
-                            position: 'absolute',
-                        }}
-                        className={styles.tipsyCaret}
-                    />
-                </Portal>
+            {transitions.map(
+                ({ item: tooltip, props: styles, key }) =>
+                    tooltip && (
+                        <animated.div key={key} style={styles}>
+                            <AnimatedTooltipPopup
+                                {...tooltip}
+                                className={tipsyStyles.tipsy}
+                                label={label}
+                                ariaLabel={ariaLabel}
+                                position={getTooltipPosition(activePosition)}
+                                style={styles}
+                            />
+                            {isVisible && (
+                                <Portal>
+                                    <animated.div
+                                        style={{
+                                            ...getCaretPosition(activePosition, triggerRect),
+                                            position: 'absolute',
+                                            ...styles,
+                                        }}
+                                        className={tipsyStyles.tipsyCaret}
+                                    />
+                                </Portal>
+                            )}
+                        </animated.div>
+                    ),
             )}
-            <TooltipPopup
-                {...tooltip}
-                className={styles.tipsy}
-                label={label}
-                ariaLabel={ariaLabel}
-                position={getTooltipPosition(activePosition)}
-            />
         </>
     );
 };
