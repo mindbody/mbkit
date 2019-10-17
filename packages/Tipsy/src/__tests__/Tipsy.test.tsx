@@ -98,7 +98,6 @@ describe('Tipsy', () => {
                 btn.focus();
                 const tipsy = getByTestId(`test-${index + 1}`);
                 expect(tipsy).toBeTruthy();
-                expect(tipsy.getBoundingClientRect().left).toBeLessThanOrEqual(btn.getBoundingClientRect().left);
             });
         });
     });
