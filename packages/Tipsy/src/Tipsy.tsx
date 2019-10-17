@@ -3,7 +3,7 @@ import { useTooltip, TooltipPopup } from '@reach/tooltip';
 import { useTransition, animated } from 'react-spring';
 import Portal from '@reach/portal';
 import tipsyStyles from './Tipsy.scss';
-import '@reach/tooltip/styles.css';
+import classnames from 'classnames';
 
 const AnimatedTooltipPopup = animated(TooltipPopup);
 
@@ -21,7 +21,7 @@ type PositionType =
     | 'right-center'
     | 'right-bottom';
 
-export type TipsyProps = React.HTMLAttributes<ReactElement> & {
+export type TipsyProps = React.HTMLAttributes<HTMLDivElement> & {
     children: ReactElement;
     label: ReactNode;
     ariaLabel?: string;
@@ -33,7 +33,7 @@ const additionalSpacing = 8;
 const bumpOffTheWallSpace = 4;
 
 export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
-    const { children, label, ariaLabel, position = 'top-left' } = props;
+    const { children, label, ariaLabel, position = 'top-left', className = '', style, ...rest } = props;
     const [trigger, tooltip] = useTooltip();
     const [activePosition, setActivePosition] = React.useState<PositionType>(position);
     const { isVisible, triggerRect } = tooltip;
@@ -81,6 +81,11 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
         }
     }
 
+    // These positions are required to be within the Tipsy instance because
+    // it has the ability to change the active position
+    // The reason these do and the others below do not is because
+    // if the window boundary pushes the tipsy away from the wall,
+    // the tipsy could obstruct the view of the trigger element
     function leftTop(triggerRect: DOMRect, tooltipRect: DOMRect): DOMRect {
         const left = triggerRect.left - tooltipRect.width - additionalSpacing;
         const maxLeft = window.innerWidth - tooltipRect.width - bumpOffTheWallSpace;
@@ -155,6 +160,11 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
         } as DOMRect;
     }
 
+    const classNames = classnames({
+        [tipsyStyles.tipsy]: true,
+        [className]: className,
+    });
+
     return (
         <>
             {cloneElement(children, trigger)}
@@ -164,11 +174,15 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
                         <animated.div key={key} style={styles}>
                             <AnimatedTooltipPopup
                                 {...tooltip}
-                                className={tipsyStyles.tipsy}
+                                className={classNames}
                                 label={label}
                                 ariaLabel={ariaLabel}
                                 position={getTooltipPosition(activePosition)}
-                                style={styles}
+                                style={{
+                                    ...styles,
+                                    ...style,
+                                }}
+                                {...rest}
                             />
                             {isVisible && (
                                 <Portal>
