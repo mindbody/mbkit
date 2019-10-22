@@ -1,32 +1,27 @@
 import React, { ReactElement, cloneElement, ReactNode } from 'react';
 import { useTooltip, TooltipPopup } from '@reach/tooltip';
-import { useTransition, animated } from 'react-spring';
 import Portal from '@reach/portal';
 import tipsyStyles from './Tipsy.scss';
 import classnames from 'classnames';
-
-const AnimatedTooltipPopup = animated(TooltipPopup);
-
-type PositionType =
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right'
-    | 'left-top'
-    | 'left-center'
-    | 'left-bottom'
-    | 'right-top'
-    | 'right-center'
-    | 'right-bottom';
 
 export type TipsyProps = React.HTMLAttributes<HTMLDivElement> & {
     children: ReactElement;
     label: ReactNode;
     ariaLabel?: string;
     /** This position will be the initial anchor point of where the tipsy starts. Collision detection will automatically reverse the side if it detects that it will overflow the window */
-    position?: PositionType;
+    position?:
+        | 'top-left'
+        | 'top-center'
+        | 'top-right'
+        | 'bottom-left'
+        | 'bottom-center'
+        | 'bottom-right'
+        | 'left-top'
+        | 'left-center'
+        | 'left-bottom'
+        | 'right-top'
+        | 'right-center'
+        | 'right-bottom';
 };
 
 const additionalSpacing = 8;
@@ -35,7 +30,7 @@ const bumpOffTheWallSpace = 4;
 export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
     const { children, label, ariaLabel, position = 'top-left', className = '', style, ...rest } = props;
     const [trigger, tooltip] = useTooltip();
-    const [activePosition, setActivePosition] = React.useState<PositionType>(position);
+    const [activePosition, setActivePosition] = React.useState<TipsyProps['position']>(position);
     const { isVisible, triggerRect } = tooltip;
 
     React.useEffect(() => {
@@ -45,14 +40,7 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
         }
     }, [isVisible]);
 
-    const transitions = useTransition(isVisible ? tooltip : false, null, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-        config: { mass: 1, tension: 800, friction: 60 },
-    });
-
-    function getTooltipPosition(position: PositionType) {
+    function getTooltipPosition(position: TipsyProps['position']) {
         switch (position) {
             case 'top-left':
                 return topLeft;
@@ -168,42 +156,34 @@ export const Tipsy: React.FC<TipsyProps> = (props: TipsyProps) => {
     return (
         <>
             {cloneElement(children, trigger)}
-            {transitions.map(
-                ({ item: tooltip, props: styles, key }) =>
-                    tooltip && (
-                        <animated.div key={key} style={styles}>
-                            <AnimatedTooltipPopup
-                                {...tooltip}
-                                className={classNames}
-                                label={label}
-                                ariaLabel={ariaLabel}
-                                position={getTooltipPosition(activePosition)}
-                                style={{
-                                    ...styles,
-                                    ...style,
-                                }}
-                                {...rest}
-                            />
-                            {isVisible && (
-                                <Portal>
-                                    <animated.div
-                                        style={{
-                                            ...getCaretPosition(activePosition, triggerRect),
-                                            position: 'absolute',
-                                            ...styles,
-                                        }}
-                                        className={tipsyStyles.tipsyCaret}
-                                    />
-                                </Portal>
-                            )}
-                        </animated.div>
-                    ),
+
+            {isVisible && (
+                <Portal>
+                    <div
+                        style={{
+                            ...getCaretPosition(activePosition, triggerRect),
+                            position: 'absolute',
+                        }}
+                        className={tipsyStyles.tipsyCaret}
+                    />
+                </Portal>
             )}
+            <TooltipPopup
+                {...tooltip}
+                className={classNames}
+                label={label}
+                ariaLabel={ariaLabel}
+                position={getTooltipPosition(activePosition)}
+                style={{
+                    ...style,
+                }}
+                {...rest}
+            />
         </>
     );
 };
 
-function getCaretPosition(position: PositionType, triggerRect: DOMRect) {
+function getCaretPosition(position: TipsyProps['position'], triggerRect: DOMRect) {
     const hiddenTriangle = '8px solid transparent';
     const triangleBorder = '8px solid var(--neutral-2, #5A5E66)';
     const style: any = {};

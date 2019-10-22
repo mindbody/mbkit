@@ -18,14 +18,12 @@
         "@types/classnames": "^2.2.9",
         "@types/reach__tooltip": "^0.2.0",
         "@types/react": "^16.9.2",
-        "react-spring": "^8.0.27",
         "react": "^16.9.0"
     },
     "peerDependencies": {
         "@reach/portal": "^0.3.0",
         "@reach/tooltip": "^0.3.0",
-        "react": "^16.9.0",
-        "react-spring": "^8.0.27"
+        "react": "^16.9.0"
     },
     "dependencies": {
         "classnames": "^2.2.6"
