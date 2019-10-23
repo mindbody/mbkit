@@ -21,11 +21,11 @@
         "react": "^16.9.0"
     },
     "peerDependencies": {
-        "@reach/portal": "^0.3.0",
-        "@reach/tooltip": "^0.3.0",
         "react": "^16.9.0"
     },
     "dependencies": {
+        "@reach/portal": "^0.4.0",
+        "@reach/tooltip": "^0.4.0",
         "classnames": "^2.2.6"
     }
 }
