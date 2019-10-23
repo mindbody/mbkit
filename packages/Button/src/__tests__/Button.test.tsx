@@ -111,8 +111,8 @@ describe('Button', () => {
             fireEvent.mouseDown(btn);
             expect(btn.innerHTML).not.toContain('<div class="ripple"');
         });
-        it('should NOT generate a ripple when button is incognito', () => {
-            const { getByText } = render(<Button variant="incognito">test</Button>);
+        it('should NOT generate a ripple when button is simple text', () => {
+            const { getByText } = render(<Button variant="simpleText">test</Button>);
 
             const btn = getByText('test');
             fireEvent.mouseDown(btn);
