@@ -28,7 +28,7 @@ Default button size with filled colors
         <Button variant="primary" disabled>Disabled State</Button>
     </div>
     <div>
-        <Button variant="iconPrimary">
+        <Button variant="iconPrimary" aria-label="Edit">
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
@@ -46,7 +46,7 @@ Default button size with filled colors
         </Button>
     </div>
     <div>
-        <Button variant="icon">
+        <Button variant="icon" aria-label="Edit Content">
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
@@ -312,7 +312,7 @@ All variants with loading indicators
         <Button variant="secondary" loading disabled>Disabled Loading</Button>
     </div>
     <div>
-        <Button variant="iconPrimary" loading>
+        <Button variant="iconPrimary" aria-label="loading" loading>
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
@@ -330,7 +330,7 @@ All variants with loading indicators
         </Button>
     </div>
     <div>
-        <Button variant="icon" loading>
+        <Button variant="icon" loading  aria-label="Edit this">
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
@@ -372,7 +372,7 @@ Different sizes
         <Button variant="primary" size={4}>Size 4</Button>
     </div>
     <div>
-        <Button variant="iconPrimary" size={1}>
+        <Button variant="iconPrimary" size={1} aria-label="Whistle">
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
@@ -385,7 +385,7 @@ Different sizes
         </Button>
     </div>
     <div>
-        <Button variant="iconPrimary" size={2}>
+        <Button variant="iconPrimary" size={2} aria-label="Search" onClick={() => alert('Searching....')}>
             <svg width="32" height="32" viewBox="0 0 32 32">
                 <g id="Icons/UI/Search-0I8WwoPilDkhuL_72O3QX" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                     <path
@@ -398,7 +398,7 @@ Different sizes
         </Button>
     </div>
     <div>
-        <Button variant="iconPrimary" size={3}>
+        <Button variant="iconPrimary" size={3} aria-label="Punch">
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
@@ -411,7 +411,7 @@ Different sizes
         </Button>
     </div>
     <div>
-        <Button variant="iconPrimary" size={4}>
+        <Button variant="iconPrimary" size={4} aria-label="Chat with Us">
             <svg width="32" height="32" viewBox="0 0 32 32" class="">
                 <defs>
                     <path
