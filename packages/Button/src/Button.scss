@@ -10,8 +10,13 @@ $neutral3: var(--neutral-3, #8F96A1);
 $neutral4: var(--neutral-4, #CBD0D7);
 $focusColor: var(--focus, #6096e6bf);
 
-$rippleTiming: 200;
+$rippleTiming: 466;
 $loadingSpeed: 650;
+
+$iconSize1: 100px;
+$iconSize2: 60px;
+$iconSize3: 40px;
+$iconSize4: 30px;
 
 :export {
     rippleTiming: $rippleTiming;
@@ -189,11 +194,46 @@ $loadingSpeed: 650;
         min-width: 136px;
         font-size: 1.5rem;
     }
-    &.icon .children, &.iconPrimary .children {
-        min-width: initial;
-        padding: 8px;
-        width: 32px;
-        height: 32px;
+    &.icon, &.iconPrimary {
+        .children {
+            min-width: initial;
+            padding: 8px;
+        }
+        $svgSizeSmaller: 8px;
+        &.size1 .children {
+                width: $iconSize1;
+                height: $iconSize1;
+                svg {
+                    width: $iconSize1 - $svgSizeSmaller;
+                    height: $iconSize1 - $svgSizeSmaller;
+                }
+        }
+        &.size2 .children {
+                width: $iconSize2;
+                height: $iconSize2;
+                svg {
+                    width: $iconSize2 - $svgSizeSmaller;
+                    height: $iconSize2 - $svgSizeSmaller;
+                }
+        }
+        &.size3 .children {
+            
+                width: $iconSize3;
+                height: $iconSize3;
+                svg {
+                    width: $iconSize3 - $svgSizeSmaller;
+                    height: $iconSize3 - $svgSizeSmaller;
+                }
+            
+        }
+        &.size4 .children {
+            width: $iconSize4;
+            height: $iconSize4;
+            svg {
+                width: $iconSize4 - $svgSizeSmaller;
+                height: $iconSize4 - $svgSizeSmaller;
+            }
+        }
     }
 
     &.primary {
