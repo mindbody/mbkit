@@ -1,13 +1,16 @@
 // TODO: Once packages are published consume theme and replace these with SCSS variables from the Theme package
 $primary: var(--primary-1, #993100);
 $secondary: var(--secondary-1, #004C57);
+$secondary2: var(--secondary-2, #007485);
+$secondary3: var(--secondary-3, #E5F2F4);
 $tertiary: var(--neutral-2, #5A5E66);
 $black: var(--neutral-1, #0B0B0D);
 $white: var(--neutral-7, #ffffff);
 $neutral3: var(--neutral-3, #8F96A1);
 $neutral4: var(--neutral-4, #CBD0D7);
+$focusColor: var(--focus, #6096e6bf);
 
-$rippleTiming: 466;
+$rippleTiming: 200;
 $loadingSpeed: 650;
 
 :export {
@@ -75,6 +78,7 @@ $loadingSpeed: 650;
 @mixin svgTargetFill() {
     svg g:not([fill~="#"]),
     svg path:not([fill~="#"]),
+    svg mask:not([fill~="#"]),
     svg use:not([fill~="#"]) { 
         @content;
     }
@@ -185,6 +189,12 @@ $loadingSpeed: 650;
         min-width: 136px;
         font-size: 1.5rem;
     }
+    &.icon .children, &.iconPrimary .children {
+        min-width: initial;
+        padding: 8px;
+        width: 32px;
+        height: 32px;
+    }
 
     &.primary {
         @include buttonStyles($primary);
@@ -214,9 +224,19 @@ $loadingSpeed: 650;
         @include buttonStyles($white, $white, $black, $tertiary);
         @include buttonHover($tertiary, $tertiary, $white, $white);
     }
-    &.incognito {
-        @include buttonStyles($white, $white, $black, $tertiary);
-        @include buttonStyles($white, $white, $black, $tertiary);
+    &.iconPrimary {
+        @include buttonStyles($white, $white, $secondary, $secondary);
+        @include buttonHover($secondary3, $secondary3, $secondary, $secondary);
+        border-radius: 50%;
+    }
+    &.icon {
+        @include buttonStyles($white, $white, $black, $black);
+        @include buttonHover($neutral4, $neutral4, $black, $black);
+        border-radius: 50%;
+    }
+    &.simpleText {
+        @include buttonStyles($white, $white, $secondary, $secondary);
+        @include buttonStyles($white, $white, $secondary, $secondary);
         &:hover {
             text-decoration: underline;
         }
@@ -239,11 +259,11 @@ $loadingSpeed: 650;
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 4px #6096e6bf;
+        box-shadow: 0 0 0 4px $focusColor;
         transition: box-shadow 100ms ease-out;
 
         &:not(.loading):active {
-            box-shadow: 0 0 0 8px #6096e6bf;
+            box-shadow: 0 0 0 8px $focusColor;
         }
     }
 }
@@ -260,10 +280,11 @@ $loadingSpeed: 650;
         transform: scale(1);
     }
     80% {
-        opacity: .3;
+        opacity: .2;
         transform: scale(50);
     }
     100% {
         opacity: 0;
+        transform: scale(50);
     }
 }

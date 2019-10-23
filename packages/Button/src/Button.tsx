@@ -11,7 +11,9 @@ export type ButtonProps = {
         | 'secondaryOutlined'
         | 'tertiaryOutlined'
         | 'offCard'
-        | 'incognito';
+        | 'simpleText'
+        | 'icon'
+        | 'iconPrimary';
     size?: '1' | '2' | '3' | '4';
     loading?: boolean;
     disabled?: boolean;
@@ -24,7 +26,7 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonEleme
     const buttonRef = React.useRef<HTMLSpanElement>(null);
     function generateRipple(e: React.MouseEvent<HTMLButtonElement>) {
         // disable ripple if in these states
-        if (variant === 'incognito' || disabled || loading) {
+        if (variant === 'simpleText' || disabled || loading) {
             return;
         }
 
