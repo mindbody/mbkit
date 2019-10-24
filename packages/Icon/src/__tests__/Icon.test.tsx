@@ -10,11 +10,8 @@ describe('Icon', () => {
 
     const renderAllIcons = (withProps = {}) =>
         Object.keys(Icons).map(key => {
-            const Comp: React.ReactNode = (Icons as AllIcons)[key];
-            if (typeof Comp === 'function') {
-                return Comp({ key, ...withProps });
-            }
-            return null;
+            const Comp: any = (Icons as AllIcons)[key];
+            return <Comp {...withProps} key={key} />;
         });
 
     it('should render with all props passed to it', () => {
