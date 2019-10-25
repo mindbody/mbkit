@@ -296,7 +296,7 @@ function getCaretPosition(position: TipsyProps['position'], triggerRect: DOMRect
             return style;
         case 'left-top':
             isLeft();
-            style.top = window.scrollY + tooltipRect.top + 4;
+            style.top = window.scrollY + tooltipRect.top + 6;
             return style;
         case 'left-bottom':
             isLeft();
@@ -312,7 +312,7 @@ function getCaretPosition(position: TipsyProps['position'], triggerRect: DOMRect
             return style;
         case 'right-top':
             isRight();
-            style.top = window.scrollY + tooltipRect.top + 4;
+            style.top = window.scrollY + tooltipRect.top + 6;
             return style;
     }
 
