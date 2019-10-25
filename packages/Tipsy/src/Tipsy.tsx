@@ -304,7 +304,7 @@ function getCaretPosition(position: TipsyProps['position'], triggerRect: DOMRect
             return style;
         case 'right-bottom':
             isRight();
-            style.top = window.scrollY + tooltipRect.top + tooltipRect.height / 2;
+            style.top = window.scrollY + tooltipRect.top + tooltipRect.height - caretSize - 12;
             return style;
         case 'right-center':
             isRight();
