@@ -43,7 +43,11 @@ export const Input: FC<InputProps> = forwardRef((props: InputProps, ref: RefObje
     }
     return (
         <div className={containerClassNames} data-disabled={disabled} {...wrapperProps}>
-            {before && <span className={styles.beforeInput}>{before}</span>}
+            {before && (
+                <span className={styles.beforeInput} data-testid="beforeInput">
+                    {before}
+                </span>
+            )}
             <input
                 className={classNames}
                 disabled={disabled}
@@ -53,7 +57,11 @@ export const Input: FC<InputProps> = forwardRef((props: InputProps, ref: RefObje
                 aria-invalid={invalid}
                 {...rest}
             />
-            {after && <span className={styles.afterInput}>{after}</span>}
+            {after && (
+                <span className={styles.afterInput} data-testid="afterInput">
+                    {after}
+                </span>
+            )}
         </div>
     );
 });
