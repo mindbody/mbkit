@@ -1,5 +1,7 @@
 # Dev Documentation
 
+All checkboxes are controlled elements, meaning you must pass the "checked" prop and "onChange" prop. Below are some examples of implementation:
+
 Basic usage
 
 ```tsx
@@ -14,4 +16,24 @@ Basic usage
         <Checkbox checked={'mixed'} /> <Checkbox disabled checked={'mixed'} /> Intermediate
     </div>
 </div>
+```
+
+As for A11Y tools reading the correct text of the checkbox, both examples below are <a href="https://www.w3.org/TR/html401/interact/forms.html#edef-LABEL" target="_blank">W3 compliant</a>. Depending on your design you may need to be explicit or possibly okay to use the implicit label.
+
+```tsx
+<>
+    <div style={{ margin: '1rem 0' }}>
+        {/* Explicit association from the label to the checkbox */}
+        <Checkbox id="emailOptIn" aria-labelledby="emailOptInLabel" />
+        <label htmlFor="emailOptIn" id="emailOptInLabel">
+            {" "}Send me updates on this product
+        </label>
+    </div>
+    <div>
+        {/* Implicit association from the label to the checkbox */}
+        <label>
+            <Checkbox /> I agree to the terms and conditions
+        </label>
+    </div>
+</>
 ```
