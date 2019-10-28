@@ -1,0 +1,17 @@
+# Dev Documentation
+
+Basic usage
+
+```tsx
+<div style={{ display: 'grid', gridTemplateColumns: '100%', gridGap: 8, padding: '8px 0' }}>
+    <div>
+        <Checkbox /> <Checkbox disabled /> Unchecked
+    </div>
+    <div>
+        <Checkbox checked={true} /> <Checkbox disabled checked={true} /> Checked
+    </div>
+    <div>
+        <Checkbox checked={'mixed'} /> <Checkbox disabled checked={'mixed'} /> Intermediate
+    </div>
+</div>
+```
