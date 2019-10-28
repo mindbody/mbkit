@@ -7,14 +7,15 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     before?: ReactNode;
     /** Add text or icon here which shows as after of the input field */
     after?: ReactNode;
+    /** Props to be added to wrapper container of the input field */
     wrapperProps?: HTMLAttributes<HTMLDivElement>;
+    /** Adds red border and sets aria-invalid attribute */
     invalid?: boolean;
 };
 export const Input: FC<InputProps> = forwardRef((props: InputProps, ref: RefObject<HTMLInputElement>) => {
     const [hasFocus, setHasFocus] = React.useState(false);
     const { className = '', before, after, disabled, onBlur, onFocus, wrapperProps = {}, invalid, ...rest } = props;
 
-    // TODO ... should class names be passed to parent AND input??
     const containerClassNames = classnames({
         [styles.inputContainer]: true,
         [styles.beforeInput]: before,

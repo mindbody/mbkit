@@ -13,11 +13,23 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
 $error-1: var(--error-1, #992D38);
 $radius: var(--radius, 3px);
 
+@mixin svgTargetFill() {
+    g:not([fill~="#"]),
+    path:not([fill~="#"]),
+    use:not([fill~="#"]) { 
+        @content;
+    }
+}
+
 @mixin disabled {
     cursor: not-allowed;
     background: $neutral-4;
     border-color: $neutral-4;
     color: $neutral-2;
+
+    @include svgTargetFill {
+        fill: $neutral-2;
+    }
 }
 
 $border: 1px solid $neutral-3;
