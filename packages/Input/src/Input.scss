@@ -52,6 +52,7 @@ $border: 1px solid $neutral-3;
         padding: 8px;
         border: $border;
         border-radius: $radius 0 0 $radius;
+        align-items: center;
     }
     .afterInput {
         border-radius: 0 $radius $radius 0;
