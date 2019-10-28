@@ -1,3 +1,6 @@
+$secondary-1: var(--secondary-1, #004C57);
+$secondary-2: var(--secondary-2, #007485);
+
 @mixin get-font-spec($spec, $defaultSize, $defaultLineHeight) {
     font-family: var(--font-family, 'Lato');
     font-size: var(--font-spec-#{$spec}-size, $defaultSize); 
@@ -68,4 +71,29 @@
 }
 .metaColor {
     color: var(--neutral-2, #5A5E66);
+}
+
+.link {
+    text-decoration: none;
+    transition: box-shadow .2s ease-out;
+    border-radius: 3px;
+    cursor: pointer;
+    color: $secondary-1;
+    
+    &:hover {
+        text-decoration: underline;
+        color: $secondary-1;
+    }
+    &:focus {
+        outline: none;
+        color: $secondary-1;
+        box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+    }
+    &:active {
+        outline: none;
+        box-shadow: 0 0 0 8px var(--focus,rgba(96,150,230,.75));
+    }
+    &:visited {
+        color: $secondary-2;
+    }
 }
