@@ -11,6 +11,7 @@ $neutral-6: var(--neutral-6, #F8F9FB);
 $neutral-7: var(--neutral-7, #ffffff);
 $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 $error-1: var(--error-1, #992D38);
+$radius: var(--radius, 3px);
 
 @mixin disabled {
     cursor: not-allowed;
@@ -25,7 +26,7 @@ $border: 1px solid $neutral-3;
     display: flex;
     width: 100%;
     transition: box-shadow .1s ease-out;
-    border-radius: 3px;
+    border-radius: $radius;
 
     &.hasFocus {
         box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
@@ -38,10 +39,10 @@ $border: 1px solid $neutral-3;
         display: inline-block;
         padding: 8px;
         border: $border;
-        border-radius: 3px 0 0 3px;
+        border-radius: $radius 0 0 $radius;
     }
     .afterInput {
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 $radius $radius 0;
     }
 
     .input {
@@ -51,7 +52,7 @@ $border: 1px solid $neutral-3;
         box-sizing: border-box;
         font-size: 1rem;
         border: $border;
-        border-radius: 3px;
+        border-radius: $radius;
         color: $foreground;
         background: $background;
         padding: 8px;
