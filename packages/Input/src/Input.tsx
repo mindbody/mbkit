@@ -28,6 +28,8 @@ export const Input: FC<InputProps> = forwardRef((props: InputProps, ref: RefObje
         [styles.input]: true,
         [styles.hasBefore]: before,
         [styles.hasAfter]: after,
+        [styles.invalid]: invalid,
+        [styles.hasFocus]: hasFocus && !after && !before,
         [className]: className,
     });
     function handleFocus(e: React.FocusEvent<HTMLInputElement>) {
@@ -42,28 +44,34 @@ export const Input: FC<InputProps> = forwardRef((props: InputProps, ref: RefObje
         }
         setHasFocus(false);
     }
-    return (
-        <div className={containerClassNames} data-disabled={disabled} {...wrapperProps}>
-            {before && (
-                <span className={styles.beforeInput} data-testid="beforeInput">
-                    {before}
-                </span>
-            )}
-            <input
-                className={classNames}
-                disabled={disabled}
-                ref={ref}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                aria-invalid={invalid}
-                {...rest}
-            />
-            {after && (
-                <span className={styles.afterInput} data-testid="afterInput">
-                    {after}
-                </span>
-            )}
-        </div>
+    const input = (
+        <input
+            className={classNames}
+            disabled={disabled}
+            ref={ref}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            aria-invalid={invalid}
+            {...rest}
+        />
     );
+    if (before || after) {
+        return (
+            <div className={containerClassNames} data-disabled={disabled} {...wrapperProps}>
+                {before && (
+                    <span className={styles.beforeInput} data-testid="beforeInput">
+                        {before}
+                    </span>
+                )}
+                {input}
+                {after && (
+                    <span className={styles.afterInput} data-testid="afterInput">
+                        {after}
+                    </span>
+                )}
+            </div>
+        );
+    }
+    return input;
 });
 Input.displayName = 'Input';

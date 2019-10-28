@@ -44,7 +44,9 @@ describe(`Input`, () => {
         expect(input.getAttribute('data-randomprop')).toBe('testing');
     });
     it('should show focus ring on container when input has focus', () => {
-        const { getByTestId, container } = render(<Input data-testid="test" wrapperProps={{ id: 'testcontainer' }} />);
+        const { getByTestId, container } = render(
+            <Input data-testid="test" before="$" wrapperProps={{ id: 'testcontainer' }} />,
+        );
 
         const testContainer = container.querySelector('#testcontainer') as HTMLElement;
         expect(testContainer.classList.contains('hasFocus')).toBe(false);

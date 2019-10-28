@@ -57,42 +57,6 @@ $border: 1px solid $neutral-3;
         border-radius: 0 $radius $radius 0;
     }
 
-    .input {
-        flex: 1;
-        appearance: none;
-        margin: 0;
-        box-sizing: border-box;
-        font-size: 1rem;
-        border: $border;
-        border-radius: $radius;
-        color: $foreground;
-        background: $background;
-        padding: 8px;
-        font-family: $font-family;
-        display: inline-flex;
-        transition: border-color .2s ease-out;
-
-        &.hasBefore {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-left: none;
-        }
-        &.hasAfter {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border-right: none;
-        }
-    
-        &:focus {
-            outline: none;
-            border-color: $secondary-2;
-        }
-    
-        &:disabled {
-            @include disabled();
-        }
-    }
-
     &.invalid {
         .beforeInput, .afterInput {
             border-top-color: $error-1;
@@ -113,5 +77,47 @@ $border: 1px solid $neutral-3;
         .beforeInput, .afterInput {
             @include disabled();
         }
+    }
+}
+
+.input {
+    flex: 1;
+    appearance: none;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: $border;
+    border-radius: $radius;
+    color: $foreground;
+    background: $background;
+    padding: 8px;
+    font-family: $font-family;
+    display: flex;
+    transition: border-color .2s ease-out;
+
+    &.hasBefore {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+    }
+    &.hasAfter {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+    }
+
+    &.hasFocus {
+        box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+    }
+    &:focus {
+        outline: none;
+        border-color: $secondary-2;
+    }
+    &.invalid {
+        border-color: $error-1;
+    }
+
+    &:disabled {
+        @include disabled();
     }
 }
