@@ -48,7 +48,7 @@ $border: 1px solid $neutral-3;
     }
 
     .beforeInput, .afterInput {
-        display: inline-block;
+        display: inline-flex;
         padding: 8px;
         border: $border;
         border-radius: $radius 0 0 $radius;
@@ -69,7 +69,7 @@ $border: 1px solid $neutral-3;
         background: $background;
         padding: 8px;
         font-family: $font-family;
-        display: inline-block;
+        display: inline-flex;
         transition: border-color .2s ease-out;
 
         &.hasBefore {
