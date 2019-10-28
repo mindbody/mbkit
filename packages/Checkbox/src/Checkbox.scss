@@ -58,12 +58,17 @@ $secondary-1: var(--secondary-1, #004C57);
         cursor: pointer;
     }
 
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
-    }
-    &:active {
-        box-shadow: 0 0 0 8px var(--focus,rgba(96,150,230,.75));
+    &:not(:disabled) {
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+        }
+        &:active {
+            box-shadow: 0 0 0 8px var(--focus,rgba(96,150,230,.75));
+        }
     }
 
     &:disabled {

@@ -1,8 +1,8 @@
-import React, { HTMLAttributes, FC, RefObject } from 'react';
+import React, { FC, RefObject, AllHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Checkbox.scss';
 
-export type CheckboxProps = HTMLAttributes<HTMLInputElement> & {
+export type CheckboxProps = Omit<AllHTMLAttributes<HTMLInputElement>, 'checked'> & {
     checked?: boolean | 'mixed';
 };
 export const Checkbox: FC<CheckboxProps> = React.forwardRef(
