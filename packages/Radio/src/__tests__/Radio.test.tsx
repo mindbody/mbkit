@@ -44,4 +44,9 @@ describe('Radio input', () => {
         expect(radio.classList.contains('customClassName')).toBe(true);
         expect(radio.hasAttribute('disabled')).toBe(true);
     });
+    it('should have the invalid class name and aria-invalid attribute when invalid is passed', () => {
+        const { getByTestId } = render(<Radio data-testid="test" checked={false} onChange={spy} invalid />);
+        expect(getByTestId('test').classList.contains('invalid')).toBe(true);
+        expect(getByTestId('test').getAttribute('aria-invalid')).toBe('true');
+    });
 });
