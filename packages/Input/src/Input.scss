@@ -71,9 +71,6 @@ $border: 1px solid $neutral-3;
         .afterInput {
             border-right-color: $error-1;
         }
-        .input {
-            border-color: $error-1;
-        }
     }
 
     &[data-disabled="true"] {
