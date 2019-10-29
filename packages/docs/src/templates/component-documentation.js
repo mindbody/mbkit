@@ -99,6 +99,7 @@ const ComponentDocumentation = props => {
         // replaces multiple white spaces with single
         .replace(/ +(?= )/g, '');
 
+    const tooManyExports = relatedComponents.length > 15;
     return (
         <>
             <SEO
@@ -121,26 +122,29 @@ const ComponentDocumentation = props => {
                 </a>
             </p>
 
-            {relatedComponents.map(component => (
-                <p key={component.name}>
-                    <a
-                        href={`/coverage/lcov-report/${pkgJson.name.replace('@mindbody/', '')}/src/${
-                            component.name
-                        }.tsx`}
-                        target="_blank"
-                    >
-                        View line by line code coverage for {component.name}
-                    </a>
-                </p>
-            ))}
+            {!tooManyExports &&
+                relatedComponents.map(component => (
+                    <p key={component.name}>
+                        <a
+                            href={`/coverage/lcov-report/${pkgJson.name.replace('@mindbody/', '')}/src/${
+                                component.name
+                            }.tsx`}
+                            target="_blank"
+                        >
+                            View line by line code coverage for {component.name}
+                        </a>
+                    </p>
+                ))}
 
             {relatedComponents.map(component => (
                 <PropDocumentation key={component.name} name={component.name} allDocs={propDocs} />
             ))}
 
-            <SyntaxHighlighter language="jsx" style={vsDark}>
-                {`import ${componentImportStatements} from "${pkgJson.name}"`}
-            </SyntaxHighlighter>
+            {!tooManyExports && (
+                <SyntaxHighlighter language="jsx" style={vsDark}>
+                    {`import ${componentImportStatements} from "${pkgJson.name}"`}
+                </SyntaxHighlighter>
+            )}
 
             <MarkdownJsx>{devDocs}</MarkdownJsx>
 

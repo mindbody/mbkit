@@ -1,5 +1,6 @@
 module.exports = {
     preset: 'ts-jest',
+    setupFilesAfterEnv: ['<rootDir>/shared/testing/testSetup.js'],
     testEnvironment: 'jsdom',
     roots: ['<rootDir>/packages'],
     collectCoverageFrom: [
