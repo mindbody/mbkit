@@ -1,0 +1,606 @@
+# Dev Documentation
+
+_Note that window collision detection of both the left and right will take presedence to any set position_
+
+```tsx
+<TipsyExamples multiLineExample={true} />
+```
+
+Tipsy position aligned with "top-left" of trigger element (default)
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0',
+    position: 'relative'
+}}>
+    <div>
+        <Tipsy label="Don't put anything critical to getting the task at hand complete in here"><button>Hover Me</button></Tipsy>
+    </div>
+    <div>
+        <Tipsy label="These are useful for tips or helper text"><button>Hover Me</button></Tipsy>
+    </div>
+    <div>
+        <Tipsy label="Assist the user with these messages"><button>Hover Me</button></Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "top-center" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="top-center" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="top-center" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="top-center" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="top-center"
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "top-right" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="top-right" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="top-right" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="top-right" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="top-right"
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "bottom-left" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="bottom-left" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-left" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-left" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-left" 
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "bottom-center" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="bottom-center" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-center" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-center" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-center" 
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "bottom-right" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="bottom-right" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-right" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-right" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="bottom-right" 
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "left-top" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="left-top" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-top" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-top" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-top" 
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "left-center" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="left-center" 
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-center" 
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-center" 
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-center" 
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "left-bottom" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="left-bottom"
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-bottom"
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-bottom"
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="left-bottom"
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "right-top" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="right-top"
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-top"
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-top"
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-top"
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "right-center" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="right-center"
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-center"
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-center"
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-center"
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+Tipsy position aligned with "right-bottom" of trigger element
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `50% 50%`,
+    gridGap: '8px',
+    margin: '1em 0'
+}}>
+    <div>
+        <Tipsy 
+            position="right-bottom"
+            label="Don't put anything critical to getting the task at hand complete in here"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-bottom"
+            label="These are useful for tips or helper text"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-bottom"
+            label="Assist the user with these messages"
+        >
+            <button>Hover Me</button>
+        </Tipsy>
+    </div>
+    <div>
+        <Tipsy 
+            position="right-bottom"
+            label={
+                <>
+                    All doggies go to heaven (or so I've been told).<br />
+                    They run and play along the streets of Gold.<br />
+                    Why is heaven such a doggie-delight?<br />
+                    Why, because there's not a single cat in sight...
+                </>
+            }
+        >
+            <button style={{ float: 'right' }}>Multiline tipsy</button>
+        </Tipsy>
+    </div>
+</div>
+```
+
+This tipsy is built on top of <a href="https://ui.reach.tech/tooltip/" target="_blank">Reach UI tooltip component</a> which is a component library built with accessibility as the main focus. 
