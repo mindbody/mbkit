@@ -1,0 +1,55 @@
+$background: var(--background, #ffffff);
+$secondary-1: var(--secondary-1, #004C57);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-7: var(--neutral-7, #ffffff);
+
+.radio {
+    -webkit-appearance: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $neutral-3;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    background: $background;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: none;
+    }
+
+    &:focus {
+        border-color: $secondary-1;
+        box-shadow: 0 0 0 4px var(--focus, rgba(96,150,230,.75));
+    }
+
+    &:checked {
+        &:before {
+            background: $secondary-1;
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        border-color: $neutral-5;
+        background: $neutral-5;
+        &:checked:before {
+            background: $neutral-3;
+        }
+    }
+}
