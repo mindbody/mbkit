@@ -3,6 +3,7 @@ $secondary-1: var(--secondary-1, #004C57);
 $neutral-3: var(--neutral-3, #8F96A1);
 $neutral-5: var(--neutral-5, #EAEDF1);
 $neutral-7: var(--neutral-7, #ffffff);
+$error-1: var(--error-1, #992D38);
 
 .radio {
     appearance: none;
@@ -51,5 +52,9 @@ $neutral-7: var(--neutral-7, #ffffff);
         &:checked:before {
             background: $neutral-3;
         }
+    }
+    
+    &.invalid {
+        border-color: $error-1;
     }
 }
