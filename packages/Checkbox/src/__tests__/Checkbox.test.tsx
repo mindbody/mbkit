@@ -29,4 +29,10 @@ describe('Checkbox', () => {
         fireEvent.click(getByTestId('test'));
         expect(spy).toHaveBeenCalledTimes(1);
     });
+    it('should show invalid styling and pass aria-invalid attribute when invalid prop is passed', () => {
+        const { getByTestId } = render(<Checkbox data-testid="test" checked={false} onChange={spy} invalid />);
+        const checkbox = getByTestId('test');
+        expect(checkbox.classList.contains('invalid')).toBe(true);
+        expect(checkbox.getAttribute('aria-invalid')).toBe('true');
+    });
 });
