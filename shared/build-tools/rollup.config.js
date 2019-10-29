@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import { eslint } from 'rollup-plugin-eslint';
 import json from 'rollup-plugin-json';
+import autoprefixer from 'autoprefixer';
 
 const consumerPath = process.cwd();
 const pkg = require(`${consumerPath}/package.json`);
@@ -38,6 +39,7 @@ export default {
             },
         }),
         postcss({
+            plugins: [autoprefixer()],
             minimize: true,
             namedExports: true,
             modules: {

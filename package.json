@@ -37,6 +37,7 @@
         "@types/react-dom": "^16.9.0",
         "@typescript-eslint/eslint-plugin": "^2.2.0",
         "@typescript-eslint/parser": "^2.2.0",
+        "autoprefixer": "^9.7.0",
         "commitizen": "^4.0.3",
         "concurrently": "^4.1.2",
         "cz-conventional-changelog": "^3.0.2",
