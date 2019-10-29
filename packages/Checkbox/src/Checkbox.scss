@@ -3,6 +3,7 @@ $neutral-3: var(--neutral-3, #8F96A1);
 $neutral-4: var(--neutral-4, #CBD0D7);
 $neutral-7: var(--neutral-7, #ffffff);
 $secondary-1: var(--secondary-1, #004C57);
+$error-1: var(--error-1, #992D38);
 
 // When using inline SVG (Checkbox component) some browsers  
 // detect encoded and display the SVG with the correct color,
@@ -51,9 +52,8 @@ $secondary-1: var(--secondary-1, #004C57);
         background-color: $secondary-1;
         border-color: $secondary-1;
     }
-
-    &:not(:disabled):hover {
-        cursor: pointer;
+    &.invalid {
+        border-color: $error-1;
     }
 
     &:not(:disabled) {
