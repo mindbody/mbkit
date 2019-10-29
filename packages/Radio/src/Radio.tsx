@@ -4,6 +4,7 @@ import styles from './Radio.scss';
 
 export type RadioProps = AllHTMLAttributes<HTMLInputElement> & {
     checked: boolean;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 export const Radio: FC<RadioProps> = forwardRef((props: RadioProps, ref: RefObject<HTMLInputElement>) => {
     const { className = '', ...rest } = props;
