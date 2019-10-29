@@ -3,8 +3,10 @@ import { render, fireEvent } from '@testing-library/react';
 import { Input } from '../Input';
 
 describe(`Input`, () => {
+    const spy = jest.fn();
+
     it('should render', () => {
-        const { getByTestId } = render(<Input data-testid="test" />);
+        const { getByTestId } = render(<Input value="" onChange={spy} data-testid="test" />);
         expect(getByTestId('test').nodeName).toBe('INPUT');
     });
     it('should render and be able to pass expected props', () => {
@@ -45,7 +47,7 @@ describe(`Input`, () => {
     });
     it('should show focus ring on container when input has focus', () => {
         const { getByTestId, container } = render(
-            <Input data-testid="test" before="$" wrapperProps={{ id: 'testcontainer' }} />,
+            <Input value="" onChange={spy} data-testid="test" before="$" wrapperProps={{ id: 'testcontainer' }} />,
         );
 
         const testContainer = container.querySelector('#testcontainer') as HTMLElement;
@@ -57,17 +59,17 @@ describe(`Input`, () => {
         expect(testContainer2.classList.contains('hasFocus')).toBe(true);
     });
     it('should pass in a string to the before prop', () => {
-        const { getByTestId } = render(<Input before="$" />);
+        const { getByTestId } = render(<Input value="" onChange={spy} before="$" />);
 
         expect(getByTestId('beforeInput').textContent).toBe('$');
     });
     it('should pass in a string to the after prop', () => {
-        const { getByTestId } = render(<Input after="%" />);
+        const { getByTestId } = render(<Input value="" onChange={spy} after="%" />);
 
         expect(getByTestId('afterInput').textContent).toBe('%');
     });
     it('should pass in a string to both before and after props', () => {
-        const { getByTestId } = render(<Input before="??" after="$$" />);
+        const { getByTestId } = render(<Input value="" onChange={spy} before="??" after="$$" />);
         expect(getByTestId('beforeInput').textContent).toBe('??');
         expect(getByTestId('afterInput').textContent).toBe('$$');
     });
@@ -76,7 +78,7 @@ describe(`Input`, () => {
         const secondText = 'After text';
         const before = <div data-testid="first">{firstText}</div>;
         const after = <div data-testid="second">{secondText}</div>;
-        const { getByTestId } = render(<Input before={before} after={after} />);
+        const { getByTestId } = render(<Input value="" onChange={spy} before={before} after={after} />);
         expect(getByTestId('first').textContent).toBe(firstText);
         expect(getByTestId('second').textContent).toBe(secondText);
     });

@@ -1,8 +1,12 @@
-import React, { forwardRef, FC, RefObject, InputHTMLAttributes, ReactNode, HTMLAttributes } from 'react';
+import React, { forwardRef, FC, RefObject, InputHTMLAttributes, ReactNode, HTMLAttributes, ChangeEvent } from 'react';
 import classnames from 'classnames';
 import styles from './Input.scss';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+    /** Value that is displayed in text input */
+    value: string;
+    /** Fires when user interacts with value in input field */
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     /** Add text or icon here which shows as in front of the input field */
     before?: ReactNode;
     /** Add text or icon here which shows as after of the input field */
