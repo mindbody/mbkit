@@ -1,9 +1,10 @@
-import React, { FC, RefObject, AllHTMLAttributes } from 'react';
+import React, { FC, RefObject, AllHTMLAttributes, ChangeEvent } from 'react';
 import classnames from 'classnames';
 import styles from './Checkbox.scss';
 
 export type CheckboxProps = Omit<AllHTMLAttributes<HTMLInputElement>, 'checked'> & {
     checked: boolean | 'mixed';
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 export const Checkbox: FC<CheckboxProps> = React.forwardRef(
     (props: CheckboxProps, ref: RefObject<HTMLInputElement>) => {
