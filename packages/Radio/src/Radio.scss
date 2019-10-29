@@ -5,7 +5,7 @@ $neutral-5: var(--neutral-5, #EAEDF1);
 $neutral-7: var(--neutral-7, #ffffff);
 
 .radio {
-    -webkit-appearance: none;
+    appearance: none;
     display: inline-block;
     vertical-align: middle;
     width: 24px;
