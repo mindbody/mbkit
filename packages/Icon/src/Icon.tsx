@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes } from 'react';
+import React, { AllHTMLAttributes, RefObject, ReactNode } from 'react';
 import nanoid from 'nanoid';
 import classnames from 'classnames';
 import styles from './Icon.scss';
@@ -7,17 +7,18 @@ type ColorOptions = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'meta
 type BaseIconProps = AllHTMLAttributes<SVGSVGElement> & {
     children: ({ id }: { id: string }) => React.ReactNode;
     color?: ColorOptions;
+    forwardedRef: RefObject<SVGSVGElement>;
 };
 
 const BaseIcon: React.FC<BaseIconProps> = (props: BaseIconProps) => {
-    const { width = '32', height = '32', color, children, className = '', ...rest } = props;
+    const { width = '32', height = '32', color, children, className = '', forwardedRef, ...rest } = props;
     const classNames = classnames({
         [styles[`${color}Color`]]: color,
         [className]: className,
     });
     const id: string = nanoid();
     return (
-        <svg {...rest} width={width} height={height} viewBox="0 0 32 32" className={classNames}>
+        <svg {...rest} width={width} height={height} viewBox="0 0 32 32" className={classNames} ref={forwardedRef}>
             {children({ id })}
         </svg>
     );
@@ -27,8 +28,8 @@ export type IconProps = AllHTMLAttributes<SVGSVGElement> & {
     color?: ColorOptions;
 };
 
-export const IconAdd: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+export const IconAdd: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Add-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -39,23 +40,29 @@ export const IconAdd: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconExclamation: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <g id={`Icons/UI/Error-${id}`} fill="#54575F" transform="translate(-4 -4)">
-                    <path
-                        id={`Combined-Shape-${id}`}
-                        d="M28 16.5C28 10.1487026 22.8506788 5 16.5 5 10.1472921 5 5 10.1476013 5 16.5S10.1472921 28 16.5 28C22.8506788 28 28 22.8512974 28 16.5zm1 0C29 23.403609 23.4029367 29 16.5 29 9.59499391 29 4 23.40467 4 16.5 4 9.59533001 9.59499391 4 16.5 4 23.4029367 4 29 9.59639099 29 16.5zm-12.5 6c-.5522847 0-1-.4477153-1-1s.4477153-1 1-1 1 .4477153 1 1-.4477153 1-1 1zm.5-5c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5v-6c0-.2761424.2238576-.5.5-.5s.5.2238576.5.5v6z"
-                    />
+));
+IconAdd.displayName = 'IconAdd';
+
+export const IconExclamation: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <g id={`Icons/UI/Error-${id}`} fill="#54575F">
+                        <path
+                            id={`Combined-Shape-${id}`}
+                            d="M28 16.5C28 10.1487026 22.8506788 5 16.5 5 10.1472921 5 5 10.1476013 5 16.5S10.1472921 28 16.5 28C22.8506788 28 28 22.8512974 28 16.5zm1 0C29 23.403609 23.4029367 29 16.5 29 9.59499391 29 4 23.40467 4 16.5 4 9.59533001 9.59499391 4 16.5 4 23.4029367 4 29 9.59639099 29 16.5zm-12.5 6c-.5522847 0-1-.4477153-1-1s.4477153-1 1-1 1 .4477153 1 1-.4477153 1-1 1zm.5-5c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5v-6c0-.2761424.2238576-.5.5-.5s.5.2238576.5.5v6z"
+                        />
+                    </g>
                 </g>
-            </g>
-        )}
-    </BaseIcon>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconCall: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconExclamation.displayName = 'IconExclamation';
+
+export const IconCall: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Call-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -66,9 +73,11 @@ export const IconCall: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconCamera: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconCall.displayName = 'IconCall';
+
+export const IconCamera: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Camera-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -79,9 +88,11 @@ export const IconCamera: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconCaution: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconCamera.displayName = 'IconCamera';
+
+export const IconCaution: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Caution-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -92,9 +103,11 @@ export const IconCaution: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconChat: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconCaution.displayName = 'IconCaution';
+
+export const IconChat: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -112,97 +125,123 @@ export const IconChat: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconCheckMark: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Check-Mark-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Mask-${id}`}
-                    fill="#54575F"
-                    d="M27.5 16c0-6.35129737-5.1493212-11.5-11.5-11.5C9.64729211 4.5 4.5 9.64760131 4.5 16c0 6.3523987 5.14729211 11.5 11.5 11.5 6.3506788 0 11.5-5.1487026 11.5-11.5zm1 0c0 6.903609-5.5970633 12.5-12.5 12.5-6.90500609 0-12.5-5.59533-12.5-12.5C3.5 9.09533001 9.09499391 3.5 16 3.5c6.9029367 0 12.5 5.59639099 12.5 12.5zm-17.887709 1.0027207c-.1743696-.2141258-.1421409-.5290635.0719848-.7034332.2141257-.1743696.5290635-.142141.7034332.0719848.6641119.8155287 1.2894506 1.5960867 1.876027 2.3416936.8362955 1.0630288 1.3141024 1.0501802 2.2452588-.0454453 1.305686-1.5363077 3.0093136-3.5337538 5.110935-5.9924.179426-.209907.4950427-.2346167.7049496-.0551908.209907.179426.2346167.4950427.0551908.7049496-2.1010562 2.457985-3.8041046 4.454752-5.1090931 5.9902391-1.3267689 1.5611145-2.5518258 1.5940572-3.7931791.0161527-.5830125-.7410768-1.2048519-1.5172668-1.865507-2.3285505z"
-                />
-            </g>
-        )}
-    </BaseIcon>
-);
-export const IconCheckMarkFilled: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
+));
+IconChat.displayName = 'IconChat';
+
+export const IconCheckMark: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Check-Mark-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                     <path
-                        id={`path-1-${id}`}
-                        d="M24 12c0 6.6281739-5.373913 12-12 12-6.62921739 0-12-5.3718261-12-12C0 5.37182609 5.37078261 0 12 0c6.626087 0 12 5.37182609 12 12zM6.61229105 13.0027207c-.17436966-.2141258-.14214099-.5290635.07198475-.7034332.21412574-.1743696.52906349-.142141.70343315.0719848.66411194.8155287 1.2894506 1.5960867 1.87602707 2.3416936.83629548 1.0630288 1.31410238 1.0501802 2.24525878-.0454453 1.305686-1.5363077 3.0093136-3.5337538 5.110935-5.99240005.179426-.20990696.4950427-.2346167.7049496-.05519073.209907.17942596.2346167.49504266.0551908.70494963-2.1010562 2.45798495-3.8041046 4.45475195-5.1090931 5.99023905-1.3267689 1.5611145-2.55182577 1.5940572-3.79317908.0161527-.58301254-.7410768-1.20485189-1.5172668-1.86550697-2.3285505z"
+                        id={`Mask-${id}`}
+                        fill="#54575F"
+                        d="M27.5 16c0-6.35129737-5.1493212-11.5-11.5-11.5C9.64729211 4.5 4.5 9.64760131 4.5 16c0 6.3523987 5.14729211 11.5 11.5 11.5 6.3506788 0 11.5-5.1487026 11.5-11.5zm1 0c0 6.903609-5.5970633 12.5-12.5 12.5-6.90500609 0-12.5-5.59533-12.5-12.5C3.5 9.09533001 9.09499391 3.5 16 3.5c6.9029367 0 12.5 5.59639099 12.5 12.5zm-17.887709 1.0027207c-.1743696-.2141258-.1421409-.5290635.0719848-.7034332.2141257-.1743696.5290635-.142141.7034332.0719848.6641119.8155287 1.2894506 1.5960867 1.876027 2.3416936.8362955 1.0630288 1.3141024 1.0501802 2.2452588-.0454453 1.305686-1.5363077 3.0093136-3.5337538 5.110935-5.9924.179426-.209907.4950427-.2346167.7049496-.0551908.209907.179426.2346167.4950427.0551908.7049496-2.1010562 2.457985-3.8041046 4.454752-5.1090931 5.9902391-1.3267689 1.5611145-2.5518258 1.5940572-3.7931791.0161527-.5830125-.7410768-1.2048519-1.5172668-1.865507-2.3285505z"
                     />
-                </defs>
-                <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                    <g id={`Icons/UI/Filled/Checked:Multiple-Picker-${id}`}>
-                        <mask id={`mask-2-${id}`} fill="#fff">
-                            <use xlinkHref={`#path-1-${id}`} />
-                        </mask>
-                        <use id={`Mask-${id}`} fill="#54575F" xlinkHref={`#path-1-${id}`} />
-                    </g>
                 </g>
-            </>
-        )}
-    </BaseIcon>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconChevronBack: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Chevron-back-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Path-${id}`}
-                    fill="#54575F"
-                    d="M18.3665692 16l-6.7612453-8.69302969c-.169535-.2179736-.1302678-.5321114.0877058-.70164642.2179736-.16953502.5321114-.13026779.7016464.0877058l7 9.00000001c.1404319.1805552.1404319.4333854 0 .6139406l-7 9c-.169535.2179736-.4836728.2572408-.7016464.0877058s-.2572408-.4836728-.0877058-.7016464L18.3665692 16z"
-                    transform="matrix(-1 0 0 1 30.999978 0)"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconCheckMark.displayName = 'IconCheckMark';
+
+export const IconCheckMarkFilled: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`path-1-${id}`}
+                            d="M24 12c0 6.6281739-5.373913 12-12 12-6.62921739 0-12-5.3718261-12-12C0 5.37182609 5.37078261 0 12 0c6.626087 0 12 5.37182609 12 12zM6.61229105 13.0027207c-.17436966-.2141258-.14214099-.5290635.07198475-.7034332.21412574-.1743696.52906349-.142141.70343315.0719848.66411194.8155287 1.2894506 1.5960867 1.87602707 2.3416936.83629548 1.0630288 1.31410238 1.0501802 2.24525878-.0454453 1.305686-1.5363077 3.0093136-3.5337538 5.110935-5.99240005.179426-.20990696.4950427-.2346167.7049496-.05519073.209907.17942596.2346167.49504266.0551908.70494963-2.1010562 2.45798495-3.8041046 4.45475195-5.1090931 5.99023905-1.3267689 1.5611145-2.55182577 1.5940572-3.79317908.0161527-.58301254-.7410768-1.20485189-1.5172668-1.86550697-2.3285505z"
+                        />
+                    </defs>
+                    <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                        <g id={`Icons/UI/Filled/Checked:Multiple-Picker-${id}`}>
+                            <mask id={`mask-2-${id}`} fill="#fff">
+                                <use xlinkHref={`#path-1-${id}`} />
+                            </mask>
+                            <use id={`Mask-${id}`} fill="#54575F" xlinkHref={`#path-1-${id}`} />
+                        </g>
+                    </g>
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconChevronDown: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Chevron-down-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Path-${id}`}
-                    fill="#54575F"
-                    d="M24.6930297 12.6053239c.2179736-.169535.5321114-.1302678.7016464.0877058s.1302678.5321114-.0877058.7016464l-9 7c-.1805552.1404319-.4333854.1404319-.6139406 0l-9.00000001-7c-.21797359-.169535-.25724082-.4836728-.0877058-.7016464.16953502-.2179736.48367282-.2572408.70164642-.0877058L16 19.3665692l8.6930297-6.7612453z"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconCheckMarkFilled.displayName = 'IconCheckMarkFilled';
+
+export const IconChevronBack: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Chevron-back-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Path-${id}`}
+                        fill="#54575F"
+                        d="M18.3665692 16l-6.7612453-8.69302969c-.169535-.2179736-.1302678-.5321114.0877058-.70164642.2179736-.16953502.5321114-.13026779.7016464.0877058l7 9.00000001c.1404319.1805552.1404319.4333854 0 .6139406l-7 9c-.169535.2179736-.4836728.2572408-.7016464.0877058s-.2572408-.4836728-.0877058-.7016464L18.3665692 16z"
+                        transform="matrix(-1 0 0 1 30.999978 0)"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconChevronForward: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Chevron-forward-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Path-${id}`}
-                    fill="#54575F"
-                    d="M13.6053239 7.30697031c-.169535-.2179736-.1302678-.5321114.0877058-.70164642.2179736-.16953502.5321114-.13026779.7016464.0877058l7 9.00000001c.1404319.1805552.1404319.4333854 0 .6139406l-7 9c-.169535.2179736-.4836728.2572408-.7016464.0877058s-.2572408-.4836728-.0877058-.7016464L20.3665692 16l-6.7612453-8.69302969z"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconChevronBack.displayName = 'IconChevronBack';
+
+export const IconChevronDown: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Chevron-down-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Path-${id}`}
+                        fill="#54575F"
+                        d="M24.6930297 12.6053239c.2179736-.169535.5321114-.1302678.7016464.0877058s.1302678.5321114-.0877058.7016464l-9 7c-.1805552.1404319-.4333854.1404319-.6139406 0l-9.00000001-7c-.21797359-.169535-.25724082-.4836728-.0877058-.7016464.16953502-.2179736.48367282-.2572408.70164642-.0877058L16 19.3665692l8.6930297-6.7612453z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconChevronUp: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Chevron-up-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Path-${id}`}
-                    fill="#54575F"
-                    d="M7.30697031 20.3946761c-.2179736.169535-.5321114.1302678-.70164642-.0877058-.16953502-.2179736-.13026779-.5321114.0877058-.7016464l9.00000001-7c.1805552-.1404319.4333854-.1404319.6139406 0l9 7c.2179736.169535.2572408.4836728.0877058.7016464s-.4836728.2572408-.7016464.0877058L16 13.6334308l-8.69302969 6.7612453z"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconChevronDown.displayName = 'IconChevronDown';
+
+export const IconChevronForward: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Chevron-forward-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Path-${id}`}
+                        fill="#54575F"
+                        d="M13.6053239 7.30697031c-.169535-.2179736-.1302678-.5321114.0877058-.70164642.2179736-.16953502.5321114-.13026779.7016464.0877058l7 9.00000001c.1404319.1805552.1404319.4333854 0 .6139406l-7 9c-.169535.2179736-.4836728.2572408-.7016464.0877058s-.2572408-.4836728-.0877058-.7016464L20.3665692 16l-6.7612453-8.69302969z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconClear: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconChevronForward.displayName = 'IconChevronForward';
+
+export const IconChevronUp: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Chevron-up-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Path-${id}`}
+                        fill="#54575F"
+                        d="M7.30697031 20.3946761c-.2179736.169535-.5321114.1302678-.70164642-.0877058-.16953502-.2179736-.13026779-.5321114.0877058-.7016464l9.00000001-7c.1805552-.1404319.4333854-.1404319.6139406 0l9 7c.2179736.169535.2572408.4836728.0877058.7016464s-.4836728.2572408-.7016464.0877058L16 13.6334308l-8.69302969 6.7612453z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
+);
+IconChevronUp.displayName = 'IconChevronUp';
+
+export const IconClear: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -220,9 +259,11 @@ export const IconClear: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconClose: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconClear.displayName = 'IconClear';
+
+export const IconClose: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -240,9 +281,11 @@ export const IconClose: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconDownload: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconClose.displayName = 'IconClose';
+
+export const IconDownload: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -260,9 +303,11 @@ export const IconDownload: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconEdit: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconDownload.displayName = 'IconDownload';
+
+export const IconEdit: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -280,9 +325,11 @@ export const IconEdit: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconEmail: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconEdit.displayName = 'IconEdit';
+
+export const IconEmail: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -300,9 +347,11 @@ export const IconEmail: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconError: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconEmail.displayName = 'IconEmail';
+
+export const IconError: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Error-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -313,9 +362,11 @@ export const IconError: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconFavorite: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconError.displayName = 'IconError';
+
+export const IconFavorite: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -333,68 +384,92 @@ export const IconFavorite: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconFavorite.displayName = 'IconFavorite';
+
+export const IconFavoriteFilled: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`path-1-${id}`}
+                            d="M16.0003849 9.58999602C17.0259399 8.03062576 18.898625 7 20.749519 7 23.7815593 7 26 9.61185089 26 13.0162532c0 1.6539798-1.0235624 3.6882386-2.5267308 5.2609171-.7920766.8266195-4.7499765 4.5475036-5.937992 5.6178018-1.13619 1.0245085-1.9205215.9841829-3.1507188-.0819882-.6513396-.5639647-4.99011157-4.6539256-5.85344362-5.5312957C7.05687404 16.7814314 6 14.6761876 6 13.0162532 6 9.61203027 8.21827598 7 11.249519 7c1.8564827 0 3.7342102 1.03588237 4.7508659 2.58999602z"
+                        />
+                    </defs>
+                    <g
+                        id={`Icons/UI/Favorite---Filled-${id}`}
+                        fill="none"
+                        fillRule="evenodd"
+                        stroke="none"
+                        strokeWidth="1"
+                    >
+                        <mask id={`mask-2-${id}`} fill="#fff">
+                            <use xlinkHref={`#path-1-${id}`} />
+                        </mask>
+                        <use id={`Shape-${id}`} fill="#5A5E66" fillRule="nonzero" xlinkHref={`#path-1-${id}`} />
+                    </g>
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconFavoriteFilled: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
+IconFavoriteFilled.displayName = 'IconFavoriteFilled';
+
+export const IconGridInactive: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Grid-Inactive-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                     <path
-                        id={`path-1-${id}`}
-                        d="M16.0003849 9.58999602C17.0259399 8.03062576 18.898625 7 20.749519 7 23.7815593 7 26 9.61185089 26 13.0162532c0 1.6539798-1.0235624 3.6882386-2.5267308 5.2609171-.7920766.8266195-4.7499765 4.5475036-5.937992 5.6178018-1.13619 1.0245085-1.9205215.9841829-3.1507188-.0819882-.6513396-.5639647-4.99011157-4.6539256-5.85344362-5.5312957C7.05687404 16.7814314 6 14.6761876 6 13.0162532 6 9.61203027 8.21827598 7 11.249519 7c1.8564827 0 3.7342102 1.03588237 4.7508659 2.58999602z"
+                        id={`Mask-${id}`}
+                        fill="#54575F"
+                        d="M7 6c-.55228475 0-1 .44771525-1 1v6c0 .5522847.44771525 1 1 1h6c.5522847 0 1-.4477153 1-1V7c0-.55228475-.4477153-1-1-1H7zm6 11c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2H7c-1.1045695 0-2-.8954305-2-2v-6c0-1.1045695.8954305-2 2-2h6zm0 1H7c-.55228475 0-1 .4477153-1 1v6c0 .5522847.44771525 1 1 1h6c.5522847 0 1-.4477153 1-1v-6c0-.5522847-.4477153-1-1-1zm0-13c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2H7c-1.1045695 0-2-.8954305-2-2V7c0-1.1045695.8954305-2 2-2h6zm12 0c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2h-6c-1.1045695 0-2-.8954305-2-2V7c0-1.1045695.8954305-2 2-2h6zm0 1h-6c-.5522847 0-1 .44771525-1 1v6c0 .5522847.4477153 1 1 1h6c.5522847 0 1-.4477153 1-1V7c0-.55228475-.4477153-1-1-1zm0 11c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2h-6c-1.1045695 0-2-.8954305-2-2v-6c0-1.1045695.8954305-2 2-2h6zm0 1h-6c-.5522847 0-1 .4477153-1 1v6c0 .5522847.4477153 1 1 1h6c.5522847 0 1-.4477153 1-1v-6c0-.5522847-.4477153-1-1-1z"
                     />
-                </defs>
-                <g id={`Icons/UI/Favorite---Filled-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                    <mask id={`mask-2-${id}`} fill="#fff">
-                        <use xlinkHref={`#path-1-${id}`} />
-                    </mask>
-                    <use id={`Shape-${id}`} fill="#5A5E66" fillRule="nonzero" xlinkHref={`#path-1-${id}`} />
                 </g>
-            </>
-        )}
-    </BaseIcon>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconGridInactive: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Grid-Inactive-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Mask-${id}`}
-                    fill="#54575F"
-                    d="M7 6c-.55228475 0-1 .44771525-1 1v6c0 .5522847.44771525 1 1 1h6c.5522847 0 1-.4477153 1-1V7c0-.55228475-.4477153-1-1-1H7zm6 11c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2H7c-1.1045695 0-2-.8954305-2-2v-6c0-1.1045695.8954305-2 2-2h6zm0 1H7c-.55228475 0-1 .4477153-1 1v6c0 .5522847.44771525 1 1 1h6c.5522847 0 1-.4477153 1-1v-6c0-.5522847-.4477153-1-1-1zm0-13c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2H7c-1.1045695 0-2-.8954305-2-2V7c0-1.1045695.8954305-2 2-2h6zm12 0c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2h-6c-1.1045695 0-2-.8954305-2-2V7c0-1.1045695.8954305-2 2-2h6zm0 1h-6c-.5522847 0-1 .44771525-1 1v6c0 .5522847.4477153 1 1 1h6c.5522847 0 1-.4477153 1-1V7c0-.55228475-.4477153-1-1-1zm0 11c1.1045695 0 2 .8954305 2 2v6c0 1.1045695-.8954305 2-2 2h-6c-1.1045695 0-2-.8954305-2-2v-6c0-1.1045695.8954305-2 2-2h6zm0 1h-6c-.5522847 0-1 .4477153-1 1v6c0 .5522847.4477153 1 1 1h6c.5522847 0 1-.4477153 1-1v-6c0-.5522847-.4477153-1-1-1z"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconGridInactive.displayName = 'IconGridInactive';
+
+export const IconInformation: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Information-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Combined-Shape-${id}`}
+                        fill="#54575F"
+                        d="M16 28.5C9.09644063 28.5 3.5 22.9035594 3.5 16 3.5 9.09644063 9.09644063 3.5 16 3.5c6.9035594 0 12.5 5.59644063 12.5 12.5 0 6.9035594-5.5964406 12.5-12.5 12.5zm0-1c6.3512746 0 11.5-5.1487254 11.5-11.5 0-6.35127462-5.1487254-11.5-11.5-11.5C9.64872538 4.5 4.5 9.64872538 4.5 16c0 6.3512746 5.14872538 11.5 11.5 11.5zm2-7c.6666667 0 .6666667 1 0 1h-4c-.6296296 0-.6646091-.8919753-.1049383-.9910837L14 20.5h1.499l.001-5H14c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5h2c.2761424 0 .5.2238576.5.5l-.001 5.5H18zm-2-10c.2761424 0 .5.2238576.5.5v1c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5v-1c0-.2761424.2238576-.5.5-.5z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconInformation: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Information-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Combined-Shape-${id}`}
-                    fill="#54575F"
-                    d="M16 28.5C9.09644063 28.5 3.5 22.9035594 3.5 16 3.5 9.09644063 9.09644063 3.5 16 3.5c6.9035594 0 12.5 5.59644063 12.5 12.5 0 6.9035594-5.5964406 12.5-12.5 12.5zm0-1c6.3512746 0 11.5-5.1487254 11.5-11.5 0-6.35127462-5.1487254-11.5-11.5-11.5C9.64872538 4.5 4.5 9.64872538 4.5 16c0 6.3512746 5.14872538 11.5 11.5 11.5zm2-7c.6666667 0 .6666667 1 0 1h-4c-.6296296 0-.6646091-.8919753-.1049383-.9910837L14 20.5h1.499l.001-5H14c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5h2c.2761424 0 .5.2238576.5.5l-.001 5.5H18zm-2-10c.2761424 0 .5.2238576.5.5v1c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5v-1c0-.2761424.2238576-.5.5-.5z"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconInformation.displayName = 'IconInformation';
+
+export const IconListInactive: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/List-Inactive-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Mask-${id}`}
+                        fill="#54575F"
+                        d="M26.5 24c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-21c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5h21zm0-8c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-21c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5h21zm0-8c.2761424 0 .5.22385763.5.5 0 .27614237-.2238576.5-.5.5h-21c-.27614237 0-.5-.22385763-.5-.5 0-.27614237.22385763-.5.5-.5h21z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconListInactive: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/List-Inactive-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Mask-${id}`}
-                    fill="#54575F"
-                    d="M26.5 24c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-21c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5h21zm0-8c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-21c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5h21zm0-8c.2761424 0 .5.22385763.5.5 0 .27614237-.2238576.5-.5.5h-21c-.27614237 0-.5-.22385763-.5-.5 0-.27614237.22385763-.5.5-.5h21z"
-                />
-            </g>
-        )}
-    </BaseIcon>
-);
-export const IconLocation: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconListInactive.displayName = 'IconListInactive';
+
+export const IconLocation: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Location-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -405,35 +480,45 @@ export const IconLocation: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
+));
+IconLocation.displayName = 'IconLocation';
+
+export const IconLockUnlocked: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Lock---Unlock-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Mask-${id}`}
+                        fill="#54575F"
+                        d="M16.5 0C20.0219119 0 22 2.19400391 22 6.5V12l-.0023571.0263697C25.3325311 12.2699847 27 14.1999709 27 17.75v6.375C27 26.6661231 25.6933922 28 23.125 28H9.875C7.2841349 28 6 26.7202159 6 24.125V17.75C6 13.8729672 7.8666214 12 11.75 12H21V6.5C21 2.72451493 19.4451976 1 16.5 1 13.6140106 1 12 2.8284323 12 6.5V7c0 .27614237-.2238576.5-.5.5S11 7.27614237 11 7v-.5C11 2.30199002 13.0320339 0 16.5 0zm4.75 13h-9.5C8.41966731 13 7 14.4244936 7 17.75v6.375C7 26.16717 7.83566134 27 9.875 27h13.25C25.1364315 27 26 26.1184087 26 24.125V17.75c0-3.2569343-1.4721537-4.75-4.75-4.75zm-2.75 7c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-4c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5h4z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconLockUnlocked: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Lock---Unlock-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Mask-${id}`}
-                    fill="#54575F"
-                    d="M16.5 0C20.0219119 0 22 2.19400391 22 6.5V12l-.0023571.0263697C25.3325311 12.2699847 27 14.1999709 27 17.75v6.375C27 26.6661231 25.6933922 28 23.125 28H9.875C7.2841349 28 6 26.7202159 6 24.125V17.75C6 13.8729672 7.8666214 12 11.75 12H21V6.5C21 2.72451493 19.4451976 1 16.5 1 13.6140106 1 12 2.8284323 12 6.5V7c0 .27614237-.2238576.5-.5.5S11 7.27614237 11 7v-.5C11 2.30199002 13.0320339 0 16.5 0zm4.75 13h-9.5C8.41966731 13 7 14.4244936 7 17.75v6.375C7 26.16717 7.83566134 27 9.875 27h13.25C25.1364315 27 26 26.1184087 26 24.125V17.75c0-3.2569343-1.4721537-4.75-4.75-4.75zm-2.75 7c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-4c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5h4z"
-                />
-            </g>
-        )}
-    </BaseIcon>
+IconLockUnlocked.displayName = 'IconLockUnlocked';
+
+export const IconLockLocked: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Lock-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Combined-Shape-${id}`}
+                        fill="#54575F"
+                        d="M16.5 5c3.5219119 0 5.5 2.19400391 5.5 6.5l.0006121.5265871C25.3335209 12.2711306 27 14.2010246 27 17.75v6.375C27 26.6661231 25.6933922 28 23.125 28H9.875C7.2841349 28 6 26.7202159 6 24.125V17.75c0-3.6187055 1.62616186-5.4915106 5.0005659-5.7250157L11 11.5C11 7.30199002 13.0320339 5 16.5 5zm4.75 8h-9.5C8.41966731 13 7 14.4244936 7 17.75v6.375C7 26.16717 7.83566134 27 9.875 27h13.25C25.1364315 27 26 26.1184087 26 24.125V17.75c0-3.2569343-1.4721537-4.75-4.75-4.75zm-4.75 5c.2761424 0 .5.2238576.5.5v4c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5v-4c0-.2761424.2238576-.5.5-.5zm0-12C13.6140106 6 12 7.8284323 12 11.5v.5h9v-.5C21 7.72451493 19.4451976 6 16.5 6z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconLockLocked: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Lock-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Combined-Shape-${id}`}
-                    fill="#54575F"
-                    d="M16.5 5c3.5219119 0 5.5 2.19400391 5.5 6.5l.0006121.5265871C25.3335209 12.2711306 27 14.2010246 27 17.75v6.375C27 26.6661231 25.6933922 28 23.125 28H9.875C7.2841349 28 6 26.7202159 6 24.125V17.75c0-3.6187055 1.62616186-5.4915106 5.0005659-5.7250157L11 11.5C11 7.30199002 13.0320339 5 16.5 5zm4.75 8h-9.5C8.41966731 13 7 14.4244936 7 17.75v6.375C7 26.16717 7.83566134 27 9.875 27h13.25C25.1364315 27 26 26.1184087 26 24.125V17.75c0-3.2569343-1.4721537-4.75-4.75-4.75zm-4.75 5c.2761424 0 .5.2238576.5.5v4c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5v-4c0-.2761424.2238576-.5.5-.5zm0-12C13.6140106 6 12 7.8284323 12 11.5v.5h9v-.5C21 7.72451493 19.4451976 6 16.5 6z"
-                />
-            </g>
-        )}
-    </BaseIcon>
-);
-export const IconNext: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconLockLocked.displayName = 'IconLockLocked';
+
+export const IconNext: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Next-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -444,9 +529,11 @@ export const IconNext: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconPrevious: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconNext.displayName = 'IconNext';
+
+export const IconPrevious: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Previous-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -457,9 +544,11 @@ export const IconPrevious: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconOther: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconPrevious.displayName = 'IconPrevious';
+
+export const IconOther: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Other-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -470,9 +559,11 @@ export const IconOther: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconPlay: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconOther.displayName = 'IconOther';
+
+export const IconPlay: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Play-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -483,9 +574,11 @@ export const IconPlay: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconPreview: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconPlay.displayName = 'IconPlay';
+
+export const IconPreview: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Preview-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -496,9 +589,11 @@ export const IconPreview: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconRefresh: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconPreview.displayName = 'IconPreview';
+
+export const IconRefresh: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Refresh-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -509,9 +604,11 @@ export const IconRefresh: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconRemove: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconRefresh.displayName = 'IconRefresh';
+
+export const IconRemove: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Remove-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -522,9 +619,11 @@ export const IconRemove: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconSearch: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconRemove.displayName = 'IconRemove';
+
+export const IconSearch: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Search-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -535,22 +634,28 @@ export const IconSearch: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
+));
+IconSearch.displayName = 'IconSearch';
+
+export const IconSortOrder: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <g id={`Icons/UI/Sort-Order-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id={`Mask-${id}`}
+                        fill="#54575F"
+                        d="M13 20c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm6 0c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm-6-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm6 0c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm-6-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm6 0c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z"
+                    />
+                </g>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconSortOrder: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <g id={`Icons/UI/Sort-Order-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <path
-                    id={`Mask-${id}`}
-                    fill="#54575F"
-                    d="M13 20c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm6 0c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm-6-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm6 0c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm-6-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm6 0c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z"
-                />
-            </g>
-        )}
-    </BaseIcon>
-);
-export const IconStar: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconSortOrder.displayName = 'IconSortOrder';
+
+export const IconStar: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -568,9 +673,11 @@ export const IconStar: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconTrash: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconStar.displayName = 'IconStar';
+
+export const IconTrash: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons/UI/Trash-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
                 <path
@@ -581,12 +688,14 @@ export const IconTrash: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconSupport: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconTrash.displayName = 'IconTrash';
+
+export const IconSupport: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <g id={`Icons/UI/Grey/Support-${id}`} fill="#54575F" transform="translate(-3 -3)">
+                <g id={`Icons/UI/Grey/Support-${id}`} fill="#54575F">
                     <path
                         id={`Mask-${id}`}
                         d="M16.3428571 27.5C22.3515098 27.5 27.5 22.3515098 27.5 16.3428571 27.5 9.75233277 22.4509728 4.5 16.3428571 4.5 9.6484902 4.5 4.5 9.6484902 4.5 16.3428571 4.5 22.4509728 9.75233277 27.5 16.3428571 27.5zm0 1C9.20868736 28.5 3.5 23.0122826 3.5 16.3428571 3.5 9.09620545 9.09620545 3.5 16.3428571 3.5 23.0122826 3.5 28.5 9.20868736 28.5 16.3428571 28.5 22.9037945 22.9037945 28.5 16.3428571 28.5zM12.5 13c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5c0-2.500322 1.9838819-4.5 4.5-4.5 2.4820664 0 4.5 2.0717435 4.5 4.5 0 1.8315954-.685474 2.7840744-2.2247265 3.7991999-.0830879.0547958-.362414.2363923-.3734868.2436315C16.8386951 17.7378645 16.5 18.1535882 16.5 19c0 .2761424-.2238576.5-.5.5s-.5-.2238576-.5-.5c0-1.273927.5364714-1.9324068 1.8545734-2.7941617.0134945-.0088225.2903283-.1887988.3701531-.2414426C19.0111434 15.1160134 19.5 14.436738 19.5 13c0-1.8817757-1.5761937-3.5-3.5-3.5-1.9620503 0-3.5 1.5501952-3.5 3.5zM16 23.25c.4142136 0 .75-.3357864.75-.75s-.3357864-.75-.75-.75-.75.3357864-.75.75.3357864.75.75.75z"
@@ -595,17 +704,14 @@ export const IconSupport: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconSettings: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconSupport.displayName = 'IconSupport';
+
+export const IconSettings: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <g
-                    id={`Icons/UI/Grey/Contextual-Settings-${id}`}
-                    fill="#5A5E66"
-                    fillRule="nonzero"
-                    transform="translate(-8 -6)"
-                >
+                <g id={`Icons/UI/Grey/Contextual-Settings-${id}`} fill="#5A5E66" fillRule="nonzero">
                     <path
                         id={`Mask-${id}`}
                         d="M13 18c1.3062521 0 2.4175144.8348501 2.8293257 2.0000889L25 20c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1l-9.1710242.0009007C15.4168852 23.1656226 14.3058822 24 13 24c-1.3058822 0-2.4168852-.8343774-2.8289758-1.9990993L7 22c-.55228475 0-1-.4477153-1-1s.44771525-1 1-1l3.1706743.0000889C10.5824856 18.8348501 11.6937479 18 13 18zm0 2c-.5522847 0-1 .4477153-1 1s.4477153 1 1 1 1-.4477153 1-1-.4477153-1-1-1zm6-12c1.3062521 0 2.4175144.8348501 2.8293257 2.0000889L25 10c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1l-3.1710242.0009007C21.4168852 13.1656226 20.3058822 14 19 14c-1.3058822 0-2.4168852-.8343774-2.8289758-1.9990993L7 12c-.55228475 0-1-.4477153-1-1s.44771525-1 1-1l9.1706743.0000889C16.5824856 8.8348501 17.6937479 8 19 8zm0 2c-.5522847 0-1 .4477153-1 1s.4477153 1 1 1 1-.4477153 1-1-.4477153-1-1-1z"
@@ -615,46 +721,56 @@ export const IconSettings: React.FC<IconProps> = (props: IconProps) => (
             </g>
         )}
     </BaseIcon>
-);
-export const IconSendMessage: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`path-1-${id}`}
-                        d="M12.8428571 24.5C5.87234783 24.5.5 19.1276522.5 12.8428571.5 5.87234783 5.87234783.5 12.8428571.5 19.1276522.5 24.5 5.87234783 24.5 12.8428571 24.5 19.1276522 19.1276522 24.5 12.8428571 24.5zM11.3749062 6.46107446c.5609645-.60959848 1.5098933-.64902409 2.1194918-.08805956.0452488.04281075.0452488.04281075.0880595.08805956l4.7854677 5.20035354c.1869882.2031995.1738463.5195091-.0293532.7064972-.2031995.1869882-.5195091.1738463-.7064972-.0293532L13 7.305V18.5c0 .2454599-.1768752.4496084-.4101244.4919443L12.5 19c-.2761424 0-.5-.2238576-.5-.5V7.258l-4.63207477 5.0342393c-.16621171.1806218-.43460332.2110746-.6349074.0842842l-.07158987-.054931c-.20319949-.1869882-.21634136-.5032978-.02935319-.7064973z"
-                    />
-                </defs>
-                <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                    <g id={`Icons/UI/Filled/Send-Message-${id}`}>
-                        <mask id={`mask-2-${id}`} fill="#fff">
-                            <use xlinkHref={`#path-1-${id}`} />
-                        </mask>
-                        <use id={`Mask-${id}`} fill="#54575F" xlinkHref={`#path-1-${id}`} />
+));
+IconSettings.displayName = 'IconSettings';
+
+export const IconSendMessage: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`path-1-${id}`}
+                            d="M12.8428571 24.5C5.87234783 24.5.5 19.1276522.5 12.8428571.5 5.87234783 5.87234783.5 12.8428571.5 19.1276522.5 24.5 5.87234783 24.5 12.8428571 24.5 19.1276522 19.1276522 24.5 12.8428571 24.5zM11.3749062 6.46107446c.5609645-.60959848 1.5098933-.64902409 2.1194918-.08805956.0452488.04281075.0452488.04281075.0880595.08805956l4.7854677 5.20035354c.1869882.2031995.1738463.5195091-.0293532.7064972-.2031995.1869882-.5195091.1738463-.7064972-.0293532L13 7.305V18.5c0 .2454599-.1768752.4496084-.4101244.4919443L12.5 19c-.2761424 0-.5-.2238576-.5-.5V7.258l-4.63207477 5.0342393c-.16621171.1806218-.43460332.2110746-.6349074.0842842l-.07158987-.054931c-.20319949-.1869882-.21634136-.5032978-.02935319-.7064973z"
+                        />
+                    </defs>
+                    <g id={`Icons-${id}`} fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                        <g id={`Icons/UI/Filled/Send-Message-${id}`}>
+                            <mask id={`mask-2-${id}`} fill="#fff">
+                                <use xlinkHref={`#path-1-${id}`} />
+                            </mask>
+                            <use id={`Mask-${id}`} fill="#54575F" xlinkHref={`#path-1-${id}`} />
+                        </g>
                     </g>
-                </g>
-            </>
-        )}
-    </BaseIcon>
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconAcupuncture: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M16 6.5c1.1045695 0 2 .8954305 2 2 0 .932274-.6378711 1.7155652-1.5009839 1.9372442L16.4990234 24c0 .2761424-.2238576.5-.5.5-.2761423 0-.5-.2238576-.5-.5l-.0010483-13.563531C14.6363891 10.2137441 14 9.43119038 14 8.5c0-1.1045695.8954305-2 2-2zm7.7361611 2.48245903c1.0379559.37778502 1.57313 1.52546977 1.195345 2.56342557-.3253748.89396-1.2218503 1.4149638-2.1274513 1.300958l-3.8467911 10.5681931c-.0944462.2594889-.3813674.3932824-.6408564.2988362-.2594889-.0944463-.3932825-.3813674-.2988362-.6408564l3.8563129-10.594438c-.7024214-.5113919-1.0131675-1.4435079-.7011484-2.3007735.377785-1.03795582 1.5254697-1.57312998 2.5634255-1.19534497zM10.8272644 10.177804c.3047213.837215.0154684 1.7458199-.6525072 2.2642065l3.745529 10.2896529c.0944462.2594889-.0393473.5464101-.2988363.6408564-.2594889.0944462-.5464101-.0393473-.6408563-.2988363L9.25503505 12.8385011c-.9254292.1448316-1.85409034-.3792154-2.18654115-1.2926165-.37778502-1.0379558.15738915-2.18564055 1.19534495-2.56342557 1.03795581-.37778501 2.18564055.15738915 2.56342555 1.19534497zm11.2851638.3420201c-.1888925.5189779.0786946 1.0928203.5976725 1.2817128.5189779.1888925 1.0928203-.0786946 1.2817128-.5976725.1888925-.5189779-.0786946-1.0928202-.5976725-1.28171275-.5189779-.1888925-1.0928203.07869455-1.2817128.59767245zM8.605859 9.92215165c-.51897791.18889255-.78656499.76273485-.59767248 1.28171275.18889251.5189779.76273486.786565 1.28171276.5976725.51897791-.1888925.78656502-.7627349.59767248-1.2817128-.18889251-.5189779-.76273486-.78656495-1.28171276-.59767245zM16 7.5c-.5522847 0-1 .44771525-1 1s.4477153 1 1 1 1-.44771525 1-1-.4477153-1-1-1z"
-                    />
-                </defs>
-                <use fill="#5A5E66" fillRule="nonzero" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
+IconSendMessage.displayName = 'IconSendMessage';
+
+export const IconAcupuncture: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M16 6.5c1.1045695 0 2 .8954305 2 2 0 .932274-.6378711 1.7155652-1.5009839 1.9372442L16.4990234 24c0 .2761424-.2238576.5-.5.5-.2761423 0-.5-.2238576-.5-.5l-.0010483-13.563531C14.6363891 10.2137441 14 9.43119038 14 8.5c0-1.1045695.8954305-2 2-2zm7.7361611 2.48245903c1.0379559.37778502 1.57313 1.52546977 1.195345 2.56342557-.3253748.89396-1.2218503 1.4149638-2.1274513 1.300958l-3.8467911 10.5681931c-.0944462.2594889-.3813674.3932824-.6408564.2988362-.2594889-.0944463-.3932825-.3813674-.2988362-.6408564l3.8563129-10.594438c-.7024214-.5113919-1.0131675-1.4435079-.7011484-2.3007735.377785-1.03795582 1.5254697-1.57312998 2.5634255-1.19534497zM10.8272644 10.177804c.3047213.837215.0154684 1.7458199-.6525072 2.2642065l3.745529 10.2896529c.0944462.2594889-.0393473.5464101-.2988363.6408564-.2594889.0944462-.5464101-.0393473-.6408563-.2988363L9.25503505 12.8385011c-.9254292.1448316-1.85409034-.3792154-2.18654115-1.2926165-.37778502-1.0379558.15738915-2.18564055 1.19534495-2.56342557 1.03795581-.37778501 2.18564055.15738915 2.56342555 1.19534497zm11.2851638.3420201c-.1888925.5189779.0786946 1.0928203.5976725 1.2817128.5189779.1888925 1.0928203-.0786946 1.2817128-.5976725.1888925-.5189779-.0786946-1.0928202-.5976725-1.28171275-.5189779-.1888925-1.0928203.07869455-1.2817128.59767245zM8.605859 9.92215165c-.51897791.18889255-.78656499.76273485-.59767248 1.28171275.18889251.5189779.76273486.786565 1.28171276.5976725.51897791-.1888925.78656502-.7627349.59767248-1.2817128-.18889251-.5189779-.76273486-.78656495-1.28171276-.59767245zM16 7.5c-.5522847 0-1 .44771525-1 1s.4477153 1 1 1 1-.44771525 1-1-.4477153-1-1-1z"
+                        />
+                    </defs>
+                    <use fill="#5A5E66" fillRule="nonzero" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconBank: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconAcupuncture.displayName = 'IconAcupuncture';
+
+export const IconBank: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -667,9 +783,11 @@ export const IconBank: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconBusiness: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconBank.displayName = 'IconBank';
+
+export const IconBusiness: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -682,9 +800,11 @@ export const IconBusiness: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconCash: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconBusiness.displayName = 'IconBusiness';
+
+export const IconCash: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -697,9 +817,11 @@ export const IconCash: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconCheck: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconCash.displayName = 'IconCash';
+
+export const IconCheck: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -712,9 +834,11 @@ export const IconCheck: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconComputer: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconCheck.displayName = 'IconCheck';
+
+export const IconComputer: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -727,39 +851,49 @@ export const IconComputer: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconComputer.displayName = 'IconComputer';
+
+export const IconCreditCard: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M14.1830127 11.4509619c.2391463.1380712.3210839.4438664.1830127.6830127-.1380712.2391463-.4438664.3210839-.6830127.1830127l-6.06217782-3.5c-.23914632-.13807119-.32108389-.44386639-.18301271-.6830127.13807119-.23914632.44386639-.32108389.68301271-.18301271l6.06217782 3.50000001zm-2.5310702-6.25875672l8.8698182 5.32952442c.8255753.4960557 1.4021066 1.0517177 1.7296002 1.6690253.6314792.1341559 1.5203712.7070128 2.3029506 1.4244497 1.3014883 1.1931513 1.8369274 2.2831557 1.9416057 3.6331494.0259612.3348113.0275816.5921974.017515 1.186438-.0134094.7915606-.0035157 1.1579931.0653084 1.6294586.0240386.164672.165715.2986962.5003426.4608295.0734369.0355816.3835985.1736104.4588602.210433.134933.0660176.2384223.1276427.3290176.2038231l.0931764.103761c.4593881.6834575.3139713 1.5737727-.3301306 2.6366827-.5494745.906754-1.1992385 2.0536295-1.9943048 3.5095774-.6183584.7927447-1.4511955.9318209-2.2972931.3848354-.2871713-.1856506-.7440393-.3526212-1.3724299-.5145918-.1460413-.0376429-1.6135942-.3658633-1.8640931-.4596016-.0556532-.0208258-.1059148-.0425634-.1521471-.0665402-.5216177-.2705194-1.5671881-1.1567033-1.9572307-1.6517574-.1601363-.2032498-1.220819-1.4887319-3.1719479-3.8441521l-.0236925.0483331c-.0846042-.0417186-.1574629-.084699-.246521-.1428204-.1088004-.0724031-.1563705-.1036763-.2090429-.1353251l-8.86981819-5.3295244c-2.19572972-1.3193275-2.62612968-3.0581321-1.30901617-5.2501771l2.23929598-3.72681435c1.31711351-2.19204499 3.05444737-2.62834369 5.25017708-1.30901617zm10.9188126 8.19427062l.003604.1066076c-.0009716.6964879-.2488345 1.4554247-.7435823 2.2788233l-1.119648 1.8634072-.7536191 1.2571292c.0231007-.0215212.0430207-.0459586.0594594-.073377.1419956-.2368372.4491003-.3137215.6859375-.1717259.2368372.1419956.3137215.4491003.1717259.6859375-.7475125 1.2467903-2.6933995.6741342-3.904075-.6272029-1.1809595-1.3382783-1.9412324-2.2464803-2.2912754-2.7392839-.4656892-.6556147-1.4449814-.9981946-1.927188-.601263-.3375517.2778579-.3436171.8184978.1045423 1.7359233 3.7247245 4.4909266 5.6893587 6.8669109 5.9213633 7.1613783.3044293.386391 1.2406228 1.1798713 1.6321247 1.3829106.2166046.0829368 1.5935611.3908952 1.8054513.4455109.7248409.1868311 1.2655828.384455 1.665742.64315.4117149.2661656.6666057.2236012.9203068-.0903655.7567023-1.3995803 1.4142299-2.5601592 1.9731538-3.4825068.4287364-.7075094.5324304-1.1955216.3946386-1.4910145-.019118-.0106286-.042762-.0229557-.0709538-.0367489-.0540573-.0264481-.3618794-.1634358-.455413-.2087546-.6036978-.2925028-.9694773-.638526-1.0538219-1.2163121-.0789726-.5409858-.0899428-.9472876-.0756526-1.7908446.0095302-.5625714.0080394-.7993744-.0146657-1.0921922-.084986-1.0960298-.5047851-1.9506234-1.6203601-2.9733371-.4332837-.3972168-.9246232-.7489039-1.3077947-.9658489zM7.25893272 7.01625943L5.01963674 10.7430738c-1.0330564 1.7192945-.75478991 2.8434839.96688694 3.8779717l7.00328662 4.2075687c-.3000793-.3619156-.6135318-.7398994-.9403386-1.1339285l-.0625134-.0958994c-.6568803-1.316031-.6568803-2.3579333.1296-3.0053298 1.0168665-.8370405 2.6168363-.2773327 3.3779877.7942448.3228086.454462 1.0682323 1.3449254 2.2169549 2.6469355.3352381.3602717.7377908.6330343 1.1147257.7982527l1.0277349-1.7126137 1.119648-1.8634072c1.0344878-1.7216768.7524076-2.8449153-.9668869-3.8779717l-8.8698182-5.32952442c-1.72167682-1.03448781-2.84491529-.75240762-3.87797168.96688695zm9.52215618 5.93470247l2.5980762 1.5c.2391463.1380712.3210839.4438664.1830127.6830127-.1380712.2391463-.4438664.3210839-.6830127.1830127l-2.5980762-1.5c-.2391463-.1380712-.3210839-.4438664-.1830127-.6830127.1380712-.2391463.4438664-.3210839.6830127-.1830127z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconCreditCard: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M14.1830127 11.4509619c.2391463.1380712.3210839.4438664.1830127.6830127-.1380712.2391463-.4438664.3210839-.6830127.1830127l-6.06217782-3.5c-.23914632-.13807119-.32108389-.44386639-.18301271-.6830127.13807119-.23914632.44386639-.32108389.68301271-.18301271l6.06217782 3.50000001zm-2.5310702-6.25875672l8.8698182 5.32952442c.8255753.4960557 1.4021066 1.0517177 1.7296002 1.6690253.6314792.1341559 1.5203712.7070128 2.3029506 1.4244497 1.3014883 1.1931513 1.8369274 2.2831557 1.9416057 3.6331494.0259612.3348113.0275816.5921974.017515 1.186438-.0134094.7915606-.0035157 1.1579931.0653084 1.6294586.0240386.164672.165715.2986962.5003426.4608295.0734369.0355816.3835985.1736104.4588602.210433.134933.0660176.2384223.1276427.3290176.2038231l.0931764.103761c.4593881.6834575.3139713 1.5737727-.3301306 2.6366827-.5494745.906754-1.1992385 2.0536295-1.9943048 3.5095774-.6183584.7927447-1.4511955.9318209-2.2972931.3848354-.2871713-.1856506-.7440393-.3526212-1.3724299-.5145918-.1460413-.0376429-1.6135942-.3658633-1.8640931-.4596016-.0556532-.0208258-.1059148-.0425634-.1521471-.0665402-.5216177-.2705194-1.5671881-1.1567033-1.9572307-1.6517574-.1601363-.2032498-1.220819-1.4887319-3.1719479-3.8441521l-.0236925.0483331c-.0846042-.0417186-.1574629-.084699-.246521-.1428204-.1088004-.0724031-.1563705-.1036763-.2090429-.1353251l-8.86981819-5.3295244c-2.19572972-1.3193275-2.62612968-3.0581321-1.30901617-5.2501771l2.23929598-3.72681435c1.31711351-2.19204499 3.05444737-2.62834369 5.25017708-1.30901617zm10.9188126 8.19427062l.003604.1066076c-.0009716.6964879-.2488345 1.4554247-.7435823 2.2788233l-1.119648 1.8634072-.7536191 1.2571292c.0231007-.0215212.0430207-.0459586.0594594-.073377.1419956-.2368372.4491003-.3137215.6859375-.1717259.2368372.1419956.3137215.4491003.1717259.6859375-.7475125 1.2467903-2.6933995.6741342-3.904075-.6272029-1.1809595-1.3382783-1.9412324-2.2464803-2.2912754-2.7392839-.4656892-.6556147-1.4449814-.9981946-1.927188-.601263-.3375517.2778579-.3436171.8184978.1045423 1.7359233 3.7247245 4.4909266 5.6893587 6.8669109 5.9213633 7.1613783.3044293.386391 1.2406228 1.1798713 1.6321247 1.3829106.2166046.0829368 1.5935611.3908952 1.8054513.4455109.7248409.1868311 1.2655828.384455 1.665742.64315.4117149.2661656.6666057.2236012.9203068-.0903655.7567023-1.3995803 1.4142299-2.5601592 1.9731538-3.4825068.4287364-.7075094.5324304-1.1955216.3946386-1.4910145-.019118-.0106286-.042762-.0229557-.0709538-.0367489-.0540573-.0264481-.3618794-.1634358-.455413-.2087546-.6036978-.2925028-.9694773-.638526-1.0538219-1.2163121-.0789726-.5409858-.0899428-.9472876-.0756526-1.7908446.0095302-.5625714.0080394-.7993744-.0146657-1.0921922-.084986-1.0960298-.5047851-1.9506234-1.6203601-2.9733371-.4332837-.3972168-.9246232-.7489039-1.3077947-.9658489zM7.25893272 7.01625943L5.01963674 10.7430738c-1.0330564 1.7192945-.75478991 2.8434839.96688694 3.8779717l7.00328662 4.2075687c-.3000793-.3619156-.6135318-.7398994-.9403386-1.1339285l-.0625134-.0958994c-.6568803-1.316031-.6568803-2.3579333.1296-3.0053298 1.0168665-.8370405 2.6168363-.2773327 3.3779877.7942448.3228086.454462 1.0682323 1.3449254 2.2169549 2.6469355.3352381.3602717.7377908.6330343 1.1147257.7982527l1.0277349-1.7126137 1.119648-1.8634072c1.0344878-1.7216768.7524076-2.8449153-.9668869-3.8779717l-8.8698182-5.32952442c-1.72167682-1.03448781-2.84491529-.75240762-3.87797168.96688695zm9.52215618 5.93470247l2.5980762 1.5c.2391463.1380712.3210839.4438664.1830127.6830127-.1380712.2391463-.4438664.3210839-.6830127.1830127l-2.5980762-1.5c-.2391463-.1380712-.3210839-.4438664-.1830127-.6830127.1380712-.2391463.4438664-.3210839.6830127-.1830127z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
+IconCreditCard.displayName = 'IconCreditCard';
+
+export const IconCreditCardHand: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M23 8c3.3625657 0 5 1.63188649 5 5v7c0 3.3625657-1.6318865 5-5 5H9c-3.36256572 0-5-1.6318865-5-5v-7c0-3.36256572 1.63188649-5 5-5h14zM5.00000005 12.9989834L5 17v3c0 2.8150676 1.18896072 4 4 4h14c2.8150676 0 4-1.1889607 4-4v-7l-21.99999995-.0010166zM16.5 16h7c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-7c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5zm-5 0c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-3c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5h3zM23 9H9c-2.45430165 0-3.66951617.90374463-3.94067969 2.9982613l21.88144559.0008242C26.6693908 9.90125588 25.4515694 9 23 9z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconCreditCardHand: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M23 8c3.3625657 0 5 1.63188649 5 5v7c0 3.3625657-1.6318865 5-5 5H9c-3.36256572 0-5-1.6318865-5-5v-7c0-3.36256572 1.63188649-5 5-5h14zM5.00000005 12.9989834L5 17v3c0 2.8150676 1.18896072 4 4 4h14c2.8150676 0 4-1.1889607 4-4v-7l-21.99999995-.0010166zM16.5 16h7c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-7c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5zm-5 0c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-3c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5h3zM23 9H9c-2.45430165 0-3.66951617.90374463-3.94067969 2.9982613l21.88144559.0008242C26.6693908 9.90125588 25.4515694 9 23 9z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconCycling: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconCreditCardHand.displayName = 'IconCreditCardHand';
+
+export const IconCycling: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -772,9 +906,11 @@ export const IconCycling: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconDance: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconCycling.displayName = 'IconCycling';
+
+export const IconDance: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -787,9 +923,11 @@ export const IconDance: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconFitness: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconDance.displayName = 'IconDance';
+
+export const IconFitness: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -802,9 +940,11 @@ export const IconFitness: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconForm: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconFitness.displayName = 'IconFitness';
+
+export const IconForm: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {() => (
             <>
                 <path
@@ -815,9 +955,11 @@ export const IconForm: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconGift: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconForm.displayName = 'IconForm';
+
+export const IconGift: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -830,9 +972,11 @@ export const IconGift: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconIphone: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconGift.displayName = 'IconGift';
+
+export const IconIphone: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -845,9 +989,11 @@ export const IconIphone: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconKids: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconIphone.displayName = 'IconIphone';
+
+export const IconKids: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -860,9 +1006,11 @@ export const IconKids: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconMassage: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconKids.displayName = 'IconKids';
+
+export const IconMassage: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -875,24 +1023,30 @@ export const IconMassage: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconMassage.displayName = 'IconMassage';
+
+export const IconMeditation: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M15.5 5.5c1.6568542 0 3 1.34314575 3 3 0 .78256777-.2996391 1.49515108-.7904464 2.0292791 1.6425312.1433665 2.2857043.8618606 2.7716913 2.5848756.0301281.1068162.0609105.2194043.1011745.3692381.0512208.191272.0819755.3061999.104436.389485l.0255401.094697c.4222261 1.5641193.7552571 2.7987371 1.3217331 4.9024169.1755549.6519452.1304318 1.2513325-.0727493 1.7672142 1.5645197.3986166 2.447343 1.2650789 2.5329976 2.5857061.1280228 1.9738618-1.5503166 2.877884-3.7378706 2.7691805-.1426364-.0070879-.2971333-.0133448-.5283898-.0217411-1.0431868-.0378756-1.2782141-.0482344-1.7809949-.0865777-1.3372856-.1019845-2.3060822-.2993659-2.9475669-.6866001-.6406796.3874384-1.6091656.5846683-2.9457594.6866001-.5027808.0383433-.7378081.0487021-1.7809949.0865777-.2312565.0083963-.3857534.0146532-.5283898.0217411-2.187554.1087035-3.86589336-.7953187-3.73787058-2.7691805.08554635-1.318958.96624746-2.1848984 2.52768305-2.5850548-.20231997-.5147656-.24562411-1.1148677-.06884926-1.7684094.46560159-1.7213425 1.28297549-4.7578245 1.34865719-5.0004195.1047326-.3897688.1549511-.5752084.2053869-.7523825.4896886-1.7202098 1.1347105-2.4384825 2.7718067-2.5867109C12.8003948 9.99694702 12.5 9.28355399 12.5 8.5c0-1.65685425 1.3431458-3 3-3zM9.78567612 21.501l.04517463-.0073817c-1.54399204.2490754-2.26459307.8409592-2.32640747 1.7940168-.07783306 1.2000341 1.0154447 1.7889182 2.69033682 1.7056898.1481404-.0073614.3063656-.0137693.5417367-.0223151 1.027623-.0373105 1.2572661-.047432 1.7412369-.0843407 1.3356802-.1018621 2.2446721-.3125271 2.6563063-.6502051.4937854-.4050694.4528132-1.0738156.1144832-1.7358941L12 22.5c-.9262341 0-1.7974089-.3598373-2.38700686-.9671753L9.78567612 21.501zM19 22.5l-2.658041.0003031c.2497296.6767396.271886 1.3667165-.0872986 1.9587024.4880966.2106035 1.2556119.3504181 2.2685027.4276636.4839709.0369087.713614.0470302 1.741237.0843407.2353711.0085458.3935963.0149537.5417367.0223151 1.6748921.0832284 2.7681699-.5056557 2.6903368-1.7056898-.0618144-.9530576-.7824154-1.5449414-2.3264075-1.7940168l.2104542.0367752C20.7898148 22.1388056 19.9194343 22.5 19 22.5zm-1.9961548-11h-2.980957c-1.7108018 0-2.1001561.3394195-2.5416809 1.8904364-.0483808.169955-.0966399.348159-.2019288.7399291-.0654377.2416938-.8827696 3.27802-1.34859413 5.0001867C9.56403272 20.4860739 10.6694314 21.5 12 21.5l5.6723543.0016451c-2.0813026-1.1458107-3.6305857-2.9195739-4.6355318-5.3077127-.1071059-.2545249.0124008-.5476846.2669257-.6547905.2545249-.107106.5476847.0124007.6547906.2669257.4033791.958584.8989857 1.8053862 1.4878629 2.5415563.438625-.5788117.9741528-1.443583 1.6007438-2.5877828.1326361-.242203.4365032-.3310245.6787061-.1983884.242203.1326361.3310245.4365032.1983884.6787062-.70067 1.2794735-1.2976421 2.2324293-1.7991272 2.8660588 1.0118792 1.010619 2.2465221 1.7598316 3.7074347 2.2514542.9061569-.3265777 1.5188865-1.1770436 1.2359769-2.2276636-.5664101-2.1034352-.8993745-3.337806-1.320418-4.8975411l-.0267573-.0992098c-.0227677-.0844242-.0538482-.2005695-.1046682-.3903473-.0392839-.1461867-.0690815-.255173-.0978845-.3572908C19.0826593 11.8393416 18.6978286 11.5 17.0038452 11.5zM15.5 6.5c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2z"
+                        />
+                    </defs>
+                    <use fill="#5A5E66" fillRule="nonzero" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconMeditation: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M15.5 5.5c1.6568542 0 3 1.34314575 3 3 0 .78256777-.2996391 1.49515108-.7904464 2.0292791 1.6425312.1433665 2.2857043.8618606 2.7716913 2.5848756.0301281.1068162.0609105.2194043.1011745.3692381.0512208.191272.0819755.3061999.104436.389485l.0255401.094697c.4222261 1.5641193.7552571 2.7987371 1.3217331 4.9024169.1755549.6519452.1304318 1.2513325-.0727493 1.7672142 1.5645197.3986166 2.447343 1.2650789 2.5329976 2.5857061.1280228 1.9738618-1.5503166 2.877884-3.7378706 2.7691805-.1426364-.0070879-.2971333-.0133448-.5283898-.0217411-1.0431868-.0378756-1.2782141-.0482344-1.7809949-.0865777-1.3372856-.1019845-2.3060822-.2993659-2.9475669-.6866001-.6406796.3874384-1.6091656.5846683-2.9457594.6866001-.5027808.0383433-.7378081.0487021-1.7809949.0865777-.2312565.0083963-.3857534.0146532-.5283898.0217411-2.187554.1087035-3.86589336-.7953187-3.73787058-2.7691805.08554635-1.318958.96624746-2.1848984 2.52768305-2.5850548-.20231997-.5147656-.24562411-1.1148677-.06884926-1.7684094.46560159-1.7213425 1.28297549-4.7578245 1.34865719-5.0004195.1047326-.3897688.1549511-.5752084.2053869-.7523825.4896886-1.7202098 1.1347105-2.4384825 2.7718067-2.5867109C12.8003948 9.99694702 12.5 9.28355399 12.5 8.5c0-1.65685425 1.3431458-3 3-3zM9.78567612 21.501l.04517463-.0073817c-1.54399204.2490754-2.26459307.8409592-2.32640747 1.7940168-.07783306 1.2000341 1.0154447 1.7889182 2.69033682 1.7056898.1481404-.0073614.3063656-.0137693.5417367-.0223151 1.027623-.0373105 1.2572661-.047432 1.7412369-.0843407 1.3356802-.1018621 2.2446721-.3125271 2.6563063-.6502051.4937854-.4050694.4528132-1.0738156.1144832-1.7358941L12 22.5c-.9262341 0-1.7974089-.3598373-2.38700686-.9671753L9.78567612 21.501zM19 22.5l-2.658041.0003031c.2497296.6767396.271886 1.3667165-.0872986 1.9587024.4880966.2106035 1.2556119.3504181 2.2685027.4276636.4839709.0369087.713614.0470302 1.741237.0843407.2353711.0085458.3935963.0149537.5417367.0223151 1.6748921.0832284 2.7681699-.5056557 2.6903368-1.7056898-.0618144-.9530576-.7824154-1.5449414-2.3264075-1.7940168l.2104542.0367752C20.7898148 22.1388056 19.9194343 22.5 19 22.5zm-1.9961548-11h-2.980957c-1.7108018 0-2.1001561.3394195-2.5416809 1.8904364-.0483808.169955-.0966399.348159-.2019288.7399291-.0654377.2416938-.8827696 3.27802-1.34859413 5.0001867C9.56403272 20.4860739 10.6694314 21.5 12 21.5l5.6723543.0016451c-2.0813026-1.1458107-3.6305857-2.9195739-4.6355318-5.3077127-.1071059-.2545249.0124008-.5476846.2669257-.6547905.2545249-.107106.5476847.0124007.6547906.2669257.4033791.958584.8989857 1.8053862 1.4878629 2.5415563.438625-.5788117.9741528-1.443583 1.6007438-2.5877828.1326361-.242203.4365032-.3310245.6787061-.1983884.242203.1326361.3310245.4365032.1983884.6787062-.70067 1.2794735-1.2976421 2.2324293-1.7991272 2.8660588 1.0118792 1.010619 2.2465221 1.7598316 3.7074347 2.2514542.9061569-.3265777 1.5188865-1.1770436 1.2359769-2.2276636-.5664101-2.1034352-.8993745-3.337806-1.320418-4.8975411l-.0267573-.0992098c-.0227677-.0844242-.0538482-.2005695-.1046682-.3903473-.0392839-.1461867-.0690815-.255173-.0978845-.3572908C19.0826593 11.8393416 18.6978286 11.5 17.0038452 11.5zM15.5 6.5c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2z"
-                    />
-                </defs>
-                <use fill="#5A5E66" fillRule="nonzero" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconMMA: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconMeditation.displayName = 'IconMeditation';
+
+export const IconMMA: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -905,9 +1059,11 @@ export const IconMMA: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconNails: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconMMA.displayName = 'IconMMA';
+
+export const IconNails: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -920,24 +1076,30 @@ export const IconNails: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconNails.displayName = 'IconNails';
+
+export const IconNutrition: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M16.5000031 11c2.2098368 0 3.5316749 1.1793082 3.9892381 3.7796492.2311544 1.3136554.6224732 2.0458302 1.5644737 3.2504405.0641792.0819826.0641792.0819826.1288084.1644861.4290929.5481764.6522619.8574973.8831695 1.2532655.7069984 1.2117725.9187171 2.0458787.9329727 3.1882803.0011509.0922364.0013376.165026.0013376.3291554 0 3.7539486-3.124362 6.034723-7.5 6.034723-4.375263 0-7.50000002-2.2809127-7.50000002-5.991209l.00046353-.3023064c.00015452-.0212479.00036053-.0419902.00063522-.0638169.01284694-1.1543062.22284123-1.9875187.93411882-3.1991143.23101165-.393507.45305935-.7002694.88253045-1.2479729.0614219-.0782785.0614219-.0782785.1224345-.1560812.9490093-1.211338 1.3404343-1.9421905 1.5710944-3.2594413C12.9662608 12.1817589 14.2904067 11 16.5000031 11zm.0000013 1c-1.7107731 0-2.6304213.8207573-3.0037119 2.9525408-.2643329 1.5095492-.7275411 2.3744323-1.7689191 3.703672-.0616367.0785985-.0616367.0785985-.1226989.1564184-.4033882.51444-.605001.7929713-.8070765 1.1371882-.6185182 1.0535885-.7855668 1.7164018-.7965581 2.7039772l-.0005987.0601342-.0004368.2948602c0 3.0778095 2.6212646 4.991209 6.5 4.991209 3.8791008 0 6.5-1.9132454 6.5-4.991209 0-.2036283-.0001806-.273606-.0012611-.3601918-.0121838-.9763808-.1809599-1.6413064-.7967888-2.6968172-.2017516-.3457958-.4041602-.626342-.8068767-1.140822-.0642293-.0819927-.0642293-.0819927-.129102-.1648614-1.0339423-1.3221834-1.4967859-2.1881842-1.7616036-3.6931491C19.1288159 12.8186555 18.2112187 12 16.5000044 12zm4.2184039-7.77018003c.3663668.07468563.5734808.28215024.6481933.64908063.3068224 1.50687487-.1103519 3.02881118-1.1685125 4.08697183-1.0575741 1.05757407-2.5784281 1.47489487-4.0845673 1.16900147-.3703351-.0752141-.5769761-.28236945-.6519117-.65077668-.3064435-1.50657506.1107905-3.02807017 1.168712-4.08599175 1.0584325-1.05843248 2.5808705-1.47553866 4.0880862-1.1682855zm-3.3809794 1.87539229c-.7887866.78878662-1.116854 1.9209091-.9165539 3.07010694 1.1492208.20030137 2.2813295-.12777573 3.0701073-.91655355.7887929-.78879293 1.1168536-1.92092538.916554-3.07010773-1.1491643-.20029852-2.2813076.12775452-3.0701074.91655434z"
+                        />
+                    </defs>
+                    <use fill="#5A5E66" fillRule="nonzero" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconNutrition: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M16.5000031 11c2.2098368 0 3.5316749 1.1793082 3.9892381 3.7796492.2311544 1.3136554.6224732 2.0458302 1.5644737 3.2504405.0641792.0819826.0641792.0819826.1288084.1644861.4290929.5481764.6522619.8574973.8831695 1.2532655.7069984 1.2117725.9187171 2.0458787.9329727 3.1882803.0011509.0922364.0013376.165026.0013376.3291554 0 3.7539486-3.124362 6.034723-7.5 6.034723-4.375263 0-7.50000002-2.2809127-7.50000002-5.991209l.00046353-.3023064c.00015452-.0212479.00036053-.0419902.00063522-.0638169.01284694-1.1543062.22284123-1.9875187.93411882-3.1991143.23101165-.393507.45305935-.7002694.88253045-1.2479729.0614219-.0782785.0614219-.0782785.1224345-.1560812.9490093-1.211338 1.3404343-1.9421905 1.5710944-3.2594413C12.9662608 12.1817589 14.2904067 11 16.5000031 11zm.0000013 1c-1.7107731 0-2.6304213.8207573-3.0037119 2.9525408-.2643329 1.5095492-.7275411 2.3744323-1.7689191 3.703672-.0616367.0785985-.0616367.0785985-.1226989.1564184-.4033882.51444-.605001.7929713-.8070765 1.1371882-.6185182 1.0535885-.7855668 1.7164018-.7965581 2.7039772l-.0005987.0601342-.0004368.2948602c0 3.0778095 2.6212646 4.991209 6.5 4.991209 3.8791008 0 6.5-1.9132454 6.5-4.991209 0-.2036283-.0001806-.273606-.0012611-.3601918-.0121838-.9763808-.1809599-1.6413064-.7967888-2.6968172-.2017516-.3457958-.4041602-.626342-.8068767-1.140822-.0642293-.0819927-.0642293-.0819927-.129102-.1648614-1.0339423-1.3221834-1.4967859-2.1881842-1.7616036-3.6931491C19.1288159 12.8186555 18.2112187 12 16.5000044 12zm4.2184039-7.77018003c.3663668.07468563.5734808.28215024.6481933.64908063.3068224 1.50687487-.1103519 3.02881118-1.1685125 4.08697183-1.0575741 1.05757407-2.5784281 1.47489487-4.0845673 1.16900147-.3703351-.0752141-.5769761-.28236945-.6519117-.65077668-.3064435-1.50657506.1107905-3.02807017 1.168712-4.08599175 1.0584325-1.05843248 2.5808705-1.47553866 4.0880862-1.1682855zm-3.3809794 1.87539229c-.7887866.78878662-1.116854 1.9209091-.9165539 3.07010694 1.1492208.20030137 2.2813295-.12777573 3.0701073-.91655355.7887929-.78879293 1.1168536-1.92092538.916554-3.07010773-1.1491643-.20029852-2.2813076.12775452-3.0701074.91655434z"
-                    />
-                </defs>
-                <use fill="#5A5E66" fillRule="nonzero" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconPackage: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconNutrition.displayName = 'IconNutrition';
+
+export const IconPackage: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -950,24 +1112,30 @@ export const IconPackage: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconPackage.displayName = 'IconPackage';
+
+export const IconPersonalTrainer: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M19.4576754 17.9543546c.0051229-.0151782.0166712-.0319076.0159898-.0430965.0011379.0126613.0022413.0254013.0033094.0382184l-.0192992.0048781zM16.4113928 13c-3.7869381 0-5.207113.1837846-6.53022864.9994716C8.36544249 14.9338983 7.5 16.5714911 7.5 18.5c0 3.0696443 2.5188059 5.6442618 5.5180798 5.5974729 2.6808479-.0418214 4.3867149-1.4212198 5.2066014-3.8739225.1541018-.460998.2360383-.9726345.2604003-1.4940286.0149949-.3209198.0067385-.5714046-.0089589-.7522912-.0258708-.6090776.3180655-.8871238.9545048-.9827026 1.3764821-.2067165 3.3748489-.5107527 5.994945-.9120856.2836405-.0434466.1454747.0837363.2183032-.201775.1403582-.5502493.3849776-1.510487.7338464-2.8806674h-9.9663292zM26.5 12c.7497831 0 1.0363237.5023868.8782156 1.1233689-.3656686 1.4361919-.6207867 2.4376637-.765367 3.0044652-.171262.6714021-.3527234.838439-1.0358673.9430795-2.6209791.4014681-4.6202079.7056355-5.9978418.912525-.0721803.0108398-.1046086.0074967-.11712-.0024893L19.459 17.975l.018213.1972872c.0463373.6739746-.0215287 1.522928-.3041179 2.3682979-.9487779 2.8382834-3.0136795 4.5080044-6.1394171 4.5567662C9.46747039 25.1529844 6.5 22.1197608 6.5 18.5c0-2.2671601 1.03759602-4.2305023 2.85638467-5.3517666C10.8959812 12.1990882 12.4344129 12 16.4113928 12H26.5zm-7.0423246 5.9543546c-.001743.0051639-.0027422.0101483-.002263.0146738L19.459 17.975l-.0013246-.0206454zm-8.408464-11.46987088l1.7207293 2.45745613c.1583887.22620259.1034148.53797548-.1227878.69636424-.2262026.15838876-.5379755.10341479-.6963643-.12278781l-1.7207293-2.45745613c-.1583887-.22620259-.1034148-.53797548.1227878-.69636424.2262026-.15838876.5379755-.10341479.6963643.12278781zm6.9015772 0c.1583888-.2262026.4701617-.28117657.6963643-.12278781.2262026.15838876.2811765.47016165.1227878.69636424l-1.7207293 2.45745613c-.1583888.2262026-.4701617.28117657-.6963643.12278781-.2262026-.15838876-.2811765-.47016165-.1227878-.69636424zM14.5 5c.2761424 0 .5.22385763.5.5v3c0 .27614237-.2238576.5-.5.5s-.5-.22385763-.5-.5v-3c0-.27614237.2238576-.5.5-.5z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconPersonalTrainer: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M19.4576754 17.9543546c.0051229-.0151782.0166712-.0319076.0159898-.0430965.0011379.0126613.0022413.0254013.0033094.0382184l-.0192992.0048781zM16.4113928 13c-3.7869381 0-5.207113.1837846-6.53022864.9994716C8.36544249 14.9338983 7.5 16.5714911 7.5 18.5c0 3.0696443 2.5188059 5.6442618 5.5180798 5.5974729 2.6808479-.0418214 4.3867149-1.4212198 5.2066014-3.8739225.1541018-.460998.2360383-.9726345.2604003-1.4940286.0149949-.3209198.0067385-.5714046-.0089589-.7522912-.0258708-.6090776.3180655-.8871238.9545048-.9827026 1.3764821-.2067165 3.3748489-.5107527 5.994945-.9120856.2836405-.0434466.1454747.0837363.2183032-.201775.1403582-.5502493.3849776-1.510487.7338464-2.8806674h-9.9663292zM26.5 12c.7497831 0 1.0363237.5023868.8782156 1.1233689-.3656686 1.4361919-.6207867 2.4376637-.765367 3.0044652-.171262.6714021-.3527234.838439-1.0358673.9430795-2.6209791.4014681-4.6202079.7056355-5.9978418.912525-.0721803.0108398-.1046086.0074967-.11712-.0024893L19.459 17.975l.018213.1972872c.0463373.6739746-.0215287 1.522928-.3041179 2.3682979-.9487779 2.8382834-3.0136795 4.5080044-6.1394171 4.5567662C9.46747039 25.1529844 6.5 22.1197608 6.5 18.5c0-2.2671601 1.03759602-4.2305023 2.85638467-5.3517666C10.8959812 12.1990882 12.4344129 12 16.4113928 12H26.5zm-7.0423246 5.9543546c-.001743.0051639-.0027422.0101483-.002263.0146738L19.459 17.975l-.0013246-.0206454zm-8.408464-11.46987088l1.7207293 2.45745613c.1583887.22620259.1034148.53797548-.1227878.69636424-.2262026.15838876-.5379755.10341479-.6963643-.12278781l-1.7207293-2.45745613c-.1583887-.22620259-.1034148-.53797548.1227878-.69636424.2262026-.15838876.5379755-.10341479.6963643.12278781zm6.9015772 0c.1583888-.2262026.4701617-.28117657.6963643-.12278781.2262026.15838876.2811765.47016165.1227878.69636424l-1.7207293 2.45745613c-.1583888.2262026-.4701617.28117657-.6963643.12278781-.2262026-.15838876-.2811765-.47016165-.1227878-.69636424zM14.5 5c.2761424 0 .5.22385763.5.5v3c0 .27614237-.2238576.5-.5.5s-.5-.22385763-.5-.5v-3c0-.27614237.2238576-.5.5-.5z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconPhoto: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconPersonalTrainer.displayName = 'IconPersonalTrainer';
+
+export const IconPhoto: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -980,9 +1148,11 @@ export const IconPhoto: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconPilates: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconPhoto.displayName = 'IconPhoto';
+
+export const IconPilates: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -995,9 +1165,11 @@ export const IconPilates: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconProducts: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconPilates.displayName = 'IconPilates';
+
+export const IconProducts: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1010,9 +1182,11 @@ export const IconProducts: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconRegister: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconProducts.displayName = 'IconProducts';
+
+export const IconRegister: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1025,9 +1199,11 @@ export const IconRegister: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconSalon: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconRegister.displayName = 'IconRegister';
+
+export const IconSalon: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1040,9 +1216,11 @@ export const IconSalon: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconSauna: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconSalon.displayName = 'IconSalon';
+
+export const IconSauna: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1055,24 +1233,30 @@ export const IconSauna: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconSauna.displayName = 'IconSauna';
+
+export const IconScanBarcode: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M4 11v.5H3V11c0-3.36256572 1.63188649-5 5-5h.5v1H8c-2.81506759 0-4 1.18896072-4 4zm20-4h-.5V6h.5c3.3139556 0 5 1.71932379 5 5v.5h-1V11c0-2.73271907-1.2427513-4-4-4zm4 16v-.5h1v.5c0 3.2769753-1.6790873 5-5 5h-.5v-1h.5c2.7627643 0 4-1.2696109 4-4zm-24-.5v.5c0 2.8150676 1.18896072 4 4 4h.5v1H8c-3.36256572 0-5-1.6318865-5-5v-.5h1zM15 13v8h-2v-8h2zm5 0v8h-2v-8h2zm3 0v8h-1v-8h1zm-13 0v8H9v-8h1z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconScanBarcode: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M4 11v.5H3V11c0-3.36256572 1.63188649-5 5-5h.5v1H8c-2.81506759 0-4 1.18896072-4 4zm20-4h-.5V6h.5c3.3139556 0 5 1.71932379 5 5v.5h-1V11c0-2.73271907-1.2427513-4-4-4zm4 16v-.5h1v.5c0 3.2769753-1.6790873 5-5 5h-.5v-1h.5c2.7627643 0 4-1.2696109 4-4zm-24-.5v.5c0 2.8150676 1.18896072 4 4 4h.5v1H8c-3.36256572 0-5-1.6318865-5-5v-.5h1zM15 13v8h-2v-8h2zm5 0v8h-2v-8h2zm3 0v8h-1v-8h1zm-13 0v8H9v-8h1z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconSchedule: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconScanBarcode.displayName = 'IconScanBarcode';
+
+export const IconSchedule: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1085,9 +1269,11 @@ export const IconSchedule: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconServices: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconSchedule.displayName = 'IconSchedule';
+
+export const IconServices: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1100,24 +1286,30 @@ export const IconServices: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconServices.displayName = 'IconServices';
+
+export const IconSignature: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M17.1769212 22.9764647l9.3905136-9.3905136c.333885-.333885.3490602-.6058456.0355111-.9193946-.1106044-.111425-.3018005-.3038679-.5415576-.5448234-.5578972-.5606859-1.1238658-1.1278793-1.6538327-1.656638-.3644295-.3635987-.6952588-.69245614-.9865902-.98051916-.3474399-.34743994-.5409977-.34288574-.9193946.03551116l-9.3905136 9.3905136c-.6376766.6376766-1.0046079 1.4968809-1.0242924 2.3984769l-.0486777 2.2295624c.0060276.2979043.2347182.5168223.5107947.5107947l2.2295625-.0486777c.901596-.0196844 1.7608003-.3866157 2.3984769-1.0242923zm6.9491441-14.20099114c.2905083.28723793.6223693.61712094.9877897.98170826.5309374.52972708 1.0977169 1.09773308 1.6564007 1.65920948.2408887.2420928.4319583.4344083.539797.5430584.7227693.7227693.6723858 1.6257113-.0355111 2.3336082l-9.3905136 9.3905135c-.8198699.8198699-1.9245612 1.2916389-3.0837561 1.3169474l-2.2295624.0486777c-.8282298.0180826-1.5143015-.6386714-1.5323841-1.4669012v-.0654829l.0486777-2.2295624c.0253085-1.1591949.4970774-2.2638862 1.3169473-3.0837561l9.3905136-9.39051358c.7616708-.76167078 1.5880058-.78111354 2.3316013-.03750676zM11.3101194 10.3895911c1.4286761.0063377 2.381847 1.171563 2.1856785 2.6750965-.4038298 3.0951537-3.69502295 4.3848052-6.62344694 3.4601344-1.61964848 4.2856014-.68721714 7.5300365 1.55167794 6.8156321.26307422-.0839438.54438792.0612701.62833172.3243444.08394381.2630742-.06127009.5443879-.32434432.6283317-3.39414359 1.0830302-4.64004195-3.1258278-2.77412769-8.139133-1.16547236-.5799438-2.2094388-1.5470636-2.90110221-2.9303904-.12349462-.2469893-.02338245-.5473258.2236068-.6708204.24698925-.1234946.54732577-.0233824.6708204.2236068.57547211 1.1509442 1.43143758 1.9584914 2.38333873 2.4516515.21490247-.4867505.45874538-.9783436.73236903-1.4708662 1.21836489-2.1930568 2.78180972-3.3740343 4.24719804-3.3675874zm-3.37304076 3.8532304c-.25527809.4595005-.48243473.9135022-.68274707 1.3590135 2.36457719.7080883 4.94252893-.3109021 5.24987053-2.6665226.296673-2.2738504-2.57044292-2.2865159-4.56712346 1.3075091zM25.6285778 6.39644661l4.0769929 4.07699289c.1952621.1952621.1952621.5118446 0 .7071068-.1952622.1952621-.5118447.1952621-.7071068 0L24.921471 7.10355339c-.1952621-.19526215-.1952621-.51184463 0-.70710678.1952622-.19526215.5118447-.19526215.7071068 0z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconSignature: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M17.1769212 22.9764647l9.3905136-9.3905136c.333885-.333885.3490602-.6058456.0355111-.9193946-.1106044-.111425-.3018005-.3038679-.5415576-.5448234-.5578972-.5606859-1.1238658-1.1278793-1.6538327-1.656638-.3644295-.3635987-.6952588-.69245614-.9865902-.98051916-.3474399-.34743994-.5409977-.34288574-.9193946.03551116l-9.3905136 9.3905136c-.6376766.6376766-1.0046079 1.4968809-1.0242924 2.3984769l-.0486777 2.2295624c.0060276.2979043.2347182.5168223.5107947.5107947l2.2295625-.0486777c.901596-.0196844 1.7608003-.3866157 2.3984769-1.0242923zm6.9491441-14.20099114c.2905083.28723793.6223693.61712094.9877897.98170826.5309374.52972708 1.0977169 1.09773308 1.6564007 1.65920948.2408887.2420928.4319583.4344083.539797.5430584.7227693.7227693.6723858 1.6257113-.0355111 2.3336082l-9.3905136 9.3905135c-.8198699.8198699-1.9245612 1.2916389-3.0837561 1.3169474l-2.2295624.0486777c-.8282298.0180826-1.5143015-.6386714-1.5323841-1.4669012v-.0654829l.0486777-2.2295624c.0253085-1.1591949.4970774-2.2638862 1.3169473-3.0837561l9.3905136-9.39051358c.7616708-.76167078 1.5880058-.78111354 2.3316013-.03750676zM11.3101194 10.3895911c1.4286761.0063377 2.381847 1.171563 2.1856785 2.6750965-.4038298 3.0951537-3.69502295 4.3848052-6.62344694 3.4601344-1.61964848 4.2856014-.68721714 7.5300365 1.55167794 6.8156321.26307422-.0839438.54438792.0612701.62833172.3243444.08394381.2630742-.06127009.5443879-.32434432.6283317-3.39414359 1.0830302-4.64004195-3.1258278-2.77412769-8.139133-1.16547236-.5799438-2.2094388-1.5470636-2.90110221-2.9303904-.12349462-.2469893-.02338245-.5473258.2236068-.6708204.24698925-.1234946.54732577-.0233824.6708204.2236068.57547211 1.1509442 1.43143758 1.9584914 2.38333873 2.4516515.21490247-.4867505.45874538-.9783436.73236903-1.4708662 1.21836489-2.1930568 2.78180972-3.3740343 4.24719804-3.3675874zm-3.37304076 3.8532304c-.25527809.4595005-.48243473.9135022-.68274707 1.3590135 2.36457719.7080883 4.94252893-.3109021 5.24987053-2.6665226.296673-2.2738504-2.57044292-2.2865159-4.56712346 1.3075091zM25.6285778 6.39644661l4.0769929 4.07699289c.1952621.1952621.1952621.5118446 0 .7071068-.1952622.1952621-.5118447.1952621-.7071068 0L24.921471 7.10355339c-.1952621-.19526215-.1952621-.51184463 0-.70710678.1952622-.19526215.5118447-.19526215.7071068 0z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconSkin: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconSignature.displayName = 'IconSignature';
+
+export const IconSkin: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1130,9 +1322,11 @@ export const IconSkin: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconSpa: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconSkin.displayName = 'IconSkin';
+
+export const IconSpa: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1145,9 +1339,11 @@ export const IconSpa: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconSplitPay: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconSpa.displayName = 'IconSpa';
+
+export const IconSplitPay: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1160,24 +1356,30 @@ export const IconSplitPay: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconSplitPay.displayName = 'IconSplitPay';
+
+export const IconSportsTraining: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M16.5 7c-.2761424 0-.5.22385763-.5.5 0 .27614237.2238576.5.5.5h6c.2761424 0 .5-.22385763.5-.5 0-.27614237-.2238576-.5-.5-.5h-6zm6-1c.8284271 0 1.5.67157288 1.5 1.5S23.3284271 9 22.5 9h-6c-.6420589 0-1.1898991-.40339852-1.4038957-.97057083-3.9853097.17872896-6.6124535 1.30504494-7.92528669 3.34090813-.92016474 1.4269364-1.25208123 3.1821474-.97278008 4.858782.03646468.2188961.08361854.4382311.14021769.6564869.38291886-.7758171.9335035-1.4707392 1.64482053-2.0832258 1.86770383-1.6082048 4.73921875-1.7784724 6.36955525-.1566096 1.7722582 1.7630468 1.9363023 4.9418005.1754473 6.8552803-1.847656 2.0078044-4.95336605 1.9216407-6.89675278-.1602293-.32367798-.3467428-.63861005-.7535024-.93000752-1.2027962.00663334.1312487.01689314.2643714.03079412.3993902.33055032 3.2106044 2.59331163 5.519747 5.48539848 5.4278025 3.2705461-.1039763 5.1427148-2.0567694 6.1505893-5.5164422.0526241-.1806395.1035557-.3865925.1679873-.6727157.016963-.0753282.1346148-.6103156.1721727-.7747638.0726306-.3180149.138966-.5837745.2117541-.8403837.341465-1.2038097.8080848-2.1054638 1.5403168-2.7522803-.1852696-.6453566.084069-1.3569166.691593-1.7076707l5.1961524-3c.7174389-.4142136 1.6348246-.1684008 2.0490381.5490381.4142136.7174389.1684008 1.6348245-.5490381 2.0490381l-5.1961524 3c-.5196157.3000003-1.1441153.2537776-1.6063701-.0670912-.5240024.4987128-.8838414 1.2159597-1.1634938 2.2018538-.0674398.2377539-.1298129.4876396-.1989026.7901502-.036452.1596064-.1536557.6925559-.1714997.7717962-.0685876.3045795-.1238983.5282397-.1834685.7327229-1.1166345 3.8330072-3.3056433 6.1162849-7.0789028 6.2362433-3.45328018.1097858-6.13073993-2.6225555-6.511916-6.324883-.07995247-.7765709-.05302867-1.5057206.07753001-2.1867288-.27577304-.6623428-.48683031-1.3606798-.60326987-2.0596622-.31923146-1.9163348.06037786-3.9237508 1.11877265-5.5650461 1.51912437-2.35576723 4.44895061-3.60964856 8.74514631-3.79954112C15.2727573 6.43144869 15.8359935 6 16.5 6h6zM8.6355766 15.5601684c-.90773185.7816115-1.50354306 1.7052082-1.77460444 2.7901384.40878246.8992546.94405593 1.7111278 1.50135467 2.308139 1.55563552 1.6664881 3.98653777 1.7339301 5.42990737.1654543 1.3880128-1.5083209 1.2554991-4.0760968-.1448652-5.4691826-1.2275154-1.2211353-3.5123545-1.0856549-5.0117924.2054509zm18.2124996-3.9931811l-5.1961524 3c-.2391463.1380712-.3210839.4438664-.1830127.6830127.1380712.2391463.4438664.3210839.6830127.1830127l5.1961524-3c.2391463-.1380712.3210839-.4438664.1830127-.6830127-.1380712-.2391463-.4438664-.3210839-.6830127-.1830127z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconSportsTraining: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M16.5 7c-.2761424 0-.5.22385763-.5.5 0 .27614237.2238576.5.5.5h6c.2761424 0 .5-.22385763.5-.5 0-.27614237-.2238576-.5-.5-.5h-6zm6-1c.8284271 0 1.5.67157288 1.5 1.5S23.3284271 9 22.5 9h-6c-.6420589 0-1.1898991-.40339852-1.4038957-.97057083-3.9853097.17872896-6.6124535 1.30504494-7.92528669 3.34090813-.92016474 1.4269364-1.25208123 3.1821474-.97278008 4.858782.03646468.2188961.08361854.4382311.14021769.6564869.38291886-.7758171.9335035-1.4707392 1.64482053-2.0832258 1.86770383-1.6082048 4.73921875-1.7784724 6.36955525-.1566096 1.7722582 1.7630468 1.9363023 4.9418005.1754473 6.8552803-1.847656 2.0078044-4.95336605 1.9216407-6.89675278-.1602293-.32367798-.3467428-.63861005-.7535024-.93000752-1.2027962.00663334.1312487.01689314.2643714.03079412.3993902.33055032 3.2106044 2.59331163 5.519747 5.48539848 5.4278025 3.2705461-.1039763 5.1427148-2.0567694 6.1505893-5.5164422.0526241-.1806395.1035557-.3865925.1679873-.6727157.016963-.0753282.1346148-.6103156.1721727-.7747638.0726306-.3180149.138966-.5837745.2117541-.8403837.341465-1.2038097.8080848-2.1054638 1.5403168-2.7522803-.1852696-.6453566.084069-1.3569166.691593-1.7076707l5.1961524-3c.7174389-.4142136 1.6348246-.1684008 2.0490381.5490381.4142136.7174389.1684008 1.6348245-.5490381 2.0490381l-5.1961524 3c-.5196157.3000003-1.1441153.2537776-1.6063701-.0670912-.5240024.4987128-.8838414 1.2159597-1.1634938 2.2018538-.0674398.2377539-.1298129.4876396-.1989026.7901502-.036452.1596064-.1536557.6925559-.1714997.7717962-.0685876.3045795-.1238983.5282397-.1834685.7327229-1.1166345 3.8330072-3.3056433 6.1162849-7.0789028 6.2362433-3.45328018.1097858-6.13073993-2.6225555-6.511916-6.324883-.07995247-.7765709-.05302867-1.5057206.07753001-2.1867288-.27577304-.6623428-.48683031-1.3606798-.60326987-2.0596622-.31923146-1.9163348.06037786-3.9237508 1.11877265-5.5650461 1.51912437-2.35576723 4.44895061-3.60964856 8.74514631-3.79954112C15.2727573 6.43144869 15.8359935 6 16.5 6h6zM8.6355766 15.5601684c-.90773185.7816115-1.50354306 1.7052082-1.77460444 2.7901384.40878246.8992546.94405593 1.7111278 1.50135467 2.308139 1.55563552 1.6664881 3.98653777 1.7339301 5.42990737.1654543 1.3880128-1.5083209 1.2554991-4.0760968-.1448652-5.4691826-1.2275154-1.2211353-3.5123545-1.0856549-5.0117924.2054509zm18.2124996-3.9931811l-5.1961524 3c-.2391463.1380712-.3210839.4438664-.1830127.6830127.1380712.2391463.4438664.3210839.6830127.1830127l5.1961524-3c.2391463-.1380712.3210839-.4438664.1830127-.6830127-.1380712-.2391463-.4438664-.3210839-.6830127-.1830127z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconTherapy: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconSportsTraining.displayName = 'IconSportsTraining';
+
+export const IconTherapy: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1190,24 +1392,30 @@ export const IconTherapy: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
+));
+IconTherapy.displayName = 'IconTherapy';
+
+export const IconThirdParty: React.FC<IconProps> = React.forwardRef(
+    (props: IconProps, ref: RefObject<SVGSVGElement>) => (
+        <BaseIcon {...props} forwardedRef={ref}>
+            {({ id }) => (
+                <>
+                    <defs>
+                        <path
+                            id={`a-${id}`}
+                            d="M24.8557075 5.85718192c1.5126923 1.51398411 1.8669293 3.08176462.5658491 4.38395588-.6132841.6132841-.953139.7977168-1.9934378 1.2237703-.3630325.1486796-.5398073.2482733-.6930653.4027321-.1610879.1615416-.1523538.2505339.1635031.5663908l.518.518c1.6504386 1.6504386 1.6530977 3.2970091 0 4.9501068l-1.4465153 1.4465147c-.1181944.118519-.1099377.1897816.0429966.332358.1590121.1474999.3373575.2458989.6913708.3930437 1.0376361.4312911 1.3862848.6231137 2.0091479 1.2459768 1.301957 1.301957.94802 2.8697948-.565 4.3841068-1.5138229 1.5138229-3.0819651 1.8681417-4.3839477.566159-.6147216-.6141689-.8000375-.9552654-1.2260168-1.9950196-.1484217-.3622761-.2478136-.5390501-.4011423-.6921394-.1123824-.1123824-.296199-.1056942-.4988932.097-.3318069.3318069-.6429172.6431042-.9270555.9275553-.2934973.2938723-.2934973.2938723-.3650663.3655664-1.6507874 1.6496505-3.2972584 1.6526049-4.949985-.0001217l-.1430108-.1430104c-.0963008-.0962998-.2306156-.2306117-.6195066-.6194941l-.4180222-.4180089c-.21641558-.2164077-.37030994-.3702959-.52093727-.5209154l-1.4925135-1.4924c-1.48179634-1.481637-2.44785874-2.447414-2.4640096-2.4631712-1.649792-1.649792-1.65274708-3.2963597 0-4.9491068.07041848-.0704185.07041848-.0704185.36896942-.3688444.40392827-.4036782.62650183-.626065 1.00058276-.9997072.57191527-.5733669 1.39225787-.5488638 1.86410711.0074411.22176219.2611193.35893493.515519.54005921.9448799.3892592.9227514.54086057 1.1942361 1.05923737 1.7130797.8258716.825167 1.7978354.6053596 2.9698933-.5666982 1.1714367-1.1724371 1.3910386-2.1441563.5659918-2.9692032-.4923948-.492838-.7452146-.6301756-1.666921-1.0074856-.4751719-.1945164-.7498442-.3487013-1.0208615-.6192994-.4972404-.4998994-.6168415-1.1971299.0319415-1.84716271l.5344838-.5344836c.897655-.89764734.8252937-.82519505.8243945-.82339467 1.6500905-1.65122688 3.2967596-1.65359066 4.9502285-.00012173l.4976273.49762764c.2913253.290712.4747669.31713488.5524224.22181873.1358397-.16647488.230755-.34449069.3737442-.68146602.4384941-1.03337692.6448667-1.40032584 1.2870993-2.04198035 1.301957-1.30195699 2.8697949-.94801994 4.3842577.56515093z"
+                        />
+                    </defs>
+                    <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
+                </>
+            )}
+        </BaseIcon>
+    ),
 );
-export const IconThirdParty: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
-        {({ id }) => (
-            <>
-                <defs>
-                    <path
-                        id={`a-${id}`}
-                        d="M24.8557075 5.85718192c1.5126923 1.51398411 1.8669293 3.08176462.5658491 4.38395588-.6132841.6132841-.953139.7977168-1.9934378 1.2237703-.3630325.1486796-.5398073.2482733-.6930653.4027321-.1610879.1615416-.1523538.2505339.1635031.5663908l.518.518c1.6504386 1.6504386 1.6530977 3.2970091 0 4.9501068l-1.4465153 1.4465147c-.1181944.118519-.1099377.1897816.0429966.332358.1590121.1474999.3373575.2458989.6913708.3930437 1.0376361.4312911 1.3862848.6231137 2.0091479 1.2459768 1.301957 1.301957.94802 2.8697948-.565 4.3841068-1.5138229 1.5138229-3.0819651 1.8681417-4.3839477.566159-.6147216-.6141689-.8000375-.9552654-1.2260168-1.9950196-.1484217-.3622761-.2478136-.5390501-.4011423-.6921394-.1123824-.1123824-.296199-.1056942-.4988932.097-.3318069.3318069-.6429172.6431042-.9270555.9275553-.2934973.2938723-.2934973.2938723-.3650663.3655664-1.6507874 1.6496505-3.2972584 1.6526049-4.949985-.0001217l-.1430108-.1430104c-.0963008-.0962998-.2306156-.2306117-.6195066-.6194941l-.4180222-.4180089c-.21641558-.2164077-.37030994-.3702959-.52093727-.5209154l-1.4925135-1.4924c-1.48179634-1.481637-2.44785874-2.447414-2.4640096-2.4631712-1.649792-1.649792-1.65274708-3.2963597 0-4.9491068.07041848-.0704185.07041848-.0704185.36896942-.3688444.40392827-.4036782.62650183-.626065 1.00058276-.9997072.57191527-.5733669 1.39225787-.5488638 1.86410711.0074411.22176219.2611193.35893493.515519.54005921.9448799.3892592.9227514.54086057 1.1942361 1.05923737 1.7130797.8258716.825167 1.7978354.6053596 2.9698933-.5666982 1.1714367-1.1724371 1.3910386-2.1441563.5659918-2.9692032-.4923948-.492838-.7452146-.6301756-1.666921-1.0074856-.4751719-.1945164-.7498442-.3487013-1.0208615-.6192994-.4972404-.4998994-.6168415-1.1971299.0319415-1.84716271l.5344838-.5344836c.897655-.89764734.8252937-.82519505.8243945-.82339467 1.6500905-1.65122688 3.2967596-1.65359066 4.9502285-.00012173l.4976273.49762764c.2913253.290712.4747669.31713488.5524224.22181873.1358397-.16647488.230755-.34449069.3737442-.68146602.4384941-1.03337692.6448667-1.40032584 1.2870993-2.04198035 1.301957-1.30195699 2.8697949-.94801994 4.3842577.56515093z"
-                    />
-                </defs>
-                <use fill="#54575F" fillRule="evenodd" xlinkHref={`#a-${id}`} />
-            </>
-        )}
-    </BaseIcon>
-);
-export const IconTips: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+IconThirdParty.displayName = 'IconThirdParty';
+
+export const IconTips: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1220,9 +1428,11 @@ export const IconTips: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconUser: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconTips.displayName = 'IconTips';
+
+export const IconUser: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {() => (
             <path
                 fill="#54575F"
@@ -1231,9 +1441,11 @@ export const IconUser: React.FC<IconProps> = (props: IconProps) => (
             />
         )}
     </BaseIcon>
-);
-export const IconWellness: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconUser.displayName = 'IconUser';
+
+export const IconWellness: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1246,9 +1458,11 @@ export const IconWellness: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
-export const IconYoga: React.FC<IconProps> = (props: IconProps) => (
-    <BaseIcon {...props}>
+));
+IconWellness.displayName = 'IconWellness';
+
+export const IconYoga: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
+    <BaseIcon {...props} forwardedRef={ref}>
         {({ id }) => (
             <>
                 <defs>
@@ -1261,4 +1475,5 @@ export const IconYoga: React.FC<IconProps> = (props: IconProps) => (
             </>
         )}
     </BaseIcon>
-);
+));
+IconYoga.displayName = 'IconYoga';

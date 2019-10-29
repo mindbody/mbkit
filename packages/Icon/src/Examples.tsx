@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import * as Icons from './Icon';
 import * as Glyphs from './Glyph';
 
@@ -16,21 +16,19 @@ const RenderAllComponents: React.FC<RenderAllComponentsProps> = (props: RenderAl
 
     const renderAllIcons = () =>
         Object.keys(components).map(key => {
-            const Comp: React.ReactNode = (components as AllIcons)[key];
+            const Comp: any = (components as AllIcons)[key];
 
             if (filtered.trim() !== '' && !key.toLowerCase().includes(filtered.toLowerCase())) {
                 return null;
             }
-            if (typeof Comp === 'function') {
-                return (
-                    <div key={key} style={{ wordBreak: 'break-word' }}>
-                        <Comp />
-                        <br />
-                        {`<${key} />`}
-                    </div>
-                );
-            }
-            return null;
+
+            return (
+                <div key={key} style={{ wordBreak: 'break-word' }}>
+                    <Comp />
+                    <br />
+                    {`<${key} />`}
+                </div>
+            );
         });
 
     return (
