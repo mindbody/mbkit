@@ -39,6 +39,10 @@ $error-1: var(--error-1, #992D38);
         box-shadow: 0 0 0 4px var(--focus, rgba(96,150,230,.75));
     }
 
+    &.invalid {
+        border-color: $error-1;
+    }
+
     &:checked {
         &:before {
             background: $secondary-1;
@@ -52,9 +56,5 @@ $error-1: var(--error-1, #992D38);
         &:checked:before {
             background: $neutral-3;
         }
-    }
-    
-    &.invalid {
-        border-color: $error-1;
     }
 }
