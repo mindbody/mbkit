@@ -8,13 +8,13 @@ describe('Checkbox', () => {
         jest.resetAllMocks();
     });
     it('should render', () => {
-        const { getByTestId } = render(<Checkbox data-testid="test" onChange={spy} />);
+        const { getByTestId } = render(<Checkbox checked={false} data-testid="test" onChange={spy} />);
         expect(getByTestId('test')).toBeTruthy();
     });
     it('should pass the appropriate checked prop', () => {
         const { getByTestId } = render(
             <>
-                <Checkbox data-testid="unchecked" onChange={spy} />
+                <Checkbox data-testid="unchecked" checked={false} onChange={spy} />
                 <Checkbox data-testid="checked" checked={true} onChange={spy} />
                 <Checkbox data-testid="mixed" checked={'mixed'} onChange={spy} />
             </>,
@@ -25,7 +25,7 @@ describe('Checkbox', () => {
         expect(getByTestId('mixed').getAttribute('aria-checked')).toBe('mixed');
     });
     it('should call the onChange handler when clicked', () => {
-        const { getByTestId } = render(<Checkbox data-testid="test" onChange={spy} />);
+        const { getByTestId } = render(<Checkbox data-testid="test" checked={false} onChange={spy} />);
         fireEvent.click(getByTestId('test'));
         expect(spy).toHaveBeenCalledTimes(1);
     });

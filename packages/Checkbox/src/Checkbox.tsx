@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import styles from './Checkbox.scss';
 
 export type CheckboxProps = Omit<AllHTMLAttributes<HTMLInputElement>, 'checked'> & {
-    checked?: boolean | 'mixed';
+    checked: boolean | 'mixed';
 };
 export const Checkbox: FC<CheckboxProps> = React.forwardRef(
     (props: CheckboxProps, ref: RefObject<HTMLInputElement>) => {
