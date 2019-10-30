@@ -40,4 +40,13 @@ describe('Select', () => {
         expect(select.getAttribute('data-randomattr')).toBe('yoga');
         expect(spy).toHaveBeenCalledTimes(1);
     });
+    it('should have invalid class when invalid prop is passed', () => {
+        const { getByTestId } = render(
+            <Select data-testid="test" value="one" onChange={spy} invalid>
+                <option>Test1</option>
+                <option>Test2</option>
+            </Select>,
+        );
+        expect(getByTestId('test').classList.contains('invalid')).toBe(true);
+    });
 });

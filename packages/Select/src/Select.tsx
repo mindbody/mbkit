@@ -7,11 +7,14 @@ export type SelectProps = AllHTMLAttributes<HTMLSelectElement> & {
     value: string;
     /** Fires when user makes a change to the select list */
     onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+    /** Sets red border on select input */
+    invalid?: boolean;
 };
 export const Select: FC<SelectProps> = React.forwardRef((props: SelectProps, ref: RefObject<HTMLSelectElement>) => {
-    const { className = '', ...rest } = props;
+    const { className = '', invalid, ...rest } = props;
     const classNames = classnames({
         [styles.select]: true,
+        [styles.invalid]: invalid,
         [className]: className,
     });
     return <select {...rest} className={classNames} ref={ref} />;
