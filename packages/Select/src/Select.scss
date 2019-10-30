@@ -1,0 +1,59 @@
+@import '../../../shared/scss/mixins.scss';
+
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$radius: var(--radius, 3px);
+$neutral-1: var(--neutral-1, #0B0B0D);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-6: var(--neutral-6, #F8F9FB);
+$neutral-7: var(--neutral-7, #ffffff);
+
+$primary-1: var(--primary-1, #993100);
+$secondary-1: var(--secondary-1, #004C57);
+$success-1: var(--success-1, #00592E);
+$warning-1: var(--warning-1, #8C6600);
+$error-1: var(--error-1, #992D38);
+
+@mixin downChevron($fill) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' class=''%3E%3Cg id='Icons/Glyphs/Chevron---Down-vfNaTDX8tnyDfRIM7JRyh' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Mask-vfNaTDX8tnyDfRIM7JRyh' fill='" + encodeHexColor($fill) + "' d='M5.6095656 3.31234752l.7808688-.62469504L10.6403124 8l-4.249878 5.3123475-.7808688-.624695L9.35968758 8z' transform='rotate(90 8.124939 8)'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+.select {
+    appearance: none;
+    display: block;
+    width: 100%;
+    font-family: $font-family;
+    background: $background;
+    color: $foreground;
+    border: 1px solid $neutral-3;
+    border-radius: $radius;
+    padding: 8px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow .1s ease-out, border .2s ease-out;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) 50%;
+    @include downChevron(#004C57);
+
+    &:not(:disabled) {
+        &:focus {
+            border-color: $secondary-1;
+            box-shadow: 0 0 0 4px var(--focus, rgba(96,150,230,.75));
+        }
+        &.invalid {
+            border-color: $error-1;
+        }
+    }
+    &:disabled {
+        background-color: $neutral-4;
+        border-color: $neutral-4;
+        color: $neutral-2;
+        cursor: not-allowed;
+        @include downChevron(#5A5E66);
+    }
+}
