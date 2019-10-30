@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes, FC, RefObject, ChangeEvent, ReactElement } from 'react';
+import React, { AllHTMLAttributes, FC, RefObject, ChangeEvent } from 'react';
 import classnames from 'classnames';
 import styles from './Select.scss';
 
@@ -7,8 +7,6 @@ export type SelectProps = AllHTMLAttributes<HTMLSelectElement> & {
     value: string;
     /** Fires when user makes a change to the select list */
     onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
-    /** Children must be of the option type */
-    children: ReactElement<HTMLOptionElement>[];
 };
 export const Select: FC<SelectProps> = React.forwardRef((props: SelectProps, ref: RefObject<HTMLSelectElement>) => {
     const { className = '', ...rest } = props;

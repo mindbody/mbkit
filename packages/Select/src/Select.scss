@@ -37,7 +37,7 @@ $error-1: var(--error-1, #992D38);
     cursor: pointer;
     transition: box-shadow .1s ease-out, border .2s ease-out;
     background-repeat: no-repeat;
-    background-position: calc(100% - 16px) 50%;
+    background-position: calc(100% - 12px) 50%;
     @include downChevron(#004C57);
 
     &:not(:disabled) {

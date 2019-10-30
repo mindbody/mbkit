@@ -27,12 +27,13 @@
 
 ```tsx
 <>
-    {/* Explicit label */}
-    <label id="fav-fruit-label" htmlFor="fav-fruit">Select your favorite fruit</label>
-    <Select disabled value="Orange" id="fav-fruit" aria-labelledby="fav-fruit-label" onChange={(e) => console.log(e.target.value)}>
-        <option value="Apple">Apple</option>
-        <option value="Banana">Banana</option>
-        <option value="Orange">Orange</option>
-    </Select>
+    {/* Implicit label */}
+    <label>Select your favorite fruit
+        <Select value="Orange" onChange={(e) => console.log(e.target.value)} disabled>
+            <option value="Apple">Apple</option>
+            <option value="Banana">Banana</option>
+            <option value="Orange">Orange</option>
+        </Select>
+    </label>
 </>
 ```
