@@ -1,33 +1,38 @@
 # Dev Documentation 
 
 ```tsx
-<>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16, }}>
     {/* Implicit label */}
     <label>Select your favorite fruit
-        <Select value="Orange" onChange={(e) => console.log(e.target.value)}>
+        <Select value="Apple" onChange={(e) => console.log(e.target.value)}>
             <option value="Apple">Apple</option>
             <option value="Banana">Banana</option>
             <option value="Orange">Orange</option>
         </Select>
     </label>
-</>
+    <div>
+        {/* Explicit label */}
+        <label id="fav-fruit-label" htmlFor="fav-fruit">Select your favorite fruit</label>
+        <Select value="Banana" id="fav-fruit" aria-labelledby="fav-fruit-label" onChange={(e) => console.log(e.target.value)}>
+            <option value="Apple">Apple</option>
+            <option value="Banana">Banana</option>
+            <option value="Orange">Orange</option>
+        </Select>
+    </div>
+</div>
 ```
 
-```tsx
-<>
-    {/* Explicit label */}
-    <label id="fav-fruit-label" htmlFor="fav-fruit">Select your favorite fruit</label>
-    <Select value="Orange" id="fav-fruit" aria-labelledby="fav-fruit-label" onChange={(e) => console.log(e.target.value)}>
-        <option value="Apple">Apple</option>
-        <option value="Banana">Banana</option>
-        <option value="Orange">Orange</option>
-    </Select>
-</>
-```
+Other states of the select dropdown
 
 ```tsx
-<>
-    {/* Implicit label */}
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16, }}>
+    <label>Select your favorite fruit
+        <Select value="Orange" onChange={(e) => console.log(e.target.value)} invalid>
+            <option value="Apple">Apple</option>
+            <option value="Banana">Banana</option>
+            <option value="Orange">Orange</option>
+        </Select>
+    </label>
     <label>Select your favorite fruit
         <Select value="Orange" onChange={(e) => console.log(e.target.value)} disabled>
             <option value="Apple">Apple</option>
@@ -35,5 +40,5 @@
             <option value="Orange">Orange</option>
         </Select>
     </label>
-</>
+</div>
 ```
