@@ -2,12 +2,14 @@ $foreground: var(--foreground, #0B0B0D);
 $radius: var(--radius, 3px);
 $background: var(--background, #ffffff);
 $focus: var(--focus, #6096e6bf);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 
 .card {
     background: $background;
     position: relative;
     border-radius: $radius;
     transition: box-shadow .2s ease-out;
+    font-family: $font-family;
 
     &:before {
         content: '';
@@ -34,7 +36,6 @@ $focus: var(--focus, #6096e6bf);
         &2:before {
             box-shadow: 0 1px 12px 0 $foreground;
         }
-        // Might not need 3
         &3:before {
             box-shadow: 0 1px 16px 0 $foreground;
         }

@@ -1,9 +1,9 @@
-import React, { FC, HTMLAttributes, forwardRef, RefObject, ReactElement } from 'react';
+import React, { FC, HTMLAttributes, forwardRef, RefObject, ReactNode } from 'react';
 import classnames from 'classnames';
 import styles from './Card.scss';
 
 export type CardProps = HTMLAttributes<HTMLElement> & {
-    as?: ReactElement;
+    as?: ReactNode;
     elevation?: 0 | 1 | 2 | 3 | 4;
 };
 export const Card: FC<CardProps> = forwardRef((props: CardProps, ref: RefObject<HTMLElement>) => {
