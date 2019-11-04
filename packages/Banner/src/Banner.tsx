@@ -19,7 +19,7 @@ export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefO
     });
     return (
         <Component {...rest} className={classNames} ref={ref}>
-            {icon ? icon : <div className={styles.icon}>{getIcon(variant)}</div>}
+            <div className={styles.icon}>{icon ? icon : getIcon(variant)}</div>
             <div className={styles.content}>
                 {title && <h2 className={styles.heading}>{title}</h2>}
                 {message && <p className={styles.body}>{message}</p>}
