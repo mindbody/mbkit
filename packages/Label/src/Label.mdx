@@ -4,9 +4,23 @@ This label should be used for text/number inputs and select inputs.
 
 ```tsx
 <>
-    <Label htmlFor="name" id="name-label">Enter your name</Label>
-    <input id="name" aria-labelledby="name-label" style={{ display: 'block', width: '100%', padding: 8, margin: '4px 0' }} />
-    <Label htmlFor="name">Use your real name</Label>
+    <Label 
+        htmlFor="name" 
+        id="name-label"
+    >
+        Enter your name
+    </Label>
+    <input 
+        id="name" 
+        aria-desribedby="name-label, name-helper-text" 
+        style={{ display: 'block', width: '100%', padding: 8, margin: '4px 0' }} 
+    />
+    <Label 
+        htmlFor="name" 
+        id="name-helper-text"
+    >
+        Use your real name
+    </Label>
 </>
 ```
 
