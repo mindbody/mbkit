@@ -1,0 +1,20 @@
+# Dev Documentation
+
+This label should be used for text/number inputs and select inputs. 
+
+```tsx
+<>
+    <Label htmlFor="name" id="name-label">Enter your name</Label>
+    <input id="name" aria-labelledby="name-label" style={{ display: 'block', width: '100%', padding: 8, margin: '4px 0' }} />
+    <Label htmlFor="name">Use your real name</Label>
+</>
+```
+
+Use the default browser label for checkboxes since the text should be the same size of the body copy
+
+```tsx
+<>
+    <input type="checkbox" id="terms" aria-labelledby="terms-label" />{" "}
+    <label htmlFor="terms" id="terms-label">I agree to the terms and conditions</label>
+</>
+```
