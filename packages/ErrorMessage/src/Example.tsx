@@ -21,7 +21,7 @@ export const ErrorMessageExample = () => {
     return (
         <>
             <label htmlFor="email" id="email-label">
-                Email
+                Enter your email
             </label>
             <input
                 type="email"
@@ -30,6 +30,7 @@ export const ErrorMessageExample = () => {
                 onChange={handleChangeEmail}
                 value={email}
                 onBlur={() => handleValidate(email)}
+                style={{ display: 'block', width: '100%', padding: 8, margin: '8px 0' }}
             />
             <ErrorMessage show={emailIsInvalid}>Please enter a valid email address</ErrorMessage>
         </>
