@@ -9,6 +9,8 @@ module.exports = {
         '!packages/docs/**',
         '!packages/**/dist/**',
         '!packages/**/index.tsx',
+        '!packages/**/Example.tsx',
+        '!packages/**/Examples.tsx',
     ],
     testPathIgnorePatterns: ['<rootDir>/packages/docs', 'node_modules'],
     transform: {
