@@ -30,12 +30,12 @@ $focus: var(--focus, #6096e6bf);
         background: #fff;
         z-index: 1;
         border-radius: 50%;
-        transition: left .2s ease-out;
+        transition: left .1s ease-out;
     }
 
     &.size2 {
-        width: 30px;
-        height: 18px;
+        width: 29px;
+        height: 17px;
 
         &:before {
             width: 13px;
@@ -60,7 +60,10 @@ $focus: var(--focus, #6096e6bf);
         }
     }
     &:disabled {
-        background: $neutral-5;
+        background: $neutral-4;
         cursor: not-allowed;
+        &:before {
+            box-shadow: 0 2px 2px 0 rgba(#000, .2);
+        }
     }
 }

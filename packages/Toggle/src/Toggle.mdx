@@ -1,10 +1,25 @@
 # Dev Documentation
 
+Treat the Toggle component as you would a checkbox as that's what it is under the hood. 
+
 ```tsx
 <>
     <Toggle />
-    <Toggle disabled />
     <Toggle size={2} />
+    <br />
+    <Toggle checked />
+    <Toggle checked size={2} />
+</>
+```
+
+Disabled states
+
+```tsx
+<>
+    <Toggle disabled />
     <Toggle disabled size={2} />
+    <br />
+    <Toggle disabled checked />
+    <Toggle disabled checked size={2} />
 </>
 ```
