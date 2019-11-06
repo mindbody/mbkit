@@ -11,7 +11,7 @@ export type ErrorMessageProps = AlertProps & {
 };
 export const ErrorMessage: FC<ErrorMessageProps> = forwardRef(
     (props: ErrorMessageProps, ref: RefObject<HTMLDivElement>) => {
-        const { show, type = 'polite', className = '', ...rest } = props;
+        const { show, className = '', ...rest } = props;
 
         if (!show) {
             return null;
@@ -22,7 +22,7 @@ export const ErrorMessage: FC<ErrorMessageProps> = forwardRef(
             [className]: className,
         });
 
-        return <Alert {...rest} type={type} className={classNames} ref={ref} />;
+        return <Alert {...rest} className={classNames} ref={ref} />;
     },
 );
 ErrorMessage.displayName = 'ErrorMessage';
