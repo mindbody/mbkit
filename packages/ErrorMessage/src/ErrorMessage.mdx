@@ -1,0 +1,29 @@
+# Dev Documentation 
+
+```tsx
+<>
+    <input type="email" style={{ display: 'block', width: '100%', padding: 8, margin: '8px 0', }} />
+    <ErrorMessage show={true}>Please enter a valid email address</ErrorMessage>
+</>
+```
+
+## Interactive email demo
+
+Turn on your voice over screen reader of choice and fill out this field with an invalid email address and tab out, you should hear the screen reader read to you when the alert shows up. 
+
+<RenderOnly>
+    <ErrorMessageExample />
+</RenderOnly>
+
+## Polite vs Assertive
+
+The ErrorMessage is using <a href="https://ui.reach.tech/alert/" target="_blank" rel="nofollow">Reach UI's "Alert"</a> package and it allows for you to determine whether it should interupt what the screen reader is reading to the user. 
+
+Generally you want to use the default "polite" setting which will let the screen reader finish reading what it's reading. Assertive will interupt what the screen reader is reading and should be used sparringly. 
+
+```tsx
+<>
+    <input type="email" style={{ display: 'block', width: '100%', padding: 8, margin: '8px 0', }} />
+    <ErrorMessage show={true} type="assertive">Please enter a valid email address</ErrorMessage>
+</>
+```

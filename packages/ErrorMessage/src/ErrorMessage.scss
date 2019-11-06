@@ -1,0 +1,11 @@
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$error-1: var(--error-1, #992D38);
+
+.errorMessage {
+    text-indent: 8px;
+    font-family: $font-family;
+    color: $error-1;
+    font-size: .75rem;
+    transition: height 2s ease-out;
+    overflow: hidden;
+}
