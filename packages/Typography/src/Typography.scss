@@ -1,5 +1,6 @@
 $secondary-1: var(--secondary-1, #004C57);
-$secondary-2: var(--secondary-2, #007485);
+$neutral-2: var(--neutral-2, #5A5E66);
+$radius: var(--radius, 3px);
 
 @mixin get-font-spec($spec, $defaultSize, $defaultLineHeight) {
     font-family: var(--font-family, 'Lato');
@@ -74,26 +75,37 @@ $secondary-2: var(--secondary-2, #007485);
 }
 
 .link {
+    display: inline-block;
     text-decoration: none;
-    transition: box-shadow .2s ease-out;
+    transition: box-shadow .1s ease-out;
     border-radius: 3px;
     cursor: pointer;
     color: $secondary-1;
+    position: relative;
+    outline: none;
     
-    &:hover {
-        text-decoration: underline;
-        color: $secondary-1;
+    &:before {
+        content: '';
+        width: 98%;
+        height: .5px;
+        display: block;
+        position: absolute;
+        background: $neutral-2;
+        top: calc(100% - 2px);
+        border-radius: $radius;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        transition: all .2s ease-out;
+    }
+    
+    &:hover, &:focus {
+        &:before {
+            width: 95%;
+            height: 2px;
+            background: $secondary-1;
+        }   
     }
     &:focus {
-        outline: none;
-        color: $secondary-1;
         box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
-    }
-    &:active {
-        outline: none;
-        box-shadow: 0 0 0 8px var(--focus,rgba(96,150,230,.75));
-    }
-    &:visited {
-        color: $secondary-2;
     }
 }
