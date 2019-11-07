@@ -17,6 +17,7 @@ $focus: var(--focus, #6096e6bf);
     transition: box-shadow .1s ease-out;
     position: relative;
     cursor: pointer;
+    margin: 0;
 
     &:before {
         content: '';

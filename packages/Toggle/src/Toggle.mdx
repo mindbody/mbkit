@@ -4,11 +4,11 @@ Treat the Toggle component as you would a checkbox as that's what it is under th
 
 ```tsx
 <>
-    <Toggle />
-    <Toggle size={2} />
+    <Toggle checked={false} onChange={() => {}} />
+    <Toggle checked={false} onChange={() => {}} size={2} />
     <br />
-    <Toggle checked />
-    <Toggle checked size={2} />
+    <Toggle checked onChange={() => {}} />
+    <Toggle checked onChange={() => {}} size={2} />
 </>
 ```
 
@@ -16,10 +16,10 @@ Disabled states
 
 ```tsx
 <>
-    <Toggle disabled />
-    <Toggle disabled size={2} />
+    <Toggle disabled onChange={() => {}} />
+    <Toggle disabled onChange={() => {}} size={2} />
     <br />
-    <Toggle disabled checked />
-    <Toggle disabled checked size={2} />
+    <Toggle disabled checked onChange={() => {}} />
+    <Toggle disabled checked onChange={() => {}} size={2} />
 </>
 ```
