@@ -14,6 +14,6 @@ export const Toggle: FC<ToggleProps> = forwardRef((props: ToggleProps, ref: RefO
         [styles[`size${size}`]]: true,
         [className]: className,
     });
-    return <input {...rest} className={classNames} ref={ref} type="checkbox" />;
+    return <input role="switch" {...rest} className={classNames} ref={ref} type="checkbox" />;
 });
 Toggle.displayName = 'Toggle';
