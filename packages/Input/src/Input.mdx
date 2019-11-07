@@ -1,0 +1,112 @@
+# Dev Documentation
+
+Basic use
+
+```tsx
+<div style={{ padding: 16 }}>
+    <div style={{
+        display: 'grid',
+        gridTemplateColumns: `1fr 1fr`,
+        gridGap: 16,
+        marginBottom: 16
+    }}>
+        <Input placeholder="Please enter your first name" />
+        <Input placeholder="Please enter your last name" />
+    </div>
+    <div style={{
+        display: 'grid',
+        gridTemplateColumns: `1fr`,
+        gridGap: 16,
+    }}>
+        <Input placeholder="Address line 1" />
+        <Input placeholder="Address line 2" disabled  />
+        <Input placeholder="More Info Here" invalid />
+    </div>
+</div>
+```
+
+Before/After selectors
+
+```tsx
+<div style={{
+    display: 'grid',
+    gridTemplateColumns: `1fr 1fr`,
+    gridGap: 16,
+    padding: 16
+}}>
+    <Input placeholder="How much does this cost class?" before="$" />
+    <Input placeholder="How much does this cost class?" after="€" invalid />
+    <Input placeholder="How much does this cost class?" before="$" disabled />
+    <Input placeholder="How much does this cost class?" after="€" disabled />
+    <Input
+        placeholder="Search"
+        before={
+            <svg width="24" height="24" viewBox="0 0 32 32">
+                <g id="Icons/UI/Search--1jdu9cRQP3t6M0L3ABYX" fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <path
+                        id="Mask--1jdu9cRQP3t6M0L3ABYX"
+                        fill="#54575F"
+                        d="M13.5 4.5c5.5228475 0 10 4.4771525 10 10 0 2.5817263-.9783543 4.9349457-2.5845372 6.7091323l5.4380906 5.4373143c.4509087.4509087-.1764425 1.1174693-.6443988.7620271l-.062708-.0549203-5.4373143-5.4380906C18.4349457 23.5216457 16.0817263 24.5 13.5 24.5c-5.5228475 0-10-4.4771525-10-10s4.4771525-10 10-10zm0 1c-4.97056275 0-9 4.02943725-9 9 0 4.9705627 4.02943725 9 9 9 4.9705627 0 9-4.0294373 9-9 0-4.97056275-4.0294373-9-9-9z"
+                    ></path>
+                </g>
+            </svg>
+        }
+    />
+    <Input
+        placeholder="Icons before and after"
+        before={
+            <svg width="22" height="22" viewBox="0 0 32 32">
+                <defs>
+                    <path
+                        id="path-1-66PQ5Is2FGT50ZCCnACc7"
+                        d="M10.1450548 26.0120565c.9282577 0 1.8184964-.3687489 2.4748737-1.0251262l12.263456-12.263456c.4747541-.474754.490038-.9241756 0-1.4142136l-3.2426407-3.24264064c-.5331636-.53316362-.8816412-.53257228-1.4142135 0L7.9630743 20.330076c-.65637732.6563774-1.02512627 1.546616-1.02512627 2.4748738v2.7071067c0 .2761424.22385763.5.5.5h2.70710677zM22.3478506 7.35951328l3.2426407 3.24264072c.8917199.8917199.8549309 1.9734962 0 2.8284271l-12.263456 12.263456c-.8439137.8439137-1.9885063 1.3180194-3.1819805 1.3180194H7.43794803c-.82842712 0-1.5-.6715728-1.5-1.5v-2.7071067c0-1.1934742.47410579-2.3380668 1.31801949-3.1819806L19.5194235 7.35951328c.9225604-.92256037 1.904201-.92422614 2.8284271 0zm1.5057028-3.21306667l5 5c.1952621.19526215.1952621.51184463 0 .70710678-.1952622.19526211-.5118446.19526211-.7071068 0l-5-5c-.1952621-.19526215-.1952621-.51184463 0-.70710678.1952622-.19526215.5118446-.19526215.7071068 0z"
+                    ></path>
+                </defs>
+                <g id="Icons/UI/Edit-66PQ5Is2FGT50ZCCnACc7" fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                    <mask id="mask-2-66PQ5Is2FGT50ZCCnACc7" fill="#fff">
+                        <use xlinkHref="#path-1-66PQ5Is2FGT50ZCCnACc7"></use>
+                    </mask>
+                    <use
+                        id="Combined-Shape-66PQ5Is2FGT50ZCCnACc7"
+                        fill="#54575F"
+                        xlinkHref="#path-1-66PQ5Is2FGT50ZCCnACc7"
+                    ></use>
+                </g>
+            </svg>
+        }
+        after={
+            <svg
+                width="22"
+                height="22"
+                viewBox="0 0 32 32"
+                aria-label="Download"
+                onClick={() => alert('You clicked download')}
+            >
+                <defs>
+                    <path
+                        id="path-1-RGe4n1OVSyadCTwAQnY1W"
+                        d="M19.5 24c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5h-8c-.2761424 0-.5-.2238576-.5-.5s.2238576-.5.5-.5h8zm-4-17c.2761424 0 .5.22385763.5.5l-.0000027 12.194 4.6320775-5.032572c.1869881-.2031995.5032977-.2163414.7064972-.0293532.2031995.1869881.2163414.5032977.0293532.7064972l-4.7854677 5.2003535c-.0428107.0452488-.0428107.0452488-.0880595.0880596-.6095985.5609645-1.5585273.5215389-2.1194918-.0880596l-4.74283143-5.1540207c-.18698817-.2031995-.1738463-.5195091.02935319-.7064973.20319949-.1869882.51950914-.1738463.70649724.0293532L14.9999973 19.741 15 7.5c0-.27614237.2238576-.5.5-.5z"
+                    ></path>
+                </defs>
+                <g
+                    id="Icons/UI/Download-RGe4n1OVSyadCTwAQnY1W"
+                    fill="none"
+                    fillRule="evenodd"
+                    stroke="none"
+                    strokeWidth="1"
+                >
+                    <mask id="mask-2-RGe4n1OVSyadCTwAQnY1W" fill="#fff">
+                        <use xlinkHref="#path-1-RGe4n1OVSyadCTwAQnY1W"></use>
+                    </mask>
+                    <use
+                        id="Combined-Shape-RGe4n1OVSyadCTwAQnY1W"
+                        fill="#5A5E66"
+                        fillRule="nonzero"
+                        xlinkHref="#path-1-RGe4n1OVSyadCTwAQnY1W"
+                    ></use>
+                </g>
+            </svg>
+        }
+    />
+</div>
+```
