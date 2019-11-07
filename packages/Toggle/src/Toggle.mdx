@@ -23,3 +23,12 @@ Disabled states
     <Toggle disabled checked onChange={() => {}} size={2} />
 </>
 ```
+
+Using a label with the Toggle
+
+```tsx
+<>
+    <Toggle id="feature-a" aria-labelledby="feature-a-label" />{" "}
+    <label htmlFor="feature-a" id="feature-a-label">Feature A</label>
+</>
+```
