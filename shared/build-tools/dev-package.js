@@ -10,9 +10,14 @@ const exec = (command, extraEnv) =>
 const consumerPath = process.cwd();
 
 const generateLocalDev = `${__dirname}/dev-generate-local-server.js --consumerPath=${consumerPath}`;
-const rollupBuildPackage = `${__dirname}/build-package.js --watch --env=development`;
+const rollupBuildPackage = `${__dirname}/build-package.js --env=development`;
 const startLocalDevServer = `yarn parcel ${__dirname}/local-server/index.html --open`;
 
-exec(`${generateLocalDev} && yarn concurrently --kill-others "${rollupBuildPackage}" "${startLocalDevServer}"`, {
-    NODE_ENV: 'development',
-});
+// First generate local dev bundle and build bundle once (so it exists and we don't see any errors if it doesn't)
+// Then run build package with watch and start local dev server
+exec(
+    `${generateLocalDev} && ${rollupBuildPackage} && yarn concurrently --kill-others "${rollupBuildPackage} --watch" "${startLocalDevServer}"`,
+    {
+        NODE_ENV: 'development',
+    },
+);

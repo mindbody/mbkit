@@ -1,0 +1,44 @@
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$radius: var(--radius, 3px);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$secondary-1: var(--secondary-1, #004C57);
+$error-1: var(--error-1, #992D38);
+$focus: var(--focus, #6096e6bf);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+
+.textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    height: 152px;
+    font-size: 1rem;
+    font-family: $font-family;
+    border: 1px solid $neutral-3;
+    border-radius: $radius;
+    transition: box-shadow .1s ease-out, border .2s ease-out;
+    padding: 8px;
+    outline: none;
+    background: $background;
+    color: $foreground;
+
+    &:not(:disabled) {
+        &:focus {
+            box-shadow: 0 0 0 4px $focus;
+            border-color: $secondary-1;
+        }
+        &.invalid {
+            border-color: $error-1;
+        }
+    }
+    
+    &:disabled {
+        background: $neutral-4;
+        border-color: $neutral-4;
+        color: $neutral-2;
+        cursor: not-allowed;
+    }
+}
