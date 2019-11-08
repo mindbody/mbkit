@@ -1,0 +1,27 @@
+{
+    "name": "@mindbody/error-message",
+    "version": "1.2.3",
+    "source": "src/index.tsx",
+    "main": "dist/ErrorMessage.js",
+    "types": "dist/ErrorMessage/src/index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "../../shared/build-tools/build-package.js",
+        "dev": "../../shared/build-tools/dev-package.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/classnames": "^2.2.9",
+        "@types/react": "^16.9.2",
+        "react": "^16.9.0"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0"
+    },
+    "dependencies": {
+        "@reach/alert": "^0.5.3",
+        "classnames": "^2.2.6"
+    }
+}
