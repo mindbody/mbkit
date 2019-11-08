@@ -88,5 +88,7 @@ function getIcon(variant: BannerProps['variant']) {
                     </g>
                 </svg>
             );
+        default:
+            return null;
     }
 }
