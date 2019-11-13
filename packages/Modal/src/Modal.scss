@@ -1,0 +1,77 @@
+@import '~@reach/dialog/styles.css';
+
+$radius: var(--radius, 3px);
+$foreground: var(--foreground, #0B0B0D);
+$neutral-1: var(--neutral-1, #0B0B0D);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-6: var(--neutral-6, #F8F9FB);
+$neutral-7: var(--neutral-7, #ffffff);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+
+$transitionTime: 400;
+$transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity #{$transitionTime}ms cubic-bezier(0,0.15,0.55,1);
+:export {
+    transitionTime: $transitionTime;
+}
+
+.modal {
+    box-sizing: border-box;
+    transition: $transitionValue;
+    opacity: 0;
+    width: 95vw;
+    max-width: 960px;
+    max-height: 80vh;
+    border-radius: $radius;
+    font-family: $font-family;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &.size2 {
+        max-width: 670px;
+    }
+    &.size3 {
+        max-width: 480px;
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+    }
+
+    .header {
+        background: $neutral-5;
+        text-align: center;
+        padding: 16px;
+        font-size: 2rem;
+        font-weight: 200;
+        position: relative;
+
+        .closeIcon {
+            top: 50%;
+            transform: translate3d(-8px, -50%, 0);
+        }
+    }
+    .content {
+        overflow: scroll;
+    }
+    .footer {
+        box-sizing: border-box; 
+        padding: 24px;
+        border-top: 1px solid $neutral-3;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.veil {
+    transition: $transitionValue;
+    opacity: 0;
+    background: rgba(#0B0B0D, .7);
+}
