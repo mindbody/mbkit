@@ -20,9 +20,9 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
 .modal {
     box-sizing: border-box;
     transition: $transitionValue;
+    transform-origin: bottom center;
     opacity: 0;
     width: 95vw;
-    max-width: 960px;
     max-height: 80vh;
     border-radius: $radius;
     font-family: $font-family;
@@ -32,6 +32,9 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
     display: flex;
     flex-direction: column;
 
+    &.size1 {
+        max-width: 960px;
+    }
     &.size2 {
         max-width: 670px;
     }
@@ -68,6 +71,14 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
         border-top: 1px solid $neutral-3;
         display: flex;
         justify-content: flex-end;
+
+        & > * {
+            margin-left: 16px;
+
+            &:first-child {
+                margin-left: 0
+            }
+        }
     }
 }
 .veil {

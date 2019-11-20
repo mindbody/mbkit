@@ -12,15 +12,15 @@ export type ModalProps = AllHTMLAttributes<HTMLDivElement> & {
     onClose: () => void;
     /** When the modal is set to be displayed, the screen reader will read this to the assistive technology */
     label: string;
+    /** Sets max-width of modal from largest to smallest */
+    size: 1 | 2 | 3;
     /** Props to be passed to the veil. Useful for custom styles or class names */
     veilProps?: AllHTMLAttributes<HTMLDivElement>;
     /** Adds header bar with content passed in it */
     header?: ReactNode;
     /** Adds footer */
     footer?: ReactNode;
-    /** Sets max-width of modal from largest to smallest */
-    size?: 1 | 2 | 3;
-    /** Set's initial focused item on passed in ref. Otherwise it will be focused on the first focusable item. */
+    /** Set's initial focused item on passed in ref. Otherwise it will be focused on the first focusable item */
     initialFocusRef?: RefObject<any>;
 };
 
@@ -48,7 +48,7 @@ const veilTransitions: TransitionValues = {
 };
 const modalTransitions: TransitionValues = {
     entering: {
-        opacity: 0,
+        opacity: 0.8,
         transform: 'scale(.8)',
     },
     entered: {
@@ -56,7 +56,7 @@ const modalTransitions: TransitionValues = {
         transform: 'scale(1)',
     },
     exiting: {
-        opacity: 0,
+        opacity: 0.8,
         transform: 'scale(.8)',
     },
     exited: {
