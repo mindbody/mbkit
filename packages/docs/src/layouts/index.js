@@ -48,6 +48,11 @@ const Layout = props => {
                     <main className={styles.main}>{props.children}</main>
                 </SkipNavContent>
             </div>
+            <div>
+                <a href="https://mindbodyonline.invisionapp.com/dsm/mindbody/1-mb-2-0" target="_blank" rel="nofollow">
+                    InVision DSM site
+                </a>
+            </div>
         </>
     );
 };
