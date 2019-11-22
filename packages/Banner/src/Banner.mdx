@@ -1,0 +1,28 @@
+# Dev Documentation
+
+All Variations
+
+```tsx
+<div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: 16, padding: '16px 0' }}>
+    <Banner variant="success" title="Your billing information was updated" message="It usually takes 3 to 4 weeks to see the banks update the auto deposits" />
+    <Banner variant="warning" title="Oops, please check for warnings" message="Usually this is something simple and fixable, please review the form and make updates and try again" />
+    <Banner variant="error" title="Something went wrong" message="There was a catastrophic error and we can not recover from here. Please try again later" />
+    <Banner variant="info" title="Looking for some information?" message="You might be able to find it somewhere else" />
+</div>
+```
+
+Using a link in the message
+
+```tsx
+<Banner variant="info" title="Looking for some information?" message={<>You might be able to find it on the <a>details page</a></>} />
+```
+
+Need to do something completely different? Pass it in as children
+
+```tsx
+<Banner variant="info">
+    <h1 style={{ margin: 0 }}>Custom Banner Chidlren</h1>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac. Id porta nibh venenatis cras sed felis. Mauris pharetra et ultrices neque ornare aenean euismod elementum nisi. Ornare suspendisse sed nisi lacus sed viverra. Neque sodales ut etiam sit amet nisl purus. Elementum tempus egestas sed sed risus pretium quam. Porttitor leo a diam sollicitudin tempor. Bibendum enim facilisis gravida neque convallis a cras. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.</p>
+</Banner>
+```

@@ -1,0 +1,34 @@
+# Dev Documentation
+
+Treat the Toggle component as you would a checkbox as that's what it is under the hood. 
+
+```tsx
+<>
+    <Toggle checked={false} onChange={() => {}} />
+    <Toggle checked={false} onChange={() => {}} size={2} />
+    <br />
+    <Toggle checked onChange={() => {}} />
+    <Toggle checked onChange={() => {}} size={2} />
+</>
+```
+
+Disabled states
+
+```tsx
+<>
+    <Toggle disabled onChange={() => {}} />
+    <Toggle disabled onChange={() => {}} size={2} />
+    <br />
+    <Toggle disabled checked onChange={() => {}} />
+    <Toggle disabled checked onChange={() => {}} size={2} />
+</>
+```
+
+Using a label with the Toggle
+
+```tsx
+<>
+    <Toggle id="feature-a" aria-labelledby="feature-a-label" />{" "}
+    <label htmlFor="feature-a" id="feature-a-label">Feature A</label>
+</>
+```

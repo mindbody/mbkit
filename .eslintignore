@@ -1,5 +1,6 @@
 *.scss
 *.css
+*.json
 dist
 shared
 packages/docs
