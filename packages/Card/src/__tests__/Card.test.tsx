@@ -12,29 +12,6 @@ describe('Card', () => {
 
         expect(getByText('I am a test')).toBeTruthy();
     });
-    it('should render with each elevation class', () => {
-        const { getByTestId } = render(
-            <>
-                <Card data-testid="elevation0" elevation={0} />
-                <Card data-testid="elevation1" elevation={1} />
-                <Card data-testid="elevation2" elevation={2} />
-                <Card data-testid="elevation3" elevation={3} />
-                <Card data-testid="elevation4" elevation={4} />
-            </>,
-        );
-
-        const elevation0 = getByTestId('elevation0');
-        const elevation1 = getByTestId('elevation1');
-        const elevation2 = getByTestId('elevation2');
-        const elevation3 = getByTestId('elevation3');
-        const elevation4 = getByTestId('elevation4');
-
-        expect(elevation0.classList.contains('elevation0')).toBe(true);
-        expect(elevation1.classList.contains('elevation1')).toBe(true);
-        expect(elevation2.classList.contains('elevation2')).toBe(true);
-        expect(elevation3.classList.contains('elevation3')).toBe(true);
-        expect(elevation4.classList.contains('elevation4')).toBe(true);
-    });
     it('should pass all props to component', () => {
         const spy = jest.fn();
         const { getByTestId } = render(
@@ -55,5 +32,13 @@ describe('Card', () => {
         expect(card.getAttribute('data-randomattribute')).toBe('THIS IS A TEST');
         expect(card.style.margin).toBe('24px');
         expect(card.nodeName).toBe('SECTION');
+    });
+    it('should render the card as the specified component', () => {
+        const { getByTestId } = render(
+            <Card as="section" data-testid="test">
+                <h1>I am a test</h1>
+            </Card>,
+        );
+        expect(getByTestId('test').nodeName).toBe('SECTION');
     });
 });
