@@ -1,8 +1,8 @@
-import React, { FC, HTMLAttributes, forwardRef, RefObject, ReactNode } from 'react';
+import React, { FC, forwardRef, RefObject, ReactNode, AllHTMLAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Card.scss';
 
-export type CardProps = HTMLAttributes<HTMLElement> & {
+export type CardProps = AllHTMLAttributes<HTMLElement> & {
     as?: ReactNode;
 };
 export const Card: FC<CardProps> = forwardRef((props: CardProps, ref: RefObject<HTMLElement>) => {
