@@ -10,6 +10,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     border-radius: $radius;
     transition: box-shadow .2s ease-out;
     font-family: $font-family;
+    padding: 16px;
 
     &:before {
         content: '';
@@ -23,24 +24,10 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         border-radius: $radius;
         transition: box-shadow .2s ease-out;
         pointer-events: none;
+        box-shadow: 0 1px 3px 0 $foreground;
     }
 
     &:focus {
         box-shadow: 0 0 0 4px $focus;
-    }
-
-    &.elevation {
-        &1:before {
-            box-shadow: 0 1px 3px 0 $foreground;
-        }
-        &2:before {
-            box-shadow: 0 1px 12px 0 $foreground;
-        }
-        &3:before {
-            box-shadow: 0 1px 16px 0 $foreground;
-        }
-        &4:before {
-            box-shadow: 0 1px 24px 0 $foreground;
-        }
     }
 }
