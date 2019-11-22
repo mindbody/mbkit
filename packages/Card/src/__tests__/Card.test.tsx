@@ -33,12 +33,4 @@ describe('Card', () => {
         expect(card.style.margin).toBe('24px');
         expect(card.nodeName).toBe('SECTION');
     });
-    it('should render the card as the specified component', () => {
-        const { getByTestId } = render(
-            <Card as="section" data-testid="test">
-                <h1>I am a test</h1>
-            </Card>,
-        );
-        expect(getByTestId('test').nodeName).toBe('SECTION');
-    });
 });
