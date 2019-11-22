@@ -1,0 +1,88 @@
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$radius: var(--radius, 3px);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-7: var(--neutral-7, #ffffff);
+$secondary-1: var(--secondary-1, #004C57);
+$focus: var(--focus, #6096e6bf);
+
+.calendar {
+    font-family: $font-family;
+    background: $background;
+    color: $foreground;
+    border-radius: $radius;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(#0B0B0D, .3);
+    font-size: 1rem;
+    padding: 16px;
+    font-size: 16px;
+    width: 320px;
+
+    button[class*="navigation__label"] {
+        background: none !important;
+        color: $foreground;
+        z-index: 1;
+        font-size: 16px;
+    }
+    [class*="navigation__arrow"] {
+        transform: scale(.8);
+        transform-origin: center;
+        z-index: 2;
+        background: $background !important;
+        border: 1px solid $neutral-4;
+        border-radius: $radius;
+
+        &:hover {
+            background: $neutral-5 !important;
+        }
+        &:focus, &:active {
+            background: $background !important;
+            box-shadow: 0 0 0 4px $focus;
+        }
+    }
+    [class*="month-view__weekdays__weekday"] {
+        text-transform: none;
+        text-decoration: none;
+        font-size: 16px;
+
+        abbr[title] {
+            text-decoration: none;
+        }
+    }
+}
+.tile {
+    background: $background;
+    color: $foreground;
+    transition: all .1s ease-out;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    transform: scale(.9);
+    transform-origin: center;
+    padding: 8px;
+
+    &[class*="day--neighboringMonth"] {
+        color: $neutral-3;
+    }
+
+    &.isToday {
+        border: 1px solid $neutral-3;
+    }
+
+    &:hover {
+        background: $neutral-5 !important;
+    }
+    &:focus {
+        background: $background !important;
+        box-shadow: 0 0 0 4px $focus;
+    }
+    &:active,
+    &[class*="active"] {
+        background: $secondary-1 !important;
+        color: $neutral-7;
+    }
+}
