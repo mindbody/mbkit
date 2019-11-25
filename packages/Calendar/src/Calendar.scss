@@ -21,10 +21,23 @@ $focus: var(--focus, #6096e6bf);
     font-size: 16px;
     width: 320px;
 
-    button[class*="navigation__label"] {
+    [class*="navigation__label"] {
         background: none !important;
         color: $foreground;
-        font-size: 16px;
+        font-size: 1.25rem;
+        border-radius: $radius;
+        transform: scale(.8);
+
+        &:not(:disabled) {
+            border: 1px solid $neutral-4;
+
+            &:hover {
+                background: $neutral-5 !important;
+            }
+            &:focus {
+                box-shadow: 0 0 0 4px $focus;
+            }
+        }
     }
     [class*="navigation__arrow"] {
         transform: scale(.8);
@@ -33,12 +46,18 @@ $focus: var(--focus, #6096e6bf);
         border: 1px solid $neutral-4;
         border-radius: $radius;
 
-        &:hover {
-            background: $neutral-5 !important;
+        &:not(:disabled) {
+            &:hover {
+                background: $neutral-5 !important;
+            }
+            &:focus, &:active {
+                background: $background !important;
+                box-shadow: 0 0 0 4px $focus;
+            }
         }
-        &:focus, &:active {
-            background: $background !important;
-            box-shadow: 0 0 0 4px $focus;
+        &:disabled {
+            cursor: not-allowed;
+            background: $neutral-4 !important;
         }
     }
     [class*="month-view__weekdays__weekday"] {
@@ -51,8 +70,13 @@ $focus: var(--focus, #6096e6bf);
         }
     }
 }
+
+/*
+    The `tile` represents any selectable dates/months within the calendar selection (not including navigation)
+*/
 .tile {
-    background: $background;
+    position: relative;
+    background: none !important;
     color: $foreground;
     transition: all .1s ease-out;
     border-radius: 50%;
@@ -63,6 +87,53 @@ $focus: var(--focus, #6096e6bf);
     transform-origin: center;
     padding: 8px;
 
+    // When using a date range selection we want to fill in the gap between the dates with before/after pseudo selector
+    &:before,
+    &:after {
+        content: '';
+        display: none;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: $secondary-1;
+        width: 12px;
+    }
+    &:before {
+        left: -8px;
+    }
+    &:after {
+        right: -8px;
+    }
+
+    // When selecting date range these are the first and last selections
+    &[class*="rangeStart"] {
+        border-radius: 50% 0 0 50%;
+    }
+    &[class*="rangeEnd"] {
+        border-radius: 0 50% 50% 0;
+    }
+
+    // Single date selected
+    &[class*="rangeBothEnds"] {
+        border-radius: 50%;
+    }
+    // All in-between dates of a date range selection
+    &[class*="active"]:not([class*="rangeBothEnds"]):not([class*="rangeStart"]):not([class*="rangeEnd"]) {
+        border-radius: 0;
+    }
+    &[class*="active"] {
+        overflow: visible !important;
+
+        // We want to show the before/after pseudo selector between all dates 
+        // except on the first and last column of each row
+        &:not([class*="rangeStart"]):not(:nth-child(7n + 1)):before,
+        &:not([class*="rangeEnd"]):not(:nth-child(7n + 7)):after {
+            display: block;
+        }
+    }
+
+    // Single dates that bleed over from previous/next month
     &[class*="day--neighboringMonth"] {
         color: $neutral-3;
     }
@@ -79,8 +150,21 @@ $focus: var(--focus, #6096e6bf);
         box-shadow: 0 0 0 4px $focus;
     }
     &:active,
-    &[class*="active"] {
+    &[class*="active"],
+    &[class*="hasActive"] {
         background: $secondary-1 !important;
         color: $neutral-7;
+    }
+
+    &[class*="year-view__months__month"] {
+        padding: 8px;
+        margin: .5em 0;
+        border-radius: $radius;
+    }
+
+    &:disabled {
+        color: $neutral-3;
+        background: $neutral-4 !important;
+        cursor: not-allowed;
     }
 }

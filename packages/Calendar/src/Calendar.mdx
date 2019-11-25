@@ -1,5 +1,7 @@
 # Dev Documentation
 
+Basic usage with different locales. Use the "onChange" prop to get the latest selection from the user
+
 ```tsx
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '16px', padding: '16px 0' }}>
     <Calendar />
@@ -7,4 +9,30 @@
     <Calendar locale="fr-fr" value={new Date(2018, 4, 3)} />
     <Calendar locale="de-DE" value={new Date(2019, 9, 17)} />
 </div>
+```
+
+Example with only being able to choose dates from the past, but no more than 30 days ago
+
+```tsx
+    <Calendar 
+        minDate={new Date(new Date().setDate(new Date().getDate() - 31))} 
+        maxDate={new Date(new Date().setDate(new Date().getDate() - 1))} 
+    />
+```
+
+Example where user can select the month to zoom out and navigate by month 
+
+```tsx
+    <Calendar 
+        minDetail="year"
+    />
+```
+
+Example where user can select a date range
+
+```tsx
+    <Calendar 
+        value={[new Date(2019, 11, 23), new Date(2019, 11, 27)]}
+        selectRange={true}
+    />
 ```

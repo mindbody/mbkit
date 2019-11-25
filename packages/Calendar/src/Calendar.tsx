@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, RefObject, AllHTMLAttributes } from 'react';
+import React, { FC, AllHTMLAttributes } from 'react';
 import ReactCalendar, { CalendarProps, CalendarTileProperties } from 'react-calendar';
 import classnames from 'classnames';
 import styles from './Calendar.scss';
@@ -41,7 +41,7 @@ const ChevronLeft = () => (
     </svg>
 );
 
-export const Calendar: FC<ICalendarProps> = forwardRef((props: ICalendarProps, ref: RefObject<HTMLDivElement>) => {
+export const Calendar: FC<ICalendarProps> = (props: ICalendarProps) => {
     const { className = '', ...rest } = props;
     const classNames = classnames({
         [styles.calendar]: true,
@@ -64,7 +64,7 @@ export const Calendar: FC<ICalendarProps> = forwardRef((props: ICalendarProps, r
             {...rest}
         />
     );
-});
+};
 Calendar.displayName = 'Calendar';
 
 function weekDayFormatter(locale: string, date: Date): string {
