@@ -31,10 +31,10 @@ export default {
             typescript: require('typescript'),
             exclude: ['**/*.stories.tsx', '**/*.js', 'node_modules'],
             verbosity: 1,
-            tsconfig: `${__dirname}/../../tsconfig.json`,
+            tsconfig: `${consumerPath}/tsconfig.json`,
             tsconfigOverride: {
                 compilerOptions: {
-                    typeRoots: [`node_modules/@types`, `${__dirname}/../types`],
+                    typeRoots: [`node_modules/@types`, `${__dirname}/../../typings`],
                 },
             },
         }),
