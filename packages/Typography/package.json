@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "source": "src/index.tsx",
     "main": "dist/Typography.js",
-    "types": "dist/Typography/src/index.d.ts",
+    "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
