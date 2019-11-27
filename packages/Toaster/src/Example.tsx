@@ -28,9 +28,7 @@ export const ToasterExample = (props: ExampleProps) => {
             <button onClick={() => setShow(!show)} disabled={show}>
                 Show example toaster
             </button>
-            <Toaster show={show} onClick={() => setShow(false)}>
-                {message}
-            </Toaster>
+            <Toaster show={show}>{message}</Toaster>
         </>
     );
 };
