@@ -1,0 +1,148 @@
+@import "../../../shared/scss/mixins.scss";
+
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$focus: var(--focus, #6096e6bf);
+
+$neutral-1: var(--neutral-1, #0B0B0D);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-6: var(--neutral-6, #F8F9FB);
+$neutral-7: var(--neutral-7, #ffffff);
+
+$primary-1: var(--primary-1, #993100);
+$secondary-1: var(--secondary-1, #004C57);
+$secondary-2: var(--secondary-2, #007485);
+$error-1: var(--error-1, #992D38);
+
+$radius: var(--radius, 3px);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+
+.fileUploader {
+    border-radius: $radius;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: $font-family;
+    font-weight: 300;
+    transition: all .2s ease-out;
+    position: relative;
+
+    .input {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+    .placeholder {
+        color: $neutral-3;
+        @include svgFill($neutral-3);
+    }
+    .value {
+        color: $foreground;
+        @include svgFill($foreground);
+    }
+    .displayText {
+        border-radius: $radius 0 0 $radius;
+        border-top: 1px solid $neutral-3;
+        border-left: 1px solid $neutral-3;
+        border-bottom: 1px solid $neutral-3;
+        flex: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        background: $background;
+        padding: 8px;
+    }
+    &.isDragging {
+        .displayText {
+            border-style: dashed;
+            border-right: none;
+        }
+    }
+
+    .largeDrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 500px;
+        width: 100%;        
+    }
+
+    .button {
+        transition: all .2s ease-out;
+        flex: 0 1 auto;
+        border: 1px solid transparent;
+        border-radius: 0 $radius $radius 0;
+        color: $neutral-7;
+        padding: 8px 16px;
+    }
+    @mixin buttonColor($bg, $fg, $border) {
+        background: $bg;
+        color: $fg;
+        border-color: $border;
+        @include svgFill($fg);
+    }
+    &:not(.disabled) .button.variant {
+        &primary {
+            @include buttonColor($primary-1, $neutral-7, $primary-1);
+        }
+        &secondary {
+            @include buttonColor($secondary-1, $neutral-7, $secondary-1);
+        }
+        &primaryOutlined {
+            @include buttonColor($neutral-7, $neutral-1, $primary-1);
+        }
+        &secondaryOutlined {
+            @include buttonColor($neutral-7, $neutral-1, $secondary-1);
+        }
+    }
+    &:not(.disabled):hover .button.variant {
+        &primary {
+            @include buttonColor($neutral-7, $neutral-1, $primary-1);
+        }
+        &secondary {
+            @include buttonColor($neutral-7, $neutral-1, $secondary-1);
+        }
+        &primaryOutlined {
+            @include buttonColor($primary-1, $neutral-7, $primary-1);
+        }
+        &secondaryOutlined {
+            @include buttonColor($secondary-1, $neutral-7, $secondary-1);
+        }
+    }
+    &.invalid {
+        .displayText,
+        .button {
+            border-color: $error-1 !important;
+        }
+    }
+    &.disabled {
+        .input {
+            cursor: not-allowed;
+        }
+
+        .displayText {
+            background: $neutral-4; 
+            color: $neutral-3;
+            border-color: $neutral-4;
+            @include svgFill($neutral-3);
+        }
+        .button {
+            @include buttonColor($neutral-4, $neutral-3, $neutral-4);
+        }
+    }
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px $focus;
+    }
+    &:active {
+        box-shadow: 0 0 0 8px $focus;
+    }
+}

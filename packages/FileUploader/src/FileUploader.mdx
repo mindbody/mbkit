@@ -1,0 +1,90 @@
+# Dev Documentation
+
+Basic use case of single file uploader. Use a label for accessibility, examples after the first do not include a label for brevity. 
+
+```tsx
+<>
+    <label htmlFor="uploadFile" id="uploadFileLabel">
+        Upload an image
+    </label>
+    <FileUploader 
+        id="uploadFile"
+        aria-labelledby="uploadFileLabel"
+        value={null} 
+        onChange={(event) => console.log(event.target.files)} 
+    />
+</>
+```
+
+Basic use case of multiple file uploader
+
+```tsx
+<FileUploader 
+    multiple 
+    value={null} 
+    onChange={(event) => console.log(event.target.files)} 
+/>
+```
+
+Using a single file as a value
+
+```tsx
+<FileUploader 
+    value={'some-file.jpg'} 
+    onChange={(event) => console.log(event.target.files)} 
+/>
+```
+
+Multiple file value
+
+```tsx
+<FileUploader 
+    multiple 
+    value={['some-file.jpg', 'another-file.json', 'test.csv']} 
+    onChange={(event) => console.log(event.target.files)} 
+/>
+```
+
+Different Variations
+
+```tsx
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16 }}>
+    <FileUploader
+        variant="primary"  
+        value="Primary" 
+        onChange={(event) => console.log(event.target.files)} 
+    />
+    <FileUploader 
+        variant="secondary"
+        value="Secondary"
+        onChange={(event) => console.log(event.target.files)} 
+    />
+    <FileUploader
+        variant="primaryOutlined" 
+        value="Primary Outlined"
+        onChange={(event) => console.log(event.target.files)} 
+    />
+    <FileUploader 
+        variant="secondaryOutlined"
+        value="Secondary Outlined"
+        onChange={(event) => console.log(event.target.files)} 
+    />
+</div>
+```
+
+Different States
+
+```tsx
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16 }}>
+    <FileUploader
+        invalid
+        value="Invalid" 
+        onChange={(event) => console.log(event.target.files)} 
+    />
+    <FileUploader 
+        disabled
+        value="Disabled"
+        onChange={(event) => console.log(event.target.files)} 
+    />
+</div>
+```
