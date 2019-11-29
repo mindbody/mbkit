@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Label.js",
-    "types": "dist/Label/src/index.d.ts",
+    "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
     },

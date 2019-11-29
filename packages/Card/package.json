@@ -1,8 +1,8 @@
 {
-    "name": "@mindbody/select",
+    "name": "@mindbody/card",
     "version": "1.0.0",
     "source": "src/index.tsx",
-    "main": "dist/Select.js",
+    "main": "dist/Card.js",
     "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"

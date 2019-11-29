@@ -10,3 +10,11 @@
     $string: '%23' + $string;
 	@return $string;
 }
+@mixin svgFill($fillColor) {
+    svg g:not([fill~="#"]),
+    svg path:not([fill~="#"]),
+    svg mask:not([fill~="#"]),
+    svg use:not([fill~="#"]) { 
+        fill: $fillColor;
+    }
+}
