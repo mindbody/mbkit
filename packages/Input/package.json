@@ -1,9 +1,9 @@
 {
     "name": "@mindbody/input",
     "version": "1.0.0",
-    "source": "src/Input.tsx",
+    "source": "src/index.tsx",
     "main": "dist/Input.js",
-    "types": "dist/Input/src/Input.d.ts",
+    "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
