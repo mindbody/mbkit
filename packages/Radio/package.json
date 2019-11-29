@@ -3,7 +3,7 @@
     "version": "1.2.3",
     "source": "src/index.tsx",
     "main": "dist/Radio.js",
-    "types": "dist/Radio/src/index.d.ts",
+    "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
     },

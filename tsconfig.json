@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
+        "baseUrl": "./packages",
+        "paths": {
+            "@mindbody/*": ["*/src"]
+        },
         "declaration": true,
         "target": "es6",
         "noImplicitAny": true,
@@ -11,7 +15,7 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "resolveJsonModule": true,
-        "typeRoots": ["node_modules/@types", "typings"],
+        "typeRoots": ["node_modules/@types", "./typings"],
         "lib": ["dom", "dom.iterable", "es5", "es6", "esnext"],
         "keyofStringsOnly": true
     },
