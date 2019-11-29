@@ -3,7 +3,7 @@
     "version": "1.2.3",
     "source": "src/index.tsx",
     "main": "dist/Button.js",
-    "types": "dist/Button/src/Button.d.ts",
+    "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
     },

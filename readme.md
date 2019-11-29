@@ -33,12 +33,13 @@ The folder structure for a component should look like:
 ```
 - ComponentName
     - src
-        - index.tsx // (optional) if you have multiple exports from a module
+        - index.tsx // Always export components as named exports
         - ComponentName.tsx // Actual component should export as default
         - ComponentName.mdx // Documentation for viewing live components
         - ComponentName.module.scss // styles using CSS Modules for namespacing
         - __tests__ // tests need to be in test folder so react-docgen can generate types and ignore these files
             - ComponentName.test.tsx // tests written
+    - tsconfig.json // extend the root tsconfig to keep packages similar
     - package.json
 ```
 
@@ -49,10 +50,10 @@ Your `package.json` should look like the following:
 ```
 {
     "name": "@mindbody/component-name",
-    "version": "1.2.3",
-    "source": "src/ComponentName.tsx",
+    "version": "1.0.0",
+    "source": "src/index.tsx",
     "main": "dist/ComponentName.js",
-    "types": "dist/ComponentName/src/ComponentName.d.ts",
+    "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
