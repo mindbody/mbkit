@@ -39,6 +39,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         @include svgFill($neutral-7);
         vertical-align: middle;
         margin-right: 8px;
+        height: 32px;
     }
     .content {
         padding: 4px;
