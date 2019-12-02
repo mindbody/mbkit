@@ -12,6 +12,7 @@ Basic use case of single file uploader. Use a label for accessibility, examples 
         aria-labelledby="uploadFileLabel"
         value={null} 
         onChange={(event) => console.log(event.target.files)} 
+        label="Upload your files"
     />
 </>
 ```
@@ -84,6 +85,11 @@ Different States
     <FileUploader 
         disabled
         value="Disabled"
+        onChange={(event) => console.log(event.target.files)} 
+    />
+    <FileUploader
+        loading
+        value="Loading" 
         onChange={(event) => console.log(event.target.files)} 
     />
 </div>

@@ -24,7 +24,6 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     border-radius: $radius;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
     font-family: $font-family;
     transition: all .2s ease-out;
     position: relative;
@@ -34,6 +33,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     }
 
     .input {
+        cursor: pointer;
         opacity: 0;
         display: block;
         position: absolute;
@@ -41,7 +41,6 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         left: 0;
         height: 100%;
         width: 100%;
-        cursor: pointer;
     }
     .placeholder {
         color: $neutral-3;
@@ -79,34 +78,47 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     }
 
     .button {
+        position: relative;
         transition: all .2s ease-out;
         flex: 0 1 auto;
         border: 1px solid transparent;
         border-radius: 0 $radius $radius 0;
         color: $neutral-7;
         padding: 8px 16px;
+
+        &.isLoading {
+            pointer-events: none;
+        }
     }
     @mixin buttonColor($bg, $fg, $border) {
         background: $bg;
         color: $fg;
         border-color: $border;
         @include svgFill($fg);
+
+        &.isLoading {
+            color: transparent;
+        }
     }
     &:not(.disabled) .button.variant {
         &primary {
             @include buttonColor($primary-1, $neutral-7, $primary-1);
+            @include loader($neutral-7, $primary-1);
         }
         &secondary {
             @include buttonColor($secondary-1, $neutral-7, $secondary-1);
+            @include loader($neutral-7, $secondary-1);
         }
         &primaryOutlined {
             @include buttonColor($neutral-7, $neutral-1, $primary-1);
+            @include loader($primary-1, $neutral-7);
         }
         &secondaryOutlined {
             @include buttonColor($neutral-7, $neutral-1, $secondary-1);
+            @include loader($secondary-1, $neutral-7);
         }
     }
-    &:not(.disabled):hover .button.variant {
+    &:not(.isLoading):not(.disabled):hover .button.variant {
         &primary {
             @include buttonColor($neutral-7, $neutral-1, $primary-1);
         }
@@ -118,6 +130,11 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         }
         &secondaryOutlined {
             @include buttonColor($secondary-1, $neutral-7, $secondary-1);
+        }
+    }
+    &.isLoading {
+        .input {
+            cursor: wait;
         }
     }
     &.invalid {
@@ -139,6 +156,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         }
         .button {
             @include buttonColor($neutral-4, $neutral-3, $neutral-4);
+            @include loader($neutral-3, $neutral-4);
         }
     }
     &:focus {
