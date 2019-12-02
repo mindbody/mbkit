@@ -231,7 +231,7 @@ $iconSize4: 30px;
     }
 
     &.loading {
-        cursor: not-allowed;
+        cursor: wait;
 
         .children {
             opacity: 0;
