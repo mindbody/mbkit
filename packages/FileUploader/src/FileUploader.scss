@@ -26,9 +26,12 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     justify-content: space-between;
     cursor: pointer;
     font-family: $font-family;
-    font-weight: 300;
     transition: all .2s ease-out;
     position: relative;
+
+    &, & * {
+        box-sizing: border-box;
+    }
 
     .input {
         opacity: 0;
