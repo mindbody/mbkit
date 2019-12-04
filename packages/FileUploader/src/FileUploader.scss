@@ -51,6 +51,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         @include svgFill($foreground);
     }
     .displayText {
+        line-height: 1.4;
         border-radius: $radius 0 0 $radius;
         border-top: 1px solid $neutral-3;
         border-left: 1px solid $neutral-3;
@@ -78,6 +79,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     }
 
     .button {
+        line-height: 1.4;
         position: relative;
         transition: all .2s ease-out;
         flex: 0 1 auto;
