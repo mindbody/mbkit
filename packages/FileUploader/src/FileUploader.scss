@@ -61,7 +61,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         white-space: nowrap;
         overflow: hidden;
         background: $background;
-        padding: 8px;
+        padding: 10px;
     }
     &.isDragging {
         .displayText {
@@ -86,7 +86,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         border: 1px solid transparent;
         border-radius: 0 $radius $radius 0;
         color: $neutral-7;
-        padding: 8px 16px;
+        padding: 10px 16px;
 
         &.isLoading {
             pointer-events: none;
