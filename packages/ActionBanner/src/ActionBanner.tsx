@@ -74,7 +74,7 @@ export const ActionBanner: FC<ActionBannerProps> = forwardRef(
             <div style={{ height }} ref={containerRef} className={styles.container}>
                 <Alert {...rest} className={classNames} ref={ref}>
                     {children}
-                    <button className={styles.closeIcon} onClick={onClose}>
+                    <button className={styles.closeIcon} onClick={onClose} data-testid="actionBannerCloseIcon">
                         <CloseIcon />
                     </button>
                 </Alert>
