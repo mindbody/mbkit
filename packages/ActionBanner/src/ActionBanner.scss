@@ -1,0 +1,40 @@
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$foreground: var(--foreground, #0B0B0D);
+
+$warning-1: var(--warning-1, #8C6600);
+$warning-2: var(--warning-2, #FFD73D);
+$warning-3: var(--warning-3, #FFFBEB);
+
+$error-1: var(--error-1, #992D38);
+$error-2: var(--error-2, #BD3845);
+$error-3: var(--error-3, #FAEBED);
+
+.actionBanner {
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1rem;
+    font-family: $font-family;
+    color: $foreground;
+    padding: 16px;
+    padding-right: 48px;
+    position: relative;
+
+    &.warning {
+        color: $warning-1;
+        background: $warning-3;
+    }
+    &.error {
+        color: $error-1;
+        background: $error-3;
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
+    }
+}
