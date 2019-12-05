@@ -21,6 +21,8 @@
         "react": "^16.9.0"
     },
     "dependencies": {
+        "@reach/alert": "^0.6.2",
+        "@types/reach__alert": "^0.1.1",
         "classnames": "^2.2.6"
     }
 }

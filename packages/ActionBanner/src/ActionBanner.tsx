@@ -1,16 +1,18 @@
-import React, { forwardRef, FC, RefObject, AllHTMLAttributes, HTMLProps } from 'react';
+import React, { forwardRef, FC, RefObject, AllHTMLAttributes, HTMLProps, useState, useEffect, useRef } from 'react';
+import Alert, { AlertProps } from '@reach/alert';
 import classnames from 'classnames';
 import styles from './ActionBanner.scss';
 
 export type ActionBannerProps = AllHTMLAttributes<HTMLDivElement> &
-    HTMLProps<HTMLDivElement> & {
+    HTMLProps<HTMLDivElement> &
+    AlertProps & {
         show: boolean;
         onClose: () => void;
         variant: 'warning' | 'error';
     };
 
-const CloseIcon = (props: any) => (
-    <svg width="32" height="32" viewBox="0 0 32 32" tabIndex={0} {...props}>
+const CloseIcon = () => (
+    <svg width="32" height="32" viewBox="0 0 32 32">
         <defs>
             <path
                 id="path-1-ad645vBcsnp8uI-Dbkgds"
@@ -28,18 +30,54 @@ const CloseIcon = (props: any) => (
 
 export const ActionBanner: FC<ActionBannerProps> = forwardRef(
     (props: ActionBannerProps, ref: RefObject<HTMLDivElement>) => {
-        const { className = '', variant, children, onClose, ...rest } = props;
+        const { className = '', variant, children, onClose, show, ...rest } = props;
+        const [internalShow, setInternalShow] = useState(show);
         const classNames = classnames({
             [styles.actionBanner]: true,
             [styles[variant]]: true,
+            [styles.hideActionBanner]: !show,
             [className]: className,
         });
+
+        const [height, setHeight] = useState(0);
+        const containerRef = useRef<HTMLDivElement>(null);
+
+        useEffect(() => {
+            if (show) {
+                // show right away
+                setInternalShow(show);
+            } else {
+                setHeight(0);
+                // otherwise allow animation to complete then close it
+                setTimeout(() => {
+                    setInternalShow(show);
+                }, Number(styles.transitionTime));
+            }
+        }, [show]);
+        useEffect(() => {
+            if (show) {
+                if (containerRef.current) {
+                    const child = containerRef.current.firstChild as HTMLDivElement;
+                    if (child) {
+                        setHeight(child.getBoundingClientRect().height);
+                    }
+                }
+            } else {
+                setHeight(0);
+            }
+        }, [internalShow]);
+
+        if (!internalShow) {
+            return null;
+        }
         return (
-            <div {...rest} className={classNames} ref={ref}>
-                {children}
-                <button>
-                    <CloseIcon onClick={onClose} className={styles.closeIcon} />
-                </button>
+            <div style={{ height }} ref={containerRef} className={styles.container}>
+                <Alert {...rest} className={classNames} ref={ref}>
+                    {children}
+                    <button className={styles.closeIcon} onClick={onClose}>
+                        <CloseIcon />
+                    </button>
+                </Alert>
             </div>
         );
     },
