@@ -8,11 +8,15 @@ describe('Toaster', () => {
         expect(container.textContent).toBe('');
     });
     it('should render the text when the show prop is true', () => {
-        const { container } = render(<Toaster show={true}>This is a toast</Toaster>);
+        const { container } = render(<Toaster show={true}>This is a toast</Toaster>, {
+            container: document.body,
+        });
         expect(container.textContent).toBe('This is a toast');
     });
     it('should allow you to pass custom ', () => {
-        const { container } = render(<Toaster show={true}>This is a toast</Toaster>);
+        const { container } = render(<Toaster show={true}>This is a toast</Toaster>, {
+            container: document.body,
+        });
         expect(container.textContent).toBe('This is a toast');
     });
     it('should allow a custom icon to be passed in', () => {
