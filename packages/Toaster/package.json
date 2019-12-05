@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "@reach/alert": "^0.6.2",
+        "@reach/portal": "^0.6.2",
         "classnames": "^2.2.6"
     }
 }

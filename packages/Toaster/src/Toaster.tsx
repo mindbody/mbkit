@@ -1,5 +1,6 @@
 import React, { FC, forwardRef, AllHTMLAttributes, RefObject, useState, useEffect, ReactNode } from 'react';
 import Alert, { AlertProps } from '@reach/alert';
+import Portal from '@reach/portal';
 import classnames from 'classnames';
 import styles from './Toaster.scss';
 
@@ -48,10 +49,12 @@ export const Toaster: FC<ToasterProps> = forwardRef((props: ToasterProps, ref: R
     }
 
     return (
-        <Alert {...rest} className={classNames} ref={ref}>
-            <div className={styles.icon}>{icon}</div>
-            <div className={styles.content}>{children}</div>
-        </Alert>
+        <Portal>
+            <Alert {...rest} className={classNames} ref={ref}>
+                <div className={styles.icon}>{icon}</div>
+                <div className={styles.content}>{children}</div>
+            </Alert>
+        </Portal>
     );
 });
 Toaster.displayName = 'Toaster';
