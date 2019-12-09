@@ -2358,6 +2358,13 @@
   dependencies:
     prop-types "^15.7.2"
 
+"@reach/component-component@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@reach/component-component/-/component-component-0.6.2.tgz#83b367b6476ef928f101319d37416bc15bd01e2f"
+  integrity sha512-Sb0p8qgzaAzFLNeOXGMz24LLmZuLzzNA5w04FfZJ+2BsMOHv/yw6P+orzeVYSclTriLurWJjb8gbdvxho+2usw==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@reach/dialog@^0.5.4":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@reach/dialog/-/dialog-0.5.4.tgz#72bc6d8a13c14088bf444f97dd1dec69ebb908c1"
