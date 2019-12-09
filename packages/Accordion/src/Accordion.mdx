@@ -1,34 +1,151 @@
 # Dev Documentation
 
-```tsx
-<Accordion activePanes={[0]} onChange={indexChanged => console.log(indexChanged)}>
-    <AccordionItem>
-        <AccordionHeader>
-            Item 1
-        </AccordionHeader>
-        <AccordionPane>
-            Content inside item 1
-        </AccordionPane>
-    </AccordionItem>
-    <AccordionItem>
-        <AccordionHeader>
-            Item 2
-        </AccordionHeader>
-        <AccordionPane>
-            Content inside item 2
-        </AccordionPane>
-    </AccordionItem>
-    <AccordionItem>
-        <AccordionHeader>
-            Item 3
-        </AccordionHeader>
-        <AccordionPane>
-            Content inside item 3
-        </AccordionPane>
-    </AccordionItem>
-</Accordion>
-```
+Basic Implementation allows you to pass in the "activePanes" by index and the "onChange" which will pass the index being changed. 
+
+This example shows use where one pane has to be open and only one at a time.
 
 ```tsx
-<AccordionExample />
+<Component initialState={{ activePanes: [0] }}>
+  {({ setState, state }) => (
+    <Accordion 
+        activePanes={state.activePanes} 
+        onChange={indexChanged => {
+            setState({ activePanes: [indexChanged] })
+        }}
+    >
+        <AccordionItem>
+            <AccordionHeader>
+                Item 1
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 1
+            </AccordionPane>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionHeader>
+                Item 2
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 2
+            </AccordionPane>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionHeader>
+                Item 3
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 3
+            </AccordionPane>
+        </AccordionItem>
+    </Accordion>
+  )}
+</Component>
+```
+
+Here's an example where multiple panes can be open at a time and none has to be open if the user closes them all. 
+
+```tsx
+<Component initialState={{ activePanes: [0] }}>
+  {({ setState, state }) => (
+    <Accordion 
+        activePanes={state.activePanes} 
+        onChange={indexChanged => {
+            const {activePanes} = state;
+            if (activePanes.includes(indexChanged)) {
+                setState({
+                    activePanes: activePanes.filter(i => i !== indexChanged),
+                });
+            } else {
+                setState({
+                    activePanes: [...activePanes, indexChanged],
+                });
+            }
+        }}
+    >
+        <AccordionItem>
+            <AccordionHeader>
+                Item 1
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 1
+            </AccordionPane>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionHeader>
+                Item 2
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 2
+            </AccordionPane>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionHeader>
+                Item 3
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 3
+            </AccordionPane>
+        </AccordionItem>
+    </Accordion>
+  )}
+</Component>
+```
+
+Need to pass a clickable element in the header but don't want to trigger the onChange? No problem, just call "stopPropagation" on the click event. 
+
+```tsx
+<Component initialState={{ activePanes: [1] }}>
+  {({ setState, state }) => (
+    <Accordion 
+        activePanes={state.activePanes} 
+        onChange={indexChanged => {
+            const {activePanes} = state;
+            if (activePanes.includes(indexChanged)) {
+                setState({
+                    activePanes: activePanes.filter(i => i !== indexChanged),
+                });
+            } else {
+                setState({
+                    activePanes: [...activePanes, indexChanged],
+                });
+            }
+        }}
+    >
+        <AccordionItem>
+            <AccordionHeader style={{ display: 'flex' }}>
+                <div style={{ flex: 1, display: 'inline-flex', justifyContent: 'space-between' }}>
+                    <div>Item 1</div>
+                    <button
+                        onClick={e => {
+                            e.stopPropagation();
+                            console.log('Button clicked');
+                        }}
+                    >
+                        Do Something Else
+                    </button>
+                </div>
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 1
+            </AccordionPane>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionHeader>
+                Item 2
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 2
+            </AccordionPane>
+        </AccordionItem>
+        <AccordionItem>
+            <AccordionHeader>
+                Item 3
+            </AccordionHeader>
+            <AccordionPane>
+                Content inside item 3
+            </AccordionPane>
+        </AccordionItem>
+    </Accordion>
+  )}
+</Component>
 ```
