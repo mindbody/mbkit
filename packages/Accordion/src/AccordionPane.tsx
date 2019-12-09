@@ -42,13 +42,17 @@ export const AccordionPane: FC<AccordionPaneProps> = forwardRef((props: Accordio
 
     // Delaying closing internal expansion for animation
     useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout>;
         if (isExpanded) {
             setInternalExpanded(isExpanded);
         } else {
-            setTimeout(() => {
+            timeout = setTimeout(() => {
                 setInternalExpanded(isExpanded);
             }, Number(styles.transitionTime));
         }
+        return () => {
+            clearTimeout(timeout);
+        };
     }, [isExpanded]);
 
     const classNames = classnames({
