@@ -3,19 +3,19 @@ import React, {
     forwardRef,
     AllHTMLAttributes,
     HTMLProps,
-    ReactElement,
     useContext,
     createContext,
     Fragment,
     useMemo,
+    ReactNode,
 } from 'react';
 import { AccordionContext } from './Accordion';
 import nanoid from 'nanoid';
 
 export type AccordionItemProps = AllHTMLAttributes<HTMLDivElement> &
     HTMLProps<HTMLDivElement> & {
-        as?: ReactElement;
-        /** Do not use! this is for internal usage of the accordion. Your value will be overwritten by the accordion */
+        as?: ReactNode;
+        /** Do not use "_index"! this is for internal usage of the accordion. Your value will be overwritten by the accordion */
         _index?: number;
     };
 

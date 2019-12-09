@@ -43,6 +43,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
                 // that needs it's own click event
                 const activeElement = document.activeElement as HTMLElement;
                 if (activeElement.id === `header-${id}`) {
+                    event.preventDefault();
                     onChange(index);
                 }
                 return;

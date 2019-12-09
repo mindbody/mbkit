@@ -10,6 +10,7 @@ This example shows use where one pane has to be open and only one at a time.
     <Accordion 
         activePanes={state.activePanes} 
         onChange={indexChanged => {
+            // Note that this simply overwrites all values of array to current index clicked
             setState({ activePanes: [indexChanged] })
         }}
     >
@@ -51,6 +52,9 @@ Here's an example where multiple panes can be open at a time and none has to be 
         activePanes={state.activePanes} 
         onChange={indexChanged => {
             const {activePanes} = state;
+            // Here we do a check to see if we need to filter out or just add the value.
+            // Another option to make sure that the accordion always has one pane open, 
+            // is to also check the length to make sure it's at least 1.
             if (activePanes.includes(indexChanged)) {
                 setState({
                     activePanes: activePanes.filter(i => i !== indexChanged),
@@ -117,6 +121,9 @@ Need to pass a clickable element in the header but don't want to trigger the onC
                     <div>Item 1</div>
                     <button
                         onClick={e => {
+                            // Stop propagation must be called as we check if 
+                            // `event.isPropagationStopped()` is true to 
+                            // disable the onChange from firing
                             e.stopPropagation();
                             console.log('Button clicked');
                         }}
@@ -149,3 +156,15 @@ Need to pass a clickable element in the header but don't want to trigger the onC
   )}
 </Component>
 ```
+
+## Accessibility (a11y)
+
+The accordion components are buil per the <a href="https://www.w3.org/TR/wai-aria-practices/#accordion" target="_blank">W3 best practices for accordions</a> for a11y concerns.
+
+### Technical details
+
+Under the hood, "AccordionItem" ties together the "AccordionHeader" and "AccordionPane" so the aria labels correspond as well tell the screen reader if the current pane is open or not. 
+
+### Keyboard shortcuts
+
+The user can use their arrow up/down keys while focused on a header to navigate between headers as well as the "home"/"end" which will focus the first/last header accordingly. While focused on a header the user can press their "Space"/"Enter" key to activate the onChange. 

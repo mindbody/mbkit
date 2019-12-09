@@ -3,7 +3,7 @@ import React, {
     forwardRef,
     AllHTMLAttributes,
     HTMLProps,
-    ReactElement,
+    ReactNode,
     useContext,
     useRef,
     useEffect,
@@ -15,7 +15,7 @@ import styles from './Accordion.scss';
 
 export type AccordionPaneProps = AllHTMLAttributes<HTMLDivElement> &
     HTMLProps<HTMLDivElement> & {
-        as?: ReactElement;
+        as?: ReactNode;
     };
 
 export const AccordionPane: FC<AccordionPaneProps> = forwardRef((props: AccordionPaneProps, ref) => {

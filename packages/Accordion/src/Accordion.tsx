@@ -1,17 +1,29 @@
-import React, { FC, forwardRef, ReactElement, createContext, Children, cloneElement, useMemo } from 'react';
+import React, {
+    FC,
+    forwardRef,
+    ReactElement,
+    ReactNode,
+    createContext,
+    Children,
+    cloneElement,
+    useMemo,
+    AllHTMLAttributes,
+    HTMLProps,
+} from 'react';
 import { AccordionItemProps } from './AccordionItem';
 import nanoid from 'nanoid';
 import classnames from 'classnames';
 import styles from './Accordion.scss';
 
-type AccordionProps = {
-    /** Array of active panes to be displayed */
-    activePanes: number[];
-    as?: ReactElement;
-    children: ReactElement<AccordionItemProps>[];
-    onChange: (index: number) => void;
-    className?: string;
-};
+type AccordionProps = AllHTMLAttributes<HTMLElement> &
+    HTMLProps<HTMLElement> & {
+        /** Array of active panes to be displayed */
+        activePanes: number[];
+        as?: ReactNode;
+        children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
+        onChange: (index: number) => void;
+        className?: string;
+    };
 
 type AccordionContextValue = {
     activePanes: AccordionProps['activePanes'];
@@ -28,11 +40,12 @@ export const AccordionContext = createContext<AccordionContextValue>({
     accordionId: '',
 });
 export const Accordion: FC<AccordionProps> = forwardRef((props: AccordionProps, ref) => {
-    const { as = 'div' as any, activePanes = [], onChange = noop, className = '', children, ...rest } = props;
+    const { as = 'div' as any, activePanes, onChange, className = '', children, ...rest } = props;
     const accordionId = useMemo(() => nanoid(), []);
     const Component = as;
 
-    const clonedChildren = Children.map(children, (child, index) => {
+    const childrenAsArray = Array.isArray(children) ? children : [children];
+    const clonedChildren = Children.map(childrenAsArray, (child, index) => {
         return cloneElement(child, { _index: index });
     });
     const classNames = classnames({
