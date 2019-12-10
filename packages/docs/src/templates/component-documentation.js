@@ -5,6 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import vsDark from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
 import SEO from '../components/seo';
+import Component from '@reach/component-component';
 const docsToMarkdown = require('react-docs-markdown');
 
 const defaultOverrides = {
@@ -14,6 +15,7 @@ const defaultOverrides = {
     h4: props => <h5 {...props} />,
     h5: props => <h6 {...props} />,
     a: props => <a {...props} target="_blank" />,
+    Component: props => <Component {...props} />,
 };
 
 const ComponentDocumentation = props => {
