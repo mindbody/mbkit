@@ -1,29 +1,17 @@
-import React, {
-    FC,
-    forwardRef,
-    ReactElement,
-    ReactNode,
-    createContext,
-    Children,
-    cloneElement,
-    useMemo,
-    AllHTMLAttributes,
-    HTMLProps,
-} from 'react';
+import React, { FC, forwardRef, ReactElement, ReactNode, createContext, Children, cloneElement, useMemo } from 'react';
 import { AccordionItemProps } from './AccordionItem';
 import nanoid from 'nanoid';
 import classnames from 'classnames';
 import styles from './Accordion.scss';
 
-type AccordionProps = AllHTMLAttributes<HTMLElement> &
-    HTMLProps<HTMLElement> & {
-        /** Array of active panes to be displayed */
-        activePanes: number[];
-        as?: ReactNode;
-        children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
-        onChange: (index: number) => void;
-        className?: string;
-    };
+type AccordionProps = {
+    /** Array of active panes to be displayed */
+    activePanes: number[];
+    onChange: (index: number) => void;
+    as?: ReactNode;
+    children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
+    className?: string;
+};
 
 type AccordionContextValue = {
     activePanes: AccordionProps['activePanes'];
