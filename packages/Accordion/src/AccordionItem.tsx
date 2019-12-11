@@ -6,7 +6,6 @@ import React, {
     useContext,
     createContext,
     Fragment,
-    useMemo,
     ReactNode,
 } from 'react';
 import { AccordionContext } from './Accordion';
@@ -25,7 +24,7 @@ export const AccordionItem: FC<AccordionItemProps> = forwardRef((props: Accordio
     const { activePanes } = useContext(AccordionContext);
     const Component = as;
 
-    const id = useMemo(() => nanoid(), []);
+    const id = nanoid();
     const isExpanded = activePanes.includes(_index);
 
     return (

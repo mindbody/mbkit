@@ -31,11 +31,14 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
     const { id, isExpanded, index } = useContext(AccordionItemContext);
 
     function handleKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-        const headers = getAccordionHeaders(accordionId);
         event.persist();
         if (onKeyDown) {
             onKeyDown(event);
         }
+
+        const headers: HTMLElement[] = Array.from(
+            document.querySelectorAll(`[data-accordion-header="${accordionId}"]`),
+        );
         switch (event.key) {
             case ' ':
             case 'Enter':
@@ -107,7 +110,3 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
     );
 });
 AccordionHeader.displayName = 'AccordionHeader';
-
-function getAccordionHeaders(id: string): HTMLElement[] {
-    return Array.from(document.querySelectorAll(`[data-accordion-header="${id}"]`));
-}
