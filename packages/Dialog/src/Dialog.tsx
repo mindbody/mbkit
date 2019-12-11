@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, AllHTMLAttributes, HTMLProps } from 'react';
+import React, { FC, forwardRef, AllHTMLAttributes, HTMLProps, useEffect } from 'react';
 import { AlertDialogContent, AlertDialogLabel, AlertDialogOverlay, AlertDialogDescription } from '@reach/alert-dialog';
 import { AlertDialogProps } from '@reach/alert-dialog';
 import classnames from 'classnames';
@@ -64,6 +64,28 @@ export const Dialog: FC<DialogProps> = forwardRef((props: DialogProps, ref) => {
                 setInternalShow(show);
             }, duration);
         }
+    }, [show]);
+
+    function watchForEscape(event: KeyboardEvent) {
+        switch (event.key) {
+            case 'Escape':
+                onClose();
+                return;
+            default:
+                return;
+        }
+    }
+
+    useEffect(() => {
+        if (show) {
+            document.addEventListener('keydown', watchForEscape);
+        } else {
+            document.removeEventListener('keydown', watchForEscape);
+        }
+
+        return () => {
+            document.removeEventListener('keydown', watchForEscape);
+        };
     }, [show]);
 
     const classNames = classnames({
