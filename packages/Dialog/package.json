@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@reach/alert-dialog": "^0.6.3",
+        "@reach/dialog": "^0.6.4",
         "classnames": "^2.2.6",
         "react-transition-group": "^4.3.0"
     }

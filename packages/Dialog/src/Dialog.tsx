@@ -8,7 +8,7 @@ import styles from './Dialog.scss';
 
 export type DialogProps = AllHTMLAttributes<HTMLDivElement> &
     HTMLProps<HTMLDivElement> &
-    AlertDialogProps & {
+    Partial<AlertDialogProps> & {
         /** Determines whether the dialog is open or not */
         show: boolean;
         /** This is the title and is read to the screen reader */
