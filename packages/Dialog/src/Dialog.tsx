@@ -1,9 +1,10 @@
 import React, { FC, forwardRef, AllHTMLAttributes, HTMLProps } from 'react';
-import { AlertDialog, AlertDialogLabel } from '@reach/alert-dialog';
+import { AlertDialogContent, AlertDialogLabel, AlertDialogOverlay, AlertDialogDescription } from '@reach/alert-dialog';
 import { AlertDialogProps } from '@reach/alert-dialog';
 import classnames from 'classnames';
+import { Transition } from 'react-transition-group';
+import { TransitionStatus } from 'react-transition-group/Transition';
 import styles from './Dialog.scss';
-import '@reach/dialog/styles.css';
 
 export type DialogProps = AllHTMLAttributes<HTMLDivElement> &
     HTMLProps<HTMLDivElement> &
@@ -14,6 +15,10 @@ export type DialogProps = AllHTMLAttributes<HTMLDivElement> &
         header: string;
         /** Function that is called when user clicks the close "X" icon */
         onClose: () => void;
+        /** Props to be passed to the veil. Useful for custom styles or class names */
+        veilProps?: AllHTMLAttributes<HTMLDivElement>;
+        /** Aria label for the close icon */
+        closeLabel?: string;
     };
 
 // TODO consume button and close icon
@@ -34,22 +39,76 @@ const CloseIcon = (props: any) => (
     </svg>
 );
 
+const duration = Number(styles.transitionTime);
 export const Dialog: FC<DialogProps> = forwardRef((props: DialogProps, ref) => {
-    const { children, header, className = '', show, onClose, ...rest } = props;
+    const {
+        children,
+        header,
+        className = '',
+        leastDestructiveRef,
+        closeLabel = 'Close',
+        show,
+        onClose,
+        veilProps = {},
+        ...rest
+    } = props;
     const closeRef = React.useRef(null);
+
+    // Using own internal state that is ultimately derived from `show` prop because animations
+    const [internalShow, setInternalShow] = React.useState(show);
+    React.useEffect(() => {
+        if (show) {
+            setInternalShow(show);
+        } else {
+            setTimeout(() => {
+                setInternalShow(show);
+            }, duration);
+        }
+    }, [show]);
+
     const classNames = classnames({
         [styles.dialog]: true,
         [className]: className,
     });
+    const veilClassNames = classnames({
+        [styles.veil]: true,
+        [veilProps.className || '']: veilProps.className,
+    });
     return (
-        <AlertDialog {...rest} className={classNames} isOpen={show} leastDestructiveRef={closeRef} ref={ref}>
-            <button onClick={onClose} ref={closeRef}>
-                <CloseIcon />
-            </button>
-            <AlertDialogLabel>{header}</AlertDialogLabel>
-            {children}
-        </AlertDialog>
+        <Transition in={show} timeout={duration}>
+            {(state: TransitionStatus) => (
+                <>
+                    {internalShow && (
+                        <AlertDialogOverlay
+                            leastDestructiveRef={leastDestructiveRef || closeRef}
+                            {...veilProps}
+                            className={`${veilClassNames} ${styles[`veil_${state}`]}`}
+                        >
+                            <AlertDialogContent
+                                {...rest}
+                                className={`${classNames} ${styles[`dialog_${state}`]}`}
+                                ref={ref}
+                            >
+                                <div className={styles.content}>
+                                    <AlertDialogLabel className={styles.header}>{header}</AlertDialogLabel>
+                                    <AlertDialogDescription className={styles.description}>
+                                        {children}
+                                    </AlertDialogDescription>
+                                    <button
+                                        onClick={onClose}
+                                        ref={closeRef}
+                                        className={styles.closeIcon}
+                                        aria-label={closeLabel}
+                                    >
+                                        <CloseIcon aria-hidden="true" />
+                                    </button>
+                                </div>
+                            </AlertDialogContent>
+                        </AlertDialogOverlay>
+                    )}
+                </>
+            )}
+        </Transition>
     );
 });
 Dialog.displayName = 'Dialog';
-3;
