@@ -6,6 +6,10 @@
     }
 }
 
+.icon {
+    box-sizing: border-box;
+}
+
 .primaryColor {
     @include svgTargetFill {
         fill: var(--primary-1, #993100);
