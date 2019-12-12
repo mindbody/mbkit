@@ -1,11 +1,12 @@
-import React, { HTMLAttributes, RefObject } from 'react';
+import React, { HTMLAttributes, RefObject, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Typography.scss';
 
-export type LinkProps = HTMLAttributes<HTMLElement> & {
-    /** This will be the actual rendered element */
-    as?: React.ReactNode;
-};
+export type LinkProps = HTMLAttributes<HTMLElement> &
+    RefAttributes<HTMLElement> & {
+        /** This will be the actual rendered element */
+        as?: React.ReactNode;
+    };
 
 export const Link: React.FC<LinkProps> = React.forwardRef((props: LinkProps, ref: RefObject<any>) => {
     const { as = 'a', className = '', ...rest } = props;
