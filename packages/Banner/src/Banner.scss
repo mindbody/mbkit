@@ -47,6 +47,10 @@ $focus: var(--focus, #6096e6bf);
     border-radius: $radius;
     font-family: $font-family;
 
+    &, & * {
+        box-sizing: border-box;
+    }
+
     a {
         text-decoration: underline;
         cursor: pointer;
