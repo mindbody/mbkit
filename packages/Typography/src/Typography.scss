@@ -1,6 +1,7 @@
 $secondary-1: var(--secondary-1, #004C57);
 $neutral-2: var(--neutral-2, #5A5E66);
 $radius: var(--radius, 3px);
+$error-2: var(--error-2, #BD3845);
 
 @mixin get-font-spec($spec, $defaultSize, $defaultLineHeight) {
     font-family: var(--font-family, 'Lato');
@@ -83,27 +84,13 @@ $radius: var(--radius, 3px);
     color: $secondary-1;
     position: relative;
     outline: none;
-    
-    &:before {
-        content: '';
-        width: 98%;
-        height: .5px;
-        display: block;
-        position: absolute;
-        background: $neutral-2;
-        top: calc(100% - 2px);
-        border-radius: $radius;
-        left: 50%;
-        transform: translate3d(-50%, 0, 0);
-        transition: all .2s ease-out;
+
+    &:hover, &:active {
+        text-decoration: underline;
     }
-    
-    &:hover, &:focus {
-        &:before {
-            width: 95%;
-            height: 2px;
-            background: $secondary-1;
-        }   
+    &:visited {
+        text-decoration: underline;
+        color: $error-2;
     }
     &:focus {
         box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
