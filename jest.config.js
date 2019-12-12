@@ -1,5 +1,6 @@
 module.exports = {
     preset: 'ts-jest',
+    setupFilesAfterEnv: ['<rootDir>/shared/testing/testSetup.js'],
     testEnvironment: 'jsdom',
     roots: ['<rootDir>/packages'],
     collectCoverageFrom: [
@@ -8,6 +9,8 @@ module.exports = {
         '!packages/docs/**',
         '!packages/**/dist/**',
         '!packages/**/index.tsx',
+        '!packages/**/Example.tsx',
+        '!packages/**/Examples.tsx',
     ],
     testPathIgnorePatterns: ['<rootDir>/packages/docs', 'node_modules'],
     transform: {

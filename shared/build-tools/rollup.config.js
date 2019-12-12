@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 import { eslint } from 'rollup-plugin-eslint';
 import json from 'rollup-plugin-json';
+import autoprefixer from 'autoprefixer';
 
 const consumerPath = process.cwd();
 const pkg = require(`${consumerPath}/package.json`);
@@ -30,14 +31,15 @@ export default {
             typescript: require('typescript'),
             exclude: ['**/*.stories.tsx', '**/*.js', 'node_modules'],
             verbosity: 1,
-            tsconfig: `${__dirname}/../../tsconfig.json`,
+            tsconfig: `${consumerPath}/tsconfig.json`,
             tsconfigOverride: {
                 compilerOptions: {
-                    typeRoots: [`node_modules/@types`, `${__dirname}/../types`],
+                    typeRoots: [`node_modules/@types`, `${__dirname}/../../typings`],
                 },
             },
         }),
         postcss({
+            plugins: [autoprefixer()],
             minimize: true,
             namedExports: true,
             modules: {

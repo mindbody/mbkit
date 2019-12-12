@@ -1,0 +1,81 @@
+# Dev Documentation
+
+## Examples of different states of the Radio component
+
+Use the "checked" prop to display the checked value and the "onChange" prop to handle when the value changes. 
+
+```tsx
+<>
+    <label>
+        <Radio checked={false} /> <Radio checked={false} disabled /> Default unselected
+    </label>
+    <br />
+    <label>
+        <Radio checked /> <Radio checked disabled /> Default selected
+    </label>
+    <br />
+    <label>
+        <Radio checked={false} invalid /> <Radio checked invalid /> <Radio checked={false} invalid disabled /> <Radio checked invalid disabled /> Invalid states
+    </label>
+</>
+```
+
+## Accessibility (A11y)
+
+There are a few ways to make your radio inputs accessible. 
+
+### Using fieldset and legend
+
+The fieldset and legend will notify the user when focus enters a radio input and reads "Yoga, radio button, 1 of 3, Please select your favorite workout, group". 
+
+_Note that the fieldset and legend will apply styling your design may not call for. Keep reading for further examples._
+
+```tsx
+<> 
+    <fieldset>
+        <legend>Please select your favorite workout</legend>
+        {/* Implicit labels */}     
+        <label>
+            <Radio name="workout" value="yoga" /> Yoga
+        </label>
+        <br />
+        
+        <label>
+            <Radio name="workout" value="barre" /> Barre
+        </label>
+        <br />
+        
+        <label>
+            <Radio name="workout" value="weight lifting" /> Weight lifting
+        </label>
+    </fieldset>
+</>
+```
+
+### Using aria attributes
+
+This will read identical to the fieldset and legend combination "Spring, radio button, 1 of 4, Please select your favorite season, group". 
+
+```tsx
+<>
+    <div role="group" aria-labelledby="favorite-season-label">
+        <p id="favorite-season-label">Please select your favorite season</p>
+
+        {/* Explicit labels */}
+        <Radio name="season" id="spring" value="spring" />{" "}
+        <label htmlFor="spring">Spring</label>
+        <br />
+
+        <Radio name="season" value="summer" id="summer" />{" "}    
+        <label htmlFor="summer">Summer</label>
+        <br />
+
+        <Radio name="season" value="fall" id="fall" />{" "}
+        <label htmlFor="fall">Fall</label>
+        <br />
+
+        <Radio name="season" value="winter" id="winter" />{" "}
+        <label htmlFor="winter">Winter</label>
+    </div>
+</>
+```

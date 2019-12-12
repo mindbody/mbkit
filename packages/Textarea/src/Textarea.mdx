@@ -1,0 +1,26 @@
+# Dev Documentation
+
+Semantic labels
+
+```tsx
+<div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: 16, padding: '8px 0' }}>
+    <label>
+        What is something you would change with your experience?
+        <Textarea value="Some content" onChange={e => console.log(e.target.value)} />
+    </label>
+    <div>
+        <label htmlFor="feedback" id="feedback-label">Any additional feedback?</label>
+        <Textarea id="feedback" aria-labelledby="feedback-label" value="Some content" onChange={e => console.log(e.target.value)} invalid />
+    </div>
+</div>
+```
+
+Different states
+
+```tsx
+<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16, padding: '8px 0' }}>
+    <Textarea value="Some content" onChange={e => console.log(e.target.value)} />
+    <Textarea value="Some content" onChange={e => console.log(e.target.value)} />
+    <Textarea value="Some content" onChange={e => console.log(e.target.value)} disabled />
+</div>
+```

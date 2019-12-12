@@ -1,0 +1,20 @@
+// When using inline SVG (Checkbox component) some browsers  
+// detect encoded and display the SVG with the correct color,
+// while others do not.
+// https://gist.github.com/certainlyakey/e9c0d8f5c87ff47e3d5b
+@function encodeHexColor($string) {
+	@if type-of($string) == 'color' {
+        $hex: str-slice(ie-hex-str($string), 4);
+        $string: unquote("#{$hex}");
+    }
+    $string: '%23' + $string;
+	@return $string;
+}
+@mixin svgFill($fillColor) {
+    svg g:not([fill~="#"]),
+    svg path:not([fill~="#"]),
+    svg mask:not([fill~="#"]),
+    svg use:not([fill~="#"]) { 
+        fill: $fillColor;
+    }
+}

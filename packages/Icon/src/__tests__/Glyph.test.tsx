@@ -9,11 +9,8 @@ describe('Icon', () => {
 
     const renderAllIcons = (props = {}) =>
         Object.keys(Glyphs).map(key => {
-            const Comp: React.ReactNode = (Glyphs as AllIcons)[key];
-            if (typeof Comp === 'function') {
-                return Comp({ key, ...props });
-            }
-            return null;
+            const Comp: any = (Glyphs as AllIcons)[key];
+            return <Comp {...props} key={key} />;
         });
 
     const { GlyphAdd } = Glyphs;

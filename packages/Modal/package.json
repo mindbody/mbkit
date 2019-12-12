@@ -1,0 +1,29 @@
+{
+    "name": "@mindbody/modal",
+    "version": "1.0.0",
+    "source": "src/index.tsx",
+    "main": "dist/Modal.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "../../shared/build-tools/build-package.js",
+        "dev": "../../shared/build-tools/dev-package.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/classnames": "^2.2.9",
+        "@types/react": "^16.9.2",
+        "@types/react-transition-group": "^4.2.3",
+        "react": "^16.9.0"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0"
+    },
+    "dependencies": {
+        "@reach/dialog": "^0.5.4",
+        "classnames": "^2.2.6",
+        "react-transition-group": "^4.3.0"
+    }
+}

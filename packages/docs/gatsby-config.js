@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `MINDBODY | Design System`,
+        title: `Design System`,
         description: `Discover and learn our best practices for design, copywriting, feature development and component library`,
         author: `@czaas`,
     },
