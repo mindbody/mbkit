@@ -1,28 +1,29 @@
-import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode } from 'react';
+import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode, RefAttributes } from 'react';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 import classnames from 'classnames';
 import styles from './Modal.scss';
 
-export type ModalProps = AllHTMLAttributes<HTMLDivElement> & {
-    /** Determines whether the modal is visible or not */
-    show: boolean;
-    /** When the close icon or background is clicked, this will be called */
-    onClose: () => void;
-    /** When the modal is set to be displayed, the screen reader will read this to the assistive technology */
-    label: string;
-    /** Sets max-width of modal from largest to smallest */
-    size: 1 | 2 | 3;
-    /** Props to be passed to the veil. Useful for custom styles or class names */
-    veilProps?: AllHTMLAttributes<HTMLDivElement>;
-    /** Adds header bar with content passed in it */
-    header?: ReactNode;
-    /** Adds footer */
-    footer?: ReactNode;
-    /** Set's initial focused item on passed in ref. Otherwise it will be focused on the first focusable item */
-    initialFocusRef?: RefObject<any>;
-};
+export type ModalProps = AllHTMLAttributes<HTMLDivElement> &
+    RefAttributes<HTMLDivElement> & {
+        /** Determines whether the modal is visible or not */
+        show: boolean;
+        /** When the close icon or background is clicked, this will be called */
+        onClose: () => void;
+        /** When the modal is set to be displayed, the screen reader will read this to the assistive technology */
+        label: string;
+        /** Sets max-width of modal from largest to smallest */
+        size: 1 | 2 | 3;
+        /** Props to be passed to the veil. Useful for custom styles or class names */
+        veilProps?: AllHTMLAttributes<HTMLDivElement>;
+        /** Adds header bar with content passed in it */
+        header?: ReactNode;
+        /** Adds footer */
+        footer?: ReactNode;
+        /** Set's initial focused item on passed in ref. Otherwise it will be focused on the first focusable item */
+        initialFocusRef?: RefObject<any>;
+    };
 
 type TransitionValues = {
     entering: object;
