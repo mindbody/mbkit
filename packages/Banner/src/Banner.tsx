@@ -1,9 +1,9 @@
-import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode, HTMLProps } from 'react';
+import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Banner.scss';
 
 export type BannerProps = AllHTMLAttributes<HTMLElement> &
-    HTMLProps<HTMLElement> & {
+    RefAttributes<HTMLElement> & {
         variant: 'success' | 'warning' | 'error' | 'info';
         as?: ReactNode;
         title?: ReactNode;
