@@ -1,6 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Dialog } from '../Dialog';
+import { act } from 'react-dom/test-utils';
 
 describe('Dialog', () => {
     const closeSpy = jest.fn();
@@ -63,5 +64,32 @@ describe('Dialog', () => {
         expect(veil.classList.contains('testing')).toBe(true);
         expect(veil.getAttribute('data-random-attribute')).toBe('true');
         expect(veil.style.background).toBe('red');
+    });
+    it('should fire onClose when dialog is open and user presses their escape key', () => {
+        const { baseElement } = render(
+            <Dialog show={true} header="Some Heading" onClose={closeSpy}>
+                Testing
+            </Dialog>,
+        );
+        act(() => {
+            fireEvent.keyDown(baseElement, { key: 'Escape' });
+        });
+        expect(closeSpy).toHaveBeenCalledTimes(1);
+    });
+    it('should not fire onClose when dialog is closed and user presses their escape key', () => {
+        const { baseElement, rerender } = render(
+            <Dialog show={true} header="Some Heading" onClose={closeSpy}>
+                Testing
+            </Dialog>,
+        );
+        rerender(
+            <Dialog show={false} header="Some Heading" onClose={closeSpy}>
+                Testing
+            </Dialog>,
+        );
+        act(() => {
+            fireEvent.keyDown(baseElement, { key: 'Escape' });
+        });
+        expect(closeSpy).toHaveBeenCalledTimes(0);
     });
 });
