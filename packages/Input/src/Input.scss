@@ -42,6 +42,10 @@ $border: 1px solid $neutral-3;
     background: $background;
     color: $foreground;
 
+    &, & * {
+        box-sizing: border-box;
+    }
+
     &.hasFocus {
         box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
         .beforeInput, .afterInput {
@@ -94,6 +98,7 @@ $border: 1px solid $neutral-3;
     font-family: $font-family;
     display: flex;
     transition: border-color .2s ease-out;
+    min-width: 0;
 
     &.hasBefore {
         border-top-left-radius: 0;
