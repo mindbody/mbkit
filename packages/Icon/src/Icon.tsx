@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes, RefObject, ReactNode } from 'react';
+import React, { AllHTMLAttributes, RefObject, ReactNode, RefAttributes } from 'react';
 import nanoid from 'nanoid';
 import classnames from 'classnames';
 import styles from './Icon.scss';
@@ -24,9 +24,10 @@ const BaseIcon: React.FC<BaseIconProps> = (props: BaseIconProps) => {
     );
 };
 
-export type IconProps = AllHTMLAttributes<SVGSVGElement> & {
-    color?: ColorOptions;
-};
+export type IconProps = AllHTMLAttributes<SVGSVGElement> &
+    RefAttributes<SVGSVGElement> & {
+        color?: ColorOptions;
+    };
 
 export const IconAdd: React.FC<IconProps> = React.forwardRef((props: IconProps, ref: RefObject<SVGSVGElement>) => (
     <BaseIcon {...props} forwardedRef={ref}>
