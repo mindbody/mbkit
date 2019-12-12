@@ -141,6 +141,10 @@ $iconSize4: 30px;
     transition: background .2s ease-out, color .2s ease-out, fill .2s ease-out;
     overflow: hidden;
 
+    &, & * {
+        box-sizing: border-box;
+    }
+
     &, .children {
         display: inline-flex;
         justify-content: center;
