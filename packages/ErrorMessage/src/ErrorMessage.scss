@@ -6,4 +6,5 @@ $error-1: var(--error-1, #992D38);
     font-family: $font-family;
     color: $error-1;
     font-size: .75rem;
+    box-sizing: border-box;
 }

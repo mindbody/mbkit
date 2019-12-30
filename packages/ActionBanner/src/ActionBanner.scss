@@ -20,14 +20,16 @@ $transitionTime: 400;
 }
 
 .container {
-    box-sizing: border-box;
     height: auto;
     overflow: hidden;
     transition: height #{$transitionTime}ms ease-out;
+
+    &, & * {
+        box-sizing: border-box; 
+    }
 }
 
 .actionBanner {
-    box-sizing: border-box; 
     display: flex;
     justify-content: center;
     align-items: center;

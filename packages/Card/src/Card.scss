@@ -11,6 +11,7 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
     transition: box-shadow .2s ease-out;
     font-family: $font-family;
     padding: 16px;
+    box-sizing: border-box;
 
     &:before {
         content: '';
