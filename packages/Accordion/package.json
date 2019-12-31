@@ -1,0 +1,28 @@
+{
+    "name": "@mindbody/accordion",
+    "version": "1.0.0",
+    "source": "src/index.tsx",
+    "main": "dist/Accordion.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "../../shared/build-tools/build-package.js",
+        "dev": "../../shared/build-tools/dev-package.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/classnames": "^2.2.9",
+        "@types/nanoid": "^2.1.0",
+        "@types/react": "^16.9.2",
+        "react": "^16.9.0"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0"
+    },
+    "dependencies": {
+        "classnames": "^2.2.6",
+        "nanoid": "^2.1.7"
+    }
+}
