@@ -13,6 +13,7 @@ type BaseIconProps = AllHTMLAttributes<SVGSVGElement> & {
 const BaseIcon: React.FC<BaseIconProps> = (props: BaseIconProps) => {
     const { width = '32', height = '32', color, children, className = '', forwardedRef, ...rest } = props;
     const classNames = classnames({
+        [styles.icon]: true,
         [styles[`${color}Color`]]: color,
         [className]: className,
     });

@@ -4,17 +4,17 @@ All Variations
 
 ```tsx
 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: 16, padding: '16px 0' }}>
-    <Banner variant="success" title="Your billing information was updated" message="It usually takes 3 to 4 weeks to see the banks update the auto deposits" />
-    <Banner variant="warning" title="Oops, please check for warnings" message="Usually this is something simple and fixable, please review the form and make updates and try again" />
-    <Banner variant="error" title="Something went wrong" message="There was a catastrophic error and we can not recover from here. Please try again later" />
-    <Banner variant="info" title="Looking for some information?" message="You might be able to find it somewhere else" />
+    <Banner variant="success" header="Your billing information was updated" message="It usually takes 3 to 4 weeks to see the banks update the auto deposits" />
+    <Banner variant="warning" header="Oops, please check for warnings" message="Usually this is something simple and fixable, please review the form and make updates and try again" />
+    <Banner variant="error" header="Something went wrong" message="There was a catastrophic error and we can not recover from here. Please try again later" />
+    <Banner variant="info" header="Looking for some information?" message="You might be able to find it somewhere else" />
 </div>
 ```
 
 Using a link in the message
 
 ```tsx
-<Banner variant="info" title="Looking for some information?" message={<>You might be able to find it on the <a>details page</a></>} />
+<Banner variant="info" header="Looking for some information?" message={<>You might be able to find it on the <a>details page</a></>} />
 ```
 
 Need to do something completely different? Pass it in as children
