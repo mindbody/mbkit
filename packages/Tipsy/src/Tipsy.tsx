@@ -1,28 +1,29 @@
-import React, { ReactElement, cloneElement, ReactNode } from 'react';
+import React, { ReactElement, cloneElement, ReactNode, RefAttributes } from 'react';
 import { useTooltip, TooltipPopup } from '@reach/tooltip';
 import Portal from '@reach/portal';
 import tipsyStyles from './Tipsy.scss';
 import classnames from 'classnames';
 
-export type TipsyProps = React.HTMLAttributes<HTMLDivElement> & {
-    children: ReactElement;
-    label: ReactNode;
-    ariaLabel?: string;
-    /** This position will be the initial anchor point of where the tipsy starts. Collision detection will automatically reverse the side if it detects that it will overflow the window */
-    position?:
-        | 'top-left'
-        | 'top-center'
-        | 'top-right'
-        | 'bottom-left'
-        | 'bottom-center'
-        | 'bottom-right'
-        | 'left-top'
-        | 'left-center'
-        | 'left-bottom'
-        | 'right-top'
-        | 'right-center'
-        | 'right-bottom';
-};
+export type TipsyProps = React.HTMLAttributes<HTMLDivElement> &
+    RefAttributes<HTMLDivElement> & {
+        children: ReactElement;
+        label: ReactNode;
+        ariaLabel?: string;
+        /** This position will be the initial anchor point of where the tipsy starts. Collision detection will automatically reverse the side if it detects that it will overflow the window */
+        position?:
+            | 'top-left'
+            | 'top-center'
+            | 'top-right'
+            | 'bottom-left'
+            | 'bottom-center'
+            | 'bottom-right'
+            | 'left-top'
+            | 'left-center'
+            | 'left-bottom'
+            | 'right-top'
+            | 'right-center'
+            | 'right-bottom';
+    };
 
 const additionalSpacing = 8;
 const bumpOffTheWallSpace = 4;

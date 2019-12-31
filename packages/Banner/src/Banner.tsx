@@ -1,14 +1,15 @@
-import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode } from 'react';
+import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Banner.scss';
 
-export type BannerProps = AllHTMLAttributes<HTMLElement> & {
-    variant: 'success' | 'warning' | 'error' | 'info';
-    as?: ReactNode;
-    header?: ReactNode;
-    message?: ReactNode;
-    icon?: ReactNode;
-};
+export type BannerProps = AllHTMLAttributes<HTMLElement> &
+    RefAttributes<HTMLElement> & {
+        variant: 'success' | 'warning' | 'error' | 'info';
+        as?: ReactNode;
+        header?: ReactNode;
+        message?: ReactNode;
+        icon?: ReactNode;
+    };
 export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefObject<HTMLElement>) => {
     const { as = 'div' as any, children, className = '', header, message, variant, icon, ...rest } = props;
     const Component = as;

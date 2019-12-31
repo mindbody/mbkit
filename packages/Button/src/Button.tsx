@@ -1,26 +1,27 @@
-import React, { RefObject } from 'react';
+import React, { RefObject, HTMLAttributes, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Button.scss';
 
-export type ButtonProps = {
-    variant:
-        | 'primary'
-        | 'secondary'
-        | 'tertiary'
-        | 'primaryOutlined'
-        | 'secondaryOutlined'
-        | 'tertiaryOutlined'
-        | 'offCard'
-        | 'simpleText'
-        | 'icon'
-        | 'iconPrimary';
-    size?: '1' | '2' | '3' | '4';
-    loading?: boolean;
-    disabled?: boolean;
-};
+export type ButtonProps = RefAttributes<HTMLButtonElement> &
+    HTMLAttributes<HTMLButtonElement> & {
+        variant:
+            | 'primary'
+            | 'secondary'
+            | 'tertiary'
+            | 'primaryOutlined'
+            | 'secondaryOutlined'
+            | 'tertiaryOutlined'
+            | 'offCard'
+            | 'simpleText'
+            | 'icon'
+            | 'iconPrimary';
+        size?: '1' | '2' | '3' | '4';
+        loading?: boolean;
+        disabled?: boolean;
+    };
 const noop = () => {};
-export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = React.forwardRef(
-    (props: ButtonProps & React.HTMLAttributes<HTMLButtonElement>, ref: RefObject<HTMLButtonElement>) => {
+export const Button: React.FC<ButtonProps> = React.forwardRef(
+    (props: ButtonProps, ref: RefObject<HTMLButtonElement>) => {
         const {
             variant,
             size = '3',

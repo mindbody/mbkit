@@ -1,12 +1,13 @@
-import React, { AllHTMLAttributes, ChangeEvent, FC, forwardRef, RefObject } from 'react';
+import React, { AllHTMLAttributes, ChangeEvent, FC, forwardRef, RefObject, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Toggle.scss';
 
-export type ToggleProps = AllHTMLAttributes<HTMLInputElement> & {
-    checked: boolean;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    size?: 1 | 2;
-};
+export type ToggleProps = AllHTMLAttributes<HTMLInputElement> &
+    RefAttributes<HTMLInputElement> & {
+        checked: boolean;
+        onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+        size?: 1 | 2;
+    };
 export const Toggle: FC<ToggleProps> = forwardRef((props: ToggleProps, ref: RefObject<HTMLInputElement>) => {
     const { className = '', size = 1, ...rest } = props;
     const classNames = classnames({

@@ -1,15 +1,16 @@
-import React, { FC, RefObject, AllHTMLAttributes, ChangeEvent } from 'react';
+import React, { FC, RefObject, AllHTMLAttributes, ChangeEvent, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Checkbox.scss';
 
-export type CheckboxProps = Omit<AllHTMLAttributes<HTMLInputElement>, 'checked'> & {
-    /** Determines whether the checkbox is checked, unchecked, or intermediate state */
-    checked: boolean | 'mixed';
-    /** Fires when input is interacted with */
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    /** Shows red border and sets aria-invalid attribute */
-    invalid?: boolean;
-};
+export type CheckboxProps = Omit<AllHTMLAttributes<HTMLInputElement>, 'checked'> &
+    RefAttributes<HTMLInputElement> & {
+        /** Determines whether the checkbox is checked, unchecked, or intermediate state */
+        checked: boolean | 'mixed';
+        /** Fires when input is interacted with */
+        onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+        /** Shows red border and sets aria-invalid attribute */
+        invalid?: boolean;
+    };
 export const Checkbox: FC<CheckboxProps> = React.forwardRef(
     (props: CheckboxProps, ref: RefObject<HTMLInputElement>) => {
         const { checked, className = '', invalid, ...rest } = props;
