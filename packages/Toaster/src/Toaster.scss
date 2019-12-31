@@ -5,6 +5,8 @@ $secondary-1: var(--secondary-1, #004C57);
 $neutral-7: var(--neutral-7, #ffffff);
 $radius: var(--radius, 3px);
 $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+// TODO import media breakpoints once packages published
+$media-sm: 600px;
 
 :export {
     transitionTime: $transitionTime;
@@ -12,15 +14,12 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
 
 .toaster {
     box-sizing: border-box;
-    
     display: inline-flex;
     
-    width: auto;
-    max-width: 540px;
-    
+    width: 100%;
     position: fixed;
-    bottom: 16px;
-    left: 16px;
+    bottom: 0;
+    left: 0;
 
     background: $secondary-1;
     color: $neutral-7;
@@ -45,6 +44,13 @@ $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial',
         padding: 4px;
         color: $neutral-7;
         line-height: 1.5;
+    }
+
+    @media screen and (min-width: $media-sm) {
+        bottom: 16px;
+        left: 16px;
+        width: auto;
+        max-width: 540px;
     }
 }
 .hideToaster {
