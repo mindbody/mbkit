@@ -5,12 +5,12 @@ import styles from './Banner.scss';
 export type BannerProps = AllHTMLAttributes<HTMLElement> & {
     variant: 'success' | 'warning' | 'error' | 'info';
     as?: ReactNode;
-    title?: ReactNode;
+    header?: ReactNode;
     message?: ReactNode;
     icon?: ReactNode;
 };
 export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefObject<HTMLElement>) => {
-    const { as = 'div' as any, children, className = '', title, message, variant, icon, ...rest } = props;
+    const { as = 'div' as any, children, className = '', header, message, variant, icon, ...rest } = props;
     const Component = as;
     const classNames = classnames({
         [styles.banner]: true,
@@ -21,7 +21,7 @@ export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefO
         <Component {...rest} className={classNames} ref={ref}>
             <div className={styles.icon}>{icon ? icon : getIcon(variant)}</div>
             <div className={styles.content}>
-                {title && <h2 className={styles.heading}>{title}</h2>}
+                {header && <h2 className={styles.heading}>{header}</h2>}
                 {message && <p className={styles.body}>{message}</p>}
                 {children}
             </div>

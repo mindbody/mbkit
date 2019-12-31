@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, ReactElement, ReactNode, createContext, Children, cloneElement, useMemo } from 'react';
+import React, { FC, forwardRef, ReactElement, ReactNode, createContext, Children, cloneElement } from 'react';
 import { AccordionItemProps } from './AccordionItem';
 import nanoid from 'nanoid';
 import classnames from 'classnames';
@@ -29,7 +29,7 @@ export const AccordionContext = createContext<AccordionContextValue>({
 });
 export const Accordion: FC<AccordionProps> = forwardRef((props: AccordionProps, ref) => {
     const { as = 'div' as any, activePanes, onChange, className = '', children, ...rest } = props;
-    const accordionId = useMemo(() => nanoid(), []);
+    const accordionId = nanoid();
     const Component = as;
 
     const childrenAsArray = Array.isArray(children) ? children : [children];

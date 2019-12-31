@@ -33,7 +33,7 @@ describe('Banner', () => {
         expect(error.classList.contains('error')).toBe(true);
     });
     it('should render with text provided', () => {
-        const { getByText } = render(<Banner variant="warning" title={title} message={message} />);
+        const { getByText } = render(<Banner variant="warning" header={title} message={message} />);
         expect(getByText(title)).toBeTruthy();
         expect(getByText(message)).toBeTruthy();
     });
@@ -56,7 +56,7 @@ describe('Banner', () => {
                 onClick={spy}
                 variant="success"
                 data-testid="test"
-                title={title}
+                header={title}
                 message={message}
                 data-somerandomprop="i exist"
                 className="testing"
