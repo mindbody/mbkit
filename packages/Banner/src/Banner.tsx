@@ -6,7 +6,7 @@ export type BannerProps = AllHTMLAttributes<HTMLElement> &
     RefAttributes<HTMLElement> & {
         variant: 'success' | 'warning' | 'error' | 'info';
         as?: ReactNode;
-        title?: ReactNode;
+        header?: ReactNode;
         message?: ReactNode;
         icon?: ReactNode;
     };
