@@ -1,0 +1,22 @@
+# Dev Documentation
+
+Basic usage of dialog component. When "show" prop is true it will read the contents of the modal to a screen reader. 
+
+Using the "leastDestructiveRef" property will set the focus to the ref passed in when the modal opens, you want to use this on the buttons like cancel and never for destructive actions like deleting something. By default it's set to focus on the close button. 
+
+```tsx
+<Component initialState={{ show: false }}>
+    {({ state, setState }) => (
+        <>
+            <button onClick={() => setState({ show: true })}>Show Dialog</button>
+            <Dialog header="Generic Dialog" show={state.show} onClose={() => setState({ show: false })}>
+                <p>This is a generic dialog that should be used to get a response from a user</p>
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button onClick={() => setState({ show: false })}>Cancel</button>
+                    <button onClick={() => setState({ show: false })}>Save</button>
+                </div>
+            </Dialog>
+        </>
+    )}
+</Component>
+```
