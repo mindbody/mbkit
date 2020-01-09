@@ -58,3 +58,50 @@ $error-1: var(--error-1, #992D38);
         @include downChevron(#5A5E66);
     }
 }
+.multiSelectContainer {
+    position: relative;
+
+    .select.isOpen {
+        border-color: $secondary-1;
+        border-bottom: none;
+        border-radius: $radius $radius 0 0;
+    }
+}
+.multiSelectMenu {
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: $background;
+    visibility: hidden;
+    border: 1px solid $secondary-1;
+    border-top-color: $neutral-4;
+    border-radius: 0 0 $radius $radius;
+
+    &.isOpen {
+        opacity: 1;
+        pointer-events: initial;
+        visibility: visible;
+    }
+}
+.multiSelectItem {
+    display: block;
+    padding: 4px 8px;
+
+    &:first-child {
+        margin-top: 4px;
+    }
+    &:last-child {
+        margin-bottom: 4px;
+    }
+
+    .checkbox {
+        margin-right: 8px;
+    }
+}
+.placeholder {
+    color: $neutral-2;
+}

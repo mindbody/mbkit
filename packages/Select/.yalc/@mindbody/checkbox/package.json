@@ -1,8 +1,8 @@
 {
-    "name": "@mindbody/select",
-    "version": "1.0.0",
+    "name": "@mindbody/checkbox",
+    "version": "1.0.0-1464ea4c",
     "source": "src/index.tsx",
-    "main": "dist/Select.js",
+    "main": "dist/Checkbox.js",
     "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"
@@ -12,18 +12,10 @@
         "dev": "../../shared/build-tools/dev-package.js"
     },
     "license": "MIT",
-    "devDependencies": {
-        "@types/classnames": "^2.2.9",
-        "@types/nanoid": "^2.1.0",
-        "@types/react": "^16.9.2",
-        "react": "^16.9.0"
-    },
     "peerDependencies": {
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mindbody/checkbox": "file:.yalc/@mindbody/checkbox",
-        "classnames": "^2.2.6",
-        "nanoid": "^2.1.8"
+        "classnames": "^2.2.6"
     }
 }
