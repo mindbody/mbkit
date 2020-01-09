@@ -1,6 +1,6 @@
 {
     "name": "@mindbody/typography",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "source": "src/index.tsx",
     "main": "dist/Typography.js",
     "types": "dist/index.d.ts",

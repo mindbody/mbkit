@@ -1,6 +1,6 @@
 {
     "name": "@mindbody/textarea",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "source": "src/index.tsx",
     "main": "dist/Textarea.js",
     "types": "dist/index.d.ts",

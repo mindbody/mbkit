@@ -2,7 +2,7 @@
   "name": "@mindbody/docs",
   "private": true,
   "description": "Design system documentation for MINDBODY",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
   "scripts": {
     "docs:dev": "yarn clean && gatsby develop",

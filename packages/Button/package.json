@@ -1,6 +1,6 @@
 {
     "name": "@mindbody/button",
-    "version": "1.2.3",
+    "version": "1.3.0",
     "source": "src/index.tsx",
     "main": "dist/Button.js",
     "types": "dist/index.d.ts",
