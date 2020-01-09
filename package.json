@@ -50,7 +50,7 @@
         "husky": "^3.0.5",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.9.0",
-        "lerna": "^3.16.4",
+        "lerna": "^3.20.2",
         "make-dir-cli": "^2.0.0",
         "markdown-to-jsx": "^6.10.3",
         "node-sass": "^4.12.0",
