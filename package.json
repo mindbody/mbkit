@@ -20,7 +20,9 @@
         "docs:serve": "yarn lerna run docs:serve",
         "lerna:version": "yarn lerna version  --no-git-reset --conventional-commits --loglevel=error --yes",
         "lerna:publish": "yarn lerna publish --no-git-reset --from-git",
-        "commit": "git-cz"
+        "commit": "git-cz",
+        "ci:gated": "yarn test && yarn build:modules",
+        "cd:docs": "yarn build:modules && yarn build:docs"
     },
     "author": "",
     "license": "ISC",
