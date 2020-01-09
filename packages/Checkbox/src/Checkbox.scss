@@ -24,6 +24,9 @@ $error-1: var(--error-1, #992D38);
     vertical-align: middle;
     margin: 0;
     transition: box-shadow .1s ease-out;
+    &, & * {
+        box-sizing: border-box;
+    }
 
     &[aria-checked="mixed"] {
         @include checkmarkIntermediate(#fff);

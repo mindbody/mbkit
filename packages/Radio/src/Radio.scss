@@ -17,6 +17,10 @@ $error-1: var(--error-1, #992D38);
     outline: none;
     background: $background;
 
+    &, & * {
+        box-sizing: border-box;
+    }
+
     &:not(:disabled) {
         cursor: pointer;
     }

@@ -1,8 +1,8 @@
-import React, { FC, forwardRef, RefObject, AllHTMLAttributes } from 'react';
+import React, { FC, forwardRef, RefObject, AllHTMLAttributes, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Label.scss';
 
-export type LabelProps = AllHTMLAttributes<HTMLLabelElement>;
+export type LabelProps = AllHTMLAttributes<HTMLLabelElement> & RefAttributes<HTMLLabelElement>;
 export const Label: FC<LabelProps> = forwardRef((props: LabelProps, ref: RefObject<HTMLLabelElement>) => {
     const { className = '', ...rest } = props;
     const classNames = classnames({

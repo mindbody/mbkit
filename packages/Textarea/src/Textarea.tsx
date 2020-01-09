@@ -1,15 +1,16 @@
-import React, { AllHTMLAttributes, ChangeEvent, FC, forwardRef, RefObject } from 'react';
+import React, { AllHTMLAttributes, ChangeEvent, FC, forwardRef, RefObject, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Textarea.scss';
 
-export type TextareaProps = AllHTMLAttributes<HTMLTextAreaElement> & {
-    /** Value that is displayed in the textarea */
-    value: string;
-    /** Fires when textarea value changes */
-    onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-    /** Shows red border around textarea */
-    invalid?: boolean;
-};
+export type TextareaProps = AllHTMLAttributes<HTMLTextAreaElement> &
+    RefAttributes<HTMLTextAreaElement> & {
+        /** Value that is displayed in the textarea */
+        value: string;
+        /** Fires when textarea value changes */
+        onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+        /** Shows red border around textarea */
+        invalid?: boolean;
+    };
 export const Textarea: FC<TextareaProps> = forwardRef((props: TextareaProps, ref: RefObject<HTMLTextAreaElement>) => {
     const { className = '', invalid, ...rest } = props;
     const classNames = classnames({

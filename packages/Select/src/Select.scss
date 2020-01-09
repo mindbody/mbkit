@@ -23,6 +23,7 @@ $error-1: var(--error-1, #992D38);
 }
 
 .select {
+    box-sizing: border-box;
     appearance: none;
     display: block;
     width: 100%;

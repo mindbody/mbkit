@@ -1,3 +1,8 @@
+$secondary-1: var(--secondary-1, #004C57);
+$neutral-2: var(--neutral-2, #5A5E66);
+$radius: var(--radius, 3px);
+$error-2: var(--error-2, #BD3845);
+
 @mixin get-font-spec($spec, $defaultSize, $defaultLineHeight) {
     font-family: var(--font-family, 'Lato');
     font-size: var(--font-spec-#{$spec}-size, $defaultSize); 
@@ -68,4 +73,26 @@
 }
 .metaColor {
     color: var(--neutral-2, #5A5E66);
+}
+
+.link {
+    display: inline-block;
+    text-decoration: none;
+    transition: box-shadow .1s ease-out;
+    border-radius: 3px;
+    cursor: pointer;
+    color: $secondary-1;
+    position: relative;
+    outline: none;
+
+    &:hover, &:active {
+        text-decoration: underline;
+    }
+    &:visited {
+        text-decoration: underline;
+        color: $error-2;
+    }
+    &:focus {
+        box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+    }
 }

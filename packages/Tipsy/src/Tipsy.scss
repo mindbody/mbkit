@@ -3,12 +3,12 @@
 }
   
 [data-reach-tooltip] {
-    z-index: 1;
     pointer-events: none;
     position: absolute;
 }
 
 .tipsy {
+    box-sizing: border-box;
     font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
     background: var(--neutral-2, #5A5E66);
     color: var(--neutral-7, #ffffff);

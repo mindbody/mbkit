@@ -15,6 +15,7 @@ function generateComponentImport() {
 import MarkdownWithOverrides from '../../../packages/docs/src/components/MarkdownWithOverrides/MarkdownWithOverrides';
 import * as components from '../${path.relative(__dirname, consumerPath)}/${pkgJson.main}';
 import Documentation from '../${path.relative(__dirname, consumerPath)}/src/${componentName}.mdx';
+import Component from "@reach/component-component";
 
 export const GeneratedMarkdown = () => {
   const [md, setMd] = React.useState('');
@@ -40,7 +41,7 @@ export const GeneratedMarkdown = () => {
   })
 
   return (
-    <MarkdownWithOverrides overrides={{ ...namedExports }}>
+    <MarkdownWithOverrides overrides={{ Component, ...namedExports }}>
       {md}
     </MarkdownWithOverrides>
   )

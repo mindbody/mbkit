@@ -1,0 +1,27 @@
+{
+    "name": "@mindbody/calendar",
+    "version": "1.2.3",
+    "source": "src/index.tsx",
+    "main": "dist/Calendar.js",
+    "types": "dist/index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "../../shared/build-tools/build-package.js",
+        "dev": "../../shared/build-tools/dev-package.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/classnames": "^2.2.9",
+        "@types/react": "^16.9.2",
+        "react": "^16.9.0"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0"
+    },
+    "dependencies": {
+        "classnames": "^2.2.6",
+        "react-calendar": "^2.19.2"
+    }
+}

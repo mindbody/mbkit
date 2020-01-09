@@ -1,0 +1,79 @@
+@import "../../../shared/scss/mixins.scss";
+
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$foreground: var(--foreground, #0B0B0D);
+$neutral-7: var(--neutral-7, #ffffff);
+$warning-1: var(--warning-1, #8C6600);
+$warning-2: var(--warning-2, #FFD73D);
+$warning-3: var(--warning-3, #FFFBEB);
+
+$error-1: var(--error-1, #992D38);
+$error-2: var(--error-2, #BD3845);
+$error-3: var(--error-3, #FAEBED);
+
+$focus: var(--focus, #6096e6bf);
+
+$transitionTime: 400;
+
+:export {
+    transitionTime: $transitionTime;
+}
+
+.container {
+    height: auto;
+    overflow: hidden;
+    transition: height #{$transitionTime}ms ease-out;
+
+    &, & * {
+        box-sizing: border-box; 
+    }
+}
+
+.actionBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1rem;
+    font-family: $font-family;
+    color: $foreground;
+    padding: 20px 16px;
+    padding-right: 48px;
+    position: relative;
+
+    &.warning {
+        background: $warning-3;
+    }
+    &.error {
+        background: $error-3;
+    }
+
+    .closeIcon {
+        // TODO remove button reset styles once imported icon button 
+        appearance: none;
+        margin: 0;
+        background: none;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .2s ease-out;
+        cursor: pointer;
+        
+        &:focus {
+            box-shadow: 0 0 0 4px $focus;
+        }
+        &:active {
+            box-shadow: 0 0 0 8px $focus;
+        }
+
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
+    }
+}

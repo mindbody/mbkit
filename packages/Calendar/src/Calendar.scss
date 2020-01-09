@@ -1,0 +1,169 @@
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$radius: var(--radius, 3px);
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-7: var(--neutral-7, #ffffff);
+$secondary-1: var(--secondary-1, #004C57);
+$focus: var(--focus, #6096e6bf);
+
+.calendar {
+    font-family: $font-family;
+    background: $background;
+    color: $foreground;
+    border-radius: $radius;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(#0B0B0D, .3);
+    font-size: 1rem;
+    padding: 16px;
+    font-size: 16px;
+    width: 380px;
+
+    [class*="navigation__label"] {
+        background: none !important;
+        color: $foreground;
+        font-size: 1rem;
+        border-radius: $radius;
+        margin: 0 16px;
+
+        &:not(:disabled) {
+            border: 1px solid $neutral-4;
+
+            &:hover {
+                background: $neutral-5 !important;
+            }
+            &:focus {
+                box-shadow: 0 0 0 4px $focus;
+            }
+        }
+    }
+    [class*="navigation__arrow"] {
+        transform-origin: center;
+        background: $background !important;
+        border: 1px solid $neutral-4;
+        border-radius: $radius;
+
+        &:not(:disabled) {
+            &:hover {
+                background: $neutral-5 !important;
+            }
+            &:focus, &:active {
+                background: $background !important;
+                box-shadow: 0 0 0 4px $focus;
+            }
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background: $neutral-4 !important;
+        }
+    }
+    [class*="month-view__weekdays__weekday"] {
+        text-transform: none;
+        text-decoration: none;
+        font-size: 16px;
+
+        abbr[title] {
+            text-decoration: none;
+        }
+    }
+}
+
+/*
+    The `tile` represents any selectable dates/months within the calendar selection (not including navigation)
+*/
+.tile {
+    position: relative;
+    background: none !important;
+    color: $foreground;
+    transition: all .1s ease-out;
+    border-radius: 50%;
+    width: 48px;
+    height: 49px;
+    font-size: 16px;
+    transform: scale(.9);
+    transform-origin: center;
+    padding: 8px;
+
+    // When using a date range selection we want to fill in the gap between the dates with before/after pseudo selector
+    &:before,
+    &:after {
+        content: '';
+        display: none;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: $secondary-1;
+        width: 12px;
+    }
+    &:before {
+        left: -8px;
+    }
+    &:after {
+        right: -8px;
+    }
+
+    // When selecting date range these are the first and last selections
+    &[class*="rangeStart"] {
+        border-radius: 50% 0 0 50%;
+    }
+    &[class*="rangeEnd"] {
+        border-radius: 0 50% 50% 0;
+    }
+
+    // Single date selected
+    &[class*="rangeBothEnds"] {
+        border-radius: 50%;
+    }
+    // All in-between dates of a date range selection
+    &[class*="active"]:not([class*="rangeBothEnds"]):not([class*="rangeStart"]):not([class*="rangeEnd"]) {
+        border-radius: 0;
+    }
+    &[class*="active"] {
+        overflow: visible !important;
+
+        // We want to show the before/after pseudo selector between all dates 
+        // except on the first and last column of each row
+        &:not([class*="rangeStart"]):not(:nth-child(7n + 1)):before,
+        &:not([class*="rangeEnd"]):not(:nth-child(7n + 7)):after {
+            display: block;
+        }
+    }
+
+    // Single dates that bleed over from previous/next month
+    &[class*="day--neighboringMonth"] {
+        color: $neutral-3;
+    }
+
+    &.isToday {
+        border: 1px solid $neutral-3;
+    }
+
+    &:hover {
+        background: $neutral-5 !important;
+    }
+    &:focus {
+        background: $background !important;
+        box-shadow: 0 0 0 4px $focus;
+    }
+    &:active,
+    &[class*="active"],
+    &[class*="hasActive"] {
+        background: $secondary-1 !important;
+        color: $neutral-7;
+    }
+
+    &[class*="year-view__months__month"] {
+        padding: 8px;
+        margin: .5em 0;
+        border-radius: $radius;
+    }
+
+    &:disabled {
+        color: $neutral-3;
+        background: $neutral-4 !important;
+        cursor: not-allowed;
+    }
+}

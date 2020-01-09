@@ -1,21 +1,31 @@
-import React, { forwardRef, FC, RefObject, InputHTMLAttributes, ReactNode, HTMLAttributes, ChangeEvent } from 'react';
+import React, {
+    forwardRef,
+    FC,
+    RefObject,
+    InputHTMLAttributes,
+    ReactNode,
+    HTMLAttributes,
+    ChangeEvent,
+    RefAttributes,
+} from 'react';
 import classnames from 'classnames';
 import styles from './Input.scss';
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
-    /** Value that is displayed in text input */
-    value: string;
-    /** Fires when user interacts with value in input field */
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    /** Add text or icon here which shows as in front of the input field */
-    before?: ReactNode;
-    /** Add text or icon here which shows as after of the input field */
-    after?: ReactNode;
-    /** Props to be added to wrapper container of the input field */
-    wrapperProps?: HTMLAttributes<HTMLDivElement>;
-    /** Adds red border and sets aria-invalid attribute */
-    invalid?: boolean;
-};
+export type InputProps = InputHTMLAttributes<HTMLInputElement> &
+    RefAttributes<HTMLInputElement> & {
+        /** Value that is displayed in text input */
+        value: string;
+        /** Fires when user interacts with value in input field */
+        onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+        /** Add text or icon here which shows as in front of the input field */
+        before?: ReactNode;
+        /** Add text or icon here which shows as after of the input field */
+        after?: ReactNode;
+        /** Props to be added to wrapper container of the input field */
+        wrapperProps?: HTMLAttributes<HTMLDivElement>;
+        /** Adds red border and sets aria-invalid attribute */
+        invalid?: boolean;
+    };
 export const Input: FC<InputProps> = forwardRef((props: InputProps, ref: RefObject<HTMLInputElement>) => {
     const [hasFocus, setHasFocus] = React.useState(false);
     const { className = '', before, after, disabled, onBlur, onFocus, wrapperProps = {}, invalid, ...rest } = props;

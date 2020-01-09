@@ -2330,6 +2330,17 @@
     string-width "^2.0.0"
     strip-ansi "^3"
 
+"@reach/alert-dialog@^0.6.3":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@reach/alert-dialog/-/alert-dialog-0.6.4.tgz#99daf72a29706f5b35dad8520d0d6963344048f1"
+  integrity sha512-JPbvlPobn77qdpq1aJef/SMISJra+Z8ODBO04cvyAuo6xFVwnE5FZae5x4kd0eplrSdaR8CjW4ywlkRGgUG+Uw==
+  dependencies:
+    "@reach/auto-id" "^0.6.1"
+    "@reach/dialog" "^0.6.4"
+    "@reach/utils" "^0.6.4"
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
+
 "@reach/alert@^0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@reach/alert/-/alert-0.5.3.tgz#962d2bb0f72b5057e66c3da548ffd2bcd41fc023"
@@ -2352,6 +2363,11 @@
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.4.0.tgz#7241b4f26092b65dd43c325c278a82efd210ad02"
   integrity sha512-tWjH+lxmGONcpbxxKHGMUZ2mw+GVvS9YE2eYV2AH+xxcf6b/Q+KC1FlBtS7eYw9y7tONvTAivVVyZSz86a8HKw==
+
+"@reach/auto-id@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.6.1.tgz#af30c153787a335cfb258289537d5ea355688821"
+  integrity sha512-t3uhdZwalO3Mph+CUdFIvMcYsMtRZoBHE5rw/+3UvQxV+AeQGNqmtlOix9mq3rOpxi0KEaf1q4CjWx4myFXkRQ==
 
 "@reach/component-component@^0.4.0":
   version "0.4.0"
@@ -2381,6 +2397,17 @@
   dependencies:
     "@reach/portal" "^0.5.0"
     "@reach/utils" "^0.5.0"
+    prop-types "^15.7.2"
+    react-focus-lock "^2.2.1"
+    react-remove-scroll "^2.2.0"
+
+"@reach/dialog@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@reach/dialog/-/dialog-0.6.4.tgz#a02b6343d036be7b06c091cabfa139e8550e927b"
+  integrity sha512-w0879aEclyvTyF8dSUOE/jAzZjKutpOqr0owhEkt8HwVtYzk7Bukm+AKQfc2/7wZQ31GMp0P85FRsdxr5t9xcQ==
+  dependencies:
+    "@reach/portal" "^0.6.2"
+    "@reach/utils" "^0.6.4"
     prop-types "^15.7.2"
     react-focus-lock "^2.2.1"
     react-remove-scroll "^2.2.0"
@@ -2461,6 +2488,11 @@
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.6.1.tgz#7345dcd624f92779fb4a0fc4a28ab16d69b53476"
   integrity sha512-SMGDydSjmvOz3Q4faGGJikdeqHumHmxB1YfYR7XTWrDQxJMod+J7mSkaS12NY4o/uPQ4xOwwL6cXWN+KpFjOQg==
+
+"@reach/utils@^0.6.4":
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.6.4.tgz#be268e1a7d04f921596b3672888a932c1832074a"
+  integrity sha512-jUWNb1STgR69WGkV4O/N4XOcUvM0u5LP1b9SR6VZsPRazpmzM8HUl3WsBVgMOnSCefZtk+wM4ig2/iYgdElwPw==
 
 "@reach/visually-hidden@^0.4.0":
   version "0.4.0"
@@ -2704,6 +2736,28 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
+
+"@types/reach__alert-dialog@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@types/reach__alert-dialog/-/reach__alert-dialog-0.2.0.tgz#0fafa96dd37f248e802eca90c19d6648a3d3c015"
+  integrity sha512-u0sCa04fVGrOT53xjMPxbB5XZ+eFEkr3q9vycMAoQX+9lR/75SZTHSHHXcybpKdyHqY3aF+Xrn01hfprpyRrtw==
+  dependencies:
+    "@types/reach__dialog" "*"
+    "@types/react" "*"
+
+"@types/reach__alert@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@types/reach__alert/-/reach__alert-0.1.1.tgz#5c9fbde74c14688f8a0d5ebe7d4d7164b3a1db2f"
+  integrity sha512-BFo1BgQWacu5xHuQW5jyWSSgQpPqMTSrrPfxoB+I6eUYa49Puss57/ZIeZguFR4+Dm8BrGfnBXSX4o2sLlYALg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/reach__dialog@*":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@types/reach__dialog/-/reach__dialog-0.1.0.tgz#64db9b1634eebe2fce395c07a7b0dd68aec5a994"
+  integrity sha512-nHP7sj5st9RTIOWmXlghev1+b/Mv5TtNvyDGPhJ+OW8ESklQSs7CvaHt+pLjjFzDqCsoL4qbVQ3Edlx6zIyfaQ==
+  dependencies:
+    "@types/react" "*"
 
 "@types/reach__router@^1.2.6":
   version "1.2.6"
@@ -8327,6 +8381,13 @@ get-stream@^5.0.0, get-stream@^5.1.0:
   dependencies:
     pump "^3.0.0"
 
+get-user-locale@^1.2.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/get-user-locale/-/get-user-locale-1.3.0.tgz#21ea740e413541281ae7b2b42e70ee523b7725b2"
+  integrity sha512-c5N8P0upjxCF9unIC2vTA+B+8nN7kU/D/TeItMAVYhWIIksyoULM1aflKflXM3w+Ij6vF/JZys+QcwIoDuy3Ag==
+  dependencies:
+    lodash.once "^4.1.1"
+
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
@@ -11083,6 +11144,11 @@ lodash.memoize@4.x, lodash.memoize@^4.1.2:
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
 
+lodash.once@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+  integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
+
 lodash.set@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
@@ -11519,6 +11585,11 @@ meow@^4.0.0:
     redent "^2.0.0"
     trim-newlines "^2.0.0"
 
+merge-class-names@^1.1.1:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/merge-class-names/-/merge-class-names-1.3.0.tgz#c4cdc1a981a81dd9afc27aa4287e912a337c5dee"
+  integrity sha512-k0Qaj36VBpKgdc8c188LEZvo6v/zzry/FUufwopWbMSp6/knfVFU/KIB55/hJjeIpg18IH2WskXJCRnM/1BrdQ==
+
 merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
@@ -11882,6 +11953,11 @@ nanoid@^2.1.2:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.6.tgz#0665418f692e54cf44f34d4010761f3240a03314"
   integrity sha512-2NDzpiuEy3+H0AVtdt8LoFi7PnqkOnIzYmJQp7xsEU6VexLluHQwKREuiz57XaQC5006seIadPrIZJhyS2n7aw==
+
+nanoid@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.7.tgz#d775e3e7c6470bbaaae3da9a647a80e228e0abf7"
+  integrity sha512-fmS3qwDldm4bE01HCIRqNk+f255CNjnAoeV3Zzzv0KemObHKqYgirVaZA9DtKcjogicWjYcHkJs4D5A8CjnuVQ==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -13905,7 +13981,7 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -14142,6 +14218,16 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-calendar@^2.19.2:
+  version "2.19.2"
+  resolved "https://registry.yarnpkg.com/react-calendar/-/react-calendar-2.19.2.tgz#496e78eb11a00aee1ae6b5d02d221ed1ca2db952"
+  integrity sha512-zKbWxwmYEg84grFsCJz9EYpnGqsZy0iV67dHzkVE0EhBdXMg2eISBQYvw4+t8zdy5ySxQkDhUW8X8ERbSyZPVw==
+  dependencies:
+    get-user-locale "^1.2.0"
+    merge-class-names "^1.1.1"
+    prop-types "^15.6.0"
+    react-lifecycles-compat "^3.0.4"
 
 react-clientside-effect@^1.2.2:
   version "1.2.2"

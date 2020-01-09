@@ -20,6 +20,10 @@ $focus: var(--focus, #6096e6bf);
     margin: 0;
     vertical-align: middle;
 
+    &, & * {
+        box-sizing: border-box;
+    }
+
     &:before {
         content: '';
         box-shadow: 0 2px 2px 0 rgba(#000, .5);
@@ -30,7 +34,6 @@ $focus: var(--focus, #6096e6bf);
         width: 27px;
         height: 27px;
         background: #fff;
-        z-index: 1;
         border-radius: 50%;
         transition: left .1s ease-out;
     }
