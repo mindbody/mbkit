@@ -62,13 +62,35 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
+
+            allContentfulHomePage {
+                edges {
+                    node {
+                        title
+                        description {
+                            json
+                        }
+                        guideHeader
+                        guides
+                        guideLinks
+                        guideDescription
+                        gettingStartedHeader
+                        gettingStartedDescription {
+                            json
+                        }
+                        gettingStarted
+                        gettingStartedDescriptions
+                        gettingStartedLinks
+                    }
+                }
+            }
         }
     `).then(result => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
 
-        const { allContentfulPage, allContentfulComponent } = result.data;
+        const { allContentfulPage, allContentfulComponent, allContentfulHomePage } = result.data;
 
         // Get pages
         const pages = allContentfulPage.edges;
@@ -78,14 +100,18 @@ exports.createPages = ({ graphql, actions }) => {
         const components = allContentfulComponent.edges;
         generateComponents({ createPage, componentEdges: components });
 
+        // generate home page
+        const homePage = allContentfulHomePage.edges;
+        generateHomePage({ createPage, homePage });
+
         // Create landing page (kitchen sink?)
-        createPage({
-            path: '/components',
-            component: path.resolve('src/templates/component-landing.js'),
-            context: {
-                components,
-            },
-        });
+        // createPage({
+        //     path: '/components',
+        //     component: path.resolve('src/templates/component-landing.js'),
+        //     context: {
+        //         components,
+        //     },
+        // });
     });
 };
 
@@ -229,4 +255,18 @@ function isComponent(componentTitle) {
         return true;
     }
     return false;
+}
+
+/**
+ * Home Page generator
+ */
+function generateHomePage({ homePage, createPage }) {
+    createPage({
+        path: '/',
+        component: path.resolve('src/templates/home-page.js'),
+        context: {
+            homePage: homePage[0].node,
+            layout: 'fullPage',
+        },
+    });
 }

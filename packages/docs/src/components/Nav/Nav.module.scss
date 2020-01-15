@@ -1,48 +1,279 @@
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$radius: var(--radius, 3px);
+$neutral-1: var(--neutral-1, #0B0B0D);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-6: var(--neutral-6, #F8F9FB);
+$neutral-7: var(--neutral-7, #ffffff);
+$primary-1: var(--primary-1, #993100);
+$primary-2: var(--primary-2, #C23E00);
+$primary-3: var(--primary-3, #FFEEE6);
+$secondary-1: var(--secondary-1, #004C57);
+$secondary-2: var(--secondary-2, #007485);
+$secondary-3: var(--secondary-3, #E5F2F4);
+$success-1: var(--success-1, #00592E);
+$success-2: var(--success-2, #007A3F);
+$success-3: var(--success-3, #E5F3EC);
+$warning-1: var(--warning-1, #8C6600);
+$warning-2: var(--warning-2, #FFD73D);
+$warning-3: var(--warning-3, #FFFBEB);
+$error-1: var(--error-1, #992D38);
+$error-2: var(--error-2, #BD3845);
+$error-3: var(--error-3, #FAEBED);
+$focus: var(--focus, #6096e6bf);
 
-.menu {
-    width: 100%;
-    max-width: 280px;
-    
-    ul,
-    li {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+
+$navShadow: 0 1px 16px 0 rgba(34, 36, 40, 20%);
+.hidden {
+  display: none;
+}
+.topNav {
+  background: $background;
+  height: 82px;
+  // z-index: 1;
+  // position: sticky;
+  // top: 0;
+  box-shadow: $navShadow;
+  padding: 0 16px;
+
+  a {
+    outline: none;
+    border-radius: $radius;
+
+    &:focus {
+      box-shadow: 0 0 0 4px $focus;
     }
-  
-    li {
-      display: block;
+  }
+
+  .links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .homeLink {
+    height: calc(100% - 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .navigation {
+    height: 100%;
+    font-size: .75rem;
+
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100% - 16px);
+      padding: 0 8px;
+      text-decoration: none;
       text-transform: capitalize;
-      ul {
-        margin-left: 16px;
+      color: $foreground;
+      position: relative;
+      top: 8px;
+
+      &.active {
+        color: $secondary-2;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -8px;
+          left: -4px;
+          width: calc(100% + 8px);
+          height: 4px;
+          background: $secondary-2;
+        }
       }
     }
-  
-    &__item {
-      position: relative;
-      &__toggleChildren {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-  
+
+    @media screen and (min-width: 800px) {
+      font-size: 1rem;
+      a {
+        padding: 0 16px;
+
         &:before {
-          content: '›';
-          display: block;
-          width: 100%;
-          height: 100%;
-          transition: transform .2s ease-out;
-        }
-  
-        &Opened {
-          &:before {
-            transform: rotate(90deg) translateY(-10%);
-          }
+          left: -8px;
+          width: calc(100% + 16px);
         }
       }
     }
   }
+}
+.mobileNavContainer {
+  .header {
+    background: $background;
+    box-shadow: $navShadow;
+    padding: 16px 32px;
+  }
+
+  .mobileNavButton {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .veil {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $neutral-1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease-out;
+    z-index: 2;
+    &.open {
+      opacity: .8;
+      pointer-events: all;
+    }
+  }
+
+  .mobileNav {
+      width: 100%;
+      max-width: 280px;
+      height: 100vh;
+      overflow-y: scroll;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: transform .2s ease-out;
+      transform: translate3d(-100%, 0, 0);
+      background: $neutral-5;
+      z-index: 2;
+      & > ul {
+        visibility: hidden;
+      }
+
+      &Open {
+        transform: translate3d(0, 0, 0);
+
+        & > ul {
+          visibility: visible;
+        }
+      }
+      
+      ul,
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      li {
+        display: block;
+        text-transform: capitalize;
+        ul {
+          margin-left: 16px;
+        }
+      }
+    
+      &__item {
+        position: relative;
+        &__toggleChildren {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+    
+          &:before {
+            content: '›';
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: transform .2s ease-out;
+          }
+    
+          &Opened {
+            &:before {
+              transform: rotate(90deg) translateY(-10%);
+            }
+          }
+        }
+      }
+  }
+}
   
+.sidenav {
+  width: 100%;
+  max-width: 262px;
+
+  & > ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item {
+    width: 100%;
+    border-bottom: 1px solid $neutral-4;
+    padding-left: 4px;
+
+    &:hover > a {
+      background: $background;
+    }
+
+    a {
+      position: relative;
+      padding: 8px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: $foreground;
+      text-decoration: none;
+      text-transform: capitalize;
+      outline: none;
+      border-radius: $radius;
+
+      &:focus {
+        box-shadow: 0 0 0 4px $focus;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 5%;
+        left: 2px;
+        height: 90%;
+        width: 2px;
+        background: transparent;
+        transition: background .2s ease-out;
+      }
+    }
+
+    &.active {
+      
+      & > a {
+        background: $background;
+
+        &:before {
+          background: $secondary-2;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    // margin-left: -32px;
+    .item a {
+      padding: 16px;
+    }
+  }
+}

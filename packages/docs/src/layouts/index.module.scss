@@ -1,3 +1,78 @@
+$font-url: var(--font-url, 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
+$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$radius: var(--radius, 3px);
+$focus: var(--focus, #6096e6bf);
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$neutral-1: var(--neutral-1, #0B0B0D);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-6: var(--neutral-6, #F8F9FB);
+$neutral-7: var(--neutral-7, #ffffff);
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+body {
+    margin: 0;
+    background: $neutral-5;
+    min-height: 100vh;
+    font-family: $font-family;
+
+    * {
+        box-sizing: border-box;
+
+        &:before, &:after {
+            box-sizing: inherit;
+        }
+    }
+}
+
+[data-reach-skip-link] {
+   outline: none;
+    border-radius: $radius;
+    color: $foreground;
+    background: $background;
+    z-index: 2 !important;
+    &:focus {
+        box-shadow: 0 0 0 4px $focus;
+    }
+}
+.skipNavContent {
+    width: 100%;
+}
+.contentContainer {
+    padding: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &.useSidebar {
+        @media screen and (min-width: 800px) {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            grid-gap: 16px;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+        padding: 32px;
+    }
+}
+.content {
+    flex: 1;
+    background: $background;
+    color: $foreground;
+    border-radius: $radius;
+    padding: 16px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 800px) {
+        padding: 32px;
+    }
+}
+
 .container {
     position: relative;
     font-size: 16px;
