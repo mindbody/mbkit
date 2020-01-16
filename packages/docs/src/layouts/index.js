@@ -52,7 +52,7 @@ function findMatchingChildren(currentNavItem, allPages) {
 }
 
 const Layout = props => {
-    const { pageContext } = props;
+    const { pageContext, path } = props;
     const allPages = useStaticQuery(query);
     const [menuItems, setMenuItems] = React.useState([]);
 
@@ -134,7 +134,7 @@ const Layout = props => {
         <>
             <SkipNavLink />
             <TopNav menu={menuItems} isMobile={isMobile} />
-            <MobileNav menu={menuItems} isMobile={isMobile} />
+            <MobileNav path={path} menu={menuItems} isMobile={isMobile} />
             <div className={containerClassNames}>
                 <SideNav menu={menuItems} isMobile={isMobile} />
                 <SkipNavContent className={styles.skipNavContent}>

@@ -1,0 +1,40 @@
+# Dev Documentation
+
+Icons and Glyphs are exported as named exports. Find the icon or glyph below you want to use and import them as: 
+
+<EditorOnly language="jsx">import { IconName, GlyphName } from '@mindbody/icons';</EditorOnly>
+
+## All Icons
+
+<RenderOnly>
+    <AllIconsExample />
+</RenderOnly>
+
+## All Glyphs
+
+<RenderOnly>
+    <AllGlyphsExample />
+</RenderOnly>
+
+## Using an Icons
+
+```tsx
+<>
+    <IconCheckMark color="success" width="100" height="100" />
+    <IconCaution color="warning" />
+    <IconError color="error" />
+    <IconInformation color="info" />
+</>
+```
+
+## Targeting icons with SCSS 
+
+This snippet targets all path, g, and use elements where they have a fill prop that contains a pound sign which indicates that it is using a hex code. 
+
+<EditorOnly language="scss">
+    svg g:not([fill~="#"]),
+    svg path:not([fill~="#"]),
+    svg use:not([fill~="#"]) { 
+        fill: #ffffff;
+    }
+</EditorOnly>
