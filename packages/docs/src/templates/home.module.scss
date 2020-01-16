@@ -1,0 +1,104 @@
+$foreground: var(--foreground, #0B0B0D);
+$background: var(--background, #ffffff);
+$radius: var(--radius, 3px);
+$focus: var(--focus, #6096e6bf);
+$neutral-1: var(--neutral-1, #0B0B0D);
+$neutral-2: var(--neutral-2, #5A5E66);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-5: var(--neutral-5, #EAEDF1);
+$neutral-6: var(--neutral-6, #F8F9FB);
+$neutral-7: var(--neutral-7, #ffffff);
+
+.banner {
+    background: rgb(240,240,240);
+    background: linear-gradient(45deg, #909090 0%, #181818 97%);
+    color: #fff;
+    padding: 80px 16px 16px;
+
+    h1 {
+        font-weight: 200;
+    }
+    @media screen and (min-width: 600px) {
+        padding: 80px 32px 32px;
+    }
+}
+
+.roundImage {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid $neutral-3; 
+
+    img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.blockLink {
+    display: block;
+    border-radius: $radius;
+    outline: none;
+    text-decoration: none;
+    padding: 4px;
+    color: $foreground;
+
+    &:visited {
+        color: $foreground;
+    }
+    
+    &:focus {
+        box-shadow: 0 0 0 4px $focus;
+    }
+}
+
+.guides {
+    padding: 16px;
+    background: $background;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 600px) {
+        padding: 16px 32px;
+    }
+    
+    .allGuides {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 8px;
+
+        @media screen and (min-width: 600px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (min-width: 800px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+.gettingStarted {
+    padding: 16px;
+    background: $background;
+
+    @media screen and (min-width: 600px) {
+        padding: 32px;
+    }
+
+    .gettingStartedContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 8px;
+
+        @media screen and (min-width: 600px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .blockLink {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 42px 1fr;
+        grid-gap: 8px;
+    }
+}

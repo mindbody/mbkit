@@ -63,7 +63,6 @@ body {
     }
 }
 .content {
-    flex: 1;
     background: $background;
     color: $foreground;
     border-radius: $radius;
@@ -72,11 +71,11 @@ body {
     max-width: 1024px;
     margin: 0 auto;
     overflow: hidden;
+
     a {
         color: $secondary-2;
         text-decoration: none;
         outline: none;
-        padding: 8px;
         border-radius: $radius;
         
         &:hover, &:active {
@@ -86,7 +85,7 @@ body {
             box-shadow: 0 0 0 4px $focus;
         }
         &:visited {
-            color: $primary-2;
+            color: $secondary-1;
         }
     }
 
@@ -98,6 +97,12 @@ body {
 
     @media screen and (min-width: 800px) {
         padding: 32px;
+    }
+
+    &.fullPage {
+        padding: 0;
+        background: initial;
+        border-radius: initial;
     }
 }
 

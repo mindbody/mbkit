@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SEO from '../components/seo';
+import styles from './home.module.scss';
 
 const HomePageTemplate = props => {
     const {
@@ -17,6 +18,8 @@ const HomePageTemplate = props => {
         gettingStarted,
         gettingStartedDescriptions,
         gettingStartedLinks,
+        guideImages,
+        gettingStartedImages,
     } = props.pageContext.homePage;
     const options = {
         renderNode: {
@@ -38,28 +41,45 @@ const HomePageTemplate = props => {
     return (
         <>
             <SEO title={title} />
-            <h1>{title}</h1>
-            {documentToReactComponents(description.json, options)}
+            <div className={styles.banner}>
+                <h1>{title}</h1>
+                {documentToReactComponents(description.json, options)}
+            </div>
 
-            <h2>{guideHeader}</h2>
+            <div className={styles.guides}>
+                <h2>{guideHeader}</h2>
+                <div className={styles.allGuides}>
+                    {guides.map((guide, index) => (
+                        <Link to={guideLinks[index]} className={styles.blockLink} key={guide}>
+                            <div className={styles.roundImage}>
+                                <img src={guideImages[index]} alt={`${guide} logo`} />
+                            </div>
+                            <h3>{guide}</h3>
+                            <p>{guideDescription[index]}</p>
+                        </Link>
+                    ))}
+                </div>
+            </div>
 
-            {guides.map((guide, index) => (
-                <Link to={guideLinks[index]} key={guide}>
-                    <h3>{guide}</h3>
-                    <p>{guideDescription[index]}</p>
-                </Link>
-            ))}
+            <div className={styles.gettingStarted}>
+                <h2>{gettingStartedHeader}</h2>
 
-            <h2>{gettingStartedHeader}</h2>
+                {documentToReactComponents(gettingStartedDescription.json, options)}
 
-            {documentToReactComponents(gettingStartedDescription.json, options)}
-
-            {gettingStarted.map((gettingStarted, index) => (
-                <Link to={gettingStartedLinks[index]} key={gettingStarted}>
-                    <h3>{gettingStarted}</h3>
-                    <p>{gettingStartedDescriptions[index]}</p>
-                </Link>
-            ))}
+                <div className={styles.gettingStartedContainer}>
+                    {gettingStarted.map((gettingStarted, index) => (
+                        <Link to={gettingStartedLinks[index]} key={gettingStarted} className={styles.blockLink}>
+                            <div className={styles.roundImage}>
+                                <img src={gettingStartedImages[index]} alt={`${gettingStarted} logo`} />
+                            </div>
+                            <div>
+                                <h3>{gettingStarted}</h3>
+                                <p>{gettingStartedDescriptions[index]}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
         </>
     );
 };

@@ -105,7 +105,11 @@ function RecursiveSubNav(props) {
     useEffect(() => {
         if (childrenRef.current) {
             const { height } = childrenRef.current.getBoundingClientRect();
-            setChildrenHeight(height);
+            if (height === 0) {
+                setChildrenHeight('auto');
+            } else {
+                setChildrenHeight(height);
+            }
         }
     }, [nestedNavOpen]);
 

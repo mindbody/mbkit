@@ -130,6 +130,11 @@ const Layout = props => {
         [styles.useSidebar]: !fullPage,
     });
 
+    const contentClassNames = classnames({
+        [styles.content]: true,
+        [styles.fullPage]: fullPage,
+    });
+
     return (
         <>
             <SkipNavLink />
@@ -138,7 +143,7 @@ const Layout = props => {
             <div className={containerClassNames}>
                 <SideNav menu={menuItems} isMobile={isMobile} />
                 <SkipNavContent className={styles.skipNavContent}>
-                    <main className={styles.content}>
+                    <main className={contentClassNames}>
                         <Breadcrumbs />
                         {props.children}
                     </main>

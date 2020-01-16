@@ -73,6 +73,7 @@ exports.createPages = ({ graphql, actions }) => {
                         guideHeader
                         guides
                         guideLinks
+                        guideImages
                         guideDescription
                         gettingStartedHeader
                         gettingStartedDescription {
@@ -81,6 +82,7 @@ exports.createPages = ({ graphql, actions }) => {
                         gettingStarted
                         gettingStartedDescriptions
                         gettingStartedLinks
+                        gettingStartedImages
                     }
                 }
             }
