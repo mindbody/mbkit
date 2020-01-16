@@ -67,12 +67,12 @@ export function MobileNav(props) {
     return (
         <div className={containerClassName}>
             <header className={styles.header}>
-                <Link to="/" className={styles.homeLink}>
+                <Link onClick={() => setMobileNavOpen(!mobileNavOpen)} to="/" className={styles.homeLink}>
                     <img src="/mindbody-nav-logo.svg" alt="MINDBODY Logo" />
                 </Link>
                 <button
                     className={styles.mobileNavButton}
-                    onClick={e => setMobileNavOpen(!mobileNavOpen)}
+                    onClick={() => setMobileNavOpen(!mobileNavOpen)}
                     aria-label={mobileNavOpen ? 'Close' : 'Open'}
                 >
                     {mobileNavOpen ? <IconClose /> : <IconListInactive />}

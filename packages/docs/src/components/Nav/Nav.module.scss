@@ -114,7 +114,7 @@ $mobileHeaderHeight: 54px;
   .header {
     background: $background;
     box-shadow: $navShadow;
-    padding: 16px;
+    padding: 0 16px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -137,9 +137,11 @@ $mobileHeaderHeight: 54px;
       } 
     }
 
-    &.homeLink {
+    .homeLink {
+      display: block;
       border-radius: $radius;
       outline: none;
+      padding: 8px;
 
       &:focus {
         box-shadow: 0 0 0 4px $focus;
