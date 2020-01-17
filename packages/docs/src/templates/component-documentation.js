@@ -143,9 +143,10 @@ const ComponentDocumentation = props => {
             ))}
 
             {!tooManyExports && (
-                <SyntaxHighlighter language="jsx" style={vsDark}>
-                    {`import ${componentImportStatements} from "${pkgJson.name}"`}
-                </SyntaxHighlighter>
+                <SyntaxHighlighter
+                    language="jsx"
+                    style={vsDark}
+                >{`import ${componentImportStatements} from "${pkgJson.name}";`}</SyntaxHighlighter>
             )}
 
             <MarkdownJsx>{devDocs}</MarkdownJsx>
