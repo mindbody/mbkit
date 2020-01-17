@@ -279,21 +279,34 @@ $mobileHeaderHeight: 54px;
   width: 100%;
   max-width: 262px;
 
+  ul ul {
+    list-style: none;
+    margin-left: 16px;
+    padding: 0;
+  }
   & > ul {
     width: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
+
+    & > .item {
+      border-bottom: 1px solid $neutral-4;
+
+      &.active {
+        & > a {
+          background: $background;
+  
+          &:before {
+            background: $secondary-2;
+          }
+        }
+      }
+    }
   }
 
   .item {
     width: 100%;
-    border-bottom: 1px solid $neutral-4;
-    padding-left: 4px;
-
-    &:hover > a {
-      background: $background;
-    }
 
     a {
       position: relative;
@@ -324,15 +337,8 @@ $mobileHeaderHeight: 54px;
       }
     }
 
-    &.active {
-      
-      & > a {
-        background: $background;
-
-        &:before {
-          background: $secondary-2;
-        }
-      }
+    &.active > a {
+      color: $secondary-2;
     }
   }
 
