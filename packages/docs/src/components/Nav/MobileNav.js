@@ -144,7 +144,7 @@ function RecursiveSubNav(props) {
                     >
                         <IconChevronDown />
                     </button>
-                    <div style={{ height: nestedNavOpen ? childrenHeight : 0 }} className={nestedListClassNames}>
+                    <div style={{ height: nestedNavOpen ? 'auto' : 0 }} className={nestedListClassNames}>
                         <ul ref={childrenRef}>
                             {menu.map(menuItem => (
                                 <RecursiveSubNav

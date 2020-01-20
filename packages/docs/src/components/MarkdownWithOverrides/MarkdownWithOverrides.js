@@ -42,7 +42,7 @@ const CodeEditorPreview = props => {
         <>
             <button onClick={() => setShowEditor(!showEditor)}>{'Toggle Editor'}</button>
             <div className={styles.codeEditorWrapper}>
-                <LiveProvider code={props.children} scope={props.scope} theme={theme}>
+                <LiveProvider code={props.children} scope={props.scope} theme={{ ...theme }}>
                     <div className={styles.codeEditor}>{showEditor && <LiveEditor onKeyDown={handleKeyPress} />}</div>
                     <div className={styles.codePreview}>
                         <LiveError />
@@ -54,24 +54,28 @@ const CodeEditorPreview = props => {
     );
 };
 
+export const EditorOnly = props => {
+    return (
+        <div className={styles.codeEditor}>
+            <LiveProvider
+                code={props.children}
+                theme={theme}
+                disabled={true}
+                noInline={true}
+                language={props.language || 'jsx'}
+            >
+                <LiveEditor />
+            </LiveProvider>
+        </div>
+    );
+};
+
 const MarkdownWithOverrides = ({ children, overrides }) => (
     <Markdown
         options={{
             overrides: {
                 RenderOnly: props => props.children,
-                EditorOnly: props => {
-                    return (
-                        <LiveProvider
-                            code={props.children[0]}
-                            theme={theme}
-                            disabled={true}
-                            noInline={true}
-                            language={props.language || 'tsx'}
-                        >
-                            <LiveEditor />
-                        </LiveProvider>
-                    );
-                },
+                EditorOnly: props => <EditorOnly {...props}>{props.children[0]}</EditorOnly>,
                 code: props => <CodeEditorPreview {...props} scope={overrides} children={props.children} />,
                 pre: props => <div {...props} />,
                 // CodePreview: props => <CodeEditorPreview {...props} scope={overrides} children={props.children} />,

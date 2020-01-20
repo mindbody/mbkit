@@ -46,8 +46,7 @@
     "@contentful/rich-text-types": "^13.4.0",
     "gatsby-plugin-layout": "^1.1.6",
     "prettier": "^1.18.2",
-    "react-docs-markdown": "^0.8.0",
-    "react-syntax-highlighter": "^11.0.2"
+    "react-docs-markdown": "^0.8.0"
   },
   "keywords": [
     "gatsby"
