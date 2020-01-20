@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Location } from '@reach/router';
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs(props) {
+    const { isFullPage } = props;
+    if (isFullPage) {
+        return null;
+    }
     return (
         <div style={{ textTransform: 'capitalize' }}>
             <Location>
@@ -14,10 +18,6 @@ export default function Breadcrumbs() {
                     // If last character is an empty string, remove it
                     if (crumbs[crumbs.length - 1] === '') {
                         crumbs.pop();
-                    }
-
-                    if (crumbs.length === 1) {
-                        return null;
                     }
 
                     // iterate over each crumb and add appropriate item

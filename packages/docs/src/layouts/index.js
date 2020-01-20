@@ -144,7 +144,7 @@ const Layout = props => {
                 <SideNav menu={menuItems} isMobile={isMobile} path={path} />
                 <SkipNavContent className={styles.skipNavContent}>
                     <main className={contentClassNames}>
-                        <Breadcrumbs />
+                        <Breadcrumbs isFullPage={fullPage} />
                         {props.children}
                     </main>
                 </SkipNavContent>

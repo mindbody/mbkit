@@ -120,6 +120,10 @@ exports.createPages = ({ graphql, actions }) => {
 const allPages = [];
 exports.onCreatePage = ({ page, actions }) => {
     console.log(page.path);
+    if (page.path.match('/404')) {
+        page.context.layout = 'fullPage';
+        actions.createPage(page);
+    }
     allPages.push({
         title: '',
         path: page.path,
