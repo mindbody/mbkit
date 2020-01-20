@@ -10,6 +10,11 @@ $neutral-5: var(--neutral-5, #EAEDF1);
 $neutral-6: var(--neutral-6, #F8F9FB);
 $neutral-7: var(--neutral-7, #ffffff);
 
+.card {
+    box-shadow: 0 1px 3px 0 rgba(34,36,40, .2);
+    border-radius: $radius;
+    overflow: hidden;
+}
 .banner {
     background: rgb(240,240,240);
     background: linear-gradient(45deg, #909090 0%, #181818 97%);
@@ -58,7 +63,6 @@ $neutral-7: var(--neutral-7, #ffffff);
 .guides {
     padding: 16px;
     background: $background;
-    margin-bottom: 16px;
 
     @media screen and (min-width: 600px) {
         padding: 16px 32px;
@@ -81,6 +85,7 @@ $neutral-7: var(--neutral-7, #ffffff);
 .gettingStarted {
     padding: 16px;
     background: $background;
+    margin-top: 16px;
 
     @media screen and (min-width: 600px) {
         padding: 32px;

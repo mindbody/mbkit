@@ -45,7 +45,13 @@ body {
 }
 .skipNavContent {
     width: 100%;
-    overflow: auto;
+
+    &:not(.fullPage) {
+        overflow: auto;
+        box-shadow: 0 1px 3px 0 rgba(34,36,40, .2);
+        background: $background;
+        border-radius: $radius;
+    }
 }
 .contentContainer {
     max-width: 1440px;
@@ -70,7 +76,6 @@ body {
     padding: 16px;
     width: 100%;
     margin: 0 auto;
-    overflow: hidden;
 
     a {
         color: $secondary-2;
