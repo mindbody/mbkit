@@ -243,26 +243,7 @@ $mobileHeaderHeight: 54px;
         .link {
           flex: 1;
         }
-        .mobileNavToggle {
-          flex: 0 0 32px;
-          transition: transform .2s ease-out;
-          transform-origin: center;
-          appearance: none;
-          background: none;
-          margin: 0;
-          padding: 8px;
-          border: none;
-          outline: none;
-
-          &.open {
-            transform: rotate(180deg);
-          }
-
-          &:focus {
-            box-shadow: inset 0 0 0 4px $focus;
-            border-radius: $radius;
-          }
-        }
+        
         .list {
           transition: height .2s ease-out;
           flex: 1 0 100%;
@@ -276,6 +257,34 @@ $mobileHeaderHeight: 54px;
           }
         }
       }
+  }
+}
+
+.navToggle {
+  flex: 0 0 32px;
+  appearance: none;
+  background: none;
+  margin: 0;
+  padding: 8px;
+  border: none;
+  outline: none;
+
+  svg {
+    transition: transform .2s ease-out;
+    transform-origin: center;
+  }
+
+  &.open svg {
+    transform: rotate(180deg);
+  }
+
+  &.activePage {
+    background: $background;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 4px $focus;
+    border-radius: $radius;
   }
 }
   
@@ -311,6 +320,22 @@ $mobileHeaderHeight: 54px;
 
   .item {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .link {
+      flex: 1;
+    }
+    .subnav {
+      flex: 1 0 100%;
+
+      
+      display: none;
+
+      &.open {
+        display: block;
+      }
+    }
 
     a {
       position: relative;
@@ -325,7 +350,11 @@ $mobileHeaderHeight: 54px;
       border-radius: $radius;
 
       &:focus {
-        box-shadow: 0 0 0 4px $focus;
+        box-shadow: inset 0 0 0 4px $focus;
+      }
+
+      &:hover {
+        color: $secondary-2;
       }
 
       &:before {

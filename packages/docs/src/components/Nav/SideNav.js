@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styles from './Nav.module.scss';
 import { pathnameContainsCurrentPage } from './TopNav';
 import { useEffect } from 'react';
+import { IconChevronDown } from '@mindbody/icon';
 
 export const SideNav = props => {
     const { menu, isMobile, path } = props;
@@ -37,7 +38,7 @@ export const SideNav = props => {
                     {subMenu
                         .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
                         .map(item => {
-                            return <RecursiveSubNav key={item.to} {...item} />;
+                            return <RecursiveSubNav key={item.to} {...item} path={path} />;
                         })}
                 </ul>
             </nav>
@@ -46,24 +47,46 @@ export const SideNav = props => {
 };
 
 const RecursiveSubNav = props => {
-    const { title, to, menu = [] } = props;
+    const { title, to, menu = [], path = '' } = props;
     const hasChildren = menu.length > 0;
+    const [nestedNavOpen, setNestedNavOpen] = useState(false);
+    useEffect(() => {
+        if (typeof path === 'string') {
+            setNestedNavOpen(path.includes(to));
+        }
+    }, [path]);
     const itemClassNames = classnames({
         [styles.item]: true,
         [styles.active]: pathnameContainsCurrentPage(to),
     });
+    const subnavClassnames = classnames({
+        [styles.subnav]: true,
+        [styles.open]: nestedNavOpen,
+    });
+    const toggleButtonClassNames = classnames({
+        [styles.navToggle]: true,
+        [styles.open]: nestedNavOpen,
+        [styles.activePage]: pathnameContainsCurrentPage(to),
+    });
     return (
         <li className={itemClassNames}>
-            <Link to={to}>{title}</Link>
+            <Link to={to} className={styles.link}>
+                {title}
+            </Link>
 
             {hasChildren && (
-                <ul>
-                    {menu
-                        .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
-                        .map(subMenu => (
-                            <RecursiveSubNav key={subMenu.to} {...subMenu} />
-                        ))}
-                </ul>
+                <>
+                    <button className={toggleButtonClassNames} onClick={() => setNestedNavOpen(!nestedNavOpen)}>
+                        <IconChevronDown />
+                    </button>
+                    <ul className={subnavClassnames}>
+                        {menu
+                            .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
+                            .map(subMenu => (
+                                <RecursiveSubNav key={subMenu.to} {...subMenu} />
+                            ))}
+                    </ul>
+                </>
             )}
         </li>
     );

@@ -123,7 +123,7 @@ function RecursiveSubNav(props) {
     const hasChildren = menu.length > 0;
 
     const mobileNavToggleButtonClassNames = classnames({
-        [styles.mobileNavToggle]: true,
+        [styles.navToggle]: true,
         [styles.open]: nestedNavOpen,
     });
     const nestedListClassNames = classnames({
@@ -144,7 +144,7 @@ function RecursiveSubNav(props) {
                     >
                         <IconChevronDown />
                     </button>
-                    <div style={{ height: nestedNavOpen ? 'auto' : 0 }} className={nestedListClassNames}>
+                    <div style={{ display: nestedNavOpen ? 'block' : 'none' }} className={nestedListClassNames}>
                         <ul ref={childrenRef}>
                             {menu.map(menuItem => (
                                 <RecursiveSubNav
