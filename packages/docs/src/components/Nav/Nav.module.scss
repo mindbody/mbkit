@@ -339,16 +339,26 @@ $mobileHeaderHeight: 54px;
         background: transparent;
         transition: background .2s ease-out;
       }
+
     }
 
     &.active > a {
       color: $secondary-2;
+      &:before {
+        background: $secondary-2;
+      }
     }
   }
 
   @media screen and (min-width: 800px) {
-    .item a {
-      padding: 16px;
+    .item {
+      a {
+        padding: 16px;
+      }
+
+      .item a {
+        padding: 12px;
+      }
     }
   }
 }
