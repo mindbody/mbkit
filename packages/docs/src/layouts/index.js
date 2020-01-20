@@ -141,7 +141,7 @@ const Layout = props => {
             <TopNav menu={menuItems} isMobile={isMobile} />
             <MobileNav path={path} menu={menuItems} isMobile={isMobile} />
             <div className={containerClassNames}>
-                <SideNav menu={menuItems} isMobile={isMobile} />
+                <SideNav menu={menuItems} isMobile={isMobile} path={path} />
                 <SkipNavContent className={styles.skipNavContent}>
                     <main className={contentClassNames}>
                         <Breadcrumbs />

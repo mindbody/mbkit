@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 import { Link } from 'gatsby';
 import styles from './Nav.module.scss';
 import { pathnameContainsCurrentPage } from './TopNav';
+import { useEffect } from 'react';
 
 export const SideNav = props => {
-    const { menu, isMobile } = props;
+    const { menu, isMobile, path } = props;
+    const [subMenu, setSubMenu] = useState([]);
 
-    let subMenu;
-    menu.forEach(item => {
-        if (pathnameContainsCurrentPage(item.to)) {
-            subMenu = item.menu;
+    useEffect(() => {
+        if (path === '/') {
+            setSubMenu([]);
+        } else {
+            menu.forEach(item => {
+                if (pathnameContainsCurrentPage(item.to)) {
+                    if (item.menu) {
+                        setSubMenu(item.menu);
+                    }
+                }
+            });
         }
-    });
+    }, [menu, path]);
 
-    if (!subMenu || subMenu.length === 0) {
+    if (subMenu.length === 0) {
         return null;
     }
     const sideNavClassNames = classnames({
