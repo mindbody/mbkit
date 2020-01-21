@@ -159,7 +159,6 @@ $mobileHeaderHeight: 54px;
         border: none;
         margin: 0 auto;
         padding: 0;
-        border-radius: $radius;
         outline: none;
 
         &:focus {
@@ -208,7 +207,6 @@ $mobileHeaderHeight: 54px;
           color: $foreground;
           background: $background;
           outline: none;
-          border-radius: $radius;
 
           &[aria-current="page"] {
             color: $secondary-2;
@@ -268,6 +266,7 @@ $mobileHeaderHeight: 54px;
   padding: 8px;
   border: none;
   outline: none;
+  background: $background;
 
   svg {
     transition: transform .2s ease-out;
@@ -284,7 +283,11 @@ $mobileHeaderHeight: 54px;
 
   &:focus {
     box-shadow: inset 0 0 0 4px $focus;
+  }
+
+  @media screen and (min-width: 800px) {
     border-radius: $radius;
+    background: initial;
   }
 }
   
