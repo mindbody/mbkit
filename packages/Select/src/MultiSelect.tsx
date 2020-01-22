@@ -184,6 +184,10 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
             return `${option.label}${useComma}`;
         })
         .join(' ');
+    const placeholderClassNames = classnames({
+        [styles.selectPlaceholderLabel]: true,
+        [styles.placeholder]: activeLabels.trim().length === 0,
+    });
     return (
         <div ref={selectRef} className={styles.multiSelectContainer}>
             <div id={labelId}>{label}</div>
@@ -202,9 +206,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
                 aria-multiselectable="true"
                 {...rest}
             >
-                <div className={activeLabels.trim() ? '' : styles.placeholder}>
-                    {activeLabels.trim() || placeholder}
-                </div>
+                <div className={placeholderClassNames}>{activeLabels.trim() || placeholder}</div>
                 <div className={selectMenuClassNames} ref={selectItemsRef}>
                     {options.map((option, index) => (
                         <MultiSelectItem
@@ -221,3 +223,4 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
         </div>
     );
 };
+MultiSelect.displayName = 'MultiSelect';

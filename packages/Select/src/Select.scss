@@ -80,6 +80,7 @@ $error-1: var(--error-1, #992D38);
     border: 1px solid $secondary-1;
     border-top-color: $neutral-4;
     border-radius: 0 0 $radius $radius;
+    z-index: 1;
 
     &.isOpen {
         opacity: 1;
@@ -104,4 +105,10 @@ $error-1: var(--error-1, #992D38);
 }
 .placeholder {
     color: $neutral-2;
+}
+.selectPlaceholderLabel {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 24px;
 }
