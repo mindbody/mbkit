@@ -173,7 +173,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
         [styles.isOpen]: isOpen,
     });
     const checkedOptions = options.filter(opt => {
-        if (opt.checked) {
+        if (opt.checked === true) {
             return opt;
         }
         return null;
