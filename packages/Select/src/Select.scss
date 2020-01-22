@@ -63,7 +63,7 @@ $error-1: var(--error-1, #992D38);
 
     .select.isOpen {
         border-color: $secondary-1;
-        border-bottom: none;
+        border-bottom-color: $neutral-3;
         border-radius: $radius $radius 0 0;
     }
 }
@@ -78,7 +78,7 @@ $error-1: var(--error-1, #992D38);
     background: $background;
     visibility: hidden;
     border: 1px solid $secondary-1;
-    border-top-color: $neutral-4;
+    border-top: none;
     border-radius: 0 0 $radius $radius;
     z-index: 1;
 
@@ -111,4 +111,10 @@ $error-1: var(--error-1, #992D38);
     white-space: nowrap;
     text-overflow: ellipsis;
     padding-right: 24px;
+}
+.label {
+    color: $neutral-2;
+    font-size: .75rem;
+    line-height: 1.5;
+    text-indent: 8px;
 }

@@ -103,6 +103,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
             case 'ArrowDown':
             case 'ArrowUp':
                 if (!isOpen) {
+                    event.preventDefault();
                     setIsOpen(true);
                 }
                 break;
@@ -190,7 +191,9 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
     });
     return (
         <div ref={selectRef} className={styles.multiSelectContainer}>
-            <div id={labelId}>{label}</div>
+            <div id={labelId} className={styles.label}>
+                {label}
+            </div>
             <div
                 ref={selectButtonRef}
                 id={selectId}
