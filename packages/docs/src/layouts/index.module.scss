@@ -34,14 +34,10 @@ body {
 }
 
 [data-reach-skip-link] {
-   outline: none;
     border-radius: $radius;
     color: $foreground;
     background: $background;
     z-index: 2 !important;
-    &:focus {
-        box-shadow: 0 0 0 4px $focus;
-    }
 }
 .skipNavContent {
     width: 100%;

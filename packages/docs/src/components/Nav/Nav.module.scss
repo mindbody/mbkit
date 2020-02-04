@@ -37,12 +37,7 @@ $navShadow: 0 1px 16px 0 rgba(34, 36, 40, .2);
   padding: 0 16px;
 
   a {
-    outline: none;
     border-radius: $radius;
-
-    &:focus {
-      box-shadow: 0 0 0 4px $focus;
-    }
   }
 
   .links {
@@ -144,12 +139,7 @@ $mobileHeaderHeight: 54px;
     .homeLink {
       display: block;
       border-radius: $radius;
-      outline: none;
       padding: 8px;
-
-      &:focus {
-        box-shadow: 0 0 0 4px $focus;
-      }
     }
 
     .mobileNavButton {
@@ -159,11 +149,6 @@ $mobileHeaderHeight: 54px;
         border: none;
         margin: 0 auto;
         padding: 0;
-        outline: none;
-
-        &:focus {
-          box-shadow: 0 0 0 4px $focus;
-        }
     }
   }
 
@@ -206,14 +191,9 @@ $mobileHeaderHeight: 54px;
           text-decoration: none;
           color: $foreground;
           background: $background;
-          outline: none;
 
           &[aria-current="page"] {
             color: $secondary-2;
-          }
-
-          &:focus {
-            box-shadow: inset 0 0 0 4px $focus;
           }
         }
       }
@@ -265,7 +245,6 @@ $mobileHeaderHeight: 54px;
   margin: 0;
   padding: 8px;
   border: none;
-  outline: none;
   background: $background;
 
   svg {
@@ -279,10 +258,6 @@ $mobileHeaderHeight: 54px;
 
   &.activePage {
     background: $background;
-  }
-
-  &:focus {
-    box-shadow: inset 0 0 0 4px $focus;
   }
 
   @media screen and (min-width: 800px) {
@@ -349,12 +324,7 @@ $mobileHeaderHeight: 54px;
       color: $foreground;
       text-decoration: none;
       text-transform: capitalize;
-      outline: none;
       border-radius: $radius;
-
-      &:focus {
-        box-shadow: inset 0 0 0 4px $focus;
-      }
 
       &:hover {
         color: $secondary-2;
