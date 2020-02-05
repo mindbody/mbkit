@@ -94,6 +94,7 @@ $error-1: var(--error-1, #992D38);
 }
 .multiSelectItem {
     display: flex;
+    align-items: center;
     padding: 4px 8px;
 
     &:first-child {
@@ -107,9 +108,6 @@ $error-1: var(--error-1, #992D38);
         margin-right: 8px;
         flex: 0 0 32px;
         height: 32px;
-    }
-    span {
-        padding: 8px 0;
     }
 }
 .placeholder {
