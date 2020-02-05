@@ -33,7 +33,7 @@ $error-1: var(--error-1, #992D38);
     border: 1px solid $neutral-3;
     border-radius: $radius;
     padding: 8px;
-    font-size: 1rem;
+    font-size: $font-spec-1-size;
     outline: none;
     cursor: pointer;
     transition: box-shadow .1s ease-out, border .2s ease-out;
@@ -121,7 +121,7 @@ $error-1: var(--error-1, #992D38);
 }
 .label {
     color: $neutral-2;
-    font-size: .75rem;
+    font-size: $font-spec-6-size;
     line-height: 1.5;
     text-indent: 8px;
 }
