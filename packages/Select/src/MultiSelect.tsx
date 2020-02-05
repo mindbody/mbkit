@@ -4,9 +4,9 @@ import nanoid from 'nanoid';
 import styles from './Select.scss';
 import { MultiSelectItem } from './MultiSelectItem';
 
-type MultiSelectOption = {
+export type MultiSelectOption = {
     label: string;
-    checked: boolean;
+    checked: boolean | 'mixed';
     id: string;
 };
 export type MultiSelectProps = AllHTMLAttributes<HTMLDivElement> & {

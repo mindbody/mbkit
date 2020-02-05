@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Select.js",
-    "types": "dist/index.d.ts",
+    "types": "dist/Select/src/index.d.ts",
     "publishConfig": {
         "access": "public"
     },

@@ -3,7 +3,7 @@ import { Checkbox } from '@mindbody/checkbox';
 import styles from './Select.scss';
 
 export type MultiSelectItemProps = {
-    checked: boolean;
+    checked: boolean | 'mixed';
     label: string;
     onChange: () => void;
     id: string;
@@ -16,14 +16,14 @@ export const MultiSelectItem: FC<MultiSelectItemProps> = (props: MultiSelectItem
                 data-multiselect-item
                 type="checkbox"
                 role="option"
-                aria-selected={props.checked}
+                aria-selected={props.checked ? true : false}
                 aria-checked={props.checked}
                 aria-label={label}
                 tabIndex={-1}
                 className={styles.checkbox}
                 {...rest}
             />
-            {label}
+            <span>{label}</span>
         </label>
     );
 };

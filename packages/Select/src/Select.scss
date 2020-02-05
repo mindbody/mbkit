@@ -81,6 +81,8 @@ $error-1: var(--error-1, #992D38);
     border-top: none;
     border-radius: 0 0 $radius $radius;
     z-index: 1;
+    max-height: 200px;
+    overflow: scroll;
 
     &.isOpen {
         opacity: 1;
@@ -89,7 +91,7 @@ $error-1: var(--error-1, #992D38);
     }
 }
 .multiSelectItem {
-    display: block;
+    display: flex;
     padding: 4px 8px;
 
     &:first-child {
@@ -101,6 +103,11 @@ $error-1: var(--error-1, #992D38);
 
     .checkbox {
         margin-right: 8px;
+        flex: 0 0 32px;
+        height: 32px;
+    }
+    span {
+        line-height: 32px;
     }
 }
 .placeholder {
