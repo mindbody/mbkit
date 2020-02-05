@@ -11,6 +11,8 @@ $neutral-4: var(--neutral-4, #CBD0D7);
 $neutral-5: var(--neutral-5, #EAEDF1);
 $neutral-6: var(--neutral-6, #F8F9FB);
 $neutral-7: var(--neutral-7, #ffffff);
+$font-spec-5-size: var(--font-spec-5-size, 1rem);
+$font-spec-6-size: var(--font-spec-6-size, .75rem);
 
 $primary-1: var(--primary-1, #993100);
 $secondary-1: var(--secondary-1, #004C57);
@@ -33,7 +35,7 @@ $error-1: var(--error-1, #992D38);
     border: 1px solid $neutral-3;
     border-radius: $radius;
     padding: 8px;
-    font-size: $font-spec-1-size;
+    font-size: $font-spec-5-size;
     outline: none;
     cursor: pointer;
     transition: box-shadow .1s ease-out, border .2s ease-out;
