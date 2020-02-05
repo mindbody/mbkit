@@ -1,9 +1,10 @@
-import React, { RefObject, HTMLAttributes, RefAttributes } from 'react';
+import React, { RefObject, ButtonHTMLAttributes, RefAttributes, HTMLProps } from 'react';
 import classnames from 'classnames';
 import styles from './Button.scss';
 
 export type ButtonProps = RefAttributes<HTMLButtonElement> &
-    HTMLAttributes<HTMLButtonElement> & {
+    ButtonHTMLAttributes<HTMLButtonElement> &
+    HTMLProps<HTMLButtonElement> & {
         variant:
             | 'primary'
             | 'secondary'
