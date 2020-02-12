@@ -2,24 +2,25 @@ import React, { RefObject, ButtonHTMLAttributes, RefAttributes, HTMLProps } from
 import classnames from 'classnames';
 import styles from './Button.scss';
 
-export type ButtonProps = RefAttributes<HTMLButtonElement> &
+type DefaultButtonProps = RefAttributes<HTMLButtonElement> &
     ButtonHTMLAttributes<HTMLButtonElement> &
-    HTMLProps<HTMLButtonElement> & {
-        variant:
-            | 'primary'
-            | 'secondary'
-            | 'tertiary'
-            | 'primaryOutlined'
-            | 'secondaryOutlined'
-            | 'tertiaryOutlined'
-            | 'offCard'
-            | 'simpleText'
-            | 'icon'
-            | 'iconPrimary';
-        size?: '1' | '2' | '3' | '4';
-        loading?: boolean;
-        disabled?: boolean;
-    };
+    HTMLProps<HTMLButtonElement>;
+export type ButtonProps = Omit<DefaultButtonProps, 'size'> & {
+    variant:
+        | 'primary'
+        | 'secondary'
+        | 'tertiary'
+        | 'primaryOutlined'
+        | 'secondaryOutlined'
+        | 'tertiaryOutlined'
+        | 'offCard'
+        | 'simpleText'
+        | 'icon'
+        | 'iconPrimary';
+    size?: '1' | '2' | '3' | '4';
+    loading?: boolean;
+    disabled?: boolean;
+};
 const noop = () => {};
 export const Button: React.FC<ButtonProps> = React.forwardRef(
     (props: ButtonProps, ref: RefObject<HTMLButtonElement>) => {
