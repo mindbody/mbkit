@@ -42,7 +42,6 @@ exports.createPages = ({ graphql, actions }) => {
                     node {
                         componentName
                         slug
-                        atomicRating
                         documentation {
                             json
                         }
@@ -161,7 +160,7 @@ function generateComponents({ componentEdges, createPage }) {
     const components = componentEdges.sort((a, b) => a.node.componentName[0] > b.node.componentName[0]);
     // then iterating over each one
     components.forEach(edge => {
-        const { slug, componentName, documentation, atomicRating } = edge.node;
+        const { slug, componentName, documentation } = edge.node;
 
         // Try/catch so the build will continue if one component fails building the page
         try {
@@ -190,10 +189,7 @@ function generateComponents({ componentEdges, createPage }) {
             }
 
             // generating slug (checking for forward slash and adding one if it doesn't exist)
-            const componentSlug =
-                slug[0] === '/'
-                    ? `/components${getAtomicSlug(atomicRating)}${slug}`
-                    : `/components${getAtomicSlug(atomicRating)}/${slug}`;
+            const componentSlug = slug[0] === '/' ? `/components${slug}` : `/components/${slug}`;
 
             // Building gatsby page
             createPage({
@@ -215,17 +211,6 @@ function generateComponents({ componentEdges, createPage }) {
             console.warn('====================================');
         }
     });
-}
-
-function getAtomicSlug(atomicRating) {
-    switch (atomicRating) {
-        case 'Atomic':
-            return '/atoms';
-        case 'Molecule':
-            return '/molecules';
-        default:
-            return '';
-    }
 }
 
 /**
