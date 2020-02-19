@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Checkbox } from '@mindbody/checkbox';
+import { Checkbox } from '@mbkit/checkbox';
 import styles from './Select.scss';
 
 export type MultiSelectItemProps = {
