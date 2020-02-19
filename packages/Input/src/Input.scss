@@ -12,6 +12,7 @@ $neutral-7: var(--neutral-7, #ffffff);
 $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 $error-1: var(--error-1, #992D38);
 $radius: var(--radius, 3px);
+$font-spec-5-size: var(--font-spec-5-size, 1rem);
 
 @mixin svgTargetFill() {
     g:not([fill~="#"]),
@@ -89,7 +90,7 @@ $border: 1px solid $neutral-3;
     appearance: none;
     margin: 0;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: $font-spec-5-size;
     border: $border;
     border-radius: $radius;
     color: $foreground;

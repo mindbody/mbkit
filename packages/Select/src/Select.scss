@@ -11,6 +11,8 @@ $neutral-4: var(--neutral-4, #CBD0D7);
 $neutral-5: var(--neutral-5, #EAEDF1);
 $neutral-6: var(--neutral-6, #F8F9FB);
 $neutral-7: var(--neutral-7, #ffffff);
+$font-spec-5-size: var(--font-spec-5-size, 1rem);
+$font-spec-6-size: var(--font-spec-6-size, .75rem);
 
 $primary-1: var(--primary-1, #993100);
 $secondary-1: var(--secondary-1, #004C57);
@@ -33,7 +35,7 @@ $error-1: var(--error-1, #992D38);
     border: 1px solid $neutral-3;
     border-radius: $radius;
     padding: 8px;
-    font-size: 1rem;
+    font-size: $font-spec-5-size;
     outline: none;
     cursor: pointer;
     transition: box-shadow .1s ease-out, border .2s ease-out;
@@ -57,4 +59,69 @@ $error-1: var(--error-1, #992D38);
         cursor: not-allowed;
         @include downChevron(#5A5E66);
     }
+}
+.multiSelectContainer {
+    position: relative;
+
+    .select.isOpen {
+        border-color: $secondary-1;
+        border-bottom-color: $neutral-3;
+        border-radius: $radius $radius 0 0;
+    }
+}
+.multiSelectMenu {
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: $background;
+    visibility: hidden;
+    border: 1px solid $secondary-1;
+    border-top: none;
+    border-radius: 0 0 $radius $radius;
+    z-index: 1;
+    max-height: 200px;
+    overflow: scroll;
+
+    &.isOpen {
+        opacity: 1;
+        pointer-events: initial;
+        visibility: visible;
+    }
+}
+.multiSelectItem {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+
+    &:first-child {
+        margin-top: 4px;
+    }
+    &:last-child {
+        margin-bottom: 4px;
+    }
+
+    .checkbox {
+        margin-right: 8px;
+        flex: 0 0 32px;
+        height: 32px;
+    }
+}
+.placeholder {
+    color: $neutral-2;
+}
+.selectPlaceholderLabel {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 24px;
+}
+.label {
+    color: $neutral-2;
+    font-size: $font-spec-6-size;
+    line-height: 1.5;
+    text-indent: 8px;
 }
