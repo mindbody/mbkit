@@ -1,6 +1,6 @@
 {
-    "name": "@mindbody/theme",
-    "version": "2.0.0",
+    "name": "@mbkit/theme",
+    "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Theme.js",
     "types": "dist/index.d.ts",

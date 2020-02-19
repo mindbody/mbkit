@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": "./packages",
         "paths": {
-            "@mindbody/*": ["*/src"]
+            "@mbkit/*": ["*/src"]
         },
         "declaration": true,
         "target": "es6",

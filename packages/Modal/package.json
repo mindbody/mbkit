@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/modal",
+    "name": "@mbkit/modal",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Modal.js",

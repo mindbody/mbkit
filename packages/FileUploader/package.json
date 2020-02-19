@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/file-uploader",
+    "name": "@mbkit/file-uploader",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/FileUploader.js",

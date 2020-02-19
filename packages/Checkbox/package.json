@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/checkbox",
+    "name": "@mbkit/checkbox",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Checkbox.js",

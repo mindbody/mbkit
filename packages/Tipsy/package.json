@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/tipsy",
+    "name": "@mbkit/tipsy",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Tipsy.js",

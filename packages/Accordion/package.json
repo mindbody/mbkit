@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/accordion",
+    "name": "@mbkit/accordion",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Accordion.js",

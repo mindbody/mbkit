@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/toggle",
+    "name": "@mbkit/toggle",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Toggle.js",

@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/label",
+    "name": "@mbkit/label",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Label.js",

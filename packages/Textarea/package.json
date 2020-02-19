@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/textarea",
+    "name": "@mbkit/textarea",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Textarea.js",

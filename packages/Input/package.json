@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/input",
+    "name": "@mbkit/input",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Input.js",

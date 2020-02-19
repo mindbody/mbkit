@@ -1,5 +1,5 @@
 {
-    "name": "@mindbody/card",
+    "name": "@mbkit/card",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/Card.js",
