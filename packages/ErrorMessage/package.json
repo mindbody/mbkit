@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/error-message",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "source": "src/index.tsx",
     "main": "dist/ErrorMessage.js",
     "types": "dist/index.d.ts",

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.0...@mbkit/select@1.1.1) (2020-02-20)
+
+
+### Bug Fixes
+
+* **select:** fixed name of yalc package ([2beb388](https://github.com/mindbody/design-system/commit/2beb3880e61abdef710c5c9e4f8fca0d9c0b2734))
+* **select:** updated yalc package with latest name ([cb31b0c](https://github.com/mindbody/design-system/commit/cb31b0c5f5ca1dc94fdb3b5483a478ccbd46f706))
+
+
+
+
+
 # 1.1.0 (2020-02-19)
 
 

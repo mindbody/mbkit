@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/calendar",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "source": "src/index.tsx",
     "main": "dist/Calendar.js",
     "types": "dist/index.d.ts",
