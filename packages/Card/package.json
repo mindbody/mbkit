@@ -1,6 +1,6 @@
 {
-    "name": "@mindbody/card",
-    "version": "1.0.0",
+    "name": "@mbkit/card",
+    "version": "1.1.0",
     "source": "src/index.tsx",
     "main": "dist/Card.js",
     "types": "dist/index.d.ts",

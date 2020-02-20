@@ -1,0 +1,77 @@
+@import '../../../shared/scss/mixins.scss';
+
+$radius: var(--radius, 3px);
+$neutral-3: var(--neutral-3, #8F96A1);
+$neutral-4: var(--neutral-4, #CBD0D7);
+$neutral-7: var(--neutral-7, #ffffff);
+$secondary-1: var(--secondary-1, #004C57);
+$error-1: var(--error-1, #992D38);
+
+@mixin checkmarkChecked($fill) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10'%3E%3Cpath fill='none' fill-rule='evenodd' stroke='" + encodeHexColor($fill) +"' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 1L5.0317226 9 1 5'/%3E%3C/svg%3E");
+}
+@mixin checkmarkIntermediate($fill) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='2'%3E%3Cpath fill='none' fill-rule='evenodd' stroke='" + encodeHexColor($fill) +"' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 1H1'/%3E%3C/svg%3E");
+}
+
+.checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: $radius;
+    border: 1px solid $neutral-3;
+    background: $neutral-7;
+    vertical-align: middle;
+    margin: 0;
+    transition: box-shadow .1s ease-out;
+    &, & * {
+        box-sizing: border-box;
+    }
+
+    &[aria-checked="mixed"] {
+        @include checkmarkIntermediate(#fff);
+    }
+
+    &:checked {
+        @include checkmarkChecked(#fff);
+    }
+    
+    &[aria-checked="mixed"],
+    &:checked {
+        background-size: 55% auto;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-color: $secondary-1;
+        border-color: $secondary-1;
+    }
+    &.invalid {
+        border-color: $error-1;
+    }
+
+    &:not(:disabled) {
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+        }
+        &:active {
+            box-shadow: 0 0 0 8px var(--focus,rgba(96,150,230,.75));
+        }
+    }
+
+    &:disabled {
+        background-color: $neutral-4;
+        border-color: $neutral-4;
+        cursor: not-allowed;
+
+        &[aria-checked="mixed"] {
+            @include checkmarkIntermediate(#5A5E66);
+        }
+    
+        &:checked {
+            @include checkmarkChecked(#5A5E66);
+        }
+    }
+}
