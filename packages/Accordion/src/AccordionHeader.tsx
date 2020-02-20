@@ -2,28 +2,10 @@ import React, { FC, forwardRef, HTMLProps, useContext, AllHTMLAttributes, Keyboa
 import classnames from 'classnames';
 import { AccordionItemContext } from './AccordionItem';
 import { AccordionContext, noop } from './Accordion';
+import { IconChevronForward } from '@mbkit/icon';
 import styles from './Accordion.scss';
 
 export type AccordionHeaderProps = AllHTMLAttributes<HTMLDivElement> & HTMLProps<HTMLDivElement>;
-
-// TODO replace with icon once they are published
-const ChevronForward = (props: any) => (
-    <svg width="18" height="18" viewBox="0 0 32 32" {...props}>
-        <g
-            id="Icons/UI/Chevron-forward-KR-umQ91SWjw4A2_TX36T"
-            fill="none"
-            fillRule="evenodd"
-            stroke="none"
-            strokeWidth="1"
-        >
-            <path
-                id="Path-KR-umQ91SWjw4A2_TX36T"
-                fill="#54575F"
-                d="M13.6053239 7.30697031c-.169535-.2179736-.1302678-.5321114.0877058-.70164642.2179736-.16953502.5321114-.13026779.7016464.0877058l7 9.00000001c.1404319.1805552.1404319.4333854 0 .6139406l-7 9c-.169535.2179736-.4836728.2572408-.7016464.0877058s-.2572408-.4836728-.0877058-.7016464L20.3665692 16l-6.7612453-8.69302969z"
-            ></path>
-        </g>
-    </svg>
-);
 
 export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: AccordionHeaderProps, ref) => {
     const { children, onKeyDown, onClick = noop, ...rest } = props;
@@ -105,7 +87,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
             data-accordion-header={accordionId}
             className={headerClassNames}
         >
-            <ChevronForward className={chevronClassNames} aria-hidden="true" /> {children}
+            <IconChevronForward width="18" height="18" className={chevronClassNames} aria-hidden="true" /> {children}
         </div>
     );
 });
