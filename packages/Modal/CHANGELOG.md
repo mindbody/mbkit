@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.1.1...@mbkit/modal@1.1.2) (2020-02-28)
+
+
+### Bug Fixes
+
+* made overflow auto so scrollbars only show up when needed on windows ([409ba69](https://github.com/mindbody/design-system/commit/409ba69ee4b0334d2fa54d90b57768f3cbbc80ae))
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.1.0...@mbkit/modal@1.1.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/modal
