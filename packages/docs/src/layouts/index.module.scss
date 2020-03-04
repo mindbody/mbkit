@@ -32,6 +32,12 @@ body {
     min-height: 100vh;
     font-family: $font-family;
 }
+h1 {
+  font-weight: 200;
+}
+p {
+  line-height: 1.5rem;
+}
 
 [data-reach-skip-link] {
     border-radius: $radius;
@@ -73,6 +79,10 @@ body {
     padding: 16px;
     width: 100%;
     margin: 0 auto;
+
+    h2, h3, h4, h5, h6 {
+      margin-top: 32px;
+    }
 
     a {
         color: $secondary-2;

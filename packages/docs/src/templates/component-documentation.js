@@ -108,7 +108,6 @@ const ComponentDocumentation = props => {
             />
             <h1>{componentName}</h1>
 
-            <h2>Documentation</h2>
             {documentToReactComponents(designDocs)}
 
             <h3>Implementation Details</h3>
@@ -126,7 +125,7 @@ const ComponentDocumentation = props => {
                 relatedComponents.map(component => (
                     <p key={component.name}>
                         <a
-                            href={`/coverage/lcov-report/${pkgJson.name.replace('@mindbody/', '')}/src/${
+                            href={`/coverage/lcov-report/${pkgJson.name.replace('@mbkit/', '')}/src/${
                                 component.name
                             }.tsx`}
                             target="_blank"
