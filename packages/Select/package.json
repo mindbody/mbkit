@@ -22,8 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/checkbox": "file:.yalc/@mbkit/checkbox",
-        "@mindbody/checkbox": "file:.yalc/@mindbody/checkbox",
+        "@mbkit/checkbox": "^1.1.1",
         "classnames": "^2.2.6",
         "nanoid": "^2.1.8"
     }

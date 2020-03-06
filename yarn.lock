@@ -2173,11 +2173,6 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-"@mbkit/checkbox@file:packages/Select/.yalc/@mbkit/checkbox":
-  version "1.1.0-df420a0e"
-  dependencies:
-    classnames "^2.2.6"
-
 "@mdx-js/react@^1.4.0":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.5.1.tgz#e0a9dbdc03826198abd82b29dcee91d661faf8a5"
@@ -2187,11 +2182,6 @@
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.9.tgz#b2b85d8ac7bb2797e577050b61aeaf1b26fbd906"
   integrity sha512-FOAjeRHULSWXd6JMuCDwf3zPbe11kP971+Bufrj9M8rQ33ZMtThgKd6IJgzj6tr/+1Rq3czzLI1LAa9x0IC92w==
-
-"@mindbody/checkbox@file:packages/Select/.yalc/@mindbody/checkbox":
-  version "1.0.0-1464ea4c"
-  dependencies:
-    classnames "^2.2.6"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
