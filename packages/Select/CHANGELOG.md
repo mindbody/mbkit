@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.1...@mbkit/select@1.1.2) (2020-03-06)
+
+
+### Bug Fixes
+
+* replaced local yalc version of checkbox with published version ([680c342](https://github.com/mindbody/design-system/commit/680c34272f3eb1aa086644e8b3d89ab140cb0032))
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.0...@mbkit/select@1.1.1) (2020-02-20)
 
 
