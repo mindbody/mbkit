@@ -2,7 +2,9 @@
     "name": "@mbkit/accordion",
     "version": "1.1.1",
     "source": "src/index.tsx",
-    "main": "dist/Accordion.js",
+    "main": "dist/cjs/Accordion.js",
+    "jsnext:main": "dist/esm/Accordion.js",
+    "module": "dist/esm/Accordion.js",
     "types": "dist/index.d.ts",
     "publishConfig": {
         "access": "public"

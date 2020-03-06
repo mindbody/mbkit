@@ -2,8 +2,10 @@
     "name": "@mbkit/action-banner",
     "version": "1.0.2",
     "source": "src/index.tsx",
-    "main": "dist/ActionBanner.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/ActionBanner.js",
+    "jsnext:main": "dist/esm/ActionBanner.js",
+    "module": "dist/esm/ActionBanner.js",
+    "types": "dist/esm/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
