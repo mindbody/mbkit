@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.1.1...@mbkit/banner@1.1.2) (2020-03-10)
+
+
+### Bug Fixes
+
+* **banner:** fixed link in readme ([7429955](https://github.com/mindbody/design-system/commit/742995549a1eef56c8249823c5518d39f38a9a96))
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.1.0...@mbkit/banner@1.1.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/banner

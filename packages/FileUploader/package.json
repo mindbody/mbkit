@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/file-uploader",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "source": "src/index.tsx",
     "main": "dist/FileUploader.js",
     "types": "dist/index.d.ts",
