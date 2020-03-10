@@ -1,4 +1,4 @@
-# Action Banner
+# Banner
 
 This is a react component to display a banner on the page to alert the user. 
 
