@@ -1,16 +1,16 @@
 # MB Design System
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2777df6c-361b-42f4-b149-c6672212a3db/deploy-status)](https://app.netlify.com/sites/friendly-bose-a575fc/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2777df6c-361b-42f4-b149-c6672212a3db/deploy-status)](https://app.netlify.com/sites/mbkit/deploys)
 
 ## Getting started
 
-If you are looking to consume the components for building applications please see the [documentation site](https://friendly-bose-a575fc.netlify.com) for the list of components and props. 
+If you are looking to consume the components for building applications please see the [documentation site](https://mbkit.netlify.com) for the list of components and props. 
 
 If you are going to work on the components in this repo; clone this repo, from your terminal navigate into this repo and run `yarn install`. 
 
 ## Docs of all components
 
-For live examples of components please see the [design system](https://friendly-bose-a575fc.netlify.com)
+For live examples of components please see the [design system](https://mbkit.netlify.com)
 
 For making updates to the gatsby instance that generates the documentation, see the `packages/docs/readme.md` for details on how the documentation is generated.
 
