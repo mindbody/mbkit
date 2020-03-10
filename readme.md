@@ -49,7 +49,7 @@ Your `package.json` should look like the following:
 
 ```
 {
-    "name": "@mindbody/component-name",
+    "name": "@mbkit/component-name",
     "version": "1.0.0",
     "source": "src/index.tsx",
     "main": "dist/ComponentName.js",
@@ -73,7 +73,7 @@ Your `package.json` should look like the following:
 ```
 
 - `source` is where the build tools will look to compile the code. 
-- `main` is where the compiled code will be put after the build occurs as well as tell the consuming user where the import will come from. This will allow the consuming dev to `import ComponentName from '@mindbody/component-name'` and the package.json will point it to the compiled code.
+- `main` is where the compiled code will be put after the build occurs as well as tell the consuming user where the import will come from. This will allow the consuming dev to `import ComponentName from '@mbkit/component-name'` and the package.json will point it to the compiled code.
 - `types` let's the consuming user see the type definitions
 
 ### Local configs

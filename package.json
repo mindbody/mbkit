@@ -18,8 +18,8 @@
         "build:modules": "yarn lerna run build",
         "build:docs": "yarn build:types && yarn lerna run docs:prod",
         "docs:serve": "yarn lerna run docs:serve",
-        "lerna:version": "yarn lerna version  --no-git-reset --conventional-commits --loglevel=error --yes",
-        "lerna:publish": "yarn lerna publish --no-git-reset --from-git",
+        "lerna:version": "yarn lerna version --conventional-commits --loglevel=error --yes",
+        "lerna:publish": "yarn lerna publish --no-git-reset",
         "commit": "git-cz"
     },
     "author": "",
@@ -77,5 +77,8 @@
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "dependencies": {
+        "yalc": "^1.0.0-pre.35"
     }
 }

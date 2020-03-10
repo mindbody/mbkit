@@ -1,6 +1,6 @@
 {
-    "name": "@mindbody/icon",
-    "version": "1.0.0",
+    "name": "@mbkit/icon",
+    "version": "1.1.1",
     "source": "src/index.tsx",
     "main": "dist/Icon.js",
     "types": "dist/index.d.ts",

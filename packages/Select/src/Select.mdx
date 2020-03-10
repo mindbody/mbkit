@@ -44,3 +44,38 @@ Other states of the select dropdown
     </label>
 </div>
 ```
+
+## MultiSelect
+
+```tsx
+<>
+    <Component initialState={{
+        items: [
+            { label: 'Apples', checked: true, id: 'test1' }, 
+            { label: 'Bananas', checked: false, id: 'test2' }, 
+            { label: 'Oranges', checked: true, id: 'test3' },
+            { label: 'Kiwis', checked: false, id: 'test4' },
+        ],
+    }}>
+        {({ state, setState }) => (
+            <MultiSelect 
+                label="Select your favorite fruits" 
+                placeholder="Select Something" 
+                options={state.items} 
+                onChange={itemChanged => {
+                    setState({
+                        items: state.items.map(item => {
+                            if (item.id === itemChanged.id) {
+                                return itemChanged;
+                            }
+                            return item;
+                        })
+                    })
+                }} 
+            />
+        )}
+    </Component>
+</>
+```
+
+This is some text below just for demo's purposes. It should not be effected by the dropdown above
