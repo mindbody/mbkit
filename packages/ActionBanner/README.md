@@ -10,4 +10,4 @@ yarn add @mbkit/action-banner
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/action-banner)
+Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/actionbanner)
