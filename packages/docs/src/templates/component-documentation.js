@@ -113,10 +113,7 @@ const ComponentDocumentation = props => {
             <h3>Implementation Details</h3>
 
             <p>
-                <a
-                    href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
-                    target="_blank"
-                >
+                <a href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`} target="_blank">
                     Version {pkgJson.version} on GitHub
                 </a>
             </p>
