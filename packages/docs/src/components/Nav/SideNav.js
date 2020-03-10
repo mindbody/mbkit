@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import styles from './Nav.module.scss';
 import { pathnameContainsCurrentPage } from './TopNav';
 import { useEffect } from 'react';
-import { IconChevronDown } from '@mindbody/icon';
+import { IconChevronDown } from '@mbkit/icon';
 
 export const SideNav = props => {
     const { menu, isMobile, path } = props;

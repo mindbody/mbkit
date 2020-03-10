@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './Nav.module.scss';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
-import { IconChevronDown, IconClose, IconListInactive } from '@mindbody/icon';
+import { IconChevronDown, IconClose, IconListInactive } from '@mbkit/icon';
 
 const noop = () => {};
 
