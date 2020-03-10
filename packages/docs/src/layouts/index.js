@@ -8,6 +8,7 @@ import '@reach/skip-nav/styles.css';
 import { SideNav } from '../components/Nav/SideNav';
 import classnames from 'classnames';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import { ThemeProvider } from '@mbkit/theme';
 
 const query = graphql`
     query {
@@ -141,18 +142,20 @@ const Layout = props => {
 
     return (
         <>
-            <SkipNavLink />
-            <TopNav menu={menuItems} isMobile={isMobile} />
-            <MobileNav path={path} menu={menuItems} isMobile={isMobile} />
-            <div className={containerClassNames}>
-                <SideNav menu={menuItems} isMobile={isMobile} path={path} />
-                <SkipNavContent className={skipNavClassNames}>
-                    <main className={contentClassNames}>
-                        <Breadcrumbs isFullPage={fullPage} />
-                        {props.children}
-                    </main>
-                </SkipNavContent>
-            </div>
+            <ThemeProvider>
+                <SkipNavLink />
+                <TopNav menu={menuItems} isMobile={isMobile} />
+                <MobileNav path={path} menu={menuItems} isMobile={isMobile} />
+                <div className={containerClassNames}>
+                    <SideNav menu={menuItems} isMobile={isMobile} path={path} />
+                    <SkipNavContent className={skipNavClassNames}>
+                        <main className={contentClassNames}>
+                            <Breadcrumbs isFullPage={fullPage} />
+                            {props.children}
+                        </main>
+                    </SkipNavContent>
+                </div>
+            </ThemeProvider>
         </>
     );
 };
