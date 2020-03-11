@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/theme@1.1.1...@mbkit/theme@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **theme:** updated font families ([d6cbeca](https://github.com/mindbody/design-system/commit/d6cbecaf70d6badd9d5714c10bbf145d9b788fcf))
+* **theme:** updated theme colors and added usage key to font specs ([8a2f581](https://github.com/mindbody/design-system/commit/8a2f581086102456e504f15de2d43e078385b6d2))
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/theme@1.1.2...@mbkit/theme@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/theme
