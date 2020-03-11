@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Design System`,
-        description: `Discover and learn our best practices for design, copywriting, feature development and component library`,
+        title: `MBKit`,
+        description: `Discover our component library and learn our best practices for content and design`,
         author: `@czaas`,
     },
     plugins: [
