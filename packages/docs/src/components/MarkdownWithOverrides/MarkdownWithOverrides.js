@@ -51,7 +51,7 @@ const CodeEditorPreview = props => {
             </Button>
             <div className={styles.codeEditorWrapper}>
                 <LiveProvider code={props.children} scope={props.scope} theme={{ ...theme }}>
-                    <div className={styles.codeEditor}>{showEditor && <LiveEditor onKeyDown={handleKeyPress} />}</div>
+                    {showEditor && <div className={styles.codeEditor}>{<LiveEditor onKeyDown={handleKeyPress} />}</div>}
                     <div className={styles.codePreview}>
                         <LiveError />
                         <LivePreview />
