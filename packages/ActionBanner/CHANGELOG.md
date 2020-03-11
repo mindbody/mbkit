@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.0.4...@mbkit/action-banner@1.1.0) (2020-03-11)
+
+
+### Features
+
+* **action-banner:** consuming mbkit/theme styles ([686ca4c](https://github.com/mindbody/design-system/commit/686ca4cf173daa96e4737793d421f8a2b6a52f5c))
+
+
+
+
+
 ## [1.0.4](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.0.3...@mbkit/action-banner@1.0.4) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/action-banner

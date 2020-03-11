@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.5...@mbkit/select@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **select:** consuming mbkit/theme ([a04dc1c](https://github.com/mindbody/design-system/commit/a04dc1c136a56b54acb5818ae244f16b4c7b999a))
+
+
+
+
+
 ## [1.1.5](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.4...@mbkit/select@1.1.5) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/select

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.1.3...@mbkit/calendar@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **calendar:** now consuming mbkit/theme ([61df1aa](https://github.com/mindbody/design-system/commit/61df1aa2c0e76cd0be7275f7a2c39f2a91674561))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.1.2...@mbkit/calendar@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/calendar
