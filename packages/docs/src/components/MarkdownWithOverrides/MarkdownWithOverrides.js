@@ -1,6 +1,7 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { Button } from '@mbkit/button';
 
 import theme from 'prism-react-renderer/themes/vsDark';
 import styles from './MarkdownWithOverrides.module.scss';
@@ -40,7 +41,14 @@ const CodeEditorPreview = props => {
     }
     return (
         <>
-            <button onClick={() => setShowEditor(!showEditor)}>{'Toggle Editor'}</button>
+            <Button
+                className={styles.toggleButton}
+                variant="secondaryOutlined"
+                size={4}
+                onClick={() => setShowEditor(!showEditor)}
+            >
+                {'Toggle Editor'}
+            </Button>
             <div className={styles.codeEditorWrapper}>
                 <LiveProvider code={props.children} scope={props.scope} theme={{ ...theme }}>
                     <div className={styles.codeEditor}>{showEditor && <LiveEditor onKeyDown={handleKeyPress} />}</div>
