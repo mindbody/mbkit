@@ -21,6 +21,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
+        "@mbkit/theme": "^1.2.1",
         "@reach/alert": "^0.6.2",
         "@reach/portal": "^0.6.2",
         "classnames": "^2.2.6"
