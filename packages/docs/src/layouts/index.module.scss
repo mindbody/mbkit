@@ -84,6 +84,10 @@ p {
       margin-top: 32px;
     }
 
+    ul, ol {
+      line-height: 1.8rem;
+    }
+
     a {
         color: $secondary-2;
         text-decoration: none;
@@ -99,12 +103,6 @@ p {
         &:visited {
             color: $secondary-1;
         }
-    }
-
-    table {
-        display: block;
-        width: auto;
-        overflow: scroll;
     }
 
     @media screen and (min-width: 800px) {
@@ -136,4 +134,40 @@ p {
         grid-template-columns: 280px auto;
         grid-gap: 16px;
     }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  line-height: 1.4rem;
+
+  thead th {
+      text-transform: uppercase;
+      font-size: 11px;
+      color: $neutral-2;
+      font-weight: 300;
+      background: $neutral-6;;
+      padding: 8px 16px;
+      text-align: left;
+      border-bottom: 1px solid $neutral-4;
+
+      &:first-child, &:last-child {
+          border-radius: 3px 3px 0 0;
+      }
+  }
+
+  tbody tr {
+      border-bottom: 1px solid $neutral-4;
+
+      &:nth-child(even) td {
+          background-color: $neutral-6;
+      }
+      td {
+          padding: 8px 16px;
+          font-size: 14px;
+          font-weight: 400;
+          background-color: #fff;
+      }
+  } 
 }
