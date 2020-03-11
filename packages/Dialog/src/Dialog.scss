@@ -1,17 +1,5 @@
+@import '~@mbkit/theme/dist/theme.scss';
 @import '@reach/dialog/styles.css';
-
-$radius: var(--radius, 3px);
-$background: var(--background, #ffffff);
-$foreground: var(--foreground, #0B0B0D);
-$neutral-1: var(--neutral-1, #0B0B0D);
-$neutral-2: var(--neutral-2, #5A5E66);
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-6: var(--neutral-6, #F8F9FB);
-$neutral-7: var(--neutral-7, #ffffff);
-$focus: var(--focus, #6096e6bf);
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 
 $transitionTime: 400;
 $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity #{$transitionTime}ms cubic-bezier(0,0.15,0.55,1);
