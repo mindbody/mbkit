@@ -110,7 +110,7 @@ const ComponentDocumentation = props => {
 
             {documentToReactComponents(designDocs)}
 
-            <h3>Implementation Details</h3>
+            <h2>Implementation Details</h2>
 
             <p>
                 <a href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`} target="_blank">

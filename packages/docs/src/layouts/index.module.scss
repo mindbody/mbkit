@@ -86,6 +86,10 @@ p {
 
     ul, ol {
       line-height: 1.8rem;
+      
+      p {
+        margin: 0;
+      }
     }
 
     a {
