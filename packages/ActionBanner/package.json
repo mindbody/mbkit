@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/action-banner",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "source": "src/index.tsx",
     "main": "dist/ActionBanner.js",
     "types": "dist/index.d.ts",
