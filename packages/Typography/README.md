@@ -1,6 +1,6 @@
 # Typography
 
-This is a react component of typography for easily managing your text.
+A React component for styling your text.
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/typography
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/typography)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/typography)

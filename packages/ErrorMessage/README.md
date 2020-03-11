@@ -1,6 +1,6 @@
 # Error Message
 
-This is a react component of a error message to display errors with input fields.
+A React component for displaying input fields errors
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/error-message
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/errormessage)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/errormessage)

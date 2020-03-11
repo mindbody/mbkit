@@ -1,6 +1,6 @@
 # Card
 
-This is a react component of a card component for displaying content.
+A styled container for displaying groups of content
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/card
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/card)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/card)

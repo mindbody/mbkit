@@ -1,6 +1,6 @@
 # Textarea
 
-This is a react component of a textarea.
+A textarea input built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/textarea
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/textarea)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/textarea)

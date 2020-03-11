@@ -1,6 +1,6 @@
 # Theme
 
-This is a react component of a theme component that should wrap your application.
+A React component that wraps your application with Mindbody-branded styles
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/theme
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/theme)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/theme)

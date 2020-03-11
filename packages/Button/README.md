@@ -1,6 +1,6 @@
 # Button
 
-This is a react component as a button with multiple variants.
+A React button component with multiple variants
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/button
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/button)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/button)

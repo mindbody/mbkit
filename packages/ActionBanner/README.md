@@ -1,6 +1,6 @@
 # Action Banner
 
-This is a react component to display a full screen banner that should alert the user to an action they need to take.
+A React component for displaying a full screen banner that alerts the user to take an action
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/action-banner
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/actionbanner)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/actionbanner)

@@ -1,6 +1,6 @@
 # Select
 
-This is a react component of a select input.
+A styled select input built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/select
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/select)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/select)

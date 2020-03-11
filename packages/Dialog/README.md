@@ -1,6 +1,6 @@
 # Dialog
 
-This is a react component of a dialog.
+A styled dialogue pop-up built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/dialog
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/dialog)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/dialog)

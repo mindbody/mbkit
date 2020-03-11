@@ -1,6 +1,6 @@
 # Input
 
-This is a react component of a input field.
+A styled input field built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/input
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/input)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/input)

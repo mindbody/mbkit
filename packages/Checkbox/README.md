@@ -1,6 +1,6 @@
 # Checkbox
 
-This is a react component of a checkbox input.
+A checkbox input built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/checkbox
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/checkbox)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/checkbox)

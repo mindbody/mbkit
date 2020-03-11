@@ -1,6 +1,6 @@
 # Modal
 
-This is a react component of a modal.
+A styled modal built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/modal
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/modal)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/modal)

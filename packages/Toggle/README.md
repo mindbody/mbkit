@@ -1,6 +1,6 @@
 # Toggle
 
-This is a react component of a toggle component (input checkbox).
+A toggle component (checkbox input) built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/toggle
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/toggle)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/toggle)

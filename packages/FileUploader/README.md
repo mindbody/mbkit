@@ -1,6 +1,6 @@
 # File Uploader
 
-This is a react component of a file uploader input.
+A file uploader input built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/file-uploader
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/fileuploader)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/fileuploader)

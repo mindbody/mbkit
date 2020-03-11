@@ -1,6 +1,6 @@
 # Banner
 
-This is a react component to display a banner on the page to alert the user. 
+A React component for displaying an alert banner 
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/banner
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/banner)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/banner)

@@ -1,6 +1,6 @@
 # Tipsy
 
-This is a react component of a tipsy.
+A React component that displays helper text on hover or focus
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/tipsy
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/tipsy)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/tipsy)

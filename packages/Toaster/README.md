@@ -1,6 +1,6 @@
 # Toaster
 
-This is a react component of a toaster.
+A React component that displays temporary messages
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/toaster
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/toaster)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/toaster)

@@ -1,6 +1,6 @@
 # Accordion
 
-This is a react component to display content in an accordion. 
+A React component to display content in an accordion
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/accordion
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/accordion)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/accordion)

@@ -1,6 +1,6 @@
 # Icon
 
-This is multiple react components of a SVG icons.
+A collection of SVG icons built with React
 
 ## Installation
 
@@ -10,4 +10,4 @@ yarn add @mbkit/icon
 
 ## Usage
 
-Detail use and examples can be found at [mbkit](https://mbkit.netlify.com/components/icon)
+[View detailed examples and documentation](https://mbkit.netlify.com/components/icon)
