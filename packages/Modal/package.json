@@ -22,6 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
+        "@mbkit/theme": "^1.2.1",
         "@reach/dialog": "^0.5.4",
         "classnames": "^2.2.6",
         "react-transition-group": "^4.3.0"
