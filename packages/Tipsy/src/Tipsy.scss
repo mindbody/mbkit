@@ -1,3 +1,5 @@
+@import '~@mbkit/theme/dist/theme.scss';
+
 :root {
     --reach-tooltip: 1;
 }
@@ -9,13 +11,13 @@
 
 .tipsy {
     box-sizing: border-box;
-    font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-    background: var(--neutral-2, #5A5E66);
-    color: var(--neutral-7, #ffffff);
+    font-family: $font-family;
+    background: $neutral-2;
+    color: $neutral-7;
     padding: 8px;
-    border-radius: var(--radius, 3px);
-    font-size: var(--font-spec-10-size, .6875rem);
-    line-height: var(--font-spec-10-lineHeight, 1rem);
+    border-radius: $radius;
+    font-size: $font-spec-10-size;
+    line-height: $font-spec-10-lineHeight;
 }
 .tipsyCaret {
     width: 0;
