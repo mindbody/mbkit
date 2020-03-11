@@ -1,10 +1,9 @@
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-$error-1: var(--error-1, #992D38);
+@import '~@mbkit/theme/dist/theme.scss';
 
 .errorMessage {
     text-indent: 8px;
     font-family: $font-family;
     color: $error-1;
-    font-size: .75rem;
+    font-size: $font-spec-8-size;
     box-sizing: border-box;
 }
