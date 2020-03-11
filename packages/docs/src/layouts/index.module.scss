@@ -1,5 +1,5 @@
-$font-url: var(--font-url, 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$font-url: var(--font-url, 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,600');
+$font-family: var(--font-family, 'Work Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 $radius: var(--radius, 3px);
 $focus: var(--focus, #6096e6bf);
 $foreground: var(--foreground, #0B0B0D);
@@ -18,7 +18,7 @@ $secondary-1: var(--secondary-1, #004C57);
 $secondary-2: var(--secondary-2, #007485);
 $secondary-3: var(--secondary-3, #E5F2F4);
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,600');
 * {
     box-sizing: border-box;
 
@@ -82,6 +82,7 @@ p {
 
     h2, h3, h4, h5, h6 {
       margin-top: 32px;
+      font-weight: 600;
     }
 
     ul, ol {
