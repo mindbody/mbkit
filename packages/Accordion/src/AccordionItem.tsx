@@ -14,7 +14,7 @@ import nanoid from 'nanoid';
 export type AccordionItemProps = AllHTMLAttributes<HTMLDivElement> &
     HTMLProps<HTMLDivElement> & {
         as?: ReactNode;
-        /** Do not use "_index"! this is for internal usage of the accordion. Your value will be overwritten by the accordion */
+        /** Internal - Do not use */
         _index?: number;
     };
 
