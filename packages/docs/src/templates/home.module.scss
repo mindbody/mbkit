@@ -87,15 +87,10 @@ $neutral-7: var(--neutral-7, #ffffff);
     display: inline-block;
     border-radius: $radius;
     text-decoration: none;
-    color: $foreground;
+  }
 
-    h3 {
-      margin-bottom: 0;
-    }
-
-    &:visited {
-        color: $foreground;
-    }
+  h3 {
+    margin: 24px 0 0 0;
   }
 
   p {

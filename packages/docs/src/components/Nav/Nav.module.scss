@@ -125,7 +125,6 @@ $mobileHeaderHeight: 54px;
     width: 100%;
     z-index: 3;
     height: $mobileHeaderHeight;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -295,8 +294,6 @@ $mobileHeaderHeight: 54px;
     margin: 0;
 
     & > .item {
-      border-bottom: 1px solid $neutral-4;
-
       &.active {
         & > a {
           background: $background;
