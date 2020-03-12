@@ -1,14 +1,14 @@
-import React, { FC, forwardRef, RefObject, ReactNode, AllHTMLAttributes, RefAttributes } from 'react';
+import React, { FC, forwardRef, RefObject, AllHTMLAttributes, RefAttributes, ReactElement } from 'react';
 import classnames from 'classnames';
 import styles from './Card.scss';
 
 export type CardProps = RefAttributes<HTMLElement> &
     AllHTMLAttributes<HTMLElement> & {
-        as?: ReactNode;
+        as?: ReactElement;
     };
 export const Card: FC<CardProps> = forwardRef((props: CardProps, ref: RefObject<HTMLElement>) => {
     const { as = 'div', className = '', ...rest } = props;
-    const Component = as;
+    const Component: any = as;
 
     const classNames = classnames({
         [styles.card]: true,
