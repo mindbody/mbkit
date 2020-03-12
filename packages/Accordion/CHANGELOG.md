@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.2.0...@mbkit/accordion@1.2.1) (2020-03-11)
+
+**Note:** Version bump only for package @mbkit/accordion
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.1.1...@mbkit/accordion@1.2.0) (2020-03-10)
+
+
+### Features
+
+* **accordion:** added readme ([c3abbdb](https://github.com/mindbody/design-system/commit/c3abbdb96ed4c79e11240e5c7235d48c4f9ec1e1))
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.1.0...@mbkit/accordion@1.1.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/accordion
