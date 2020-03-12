@@ -1,5 +1,4 @@
-$font-url: var(--font-url, 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,600');
-$font-family: var(--font-family, 'Work Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+$font-family: var(--font-family, 'Averta', 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 $radius: var(--radius, 3px);
 $focus: var(--focus, #6096e6bf);
 $foreground: var(--foreground, #0B0B0D);
@@ -18,7 +17,12 @@ $secondary-1: var(--secondary-1, #004C57);
 $secondary-2: var(--secondary-2, #007485);
 $secondary-3: var(--secondary-3, #E5F2F4);
 
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,600');
+@font-face {
+  font-family: "Averta";
+  src: url("https://static.mindbodyonline.com/a/fonts/averta/Averta-Regular.woff2") format("woff2")
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,600');
 * {
     box-sizing: border-box;
 
