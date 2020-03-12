@@ -57,6 +57,11 @@ const CodeEditorPreview = props => {
 const MarkdownWithOverrides = ({ children, overrides }) => (
     <Markdown
         options={{
+            namedCodesToUnicode: {
+                separator: '|',
+                openbracket: '[',
+                closebracket: ']',
+            },
             overrides: {
                 RenderOnly: props => props.children,
                 EditorOnly: props => {

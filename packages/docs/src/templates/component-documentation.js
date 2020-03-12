@@ -66,13 +66,18 @@ const ComponentDocumentation = props => {
             });
             const docs = allDocs[foundDocumentation];
 
+            const docsParsed = docsToMarkdown(docs)
+                .replace(/&#124;/g, '&separator;')
+                .replace(/&#91;/g, '&openbracket;')
+                .replace(/&#93;/g, '&closebracket;');
+
             return (
                 <MarkdownJsx
                     overrides={{
                         h2: () => <h3>{name} Props</h3>,
                     }}
                 >
-                    {docsToMarkdown(docs)}
+                    {docsParsed}
                 </MarkdownJsx>
             );
         } catch (e) {
