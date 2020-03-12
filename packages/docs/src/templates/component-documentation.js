@@ -64,12 +64,16 @@ const ComponentDocumentation = props => {
                 const componentName = splitPath[splitPath.length - 1].replace('.tsx', '');
                 return componentName === name;
             });
-            const docs = allDocs[foundDocumentation];
+            const docs = allDocs[foundDocumentation].find(doc => doc.displayName === name);
 
             const docsParsed = docsToMarkdown(docs)
                 .replace(/&#124;/g, '&separator;')
                 .replace(/&#91;/g, '&openbracket;')
                 .replace(/&#93;/g, '&closebracket;');
+
+            if (docsParsed.includes('No props')) {
+                return null;
+            }
 
             return (
                 <MarkdownJsx
