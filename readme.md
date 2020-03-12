@@ -1,28 +1,22 @@
-# MB Design System
+# MBKit
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2777df6c-361b-42f4-b149-c6672212a3db/deploy-status)](https://app.netlify.com/sites/friendly-bose-a575fc/deploys)
 
 ## Getting started
 
-If you are looking to consume the components for building applications please see the [documentation site](https://friendly-bose-a575fc.netlify.com) for the list of components and props. 
+If you'd like to consume the components for building applications, please see the [documentation site](https://mbkit.netlify.com) for the full list of components, props, and examples. 
 
-If you are going to work on the components in this repo; clone this repo, from your terminal navigate into this repo and run `yarn install`. 
+If you'd like to make changes to the components, clone this repo and run `yarn install` in the root directory. 
 
-## Docs of all components
+## Updating components
 
-For live examples of components please see the [design system](https://friendly-bose-a575fc.netlify.com)
+All component packages are found in `packages/*`. Navigate to the component directory and run `yarn dev`. This will create a [Rollup](https://rollupjs.org/guide/en/) instance watching the `Component.tsx` file you want to update along with running the corresponding `Component.mdx` file for the visual example. 
 
-For making updates to the gatsby instance that generates the documentation, see the `packages/docs/readme.md` for details on how the documentation is generated.
-
-## Local development of individual components
-
-All packages are found in `packages/*`. Navigate to the component directory you want are working on and run `yarn dev`. This will spin up a rollup instance watching the `Component.tsx` file you want to develop on and run the corresponding `Component.mdx` file for the visual example. 
-
-*Note that the mdx file is injected with the corresponding component so you do not have to import it on it's own.* This is because the documentation can be used in multiple places (docs/local development) and the resolution path can change. 
+*Note: The mdx file automatically injects the corresponding component; you don't have to import it directly.* This is done so the documentation can be used in multiple places (docs/local development) and the resolution path can change. 
 
 ## Adding a new component
 
-Create a new folder with `CamelCase` naming under the `/packages` folder. The only exception to this is the `docs` folder which is where the documentation is generated from. (See it's readme for details on how it works)
+Create a new folder with `CamelCase` naming under the `/packages` folder. (The only exception to this is the `docs` folder which is where the documentation site is generated from. See its [README](https://github.com/mindbody/mbkit/tree/master/packages/docs) for details on how it works)
 
 Each component file should have one React component export as default. If you need multiple exported modules, use multiple component files and an `index.tsx` file to export the shipped modules. 
 
@@ -34,7 +28,7 @@ The folder structure for a component should look like:
 - ComponentName
     - src
         - index.tsx // Always export components as named exports
-        - ComponentName.tsx // Actual component should export as default
+        - ComponentName.tsx // Component should export as default
         - ComponentName.mdx // Documentation for viewing live components
         - ComponentName.module.scss // styles using CSS Modules for namespacing
         - __tests__ // tests need to be in test folder so react-docgen can generate types and ignore these files
@@ -73,12 +67,10 @@ Your `package.json` should look like the following:
 ```
 
 - `source` is where the build tools will look to compile the code. 
-- `main` is where the compiled code will be put after the build occurs as well as tell the consuming user where the import will come from. This will allow the consuming dev to `import ComponentName from '@mbkit/component-name'` and the package.json will point it to the compiled code.
-- `types` let's the consuming user see the type definitions
+- `main` is where the compiled code will be placed after the build finishes along with telling the consuming user where the import will come from. This will allow the consuming dev to `import ComponentName from '@mbkit/component-name'` and the package.json will point to the compiled code.
+- `types` lets the consuming user see the type definitions
 
 ### Local configs
-
-*All of these configurations are targeted towards the use of VSCode*
 
 #### ESLint
 
@@ -95,4 +87,4 @@ Install the ESLint for VSCode plugin and add the following to your local setting
 ],
 ```
 
-*Early 2019 the [TypeScript roadmap](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) pointed out they are moving in favor of ESLint over TSLint*
+*The early-2019 [TypeScript roadmap](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) points out them favoring ESLint over TSLint*
