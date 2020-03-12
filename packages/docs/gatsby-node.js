@@ -66,22 +66,14 @@ exports.createPages = ({ graphql, actions }) => {
                 edges {
                     node {
                         title
+                        bannerImage
                         description {
                             json
                         }
-                        guideHeader
                         guides
                         guideLinks
                         guideImages
                         guideDescription
-                        gettingStartedHeader
-                        gettingStartedDescription {
-                            json
-                        }
-                        gettingStarted
-                        gettingStartedDescriptions
-                        gettingStartedLinks
-                        gettingStartedImages
                     }
                 }
             }

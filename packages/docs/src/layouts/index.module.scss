@@ -86,11 +86,6 @@ p {
 
     h2, h3, h4, h5, h6 {
       margin-top: 32px;
-      font-weight: 600;
-    }
-
-    b, strong {
-      font-weight: 600;
     }
 
     ul, ol {
@@ -104,14 +99,10 @@ p {
     a {
         color: $secondary-2;
         text-decoration: none;
-        outline: none;
         border-radius: $radius;
         
         &:hover, &:active {
             text-decoration: underline;
-        }
-        &:focus {
-            box-shadow: 0 0 0 4px $focus;
         }
         &:visited {
             color: $secondary-1;

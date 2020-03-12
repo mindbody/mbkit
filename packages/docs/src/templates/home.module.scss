@@ -1,7 +1,7 @@
 $foreground: var(--foreground, #0B0B0D);
 $background: var(--background, #ffffff);
 $radius: var(--radius, 3px);
-$focus: var(--focus, #6096e6bf);
+$focus: var(--focus, #6096e6);
 $neutral-1: var(--neutral-1, #0B0B0D);
 $neutral-2: var(--neutral-2, #5A5E66);
 $neutral-3: var(--neutral-3, #8F96A1);
@@ -14,27 +14,56 @@ $neutral-7: var(--neutral-7, #ffffff);
     box-shadow: 0 1px 3px 0 rgba(34,36,40, .2);
     border-radius: $radius;
     overflow: hidden;
+    margin-bottom: 32px;
 }
 .banner {
-    background: rgb(240,240,240);
-    background: linear-gradient(45deg, #909090 0%, #181818 97%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    height: 432px;
     color: #fff;
-    padding: 80px 16px 16px;
+    display: grid;
+    padding: 32px;
 
-    h1 {
-        font-weight: 200;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #005d6b;
+      background: linear-gradient(45deg, rgba(0,93,107,0.9) 20%,rgba(0,0,0,0.1) 100%);
     }
+    
     @media screen and (min-width: 600px) {
-        padding: 80px 32px 32px;
+      padding: 48px 48px 36px 48px;
     }
+}
+
+.bannerText {
+  position: relative;
+  z-index: 2;
+  align-self: self-end;
+
+  h1 {
+    font-size: 6.4em;
+    font-weight: 200;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 2.4em;
+    line-height: 1.2;
+  }
 }
 
 .roundImage {
     width: 42px;
     height: 42px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1px solid $neutral-3; 
 
     img {
         width: auto;
@@ -43,67 +72,44 @@ $neutral-7: var(--neutral-7, #ffffff);
     }
 }
 
-.blockLink {
-    display: block;
+.homeLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  column-gap: 32px;
+
+  .card {
+    padding: 32px;
+    background: $background;
+    position: relative;
+  }
+
+  .blockLink {
+    display: inline-block;
     border-radius: $radius;
-    outline: none;
     text-decoration: none;
-    padding: 4px;
     color: $foreground;
+
+    h3 {
+      margin-bottom: 0;
+    }
 
     &:visited {
         color: $foreground;
     }
-    
-    &:focus {
-        box-shadow: 0 0 0 4px $focus;
-    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
-.guides {
-    padding: 16px;
-    background: $background;
-
-    @media screen and (min-width: 600px) {
-        padding: 16px 32px;
-    }
-    
-    .allGuides {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 8px;
-
-        @media screen and (min-width: 600px) {
-            grid-template-columns: 1fr 1fr;
-        }
-        @media screen and (min-width: 800px) {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-}
-
-.gettingStarted {
-    padding: 16px;
-    background: $background;
-    margin-top: 16px;
-
-    @media screen and (min-width: 600px) {
-        padding: 32px;
-    }
-
-    .gettingStartedContainer {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 8px;
-
-        @media screen and (min-width: 600px) {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-    .blockLink {
-        display: grid;
-        align-items: center;
-        grid-template-columns: 42px 1fr;
-        grid-gap: 8px;
-    }
+.comingSoon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $neutral-6;
+  border-bottom: 1px solid $neutral-5;
+  border-left: 1px solid $neutral-5;
+  padding: 12px;
+  border-radius: 0 3px 0 3px;
 }
