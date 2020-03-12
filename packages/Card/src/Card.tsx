@@ -7,7 +7,7 @@ export type CardProps = RefAttributes<HTMLElement> &
         as?: ReactNode;
     };
 export const Card: FC<CardProps> = forwardRef((props: CardProps, ref: RefObject<HTMLElement>) => {
-    const { as = 'div' as any, className = '', ...rest } = props;
+    const { as = 'div', className = '', ...rest } = props;
     const Component = as;
 
     const classNames = classnames({
