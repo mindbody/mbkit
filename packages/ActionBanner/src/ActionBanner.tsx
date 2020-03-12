@@ -57,8 +57,8 @@ export const ActionBanner: FC<ActionBannerProps> = forwardRef(
         useEffect(() => {
             if (show) {
                 if (containerRef.current) {
-                    const child = containerRef.current.firstChild as HTMLDivElement;
-                    if (child) {
+                    const child: ChildNode | null = containerRef.current.firstChild;
+                    if (child instanceof HTMLElement) {
                         setHeight(child.getBoundingClientRect().height);
                     }
                 }
