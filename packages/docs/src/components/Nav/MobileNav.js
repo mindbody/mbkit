@@ -90,6 +90,17 @@ export function MobileNav(props) {
                         .map(item => (
                             <RecursiveSubNav path={path} key={item.to} item={item} handleLinkClick={handleLinkClick} />
                         ))}
+                    <li className={styles.listItem}>
+                        <a
+                            href="https://github.com/mindbody/mbkit"
+                            target="_blank"
+                            title="Github"
+                            className={styles.link}
+                            rel="noopener noreferrer"
+                        >
+                            Github
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

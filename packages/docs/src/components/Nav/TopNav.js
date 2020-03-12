@@ -31,6 +31,14 @@ export const TopNav = props => {
                                 </Link>
                             );
                         })}
+                    <a
+                        href="https://github.com/mindbody/mbkit"
+                        target="_blank"
+                        title="Github"
+                        rel="noopener noreferrer"
+                    >
+                        Github
+                    </a>
                 </div>
             </nav>
         </header>
