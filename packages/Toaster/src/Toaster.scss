@@ -1,5 +1,3 @@
-@import '../../../shared/scss/mixins.scss';
-
 $transitionTime: 500;
 $secondary-1: var(--secondary-1, #004C57);
 $neutral-7: var(--neutral-7, #ffffff);
@@ -7,6 +5,16 @@ $radius: var(--radius, 3px);
 $font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 // TODO import media breakpoints once packages published
 $media-sm: 600px;
+
+// Targets fill of all SVG elements that have a fill attribute that contains a pound symbol
+@mixin svgFill($fillColor) {
+    svg g:not([fill~="#"]),
+    svg path:not([fill~="#"]),
+    svg mask:not([fill~="#"]),
+    svg use:not([fill~="#"]) { 
+        fill: $fillColor;
+    }
+}
 
 :export {
     transitionTime: $transitionTime;
