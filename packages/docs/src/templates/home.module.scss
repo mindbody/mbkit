@@ -44,7 +44,7 @@ $neutral-7: var(--neutral-7, #ffffff);
 
 .bannerText {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   align-self: self-end;
 
   h1 {

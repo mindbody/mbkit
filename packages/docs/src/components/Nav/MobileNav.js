@@ -67,8 +67,8 @@ export function MobileNav(props) {
     return (
         <div className={containerClassName}>
             <header className={styles.header}>
-                <Link onClick={() => setMobileNavOpen(!mobileNavOpen)} to="/" className={styles.homeLink}>
-                    <img src="/mindbody-nav-logo.svg" alt="MINDBODY Logo" />
+                <Link to="/" className={styles.homeLink}>
+                    <img src="/mindbody-nav-logo.svg" alt="Mindbody" />
                 </Link>
                 <button
                     className={styles.mobileNavButton}

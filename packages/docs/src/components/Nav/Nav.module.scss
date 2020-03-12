@@ -120,23 +120,24 @@ $mobileHeaderHeight: 54px;
     box-shadow: $navShadow;
     padding: 0 16px;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 3;
     height: $mobileHeaderHeight;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
 
     @at-root {
       body {
-        padding-bottom: $mobileHeaderHeight;
+        padding-top: $mobileHeaderHeight;
       }
+
       @media screen and (min-width: 800px) {
         body {
-          padding-bottom: initial;
+          padding-top: initial;
         } 
       } 
     }
@@ -145,6 +146,12 @@ $mobileHeaderHeight: 54px;
       display: block;
       border-radius: $radius;
       padding: 8px;
+
+      img {
+        padding-top: 4px;
+        width: 100%;
+        max-width: 150px;
+      }
     }
 
     .mobileNavButton {
@@ -152,17 +159,18 @@ $mobileHeaderHeight: 54px;
         height: 32px;
         appearance: none;
         border: none;
-        margin: 0 auto;
         padding: 0;
+        justify-self: right;
+        background-color: transparent;
     }
   }
 
   .mobileNav {
       width: 100%;
-      height: calc(100vh - #{$mobileHeaderHeight});
+      height: calc(100vh + #{$mobileHeaderHeight});
       overflow-y: scroll;
       position: fixed;
-      bottom: 0;
+      top: 0;
       left: 0;
       transition: transform .2s ease-out;
       transform: translate3d(0, 100%, 0);
@@ -174,7 +182,7 @@ $mobileHeaderHeight: 54px;
       }
 
       &Open {
-        transform: translate3d(0, -#{$mobileHeaderHeight}, 0);
+        transform: translate3d(0, #{$mobileHeaderHeight}, 0);
 
         & > ul {
           visibility: visible;
@@ -204,7 +212,7 @@ $mobileHeaderHeight: 54px;
       }
       
       & > ul > li {
-        border-bottom: 1px solid $neutral-3;
+        border-bottom: 1px solid $neutral-5;
 
         ul ul {
           margin-left: 16px;
