@@ -2,17 +2,18 @@ import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode, RefAttr
 import classnames from 'classnames';
 import styles from './Banner.scss';
 
+type BannerVariant = 'success' | 'warning' | 'error' | 'info';
 export type BannerProps = AllHTMLAttributes<HTMLElement> &
     RefAttributes<HTMLElement> & {
-        variant: 'success' | 'warning' | 'error' | 'info';
+        variant: BannerVariant;
         as?: ReactNode;
         header?: ReactNode;
         message?: ReactNode;
         icon?: ReactNode;
     };
 export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefObject<HTMLElement>) => {
-    const { as = 'div' as any, children, className = '', header, message, variant, icon, ...rest } = props;
-    const Component = as;
+    const { as = 'div', children, className = '', header, message, variant, icon, ...rest } = props;
+    const Component: any = as;
     const classNames = classnames({
         [styles.banner]: true,
         [styles[variant]]: true,
@@ -32,7 +33,7 @@ export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefO
 Banner.displayName = 'Banner';
 
 // TODO: Once packages are published, consume icons here
-function getIcon(variant: BannerProps['variant']) {
+function getIcon(variant: BannerVariant) {
     switch (variant) {
         case 'success':
             return (
