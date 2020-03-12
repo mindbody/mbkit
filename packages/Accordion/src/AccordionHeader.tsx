@@ -44,8 +44,8 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
             case 'Enter':
                 // Need check so change doesn't fire if you pass in element
                 // that needs it's own click event
-                const activeElement = document.activeElement as HTMLElement;
-                if (activeElement.id === `header-${id}`) {
+                const activeElement: Element | null = document.activeElement;
+                if (activeElement && activeElement.id === `header-${id}`) {
                     event.preventDefault();
                     onChange(index);
                 }

@@ -20,9 +20,9 @@ export type AccordionItemProps = AllHTMLAttributes<HTMLDivElement> &
 
 export const AccordionItemContext = createContext({ id: '', isExpanded: false, index: 0 });
 export const AccordionItem: FC<AccordionItemProps> = forwardRef((props: AccordionItemProps, ref) => {
-    const { as = Fragment as any, _index = 0, ...rest } = props;
+    const { as = Fragment, _index = 0, ...rest } = props;
     const { activePanes } = useContext(AccordionContext);
-    const Component = as;
+    const Component: any = as;
 
     const id = nanoid();
     const isExpanded = activePanes.includes(_index);
