@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/accordion",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "source": "src/index.tsx",
     "main": "dist/Accordion.js",
     "types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^1.2.2",
+        "@mbkit/theme": "^1.2.3",
         "classnames": "^2.2.6",
         "nanoid": "^2.1.7"
     }

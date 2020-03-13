@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/modal",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "source": "src/index.tsx",
     "main": "dist/Modal.js",
     "types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^1.2.2",
+        "@mbkit/theme": "^1.2.3",
         "@reach/dialog": "^0.5.4",
         "classnames": "^2.2.6",
         "react-transition-group": "^4.3.0"
