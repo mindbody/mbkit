@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/radio@1.1.3...@mbkit/radio@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **radio:** consuming mbkit/theme ([4fa997d](https://github.com/mindbody/design-system/commit/4fa997dcaa08f78aab68cf72798dd13ca024365b))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/radio@1.1.2...@mbkit/radio@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/radio

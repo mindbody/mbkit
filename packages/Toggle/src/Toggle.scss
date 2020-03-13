@@ -1,11 +1,4 @@
-$secondary-1: var(--secondary-1, #004C57);
-$neutral-2: var(--neutral-2, #5A5E66);
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-6: var(--neutral-6, #F8F9FB);
-$neutral-7: var(--neutral-7, #ffffff);
-$focus: var(--focus, #6096e6bf);
+@import '~@mbkit/theme/dist/theme.scss';
 
 .toggle {
     appearance: none;

@@ -1,8 +1,4 @@
-$foreground: var(--foreground, #0B0B0D);
-$radius: var(--radius, 3px);
-$background: var(--background, #ffffff);
-$focus: var(--focus, #6096e6bf);
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+@import '~@mbkit/theme/dist/theme.scss';
 
 .card {
     background: $background;

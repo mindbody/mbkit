@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/dialog@1.1.3...@mbkit/dialog@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **dialog:** consuming mbkit/theme ([b626739](https://github.com/mindbody/design-system/commit/b62673981892d219f741e3c828158cfea956e8fb))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/dialog@1.1.2...@mbkit/dialog@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/dialog
