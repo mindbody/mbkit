@@ -1,8 +1,8 @@
-# Dev Documentation
+# Accordion Usage
 
-Basic Implementation allows you to pass in the "activePanes" by index and the "onChange" which will pass the index being changed. 
+## Basic Implementation 
 
-This example shows use where one pane has to be open and only one at a time.
+This allows you to pass in the "activePanes" by index and the "onChange" which will pass the index being changed. This example shows use where one pane has to be open and only one at a time.
 
 ```tsx
 <Component initialState={{ activePanes: [0] }}>
@@ -43,7 +43,9 @@ This example shows use where one pane has to be open and only one at a time.
 </Component>
 ```
 
-Here's an example where multiple panes can be open at a time and none has to be open if the user closes them all. 
+## Multiple Panes
+
+Multiple panes can be open at a time and the user can close them all.
 
 ```tsx
 <Component initialState={{ activePanes: [0] }}>
@@ -95,7 +97,9 @@ Here's an example where multiple panes can be open at a time and none has to be 
 </Component>
 ```
 
-Need to pass a clickable element in the header but don't want to trigger the onChange? No problem, just call "stopPropagation" on the click event. 
+## Stopping Propagation
+
+Need to pass a clickable element in the header but don't want to trigger the onChange? Just call "stopPropagation" on the click event. 
 
 ```tsx
 <Component initialState={{ activePanes: [1] }}>
@@ -157,14 +161,14 @@ Need to pass a clickable element in the header but don't want to trigger the onC
 </Component>
 ```
 
-## Accessibility (a11y)
+# Accessibility
 
-The accordion components are buil per the <a href="https://www.w3.org/TR/wai-aria-practices/#accordion" target="_blank">W3 best practices for accordions</a> for a11y concerns.
+The accordion components are built with the <a href="https://www.w3.org/TR/wai-aria-practices/#accordion" target="_blank">W3 best practices for accordions</a> to meet AA accessibility compliance.
 
-### Technical details
+# Technical details
 
-Under the hood, "AccordionItem" ties together the "AccordionHeader" and "AccordionPane" so the aria labels correspond as well tell the screen reader if the current pane is open or not. 
+Under the hood, "AccordionItem" ties together the "AccordionHeader" and "AccordionPane." The aria labels tell the screen reader if the current pane is open or not. 
 
-### Keyboard shortcuts
+# Keyboard shortcuts
 
-The user can use their arrow up/down keys while focused on a header to navigate between headers as well as the "home"/"end" which will focus the first/last header accordingly. While focused on a header the user can press their "Space"/"Enter" key to activate the onChange. 
+The user can use the up/down arrow keys while focused on a header to navigate between headers. They can also use the "home" and "end" keys which will focus the first/last header, respectively. While focused on a header, the user can press the "Space" or "Enter" key to activate the onChange. 

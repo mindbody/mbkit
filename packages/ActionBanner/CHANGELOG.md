@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.1.3...@mbkit/action-banner@1.1.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **action-banner:** removing reference to relative scss file ([b3b4858](https://github.com/mindbody/design-system/commit/b3b4858d4624aa3d9f4359593906144c6039d023))
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/mindbody/design-system/commit/d9522e0f1470800e3103793208e24a84739a5888))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.1.2...@mbkit/action-banner@1.1.3) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/action-banner

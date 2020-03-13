@@ -1,9 +1,7 @@
 import React from 'react';
-import MarkdownWithOverrides from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
+import MarkdownWithOverrides, { EditorOnly } from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
 import components from '../../generated/components.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import vsDark from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
 import SEO from '../components/seo';
 import Component from '@reach/component-component';
 const docsToMarkdown = require('react-docs-markdown');
@@ -119,16 +117,12 @@ const ComponentDocumentation = props => {
             />
             <h1>{componentName}</h1>
 
-            <h2>Documentation</h2>
             {documentToReactComponents(designDocs)}
 
-            <h3>Implementation Details</h3>
+            <h2>Implementation Details</h2>
 
             <p>
-                <a
-                    href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
-                    target="_blank"
-                >
+                <a href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`} target="_blank">
                     Version {pkgJson.version} on GitHub
                 </a>
             </p>
@@ -152,9 +146,7 @@ const ComponentDocumentation = props => {
             ))}
 
             {!tooManyExports && (
-                <SyntaxHighlighter language="jsx" style={vsDark}>
-                    {`import ${componentImportStatements} from "${pkgJson.name}"`}
-                </SyntaxHighlighter>
+                <EditorOnly>{`import ${componentImportStatements} from "${pkgJson.name}";`}</EditorOnly>
             )}
 
             <MarkdownJsx>{devDocs}</MarkdownJsx>

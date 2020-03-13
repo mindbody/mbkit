@@ -1,6 +1,8 @@
-# Button
+# Button Usage
 
-Default button size with filled colors
+## Base Styles
+
+All button colors with default sizing
 
 ```tsx
 <div style={{
@@ -66,7 +68,7 @@ Default button size with filled colors
 </div>
 ```
 
-Default button size with outlined colors
+## Outlined Buttons
 
 ```tsx
 <div style={{
@@ -84,15 +86,10 @@ Default button size with outlined colors
     <div>
         <Button variant="tertiaryOutlined">Tertiary</Button>
     </div>
-    <div>
-        <Button variant="primaryOutlined" disabled>Disabled State</Button>
-    </div>
 </div>
 ```
 
-All variants with icons. 
-
-TODO: once icon component is generated, update these examples
+## Buttons with Icons
 
 ```tsx
 <div style={{
@@ -103,114 +100,6 @@ TODO: once icon component is generated, update these examples
 }}>
     <div>
         <Button variant="primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Primary
-        </Button>
-    </div>
-    <div>
-        <Button variant="secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Secondary
-        </Button>
-    </div>
-    <div>
-        <Button variant="tertiary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Tertiary
-        </Button>
-    </div>
-    <div>
-        <Button variant="offCard">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Off Card
-        </Button>
-    </div>
-    <div>
-        <Button variant="simpleText">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            simpleText
-        </Button>
-    </div>
-    <div>
-        <Button variant="primary" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Disabled State
-        </Button>
-    </div>
-    <div>
-        <Button variant="primaryOutlined">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
                 <g id="Buttons" fill="none" fillRule="evenodd">
                     <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
@@ -245,46 +134,10 @@ TODO: once icon component is generated, update these examples
             Secondary
         </Button>
     </div>
-    <div>
-        <Button variant="tertiaryOutlined">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Tertiary
-        </Button>
-    </div>
-    <div>
-        <Button variant="primaryOutlined" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8">
-                <g id="Buttons" fill="none" fillRule="evenodd">
-                    <g id="Desktop" fill="#5A5E66" transform="translate(-541 -713)">
-                    <g id="Tertiary-with-Icon-Outlined" transform="translate(507 699)">
-                        <g id="Group-5" transform="translate(32 8)">
-                        <g id="Email" transform="translate(0 2)">
-                            <path id="Rectangle-102" d="M14 4.99703014v6.00593976C14 11.5536144 13.544239 12 12.9975267 12H3.00247329C2.44882258 12 2 11.5469637 2 11.0029699V4.99703014c0-.10634141.01699806-.20879437.04836656-.30489467L7.6799078 9.38411064 8 9.65085414l.3200922-.2667435 5.6312947-4.69214715c.0315595.096445.0486131.1990278.0486131.30506665zM12.9975267 4c.0685939 0 .1355787.00695396.2003003.0201733L8.02224875 8.36768656a406169392.0297298 406169392.0297298 0 0 0-5.2176622-4.34805191C2.86926517 4.0067629 2.93518026 4 3.00247329 4h9.99505341z"/>
-                        </g>
-                        </g>
-                    </g>
-                    </g>
-                </g>
-            </svg>
-            Disabled State
-        </Button>
-    </div>
 </div>
 ```
 
-All variants with loading indicators
+## Buttons with Loading Indicators
 
 ```tsx
 <div style={{
@@ -297,60 +150,12 @@ All variants with loading indicators
         <Button variant="primary" loading>Primary</Button>
     </div>
     <div>
-        <Button variant="secondaryOutlined" loading>Secondary Outlined</Button>
-    </div>
-    <div>
         <Button variant="tertiaryOutlined" loading>Tertiary</Button>
-    </div>
-    <div>
-        <Button variant="simpleText" loading>Simple Text</Button>
-    </div>
-    <div>
-        <Button variant="offCard" loading>Off Card</Button>
-    </div>
-    <div>
-        <Button variant="secondary" loading disabled>Disabled Loading</Button>
-    </div>
-    <div>
-        <Button variant="iconPrimary" aria-label="loading" loading>
-            <svg width="32" height="32" viewBox="0 0 32 32" class="">
-                <defs>
-                    <path
-                        id="path-1-9fkkWOFJo-Oa4XJeQLo7-1"
-                        d="M10.1450548 26.0120565c.9282577 0 1.8184964-.3687489 2.4748737-1.0251262l12.263456-12.263456c.4747541-.474754.490038-.9241756 0-1.4142136l-3.2426407-3.24264064c-.5331636-.53316362-.8816412-.53257228-1.4142135 0L7.9630743 20.330076c-.65637732.6563774-1.02512627 1.546616-1.02512627 2.4748738v2.7071067c0 .2761424.22385763.5.5.5h2.70710677zM22.3478506 7.35951328l3.2426407 3.24264072c.8917199.8917199.8549309 1.9734962 0 2.8284271l-12.263456 12.263456c-.8439137.8439137-1.9885063 1.3180194-3.1819805 1.3180194H7.43794803c-.82842712 0-1.5-.6715728-1.5-1.5v-2.7071067c0-1.1934742.47410579-2.3380668 1.31801949-3.1819806L19.5194235 7.35951328c.9225604-.92256037 1.904201-.92422614 2.8284271 0zm1.5057028-3.21306667l5 5c.1952621.19526215.1952621.51184463 0 .70710678-.1952622.19526211-.5118446.19526211-.7071068 0l-5-5c-.1952621-.19526215-.1952621-.51184463 0-.70710678.1952622-.19526215.5118446-.19526215.7071068 0z"
-                    ></path>
-                </defs>
-                <g id="Icons/UI/Edit-9fkkWOFJo-Oa4XJeQLo7-1" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
-                    <mask id="mask-2-9fkkWOFJo-Oa4XJeQLo7-1" fill="#fff">
-                        <use xlinkHref="#path-1-9fkkWOFJo-Oa4XJeQLo7-1"></use>
-                    </mask>
-                    <use id="Combined-Shape-9fkkWOFJo-Oa4XJeQLo7-" fill="#54575F" xlinkHref="#path-1-9fkkWOFJo-Oa4XJeQLo7-1"></use>
-                </g>
-            </svg>
-        </Button>
-    </div>
-    <div>
-        <Button variant="icon" loading  aria-label="Edit this">
-            <svg width="32" height="32" viewBox="0 0 32 32" class="">
-                <defs>
-                    <path
-                        id="path-1-9fkkWOFJo-Oa4XJeQLo7-1"
-                        d="M10.1450548 26.0120565c.9282577 0 1.8184964-.3687489 2.4748737-1.0251262l12.263456-12.263456c.4747541-.474754.490038-.9241756 0-1.4142136l-3.2426407-3.24264064c-.5331636-.53316362-.8816412-.53257228-1.4142135 0L7.9630743 20.330076c-.65637732.6563774-1.02512627 1.546616-1.02512627 2.4748738v2.7071067c0 .2761424.22385763.5.5.5h2.70710677zM22.3478506 7.35951328l3.2426407 3.24264072c.8917199.8917199.8549309 1.9734962 0 2.8284271l-12.263456 12.263456c-.8439137.8439137-1.9885063 1.3180194-3.1819805 1.3180194H7.43794803c-.82842712 0-1.5-.6715728-1.5-1.5v-2.7071067c0-1.1934742.47410579-2.3380668 1.31801949-3.1819806L19.5194235 7.35951328c.9225604-.92256037 1.904201-.92422614 2.8284271 0zm1.5057028-3.21306667l5 5c.1952621.19526215.1952621.51184463 0 .70710678-.1952622.19526211-.5118446.19526211-.7071068 0l-5-5c-.1952621-.19526215-.1952621-.51184463 0-.70710678.1952622-.19526215.5118446-.19526215.7071068 0z"
-                    ></path>
-                </defs>
-                <g id="Icons/UI/Edit-9fkkWOFJo-Oa4XJeQLo7-1" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
-                    <mask id="mask-2-9fkkWOFJo-Oa4XJeQLo7-1" fill="#fff">
-                        <use xlinkHref="#path-1-9fkkWOFJo-Oa4XJeQLo7-1"></use>
-                    </mask>
-                    <use id="Combined-Shape-9fkkWOFJo-Oa4XJeQLo7-" fill="#54575F" xlinkHref="#path-1-9fkkWOFJo-Oa4XJeQLo7-1"></use>
-                </g>
-            </svg>
-        </Button>
     </div>
 </div>
 ```
 
-Different sizes
+## Button Sizes
 
 ```tsx
 <div style={{

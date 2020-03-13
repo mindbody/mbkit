@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Design System`,
-        description: `Discover and learn our best practices for design, copywriting, feature development and component library`,
+        title: `MBKit`,
+        description: `Discover our component library and learn our best practices for content and design`,
         author: `@czaas`,
     },
     plugins: [
@@ -12,6 +12,8 @@ module.exports = {
             options: {
                 spaceId: '2rb53inahems',
                 accessToken: 'N5bVC4fM-z13KhhJB25teCb420y2krFysdjlsy_wI9E',
+                downloadLocal: true,
+                environment: process.env.NODE_ENV === 'development' ? 'dev' : 'master',
             },
         },
         `@contentful/gatsby-transformer-contentful-richtext`,

@@ -1,6 +1,6 @@
 # MBKit
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2777df6c-361b-42f4-b149-c6672212a3db/deploy-status)](https://app.netlify.com/sites/friendly-bose-a575fc/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2777df6c-361b-42f4-b149-c6672212a3db/deploy-status)](https://app.netlify.com/sites/mbkit/deploys)
 
 ## Getting started
 

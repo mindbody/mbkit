@@ -1,5 +1,4 @@
 @import '~@mbkit/theme/dist/theme.scss';
-@import "../../../shared/scss/mixins.scss";
 
 $rippleTiming: 466;
 
@@ -63,6 +62,63 @@ $iconSize4: 30px;
         }
 
         @include loader($neutral-3, $neutral-4);
+    }
+}
+/*
+* Exposes `loader` class name to be applied to an element
+*/ 
+@mixin loader($color, $background) {
+    $loadingSpeed: 650;
+    .loader {
+        &,
+        &:before,
+        &:after {
+            border-radius: 50%;
+        }
+        
+        color: $color;
+        font-size: 4px;
+        text-indent: -999px;
+        width: 18px;
+        height: 18px;
+        box-shadow: inset 0 0 0 1px;
+        transform: translate3d(-50%, -50%, 0) rotate(180deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';  
+            width: 12px;
+            height: 20px;
+            background: $background;
+            top: -1px;
+        }
+        
+        &:before {
+            border-radius: 20px 0 0 20px;  
+            left: -1px;
+            transform-origin: 11px 11px;
+            animation: spin #{$loadingSpeed}ms infinite ease #{$loadingSpeed * .75}ms;
+        }
+        &:after {
+            border-radius: 0 20px 20px 0;
+            left: 9px;
+            transform-origin: 0px 9px;
+            animation: spin #{$loadingSpeed}ms infinite ease;    
+        }
+    }
+        
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 }
 

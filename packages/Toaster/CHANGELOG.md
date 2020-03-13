@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.3...@mbkit/toaster@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **toaster:** removing reference to relative scss file ([ddf6443](https://github.com/mindbody/design-system/commit/ddf6443c747d114d0fc65807ffb26a0d71c93f8e))
+
+
+
+
+
 ## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.2...@mbkit/toaster@1.2.3) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/toaster

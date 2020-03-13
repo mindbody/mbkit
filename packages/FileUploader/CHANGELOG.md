@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.2.3...@mbkit/file-uploader@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/mindbody/design-system/commit/d9522e0f1470800e3103793208e24a84739a5888))
+* **file-uploader:** removing reference to relative scss file ([2ee1cd2](https://github.com/mindbody/design-system/commit/2ee1cd2341bada5e171be0b4f5b6f276fb8447f1))
+
+
+
+
+
 ## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.2.2...@mbkit/file-uploader@1.2.3) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/file-uploader

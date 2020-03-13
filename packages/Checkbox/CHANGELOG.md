@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.2.3...@mbkit/checkbox@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **checkbox:** removing reference to relative scss file ([98ff459](https://github.com/mindbody/design-system/commit/98ff4590ac12ef500f2e4e8b4d70c88c9fa9266d))
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/mindbody/design-system/commit/d9522e0f1470800e3103793208e24a84739a5888))
+
+
+
+
+
 ## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.2.2...@mbkit/checkbox@1.2.3) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/checkbox
