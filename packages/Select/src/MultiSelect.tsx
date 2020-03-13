@@ -10,9 +10,13 @@ export type MultiSelectOption = {
     id: string;
 };
 export type MultiSelectProps = AllHTMLAttributes<HTMLDivElement> & {
+    /** Label to be displayed above the select field */
     label: string;
+    /** object with the properties of "label", "checked", "id" */
     options: MultiSelectOption[];
+    /** Will be fired when user selects an option */
     onChange: (option: MultiSelectOption) => void;
+    /** Placeholder of multi select input */
     placeholder?: string;
 };
 

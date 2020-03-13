@@ -38,3 +38,4 @@ export const Text: FC<TextProps> = forwardRef((props: TextProps, ref: RefObject<
     });
     return <Component {...rest} className={classNames} ref={ref} />;
 });
+Text.displayName = 'Text';

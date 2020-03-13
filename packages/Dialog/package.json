@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/dialog",
-    "version": "1.2.1",
+    "version": "1.2.3",
     "source": "src/index.tsx",
     "main": "dist/Dialog.js",
     "types": "dist/Dialog.d.ts",
@@ -22,7 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^1.2.3",
+        "@mbkit/theme": "^1.2.5",
         "@reach/alert-dialog": "^0.6.3",
         "@reach/dialog": "^0.6.4",
         "classnames": "^2.2.6",

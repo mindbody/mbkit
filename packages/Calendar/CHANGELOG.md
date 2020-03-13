@@ -3,11 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.2.0...@mbkit/calendar@1.2.1) (2020-03-13)
+## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.2.2...@mbkit/calendar@1.2.3) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/calendar
 
 
+
+
+
+## [1.2.2](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.2.1...@mbkit/calendar@1.2.2) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/calendar
+
+
+
+
+
+
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.2.0...@mbkit/calendar@1.2.1) (2020-03-13)
+
+
+**Note:** Version bump only for package @mbkit/calendar
 
 
 
@@ -20,7 +36,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+## [1.1.4](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.1.3...@mbkit/calendar@1.1.4) (2020-03-12)
 
+**Note:** Version bump only for package @mbkit/calendar
 
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.1.2...@mbkit/calendar@1.1.3) (2020-03-11)
 

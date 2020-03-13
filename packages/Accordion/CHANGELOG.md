@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.3.2...@mbkit/accordion@1.3.3) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/accordion
+
+
+
+
+
+## [1.3.2](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.3.1...@mbkit/accordion@1.3.2) (2020-03-13)
+
+
+### Bug Fixes
+
+* **accordion:** fixed prop doc generation ([4a80c37](https://github.com/mindbody/design-system/commit/4a80c37a07fe2527df7fb4813ded5ee20c226101))
+
+
+
+
+
 ## [1.3.1](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.3.0...@mbkit/accordion@1.3.1) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/accordion

@@ -7,7 +7,9 @@ import classnames from 'classnames';
 export type TipsyProps = React.HTMLAttributes<HTMLDivElement> &
     RefAttributes<HTMLDivElement> & {
         children: ReactElement;
+        /** What the tipsy renders */
         label: ReactNode;
+        /** What the screen reader will read in the event you use an icon */
         ariaLabel?: string;
         /** This position will be the initial anchor point of where the tipsy starts. Collision detection will automatically reverse the side if it detects that it will overflow the window */
         position?:
