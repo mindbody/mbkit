@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/card",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "source": "src/index.tsx",
     "main": "dist/Card.js",
     "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^1.2.4",
+        "@mbkit/theme": "^1.2.5",
         "classnames": "^2.2.6"
     }
 }
