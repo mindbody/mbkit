@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/file-uploader",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "source": "src/index.tsx",
     "main": "dist/FileUploader.js",
     "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^1.2.6",
+        "@mbkit/theme": "^1.2.7",
         "classnames": "^2.2.6"
     }
 }
