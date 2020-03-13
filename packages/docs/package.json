@@ -15,6 +15,7 @@
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@mbkit/theme": "^1.1.1",
+    "@mbkit/toggle": "^1.2.1",
     "@mdx-js/react": "^1.4.0",
     "@reach/component-component": "^0.6.2",
     "@reach/skip-nav": "^0.1.3",

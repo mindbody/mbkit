@@ -25,3 +25,11 @@
 .toggleButton {
   margin-bottom: 16px;
 }
+.editorToggle {
+    display: inline-flex;
+    align-items: center;
+
+    .toggle {
+        margin-right: 4px;
+    }
+}
