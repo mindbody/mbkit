@@ -1,10 +1,9 @@
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-$neutral-2: var(--neutral-2, #5A5E66);
+@import '~@mbkit/theme/dist/theme.scss';
 
 .label {
     display: block;
     width: 100%;
-    font-size: .75rem;
+    font-size: $font-spec-8-size;
     font-family: $font-family;
     line-height: 1.5;
     color: $neutral-2;

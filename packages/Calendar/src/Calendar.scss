@@ -1,13 +1,4 @@
-$foreground: var(--foreground, #0B0B0D);
-$background: var(--background, #ffffff);
-$radius: var(--radius, 3px);
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-7: var(--neutral-7, #ffffff);
-$secondary-1: var(--secondary-1, #004C57);
-$focus: var(--focus, #6096e6bf);
+@import '~@mbkit/theme/dist/theme.scss';
 
 .calendar {
     font-family: $font-family;
@@ -16,15 +7,14 @@ $focus: var(--focus, #6096e6bf);
     border-radius: $radius;
     border: none;
     box-shadow: 0 1px 3px 0 rgba(#0B0B0D, .3);
-    font-size: 1rem;
     padding: 16px;
-    font-size: 16px;
+    font-size: $font-spec-7-size;
     width: 380px;
 
     [class*="navigation__label"] {
         background: none !important;
         color: $foreground;
-        font-size: 1rem;
+        font-size: $font-spec-7-size;
         border-radius: $radius;
         margin: 0 16px;
 
@@ -62,7 +52,7 @@ $focus: var(--focus, #6096e6bf);
     [class*="month-view__weekdays__weekday"] {
         text-transform: none;
         text-decoration: none;
-        font-size: 16px;
+        font-size: $font-spec-7-size;
 
         abbr[title] {
             text-decoration: none;
@@ -81,7 +71,7 @@ $focus: var(--focus, #6096e6bf);
     border-radius: 50%;
     width: 48px;
     height: 49px;
-    font-size: 16px;
+    font-size: $font-spec-7-size;
     transform: scale(.9);
     transform-origin: center;
     padding: 8px;

@@ -81,6 +81,11 @@ export const EditorOnly = props => {
 const MarkdownWithOverrides = ({ children, overrides }) => (
     <Markdown
         options={{
+            namedCodesToUnicode: {
+                separator: '|',
+                openbracket: '[',
+                closebracket: ']',
+            },
             overrides: {
                 RenderOnly: props => props.children,
                 EditorOnly: props => <EditorOnly {...props}>{props.children[0]}</EditorOnly>,

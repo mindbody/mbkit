@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.2.2...@mbkit/typography@1.2.3) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/typography
+
+
+
+
+
+## [1.2.2](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.2.1...@mbkit/typography@1.2.2) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/typography
+
+
+
+
+
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.2.0...@mbkit/typography@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/typography
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.1.3...@mbkit/typography@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **typography:** consuming mbkit/theme ([7c2a7ef](https://github.com/mindbody/design-system/commit/7c2a7ef18872df2cf99c3e88a257835cf63814ce))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.1.2...@mbkit/typography@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/typography

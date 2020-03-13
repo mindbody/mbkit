@@ -6,8 +6,11 @@ import styles from './ActionBanner.scss';
 export type ActionBannerProps = AllHTMLAttributes<HTMLDivElement> &
     HTMLProps<HTMLDivElement> &
     AlertProps & {
+        /** Determines whether the action banner will be visible */
         show: boolean;
+        /** When user clicks on the close icon this will be called */
         onClose: () => void;
+        /** Determines the color variant that will be displayed */
         variant: 'warning' | 'error';
     };
 
@@ -57,8 +60,8 @@ export const ActionBanner: FC<ActionBannerProps> = forwardRef(
         useEffect(() => {
             if (show) {
                 if (containerRef.current) {
-                    const child = containerRef.current.firstChild as HTMLDivElement;
-                    if (child) {
+                    const child: ChildNode | null = containerRef.current.firstChild;
+                    if (child instanceof HTMLElement) {
                         setHeight(child.getBoundingClientRect().height);
                     }
                 }

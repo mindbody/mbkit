@@ -6,6 +6,7 @@ type DefaultButtonProps = RefAttributes<HTMLButtonElement> &
     ButtonHTMLAttributes<HTMLButtonElement> &
     HTMLProps<HTMLButtonElement>;
 export type ButtonProps = Omit<DefaultButtonProps, 'size'> & {
+    /** Changes the visual appearance of the button */
     variant:
         | 'primary'
         | 'secondary'
@@ -17,8 +18,11 @@ export type ButtonProps = Omit<DefaultButtonProps, 'size'> & {
         | 'simpleText'
         | 'icon'
         | 'iconPrimary';
+    /** Changes the size of the button */
     size?: '1' | '2' | '3' | '4';
+    /** Hides text and displays a loading spinner on the button */
     loading?: boolean;
+    /** Makes button disabled both visually and functionally */
     disabled?: boolean;
 };
 const noop = () => {};
@@ -81,3 +85,4 @@ export const Button: React.FC<ButtonProps> = React.forwardRef(
         );
     },
 );
+Button.displayName = 'Button';

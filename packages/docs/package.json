@@ -2,7 +2,7 @@
   "name": "@mbkit/docs",
   "private": true,
   "description": "Design system documentation for MINDBODY",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
   "scripts": {
     "docs:dev": "yarn clean && gatsby develop",
@@ -31,7 +31,7 @@
     "gatsby-source-contentful": "^2.1.25",
     "gatsby-source-filesystem": "^2.1.11",
     "gatsby-transformer-sharp": "^2.2.7",
-    "markdown-to-jsx": "^6.10.3",
+    "markdown-to-jsx": "^6.11.0",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "prism-react-renderer": "^0.1.7",

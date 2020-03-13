@@ -1,14 +1,4 @@
-// TODO: Once packages are published consume theme and replace these with SCSS variables from the Theme package
-$primary: var(--primary-1, #993100);
-$secondary: var(--secondary-1, #004C57);
-$secondary2: var(--secondary-2, #007485);
-$secondary3: var(--secondary-3, #E5F2F4);
-$tertiary: var(--neutral-2, #5A5E66);
-$black: var(--neutral-1, #0B0B0D);
-$white: var(--neutral-7, #ffffff);
-$neutral3: var(--neutral-3, #8F96A1);
-$neutral4: var(--neutral-4, #CBD0D7);
-$focusColor: var(--focus, #6096e6bf);
+@import '~@mbkit/theme/dist/theme.scss';
 
 $rippleTiming: 466;
 
@@ -34,7 +24,7 @@ $iconSize4: 30px;
         @content;
     }
 }
-@mixin buttonStyles($background, $border: $background, $color: $white, $svg: $white) {
+@mixin buttonStyles($background, $border: $background, $color: $neutral-7, $svg: $neutral-7) {
     border-color: $border;
     background: $background;
     color: $color;
@@ -49,7 +39,7 @@ $iconSize4: 30px;
 
     @include loader($color, $background);
 }
-@mixin buttonHover($background, $border: $background, $color: $black, $svg: $tertiary) {
+@mixin buttonHover($background, $border: $background, $color: $neutral-1, $svg: $neutral-2) {
     &:not(.loading):not([disabled]):hover {
         border-color: $border;
         background: $background;
@@ -63,15 +53,15 @@ $iconSize4: 30px;
 @mixin buttonDisabled {
     @include disabled {
         cursor: not-allowed;
-        background: $neutral4; 
-        border-color: $neutral4;
-        color: $neutral3;
+        background: $neutral-4; 
+        border-color: $neutral-4;
+        color: $neutral-3;
 
         @include svgTargetFill {
-            fill: $neutral3;
+            fill: $neutral-3;
         }
 
-        @include loader($neutral3, $neutral4);
+        @include loader($neutral-3, $neutral-4);
     }
 }
 /*
@@ -242,46 +232,46 @@ $iconSize4: 30px;
     }
 
     &.primary {
-        @include buttonStyles($primary);
-        @include buttonHover($white, $primary);
+        @include buttonStyles($primary-1);
+        @include buttonHover($neutral-7, $primary-1);
     }
     &.secondary {
-        @include buttonStyles($secondary);
-        @include buttonHover($white, $secondary);
+        @include buttonStyles($secondary-1);
+        @include buttonHover($neutral-7, $secondary-1);
     }
     &.tertiary {
-        @include buttonStyles($tertiary);
-        @include buttonHover($white, $tertiary);
+        @include buttonStyles($neutral-2);
+        @include buttonHover($neutral-7, $neutral-2);
     }
     &.primaryOutlined {
-        @include buttonStyles($white, $primary, $black, $tertiary);
-        @include buttonHover($primary, $primary, $white, $white);
+        @include buttonStyles($neutral-7, $primary-1, $neutral-1, $neutral-2);
+        @include buttonHover($primary-1, $primary-1, $neutral-7, $neutral-7);
     }
     &.secondaryOutlined {
-        @include buttonStyles($white, $secondary, $black, $tertiary);
-        @include buttonHover($secondary, $secondary, $white, $white);
+        @include buttonStyles($neutral-7, $secondary-1, $neutral-1, $neutral-2);
+        @include buttonHover($secondary-1, $secondary-1, $neutral-7, $neutral-7);
     }
     &.tertiaryOutlined {
-        @include buttonStyles($white, $tertiary, $black, $tertiary);
-        @include buttonHover($tertiary, $tertiary, $white, $white);
+        @include buttonStyles($neutral-7, $neutral-2, $neutral-1, $neutral-2);
+        @include buttonHover($neutral-2, $neutral-2, $neutral-7, $neutral-7);
     }
     &.offCard {
-        @include buttonStyles($white, $white, $black, $tertiary);
-        @include buttonHover($tertiary, $tertiary, $white, $white);
+        @include buttonStyles($neutral-7, $neutral-7, $neutral-1, $neutral-2);
+        @include buttonHover($neutral-2, $neutral-2, $neutral-7, $neutral-7);
     }
     &.iconPrimary {
-        @include buttonStyles($white, $white, $secondary, $secondary);
-        @include buttonHover($secondary3, $secondary3, $secondary, $secondary);
+        @include buttonStyles($neutral-7, $neutral-7, $secondary-1, $secondary-1);
+        @include buttonHover($secondary-3, $secondary-3, $secondary-1, $secondary-1);
         border-radius: 50%;
     }
     &.icon {
-        @include buttonStyles($white, $white, $black, $black);
-        @include buttonHover($neutral4, $neutral4, $black, $black);
+        @include buttonStyles($neutral-7, $neutral-7, $neutral-1, $neutral-1);
+        @include buttonHover($neutral-4, $neutral-4, $neutral-1, $neutral-1);
         border-radius: 50%;
     }
     &.simpleText {
-        @include buttonStyles($white, $white, $secondary, $secondary);
-        @include buttonStyles($white, $white, $secondary, $secondary);
+        @include buttonStyles($neutral-7, $neutral-7, $secondary-1, $secondary-1);
+        @include buttonStyles($neutral-7, $neutral-7, $secondary-1, $secondary-1);
         &:hover {
             text-decoration: underline;
         }
@@ -304,11 +294,11 @@ $iconSize4: 30px;
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 4px $focusColor;
+        box-shadow: 0 0 0 4px $focus;
         transition: box-shadow 100ms ease-out;
 
         &:not(.loading):active {
-            box-shadow: 0 0 0 8px $focusColor;
+            box-shadow: 0 0 0 8px $focus;
         }
     }
 }

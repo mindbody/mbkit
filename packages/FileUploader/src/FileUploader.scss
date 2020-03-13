@@ -1,3 +1,5 @@
+@import '~@mbkit/theme/dist/theme.scss';
+
 
 // Targets fill of all SVG elements that have a fill attribute that contains a pound symbol
 @mixin svgFill($fillColor) {
@@ -65,26 +67,6 @@
         }
     }
 }
-
-$foreground: var(--foreground, #0B0B0D);
-$background: var(--background, #ffffff);
-$focus: var(--focus, #6096e6bf);
-
-$neutral-1: var(--neutral-1, #0B0B0D);
-$neutral-2: var(--neutral-2, #5A5E66);
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-6: var(--neutral-6, #F8F9FB);
-$neutral-7: var(--neutral-7, #ffffff);
-
-$primary-1: var(--primary-1, #993100);
-$secondary-1: var(--secondary-1, #004C57);
-$secondary-2: var(--secondary-2, #007485);
-$error-1: var(--error-1, #992D38);
-
-$radius: var(--radius, 3px);
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
 
 .fileUploader {
     border-radius: $radius;

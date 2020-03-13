@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.4.1...@mbkit/docs@0.4.2) (2020-03-12)
+
+
+### Bug Fixes
+
+* **docs:** fixed unicode issues in props being displayed ([de8b245](https://github.com/gatsbyjs/gatsby-starter-default/commit/de8b245465aa3e776289a274bf42af97be40aa4b))
+
+
+
+
+
 ## [0.4.1](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.4.0...@mbkit/docs@0.4.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/docs

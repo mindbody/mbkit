@@ -4,18 +4,21 @@ import nanoid from 'nanoid';
 import classnames from 'classnames';
 import styles from './Accordion.scss';
 
-type AccordionProps = {
+export type AccordionProps = {
     /** Array of active panes to be displayed */
     activePanes: number[];
+    /** When a header is clicked this will be called with the header index */
     onChange: (index: number) => void;
+    /** Renders as the element/component you pass in. E.g. div, section, Card */
     as?: ReactNode;
+    /** An AccordionItem must be the direct child of the Accordion component */
     children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
     className?: string;
 };
 
-type AccordionContextValue = {
-    activePanes: AccordionProps['activePanes'];
-    onChange: AccordionProps['onChange'];
+export type AccordionContextValue = {
+    activePanes: number[];
+    onChange: (index: number) => void;
     accordionId: string;
 };
 
@@ -28,9 +31,9 @@ export const AccordionContext = createContext<AccordionContextValue>({
     accordionId: '',
 });
 export const Accordion: FC<AccordionProps> = forwardRef((props: AccordionProps, ref) => {
-    const { as = 'div' as any, activePanes, onChange, className = '', children, ...rest } = props;
+    const { as = 'div', activePanes, onChange, className = '', children, ...rest } = props;
     const accordionId = nanoid();
-    const Component = as;
+    const Component: any = as;
 
     const childrenAsArray = Array.isArray(children) ? children : [children];
     const clonedChildren = Children.map(childrenAsArray, (child, index) => {
@@ -49,3 +52,6 @@ export const Accordion: FC<AccordionProps> = forwardRef((props: AccordionProps, 
     );
 });
 Accordion.displayName = 'Accordion';
+Accordion.defaultProps = {
+    as: 'div',
+};
