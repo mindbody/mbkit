@@ -7,8 +7,11 @@ import styles from './Accordion.scss';
 export type AccordionProps = {
     /** Array of active panes to be displayed */
     activePanes: number[];
+    /** When a header is clicked this will be called with the header index */
     onChange: (index: number) => void;
+    /** Renders as the element/component you pass in. E.g. div, section, Card */
     as?: ReactNode;
+    /** An AccordionItem must be the direct child of the Accordion component */
     children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
     className?: string;
 };
