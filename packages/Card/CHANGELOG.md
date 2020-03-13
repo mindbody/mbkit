@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/card@1.2.3...@mbkit/card@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/mindbody/design-system/commit/d9522e0f1470800e3103793208e24a84739a5888))
+
+
+
+
+
 ## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/card@1.2.2...@mbkit/card@1.2.3) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/card
