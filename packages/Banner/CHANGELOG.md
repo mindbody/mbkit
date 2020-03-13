@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.2.1...@mbkit/banner@1.2.2) (2020-03-13)
+
+
+### Bug Fixes
+
+* **banner:** fixed prop generation ([5ea7794](https://github.com/mindbody/design-system/commit/5ea77945dacac18abf2398d05eb79d9dacc509b2))
+
+
+
+
+
 ## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.2.0...@mbkit/banner@1.2.1) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/banner
