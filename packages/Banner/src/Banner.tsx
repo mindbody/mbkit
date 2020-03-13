@@ -5,10 +5,15 @@ import styles from './Banner.scss';
 type BannerVariant = 'success' | 'warning' | 'error' | 'info';
 export type BannerProps = AllHTMLAttributes<HTMLElement> &
     RefAttributes<HTMLElement> & {
+        /** Determines the color of the banner displayed */
         variant: BannerVariant;
+        /** Renders as the element/component you pass in. E.g. div, section, Card */
         as?: ReactNode;
+        /** Text or element to be displayed in the header element */
         header?: ReactNode;
+        /** Text or element to be displayed */
         message?: ReactNode;
+        /** Icon to be displayed to the left of the element. By default this will vary based on the variant */
         icon?: ReactNode;
     };
 export const Banner: FC<BannerProps> = forwardRef((props: BannerProps, ref: RefObject<HTMLElement>) => {
