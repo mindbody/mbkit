@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/card@1.2.0...@mbkit/card@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/card
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/card@1.1.3...@mbkit/card@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **card:** consuming mbkit/theme ([29d3c56](https://github.com/mindbody/design-system/commit/29d3c5622411fe21375f6af71afb760961391922))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/card@1.1.2...@mbkit/card@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/card

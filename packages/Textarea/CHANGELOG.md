@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.2.0...@mbkit/textarea@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/textarea
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.1.3...@mbkit/textarea@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **textarea:** consuming mbkit/theme ([0b66ce3](https://github.com/mindbody/design-system/commit/0b66ce3dbf65c379a90d204cf464997a7c6a05f9))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.1.2...@mbkit/textarea@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/textarea

@@ -1,3 +1,5 @@
+@import '~@mbkit/theme/dist/theme.scss';
+
 @mixin svgTargetFill() {
     g:not([fill~="#"]),
     path:not([fill~="#"]),
@@ -12,33 +14,33 @@
 
 .primaryColor {
     @include svgTargetFill {
-        fill: var(--primary-1, #993100);
+        fill: $primary-1;
     }
 }
 .infoColor {
     @include svgTargetFill {
-        fill: var(--secondary-1, #004C57);
+        fill: $secondary-1;
     }
 
 }
 .successColor {
     @include svgTargetFill {
-        fill: var(--success-1, #00592E);
+        fill: $success-1;
     }
 
 }
 .warningColor {
     @include svgTargetFill {
-        fill: var(--warning-1, #8C6600);
+        fill: $warning-1;
     }
 }
 .errorColor {
     @include svgTargetFill {
-        fill: var(--error-1, #992D38);
+        fill: $error-1;
     }
 }
 .metaColor {
     @include svgTargetFill {
-        fill: var(--neutral-2, #5A5E66);
+        fill: $neutral-2;
     }
 }

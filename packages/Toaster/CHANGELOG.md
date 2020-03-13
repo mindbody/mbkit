@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.0...@mbkit/toaster@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.1.3...@mbkit/toaster@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **toaster:** consuming mbkit/theme ([0431a8d](https://github.com/mindbody/design-system/commit/0431a8d5917d821e1de927e8a92eea7334923165))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.1.2...@mbkit/toaster@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/toaster

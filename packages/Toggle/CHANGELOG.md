@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.2.0...@mbkit/toggle@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/toggle
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.1.3...@mbkit/toggle@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **toggle:** consuming mbkit/theme ([9a63e44](https://github.com/mindbody/design-system/commit/9a63e44608ca9cf65a89a26efa234d5132f50f02))
+
+
+
+
+
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.1.2...@mbkit/toggle@1.1.3) (2020-03-11)
 
 **Note:** Version bump only for package @mbkit/toggle

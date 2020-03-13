@@ -3,13 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.4](https://github.com/mindbody/design-system/compare/@mbkit/button@1.1.3...@mbkit/button@1.1.4) (2020-03-12)
+
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/button@1.2.0...@mbkit/button@1.2.1) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/button
 
+## [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/button@1.1.3...@mbkit/button@1.2.0) (2020-03-11)
 
 
+### Features
 
+* **button:** updated button to consume mbkit/theme ([867d3bb](https://github.com/mindbody/design-system/commit/867d3bbefed6974c9feb5872ceb2ac689c470044))
+
+## [1.1.4](https://github.com/mindbody/design-system/compare/@mbkit/button@1.1.3...@mbkit/button@1.1.4) (2020-03-12)
+
+**Note:** Version bump only for package @mbkit/button
 
 ## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/button@1.1.2...@mbkit/button@1.1.3) (2020-03-11)
 

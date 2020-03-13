@@ -2297,6 +2297,13 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
+"@mbkit/checkbox@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@mbkit/checkbox/-/checkbox-1.1.1.tgz#66b219b8ee402b4e518b066b351d07b5107b6d6c"
+  integrity sha512-+E6EU95DdG6I30iyKYel5nPXPp375Jid2VCTk8V7jzTsaXlWZtFuW+whQG+TT5KMCboHyyo2naOJ6AJbZMeVdA==
+  dependencies:
+    classnames "^2.2.6"
+
 "@mdx-js/react@^1.4.0":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.5.1.tgz#e0a9dbdc03826198abd82b29dcee91d661faf8a5"

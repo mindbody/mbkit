@@ -1,25 +1,4 @@
-$foreground: var(--foreground, #0B0B0D);
-$background: var(--background, #ffffff);
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-
-$secondary-1: var(--secondary-1, #004C57);
-$secondary-2: var(--secondary-2, #007485);
-$secondary-3: var(--secondary-3, #E5F2F4);
-
-$success-1: var(--success-1, #00592E);
-$success-2: var(--success-2, #007A3F);
-$success-3: var(--success-3, #E5F3EC);
-
-$warning-1: var(--warning-1, #8C6600);
-$warning-2: var(--warning-2, #FFD73D);
-$warning-3: var(--warning-3, #FFFBEB);
-
-$error-1: var(--error-1, #992D38);
-$error-2: var(--error-2, #BD3845);
-$error-3: var(--error-3, #FAEBED);
-
-$radius: var(--radius, 3px);
-$focus: var(--focus, #6096e6bf);
+@import '~@mbkit/theme/dist/theme.scss';
 
 @mixin svgTargetFill($fill) {
     g:not([fill~="#"]),
@@ -74,14 +53,14 @@ $focus: var(--focus, #6096e6bf);
     }
     .heading {
         margin: 0;
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: $font-spec-7-size;
+        line-height: $font-spec-7-lineHeight;
         font-weight: bold;
     }
     .body {
         margin: 0;
-        font-size: .75rem;
-        line-height: 1.5rem;
+        font-size: $font-spec-8-size;
+        line-height: $font-spec-8-lineHeight;
     }
 
     &.success {
