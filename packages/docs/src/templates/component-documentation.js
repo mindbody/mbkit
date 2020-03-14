@@ -12,7 +12,7 @@ const defaultOverrides = {
     h3: props => <h4 {...props} />,
     h4: props => <h5 {...props} />,
     h5: props => <h6 {...props} />,
-    a: props => <a {...props} target="_blank" />,
+    a: props => <a {...props} target="_blank" rel="noopener noreferrer" />,
     Component: props => <Component {...props} />,
 };
 
@@ -122,7 +122,11 @@ const ComponentDocumentation = props => {
             <h2>Implementation Details</h2>
 
             <p>
-                <a href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`} target="_blank">
+                <a
+                    href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Version {pkgJson.version} on GitHub
                 </a>
             </p>
@@ -135,6 +139,7 @@ const ComponentDocumentation = props => {
                                 component.name
                             }.tsx`}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             View line by line code coverage for {component.name}
                         </a>

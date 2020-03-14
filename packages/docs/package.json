@@ -1,7 +1,7 @@
 {
   "name": "@mbkit/docs",
   "private": true,
-  "description": "Design system documentation for MINDBODY",
+  "description": "Design system documentation for Mindbody",
   "version": "0.5.1",
   "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
   "scripts": {

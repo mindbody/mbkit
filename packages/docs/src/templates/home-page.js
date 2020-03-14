@@ -22,7 +22,7 @@ const HomePageTemplate = props => {
                 const linkTo = node.data.uri;
                 if (linkTo.includes('http')) {
                     return (
-                        <a href={linkTo} target="_blank" rel="nofollow">
+                        <a href={linkTo} target="_blank" rel="noopener noreferrer nofollow">
                             {text}
                         </a>
                     );

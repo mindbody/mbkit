@@ -52,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
                     content: `website`,
                 },
                 {
+                    property: `og:image`,
+                    content: `https://images.ctfassets.net/2rb53inahems/2wKqEPx2ZRMEWnMmv09zdO/6bbb653c89524ca0c2e37c6cf581a845/mbkit-banner.jpg`,
+                },
+                {
                     name: `twitter:card`,
                     content: `summary`,
                 },
@@ -66,6 +70,10 @@ function SEO({ description, lang, meta, title }) {
                 {
                     name: `twitter:description`,
                     content: metaDescription,
+                },
+                {
+                    name: `twitter:image`,
+                    content: `https://images.ctfassets.net/2rb53inahems/2wKqEPx2ZRMEWnMmv09zdO/6bbb653c89524ca0c2e37c6cf581a845/mbkit-banner.jpg`,
                 },
             ].concat(meta)}
         />
