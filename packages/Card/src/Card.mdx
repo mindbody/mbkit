@@ -1,12 +1,21 @@
 # Card Usage
 
+## Basic Usage
+
+Cards are rendered as divs by default.
+
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 24, padding: '16px 8px' }}>
-    <Card>
-        This is a card to place content inside of
-    </Card>
-    <Card as="section">
-        This card is rendered as a section as opposed to a div
-    </Card>
-</div>
+<Card>
+    This is a standard card where you can place content.
+</Card>
+```
+
+## Render as a Section
+
+It may be useful for semantics to render as an HTML5 section.
+
+```tsx
+<Card as="section">
+    This card is rendered as a section element using the "as" prop.
+</Card>
 ```
