@@ -1,9 +1,9 @@
 # Input Usage
 
-Basic use
+## Basic Usage
 
 ```tsx
-<div style={{ padding: 16 }}>
+<>
     <div style={{
         display: 'grid',
         gridTemplateColumns: `1fr 1fr`,
@@ -13,6 +13,7 @@ Basic use
         <Input placeholder="Please enter your first name" />
         <Input placeholder="Please enter your last name" />
     </div>
+
     <div style={{
         display: 'grid',
         gridTemplateColumns: `1fr`,
@@ -22,22 +23,21 @@ Basic use
         <Input placeholder="Address line 2" disabled  />
         <Input placeholder="More Info Here" invalid />
     </div>
-</div>
+</>
 ```
 
-Before/After selectors
+## Prefix and Postfix Icons
 
 ```tsx
 <div style={{
     display: 'grid',
     gridTemplateColumns: `1fr 1fr`,
-    gridGap: 16,
-    padding: 16
+    gridGap: 16
 }}>
-    <Input placeholder="How much does this cost class?" before="$" />
-    <Input placeholder="How much does this cost class?" after="€" invalid />
-    <Input placeholder="How much does this cost class?" before="$" disabled />
-    <Input placeholder="How much does this cost class?" after="€" disabled />
+    <Input placeholder="How much does this class cost?" before="$" />
+    <Input placeholder="How much does this class cost?" after="€" invalid />
+    <Input placeholder="How much does this class cost?" before="$" disabled />
+    <Input placeholder="How much does this class cost?" after="€" disabled />
     <Input
         placeholder="Search"
         before={
