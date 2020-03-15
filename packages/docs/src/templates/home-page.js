@@ -43,7 +43,7 @@ const HomePageTemplate = props => {
             </div>
             <div className={styles.homeLinks}>
                 {guides.map((guide, index) => (
-                    <div className={styles.card}>
+                    <div key={index} className={styles.card}>
                         <div className={styles.roundImage}>
                             <img src={guideImages[index]} alt={`${guide} logo`} />
                         </div>
