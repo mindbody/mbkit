@@ -17,11 +17,6 @@
           padding: 32px;
         }
     }
-
-    @media screen and (min-width: 769px) {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));;
-    }
 }
 .codeEditor {
     font-size: 14px;
