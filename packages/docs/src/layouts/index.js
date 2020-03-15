@@ -3,12 +3,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styles from './index.module.scss';
 import { TopNav } from '../components/Nav/TopNav';
 import { MobileNav } from '../components/Nav/MobileNav';
-import { Footer } from '../components/Footer/Footer';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import '@reach/skip-nav/styles.css';
 import { SideNav } from '../components/Nav/SideNav';
 import classnames from 'classnames';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import Footer from '../components/Footer/Footer';
 import { ThemeProvider } from '@mbkit/theme';
 
 const query = graphql`

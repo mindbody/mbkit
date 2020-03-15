@@ -3,7 +3,7 @@ import { Text } from '@mbkit/typography';
 
 import styles from './Footer.module.scss';
 
-export const Footer = () => {
+export default function Footer() {
     return (
         <footer className={styles.footer}>
             <Text size={6} color="meta">
@@ -11,4 +11,4 @@ export const Footer = () => {
             </Text>
         </footer>
     );
-};
+}

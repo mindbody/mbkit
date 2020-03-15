@@ -9,6 +9,10 @@
         border-radius: 3px;
         margin-bottom: 16px;
 
+        h2, h3, h4, h5, h6 {
+          margin-top: initial;
+        }
+
         @media screen and (min-width: 800px) {
           padding: 32px;
         }
