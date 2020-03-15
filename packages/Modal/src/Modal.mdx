@@ -1,6 +1,8 @@
 # Modal Usage
 
-By default modals are fluid and will respond based on the width of the window up to a max-width of 960 pixels which is the size 1 default. Size 2 is the medium size and size 3 is the smallest. Any customization beyond this should be added via a CSS class name. 
+## Basic Usage
+
+By default, modals are fluid. Their max-width is determined by the "size" prop. Size 1 is 960px, size 2 is 670px, and size 3 is 480px. Any customization beyond this should done with a custom CSS class. 
 
 <RenderOnly>
     <ModalExample buttonText="Modal size 1 (960px max width)" size={1} />
@@ -8,14 +10,18 @@ By default modals are fluid and will respond based on the width of the window up
     <ModalExample buttonText="Modal size 3 (480px max width)" size={3} />
 </RenderOnly>
 
-Below are live examples of the modal with different props. The content section contains no inner styling relating to padding so you can use your own grid/padding or custom background
+## Modal with Inner Styles
+
+Modals contain no inner styling, so you can use your own grid, padding, or custom background.
 
 <RenderOnly>
     <ModalExample size={1} buttonText="Open Basic Modal (Few children)" />
     <ModalExample size={1} buttonText="Open Basic Modal (Many children)" renderManyChildren />
 </RenderOnly>
 
-The header/footer both accomidate the correct styling since there has been little deviation historically. 
+## Modal Header and Footer
+
+The "header" and "footer" props provide a pre-styled header and footer, respectively.
 
 <RenderOnly>
     <ModalExample size={1} buttonText="Open Modal with title (Few children)" header="Hello world" />
