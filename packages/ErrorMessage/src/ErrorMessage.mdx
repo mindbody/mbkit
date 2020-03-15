@@ -1,5 +1,7 @@
 # ErrorMessage Usage
 
+## Basic Usage
+
 ```tsx
 <>
     <input type="email" style={{ display: 'block', width: '100%', padding: 8, margin: '8px 0', }} />
@@ -7,9 +9,9 @@
 </>
 ```
 
-## Interactive email demo
+## Interactive Email Demo
 
-Turn on your voice over screen reader of choice and fill out this field with an invalid email address and tab out, you should hear the screen reader read to you when the alert shows up. 
+Turn on your screen reader of choice, then fill out this field with an invalid email address and tab out. The screen reader will read the error message. 
 
 <RenderOnly>
     <ErrorMessageExample />
@@ -17,9 +19,9 @@ Turn on your voice over screen reader of choice and fill out this field with an 
 
 ## Polite vs Assertive
 
-The ErrorMessage is using <a href="https://ui.reach.tech/alert/" target="_blank" rel="nofollow">Reach UI's "Alert"</a> package and it allows for you to determine whether it should interupt what the screen reader is reading to the user. 
+ErrorMessage uses <a href="https://ui.reach.tech/alert/" target="_blank" rel="noopener noreferrer nofollow">Reach UI's Alert package</a>, which allows you to interrupt the screen reader. 
 
-Generally you want to use the default "polite" setting which will let the screen reader finish reading what it's reading. Assertive will interupt what the screen reader is reading and should be used sparringly. 
+You generally want to use the default "polite" setting, which allows the screen reader to finish reading. The "assertive" setting interrupts the screen reader and should be used sparingly. 
 
 ```tsx
 <>
