@@ -41,7 +41,6 @@ const HomePageTemplate = props => {
                     <div className={styles.bannerText}>{documentToReactComponents(description.json, options)}</div>
                 </div>
             </div>
-
             <div className={styles.homeLinks}>
                 {guides.map((guide, index) => (
                     <div className={styles.card}>
@@ -63,8 +62,6 @@ const HomePageTemplate = props => {
                     </div>
                 ))}
             </div>
-
-            <Footer />
         </>
     );
 };

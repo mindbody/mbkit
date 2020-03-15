@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styles from './index.module.scss';
 import { TopNav } from '../components/Nav/TopNav';
 import { MobileNav } from '../components/Nav/MobileNav';
+import { Footer } from '../components/Footer/Footer';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import '@reach/skip-nav/styles.css';
 import { SideNav } from '../components/Nav/SideNav';
@@ -153,6 +154,7 @@ const Layout = props => {
                             <Breadcrumbs isFullPage={fullPage} />
                             {props.children}
                         </main>
+                        <Footer />
                     </SkipNavContent>
                 </div>
             </ThemeProvider>
