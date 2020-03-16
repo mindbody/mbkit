@@ -2,8 +2,9 @@
     "name": "@mbkit/label",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/Label.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/Label.js",
+    "module": "dist/esm/Label.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
