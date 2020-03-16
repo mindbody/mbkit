@@ -2,8 +2,9 @@
     "name": "@mbkit/radio",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/Radio.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/Radio.js",
+    "module": "dist/esm/Radio.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
