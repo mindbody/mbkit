@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/theme@1.2.7...@mbkit/theme@1.3.0) (2020-03-16)
+
+
+### Bug Fixes
+
+* **theme:** updated theme to use latest copyfiles ([95c0b16](https://github.com/mindbody/design-system/commit/95c0b1645d1a53f736c98e4caec1de30c99274ea))
+
+
+### Features
+
+* **theme:** updated package to publish esm and cjs ([9f5cd3c](https://github.com/mindbody/design-system/commit/9f5cd3cbea3f9b031fa57dd5beb95087f64b1604))
+
+
+
+
+
 ## [1.2.7](https://github.com/mindbody/design-system/compare/@mbkit/theme@1.2.6...@mbkit/theme@1.2.7) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/theme

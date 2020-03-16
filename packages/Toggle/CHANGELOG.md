@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.2.5...@mbkit/toggle@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **toggle:** updated package to publish as esm and cjs ([9f59790](https://github.com/mindbody/design-system/commit/9f59790e03bd540176a603aca00d8ba8ae10303a))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.2.4...@mbkit/toggle@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/toggle

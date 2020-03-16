@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.5...@mbkit/label@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **label:** updated package to publish cjs and esm ([dbe59e3](https://github.com/mindbody/design-system/commit/dbe59e3cf8da783dd3bddb4a52f986ab7b76fd0f))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.4...@mbkit/label@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/label

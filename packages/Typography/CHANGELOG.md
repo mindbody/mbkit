@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.2.5...@mbkit/typography@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **typography:** package now publishes as cjs and esm ([19fe4ec](https://github.com/mindbody/design-system/commit/19fe4ec250150703aa3a31a46389b86cdb5079fb))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.2.4...@mbkit/typography@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/typography

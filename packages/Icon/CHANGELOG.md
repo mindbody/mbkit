@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.2.5...@mbkit/icon@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **icon:** updated icons to publish esm and cjs ([50147f2](https://github.com/mindbody/design-system/commit/50147f2124b954ef289c575f6350b09fd3e6ddbc))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.2.4...@mbkit/icon@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/icon
