@@ -5,8 +5,9 @@
   "version": "0.5.1",
   "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
   "scripts": {
-    "docs:dev": "yarn clean && gatsby develop",
-    "docs:prod": "yarn clean && gatsby build",
+    "clone:env:file": "yarn copyfiles ../../.env ./docs/.env",
+    "docs:dev": "yarn clean && yarn clone:env:file && gatsby develop",
+    "docs:prod": "yarn clean && yarn clone:env:file && gatsby build",
     "docs:serve": "gatsby serve",
     "clean": "rm -rf .cache",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
@@ -21,6 +22,8 @@
     "@reach/skip-nav": "^0.1.3",
     "add": "^2.0.6",
     "classnames": "^2.2.6",
+    "copyfiles": "^2.2.0",
+    "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "gatsby": "^2.13.73",
     "gatsby-image": "^2.2.10",
