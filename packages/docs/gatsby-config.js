@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
     siteMetadata: {
         title: `MBKit`,
@@ -11,7 +13,7 @@ module.exports = {
             resolve: `gatsby-source-contentful`,
             options: {
                 spaceId: '2rb53inahems',
-                accessToken: 'N5bVC4fM-z13KhhJB25teCb420y2krFysdjlsy_wI9E',
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
                 downloadLocal: true,
                 environment: process.env.NODE_ENV === 'development' ? 'dev' : 'master',
             },
