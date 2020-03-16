@@ -5,7 +5,7 @@
     "main": "dist/cjs/ActionBanner.js",
     "jsnext:main": "dist/esm/ActionBanner.js",
     "module": "dist/esm/ActionBanner.js",
-    "types": "dist/esm/index.d.ts",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
