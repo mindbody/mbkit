@@ -79,7 +79,7 @@ const ComponentDocumentation = props => {
                         h2: () => <h3>{name} Props</h3>,
                     }}
                 >
-                    {docsParsed}
+                    <div styles={{ overflow: 'scroll' }}>{docsParsed}</div>
                 </MarkdownJsx>
             );
         } catch (e) {
