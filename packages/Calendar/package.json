@@ -4,7 +4,7 @@
     "source": "src/index.tsx",
     "main": "dist/cjs/Calendar.js",
     "module": "dist/esm/Calendar.js",
-    "types": "dist/index.d.ts",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
