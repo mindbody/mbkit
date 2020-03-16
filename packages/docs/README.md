@@ -10,7 +10,7 @@ This creates a mapping of all components and generates a file for the components
 
 ## Working on the site locally
 
-To pull from contentful request a access token from one of the maintainers. You will need to create a `.env` file in the root of this package `docs` and place token with the `CONTENTFUL_ACCESS_TOKEN` variable.
+To pull site data from contentful, request a access token from one of the maintainers. You will need to create a `.env` file in the root of this package and set the `CONTENTFUL_ACCESS_TOKEN` variable with the token.
 
 ```
 CONTENTFUL_ACCESS_TOKEN={YOUR ACCESS TOKEN TO CONTENTFUL}
