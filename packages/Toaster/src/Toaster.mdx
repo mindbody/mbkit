@@ -1,13 +1,17 @@
-# Dev Documentation
+# Toaster Usage
 
-The consuming application will be responsible for the showing and hiding of the toaster using the "show" prop. It will handle the transition and placement on the screen.
+## Basic Usage
+
+The consuming application will be responsible for the showing and hiding of the toaster using the "show" prop.
+
+You should see the Toaster example at the bottom of your screen.
 
 ```tsx
-<Toaster show={true} style={{ position: 'static', bottom: 'initial', left: 'initial', animation: 'none' }}>It was a success</Toaster>
+<Toaster show={true}>Here's a Toaster example</Toaster>
 ```
 
-Click the button below to see the alert show up on screen and watch it disappear in 5 seconds. 
+Click the button below to see the Toaster show up on screen for 5 seconds. 
 
 <RenderOnly>
-    <ToasterExample message="You've successfully saved something" />
+    <ToasterExample message="Here's a five second Toaster demo" />
 </RenderOnly>
