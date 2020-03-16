@@ -2,8 +2,9 @@
     "name": "@mbkit/file-uploader",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/FileUploader.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/FileUploader.js",
+    "module": "dist/esm/FileUploader.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
