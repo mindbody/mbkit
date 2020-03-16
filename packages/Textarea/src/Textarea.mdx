@@ -1,26 +1,31 @@
 # Textarea Usage
 
-Semantic labels
+## Explicit and Implicit Labels
+
+Both examples are semantic HTML and will be read by a screen reader.
 
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: 16, padding: '8px 0' }}>
+<div style={{ display: 'grid', gridTemplateColumns: '1fr', gridGap: 16 }}>
+    
+    {/* Implicit label */}
     <label>
         What is something you would change with your experience?
         <Textarea value="Some content" onChange={e => console.log(e.target.value)} />
     </label>
+
+    {/* Explicit label */}
     <div>
         <label htmlFor="feedback" id="feedback-label">Any additional feedback?</label>
-        <Textarea id="feedback" aria-labelledby="feedback-label" value="Some content" onChange={e => console.log(e.target.value)} invalid />
+        <Textarea id="feedback" aria-labelledby="feedback-label" value="Some content" onChange={e => console.log(e.target.value)} />
     </div>
 </div>
 ```
 
-Different states
+## Invalid and Disabled States
 
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16, padding: '8px 0' }}>
-    <Textarea value="Some content" onChange={e => console.log(e.target.value)} />
-    <Textarea value="Some content" onChange={e => console.log(e.target.value)} />
+<div style={{ display: 'grid', gridGap: 16 }}>
+    <Textarea value="Some content" onChange={e => console.log(e.target.value)} invalid />
     <Textarea value="Some content" onChange={e => console.log(e.target.value)} disabled />
 </div>
 ```
