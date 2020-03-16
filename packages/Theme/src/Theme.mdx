@@ -1,51 +1,53 @@
 # ThemeProvider and ThemeConsumer Usage
 
-Start by adding a theme provider as the outermost wrapper. This theme provider will generate CSS variables in a scoped selector, as not to overwrite other theme providers, that all common components will use. 
+Start by adding a theme provider as the outermost wrapper. This theme provider will generate CSS variables in a scoped selector. 
 
-## Demo
+## Default Theme
 
-Below are two examples of the ThemeProvider, one which just outputs the default theme and another that adds a custom theme. 
-
-Inspect the output and find the scoped selector. On it you will see the CSS variables scoped there.
+Inspect the output and find the scoped selector. You'll see the CSS variables scoped there.
 
 ```tsx
 <>
-    <ThemeProvider>
-        {({theme}) => (
-            <>
-                Default
-                <pre>
-                    {JSON.stringify(theme, null, 2)}
-                </pre>
-            </>
-        )}
-    </ThemeProvider>
-
-    <ThemeProvider theme={{
-        name: "My Custom Theme",
-        foreground: 'red',
-        background: 'blue',
-    }}>
-        {({theme}) => (
-            <>
-                Custom
-                <pre>
-                    {JSON.stringify(theme, null, 2)}
-                </pre>
-            </>
-        )}
-    </ThemeProvider>
+<ThemeProvider>
+    {({theme}) => (
+        <>
+            <pre>
+                {JSON.stringify(theme, null, 2)}
+            </pre>
+        </>
+    )}
+</ThemeProvider>
 </>
 ```
 
-## FAQ
+## Custom Theme
 
-### When should I use a custom theme?
+```tsx
+<ThemeProvider theme={{
+    name: "My Custom Theme",
+    foreground: 'red',
+    background: 'blue',
+}}>
+    {({theme}) => (
+        <>
+            <pre>
+                {JSON.stringify(theme, null, 2)}
+            </pre>
+        </>
+    )}
+</ThemeProvider>
+```
 
-If you are working in a legacy product and want to match it's styling, you can override the values of the theme and see the common components reflect this.
+# FAQ
 
-### Can I use theme values as SCSS variables?
+## When should I use a custom theme?
 
-Yes! After you've installed this package as a dependency you can add this line "@import '~@mbkit/theme/dist/theme.scss';" in any of your scss files and it will allow you to consume the SCSS variables. Variable names follow the JSON structure just like the CSS variables. 
+Use a custom theme if you're working in a legacy product and want to match its styling.
 
-For example: "$primary-1" will output "var(--primary-1, #993100)"
+## Can I use theme values as SCSS variables?
+
+Yes! After you've installed this package as a dependency, you can add this line in any of your SCSS files and it will allow you to consume them. Variable names follow the same JSON structure as the CSS variables.
+
+> @import '~@mbkit/theme/dist/theme.scss';
+
+For example, **$primary-1** will output **var(--primary-1, #993100)**.
