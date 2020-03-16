@@ -5,7 +5,7 @@
     "main": "dist/cjs/Accordion.js",
     "jsnext:main": "dist/esm/Accordion.js",
     "module": "dist/esm/Accordion.js",
-    "types": "dist/index.d.ts",
+    "types": "dist/cjs/Accordion/src/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
