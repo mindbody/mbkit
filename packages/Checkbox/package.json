@@ -2,8 +2,9 @@
     "name": "@mbkit/checkbox",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/Checkbox.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/Checkbox.js",
+    "module": "dist/esm/Checkbox.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
