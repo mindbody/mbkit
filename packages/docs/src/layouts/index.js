@@ -8,7 +8,7 @@ import '@reach/skip-nav/styles.css';
 import { SideNav } from '../components/Nav/SideNav';
 import classnames from 'classnames';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
-import Footer from '../components/Footer/Footer';
+import { Text } from '@mbkit/typography';
 import { ThemeProvider } from '@mbkit/theme';
 
 const query = graphql`
@@ -154,7 +154,11 @@ const Layout = props => {
                             <Breadcrumbs isFullPage={fullPage} />
                             {props.children}
                         </main>
-                        <Footer />
+                        <footer className={styles.footer}>
+                            <Text size={6} color="meta">
+                                Copyright &copy; {new Date().getFullYear()} Mindbody, Inc.
+                            </Text>
+                        </footer>
                     </SkipNavContent>
                 </div>
             </ThemeProvider>

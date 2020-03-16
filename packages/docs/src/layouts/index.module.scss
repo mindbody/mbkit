@@ -174,3 +174,12 @@ table {
       }
   } 
 }
+
+.footer {
+  text-align: center;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0;
+  }
+}
