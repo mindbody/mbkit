@@ -1,33 +1,40 @@
 # Typography Usage
 
-## Text
+## Text Component
 
-Basic usage with size and descriptions of what they are typically used for.
+By default, the Text component is a paragraph tag, but the "size" prop allows you to change the size. 
+
+When you want to use a heading (h1, h2, h3, etc.), consider using the "Heading" component instead.
 
 ```tsx
-<>
-    <Text>By default this is a paragraph text and margin, but these props will allow you to make it look like anything you want. Note when you want to use a heading consider using the "Heading" component instead of trying to mock the size as you want your application to stay semantic.</Text>
-    
+<>  
     <Text size={1}>Size 1</Text>
     <Text size={2}>Size 2</Text>
     <Text size={3} bold as="span">Size 3</Text>
     <Text size={4}>Size 4</Text>
     <Text size={5}>Size 5</Text>
     <Text size={6}>Size 6</Text>
-    <Text size={7}>This is a "SubHeading" which often follows the h1 but the content is more informational than an actual header.</Text>
+    <Text size={7}>Size 7 can be a "sub-heading" for an h1.</Text>
     <Text>Size 8 is the default paragraph size and default "size" prop</Text>
-    <Text size={9}>This size is used for meta text. This can be a placeholder or error text. If you show this conditionally don't forget to add your aria labels! </Text>
-    <Text size={10}>This size is used in Tipsy's or Quicknotes for displaying simple help or directions</Text>
+    <Text size={9}>Size 9 is used for meta text. This can be a placeholder or error text. (If you show this conditionally, don't forget to add your aria labels!)</Text>
+    <Text size={10}>Size 10 is used in Tipsies or Quicknotes for displaying simple help or directions.</Text>
 </>
 ```
 
-Additionally, you can render any element you want using the "as" prop
+## Render "as"
+
+You can render the Text component as another HTML tag using the "as" prop.
 
 ```tsx
-<Text as="label" size={9} color="meta">This is a label now <br /><input defaultValue="Edit this text" /></Text>
+<Text as="label" size={9} color="meta">This is a label now 
+  <br />
+  <input defaultValue="Edit this text" />
+</Text>
 ```
 
-Or any brand color you want via a prop
+## Colored Text
+
+Apply branded colors to your text with the "color" prop.
 
 ```tsx
 <>
@@ -41,9 +48,9 @@ Or any brand color you want via a prop
 </>
 ```
 
-## Heading
+## Heading Component
 
-Basic usage
+Use the "as" prop to specify the semantic heading tag.
 
 ```tsx
 <>
@@ -56,16 +63,20 @@ Basic usage
 </>
 ```
 
-Need a h1 size but want to render an h6? Try using the "size" prop
+## Custom Heading Sizing
+
+Need h1 sizing but want to render h6? Try using the "size" prop.
 
 ```tsx
 <>
-    <Heading as="h6" size={1}>I look massive, but semantically I am as small as it gets</Heading>
-    <Heading as="h1" size={6}>I look tiny, but semantically I am the most important</Heading>
+    <Heading as="h6" size={1}>I'm a big h6</Heading>
+    <Heading as="h1" size={6}>I'm a small h1</Heading>
 </>
 ```
 
-Also has colors!
+## Colored Heading
+
+Apply branded colors to your heading with the "color" prop.
 
 ```tsx
 <>
@@ -81,10 +92,8 @@ Also has colors!
 
 ## Link
 
-Basic usage
-
 ```tsx
 <>
-    <Text style={{ margin: '1rem 0' }}>Try our <Link href="#!">available classes</Link> or read the <Link href="https://mindbody.io/blog" target="_blank">Enso blog</Link> for the future</Text>
+    <Text>Try our <Link href="https://mindbody.io">available classes</Link> or read the <Link href="https://mindbody.io/blog" target="_blank">Enso blog</Link> for the future</Text>
 </>
 ```
