@@ -1,6 +1,6 @@
 # Radio Usage
 
-## Examples of different states of the Radio component
+## Basic Usage
 
 Use the "checked" prop to display the checked value and the "onChange" prop to handle when the value changes. 
 
@@ -22,13 +22,13 @@ Use the "checked" prop to display the checked value and the "onChange" prop to h
 
 ## Accessibility
 
-There are a few ways to make your radio inputs accessible. 
+There are a couple ways to make your radio inputs accessible. 
 
 ### Using fieldset and legend
 
-The fieldset and legend will notify the user when focus enters a radio input and reads "Yoga, radio button, 1 of 3, Please select your favorite workout, group". 
+In the following example, the fieldset and legend will notify the screen reader when focus enters a radio input. 
 
-_Note that the fieldset and legend will apply styling your design may not call for. Keep reading for further examples._
+_Note: The fieldset and legend will apply styling your design may not call for, but this can be changed with CSS._
 
 ```tsx
 <> 
@@ -53,8 +53,6 @@ _Note that the fieldset and legend will apply styling your design may not call f
 ```
 
 ### Using aria attributes
-
-This will read identical to the fieldset and legend combination "Spring, radio button, 1 of 4, Please select your favorite season, group". 
 
 ```tsx
 <>
