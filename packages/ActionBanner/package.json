@@ -3,7 +3,6 @@
     "version": "1.1.5",
     "source": "src/index.tsx",
     "main": "dist/cjs/ActionBanner.js",
-    "jsnext:main": "dist/esm/ActionBanner.js",
     "module": "dist/esm/ActionBanner.js",
     "types": "dist/cjs/index.d.ts",
     "publishConfig": {
