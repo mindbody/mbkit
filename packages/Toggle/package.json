@@ -2,8 +2,9 @@
     "name": "@mbkit/toggle",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/Toggle.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/Toggle.js",
+    "module": "dist/esm/Toggle.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
