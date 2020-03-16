@@ -4,30 +4,31 @@ import theme from './base-theme.json';
 export type Theme = {
     name: string;
 
-    foreground: string;
-    background: string;
-    radius: string;
+    foreground?: string;
+    background?: string;
+    radius?: string;
 
-    neutral: ThemeColors;
-    primary: ThemeColors;
-    secondary: ThemeColors;
-    success: ThemeColors;
-    warning: ThemeColors;
-    error: ThemeColors;
+    neutral?: ThemeColors;
+    primary?: ThemeColors;
+    secondary?: ThemeColors;
+    success?: ThemeColors;
+    warning?: ThemeColors;
+    error?: ThemeColors;
 
     font: {
-        family: string;
+        family?: string;
         url?: string;
-        spec: {
+        spec?: {
             [key: string]: FontSizes;
         };
     };
 };
 
 export type FontSizes = {
-    size: string;
-    lineHeight: string;
+    size?: string;
+    lineHeight?: string;
     margin?: string;
+    usage?: string;
 };
 
 export type ThemeColors = {

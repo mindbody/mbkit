@@ -30,7 +30,6 @@ exports.onPreInit = () => {
         generateComponentsFile(components);
     });
 };
-
 /**
  * This fetches all design documentation stored in contentful and creates pages for each component
  */
@@ -62,13 +61,29 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
+
+            allContentfulHomePage {
+                edges {
+                    node {
+                        title
+                        bannerImage
+                        description {
+                            json
+                        }
+                        guides
+                        guideLinks
+                        guideImages
+                        guideDescription
+                    }
+                }
+            }
         }
     `).then(result => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
 
-        const { allContentfulPage, allContentfulComponent } = result.data;
+        const { allContentfulPage, allContentfulComponent, allContentfulHomePage } = result.data;
 
         // Get pages
         const pages = allContentfulPage.edges;
@@ -78,20 +93,28 @@ exports.createPages = ({ graphql, actions }) => {
         const components = allContentfulComponent.edges;
         generateComponents({ createPage, componentEdges: components });
 
+        // generate home page
+        const homePage = allContentfulHomePage.edges;
+        generateHomePage({ createPage, homePage });
+
         // Create landing page (kitchen sink?)
-        createPage({
-            path: '/components',
-            component: path.resolve('src/templates/component-landing.js'),
-            context: {
-                components,
-            },
-        });
+        // createPage({
+        //     path: '/components',
+        //     component: path.resolve('src/templates/component-landing.js'),
+        //     context: {
+        //         components,
+        //     },
+        // });
     });
 };
 
 const allPages = [];
 exports.onCreatePage = ({ page, actions }) => {
     console.log(page.path);
+    if (page.path.match('/404')) {
+        page.context.layout = 'fullPage';
+        actions.createPage(page);
+    }
     allPages.push({
         title: '',
         path: page.path,
@@ -229,4 +252,18 @@ function isComponent(componentTitle) {
         return true;
     }
     return false;
+}
+
+/**
+ * Home Page generator
+ */
+function generateHomePage({ homePage, createPage }) {
+    createPage({
+        path: '/',
+        component: path.resolve('src/templates/home-page.js'),
+        context: {
+            homePage: homePage[0].node,
+            layout: 'fullPage',
+        },
+    });
 }

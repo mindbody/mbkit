@@ -3,6 +3,96 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.4...@mbkit/select@1.2.5) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.3...@mbkit/select@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/mindbody/design-system/commit/d9522e0f1470800e3103793208e24a84739a5888))
+* **select:** removing reference to relative scss file ([1f32fa0](https://github.com/mindbody/design-system/commit/1f32fa0d5b0d5bdecc677832e68751a9741b6adc))
+
+
+
+
+
+## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.2...@mbkit/select@1.2.3) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+## [1.2.2](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.1...@mbkit/select@1.2.2) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.0...@mbkit/select@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.5...@mbkit/select@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **select:** consuming mbkit/theme ([a04dc1c](https://github.com/mindbody/design-system/commit/a04dc1c136a56b54acb5818ae244f16b4c7b999a))
+
+
+
+
+
+## [1.1.5](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.4...@mbkit/select@1.1.5) (2020-03-11)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+## [1.1.4](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.3...@mbkit/select@1.1.4) (2020-03-10)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.2...@mbkit/select@1.1.3) (2020-03-09)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
+## [1.1.2](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.1...@mbkit/select@1.1.2) (2020-03-06)
+
+
+### Bug Fixes
+
+* replaced local yalc version of checkbox with published version ([680c342](https://github.com/mindbody/design-system/commit/680c34272f3eb1aa086644e8b3d89ab140cb0032))
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/select@1.1.0...@mbkit/select@1.1.1) (2020-02-20)
 
 

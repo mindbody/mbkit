@@ -1,0 +1,40 @@
+@mixin svgTargetFill() {
+    g:not([fill~="#"]),
+    path:not([fill~="#"]),
+    use:not([fill~="#"]) { 
+        @content;
+    }
+}
+
+.primaryColor {
+    @include svgTargetFill {
+        fill: var(--primary-1, #993100);
+    }
+}
+.infoColor {
+    @include svgTargetFill {
+        fill: var(--secondary-1, #004C57);
+    }
+
+}
+.successColor {
+    @include svgTargetFill {
+        fill: var(--success-1, #00592E);
+    }
+
+}
+.warningColor {
+    @include svgTargetFill {
+        fill: var(--warning-1, #8C6600);
+    }
+}
+.errorColor {
+    @include svgTargetFill {
+        fill: var(--error-1, #992D38);
+    }
+}
+.metaColor {
+    @include svgTargetFill {
+        fill: var(--neutral-2, #5A5E66);
+    }
+}

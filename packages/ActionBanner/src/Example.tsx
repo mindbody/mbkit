@@ -15,7 +15,7 @@ export const ActionBannerExample = () => {
                 </svg>
                 This is an error banner
             </ActionBanner>
-            <p>Content Below the banner should get pushed down</p>
+            <p>Content below the banner should get pushed down</p>
         </>
     );
 };

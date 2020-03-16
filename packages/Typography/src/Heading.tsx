@@ -30,3 +30,4 @@ export const Heading: FC<HeadingProps> = forwardRef((props: HeadingProps, ref: R
 
     return <Component {...rest} className={classNames} ref={ref} />;
 });
+Heading.displayName = 'Heading';

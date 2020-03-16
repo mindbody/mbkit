@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.4...@mbkit/toaster@1.2.5) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.3...@mbkit/toaster@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **toaster:** removing reference to relative scss file ([ddf6443](https://github.com/mindbody/design-system/commit/ddf6443c747d114d0fc65807ffb26a0d71c93f8e))
+
+
+
+
+
+## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.2...@mbkit/toaster@1.2.3) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
+## [1.2.2](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.1...@mbkit/toaster@1.2.2) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.0...@mbkit/toaster@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.1.3...@mbkit/toaster@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **toaster:** consuming mbkit/theme ([0431a8d](https://github.com/mindbody/design-system/commit/0431a8d5917d821e1de927e8a92eea7334923165))
+
+
+
+
+
+## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.1.2...@mbkit/toaster@1.1.3) (2020-03-11)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
+## [1.1.2](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.1.1...@mbkit/toaster@1.1.2) (2020-03-10)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.1.0...@mbkit/toaster@1.1.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/toaster

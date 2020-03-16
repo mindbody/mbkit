@@ -3,7 +3,7 @@ import ReactCalendar, { CalendarProps, CalendarTileProperties } from 'react-cale
 import classnames from 'classnames';
 import styles from './Calendar.scss';
 
-export type ICalendarProps = CalendarProps & AllHTMLAttributes<HTMLElement> & {};
+export type ICalendarProps = CalendarProps & AllHTMLAttributes<HTMLElement>;
 
 const ChevronRight = () => (
     <svg width="24" height="24" viewBox="0 0 32 32">

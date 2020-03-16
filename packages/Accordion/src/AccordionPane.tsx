@@ -19,9 +19,9 @@ export type AccordionPaneProps = AllHTMLAttributes<HTMLDivElement> &
     };
 
 export const AccordionPane: FC<AccordionPaneProps> = forwardRef((props: AccordionPaneProps, ref) => {
-    const { as = 'div' as any, children, style, className = '', ...rest } = props;
+    const { as = 'div', children, style, className = '', ...rest } = props;
     const { id, isExpanded } = useContext(AccordionItemContext);
-    const Component = as;
+    const Component: any = as;
 
     const innerRef = useRef<HTMLDivElement>(null);
     const [internalExpanded, setInternalExpanded] = useState(isExpanded);

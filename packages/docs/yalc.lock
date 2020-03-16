@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@mindbody/icon": {
+      "signature": "3c2ae1a317d95538078ad41c903d8ea8",
+      "file": true
+    }
+  }
+}

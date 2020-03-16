@@ -6,7 +6,9 @@ import styles from './Toaster.scss';
 
 export type ToasterProps = AllHTMLAttributes<HTMLDivElement> &
     AlertProps & {
+        /** Determines whether the toaster should be displayed or not */
         show: boolean;
+        /** Optional icon. By default it uses success icon */
         icon?: ReactNode;
     };
 // TODO import and replace once icons are published

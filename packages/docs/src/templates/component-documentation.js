@@ -1,9 +1,7 @@
 import React from 'react';
-import MarkdownWithOverrides from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
+import MarkdownWithOverrides, { EditorOnly } from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
 import components from '../../generated/components.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import vsDark from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
 import SEO from '../components/seo';
 import Component from '@reach/component-component';
 const docsToMarkdown = require('react-docs-markdown');
@@ -64,7 +62,16 @@ const ComponentDocumentation = props => {
                 const componentName = splitPath[splitPath.length - 1].replace('.tsx', '');
                 return componentName === name;
             });
-            const docs = allDocs[foundDocumentation];
+            const docs = allDocs[foundDocumentation].find(doc => doc.displayName === name);
+
+            const docsParsed = docsToMarkdown(docs)
+                .replace(/&#124;/g, '&separator;')
+                .replace(/&#91;/g, '&openbracket;')
+                .replace(/&#93;/g, '&closebracket;');
+
+            if (docsParsed.includes('No props')) {
+                return null;
+            }
 
             return (
                 <MarkdownJsx
@@ -72,7 +79,7 @@ const ComponentDocumentation = props => {
                         h2: () => <h3>{name} Props</h3>,
                     }}
                 >
-                    {docsToMarkdown(docs)}
+                    {docsParsed}
                 </MarkdownJsx>
             );
         } catch (e) {
@@ -110,16 +117,12 @@ const ComponentDocumentation = props => {
             />
             <h1>{componentName}</h1>
 
-            <h2>Documentation</h2>
             {documentToReactComponents(designDocs)}
 
-            <h3>Implementation Details</h3>
+            <h2>Implementation Details</h2>
 
             <p>
-                <a
-                    href={`https://github.com/mindbody/design-system/tree/master/packages/${componentName}`}
-                    target="_blank"
-                >
+                <a href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`} target="_blank">
                     Version {pkgJson.version} on GitHub
                 </a>
             </p>
@@ -143,9 +146,7 @@ const ComponentDocumentation = props => {
             ))}
 
             {!tooManyExports && (
-                <SyntaxHighlighter language="jsx" style={vsDark}>
-                    {`import ${componentImportStatements} from "${pkgJson.name}"`}
-                </SyntaxHighlighter>
+                <EditorOnly>{`import ${componentImportStatements} from "${pkgJson.name}";`}</EditorOnly>
             )}
 
             <MarkdownJsx>{devDocs}</MarkdownJsx>

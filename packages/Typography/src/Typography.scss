@@ -1,10 +1,7 @@
-$secondary-1: var(--secondary-1, #004C57);
-$neutral-2: var(--neutral-2, #5A5E66);
-$radius: var(--radius, 3px);
-$error-2: var(--error-2, #BD3845);
+@import '~@mbkit/theme/dist/theme.scss';
 
 @mixin get-font-spec($spec, $defaultSize, $defaultLineHeight) {
-    font-family: var(--font-family, 'Lato');
+    font-family: $font-family;
     font-size: var(--font-spec-#{$spec}-size, $defaultSize); 
     line-height: var(--font-spec-#{$spec}-lineHeight, $defaultLineHeight);
     margin: 0;
@@ -54,25 +51,25 @@ $error-2: var(--error-2, #BD3845);
 }
 
 .defaultColor {
-    color: var(--foreground, #0B0B0D);
+    color: $foreground;
 }
 .primaryColor {
-    color: var(--primary-1, #993100);
+    color: $primary-1;
 }
 .infoColor {
-    color: var(--secondary-1, #004C57);
+    color: $secondary-1;
 }
 .successColor {
-    color: var(--success-1, #00592E);
+    color: $success-1;
 }
 .warningColor {
-    color: var(--warning-1, #8C6600);
+    color: $warning-1;
 }
 .errorColor {
-    color: var(--error-1, #992D38);
+    color: $error-1;
 }
 .metaColor {
-    color: var(--neutral-2, #5A5E66);
+    color: $neutral-2;
 }
 
 .link {
@@ -93,6 +90,6 @@ $error-2: var(--error-2, #BD3845);
         color: $error-2;
     }
     &:focus {
-        box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+        box-shadow: 0 0 0 4px $focus;
     }
 }

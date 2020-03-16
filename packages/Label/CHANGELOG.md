@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.4...@mbkit/label@1.2.5) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.3...@mbkit/label@1.2.4) (2020-03-13)
+
+
+### Bug Fixes
+
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/mindbody/design-system/commit/d9522e0f1470800e3103793208e24a84739a5888))
+
+
+
+
+
+## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.2...@mbkit/label@1.2.3) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
+## [1.2.2](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.1...@mbkit/label@1.2.2) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
+## [1.2.1](https://github.com/mindbody/design-system/compare/@mbkit/label@1.2.0...@mbkit/label@1.2.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/label@1.1.3...@mbkit/label@1.2.0) (2020-03-11)
+
+
+### Features
+
+* **label:** consuming mbkit/label ([d9f63c2](https://github.com/mindbody/design-system/commit/d9f63c2d3539fbe84fe3e3dab388e0c9f6b0aa52))
+
+
+
+
+
+## [1.1.3](https://github.com/mindbody/design-system/compare/@mbkit/label@1.1.2...@mbkit/label@1.1.3) (2020-03-11)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
+## [1.1.2](https://github.com/mindbody/design-system/compare/@mbkit/label@1.1.1...@mbkit/label@1.1.2) (2020-03-10)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
 ## [1.1.1](https://github.com/mindbody/design-system/compare/@mbkit/label@1.1.0...@mbkit/label@1.1.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/label

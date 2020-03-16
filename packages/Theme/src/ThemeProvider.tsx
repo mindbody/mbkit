@@ -22,3 +22,4 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = (props: ThemeProvider
         </ThemeContext.Provider>
     );
 };
+ThemeProvider.displayName = 'ThemeProvider';

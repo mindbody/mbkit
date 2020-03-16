@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.5.0...@mbkit/docs@0.5.1) (2020-03-13)
+
+**Note:** Version bump only for package @mbkit/docs
+
+
+
+
+
+# [0.5.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.4.2...@mbkit/docs@0.5.0) (2020-03-13)
+
+
+### Bug Fixes
+
+* **docs:** adjusted mobile nav styling ([9479783](https://github.com/gatsbyjs/gatsby-starter-default/commit/94797839cdd143c1b478b9c360a155d06ad71ab1))
+* **docs:** fixed sidenav in firefox ([3862027](https://github.com/gatsbyjs/gatsby-starter-default/commit/386202724d7e1ed3063713405220727e76b574c2))
+* **docs:** made nav line up with backpages width ([0f3aee5](https://github.com/gatsbyjs/gatsby-starter-default/commit/0f3aee507d759384ecc560714fe679f40c4ee5f7))
+* **docs:** minor style tweaks and updated copy in component docs ([d9522e0](https://github.com/gatsbyjs/gatsby-starter-default/commit/d9522e0f1470800e3103793208e24a84739a5888))
+* **docs:** removed dynamic height from content cards ([1690502](https://github.com/gatsbyjs/gatsby-starter-default/commit/1690502934b89f5c4a13dbb296d6f51bd71add76))
+* **docs:** tweaked outline behavior for focus ([a50f115](https://github.com/gatsbyjs/gatsby-starter-default/commit/a50f1158b1523845faaab9909d7e4df209366714))
+* **docs:** updated box-shadows of containers ([b4de76b](https://github.com/gatsbyjs/gatsby-starter-default/commit/b4de76b748693ffee01c59351adb8b5db55f594a))
+* **docs:** updated button with toggle ([49da2f7](https://github.com/gatsbyjs/gatsby-starter-default/commit/49da2f7af9a371472d8534588a6bfc5fb771024b))
+* **docs:** updated full page max-width ([b49647c](https://github.com/gatsbyjs/gatsby-starter-default/commit/b49647c45528d77d4b366de108f7934cf5cea081))
+* **docs:** updated imports after merging from master ([c3a0416](https://github.com/gatsbyjs/gatsby-starter-default/commit/c3a0416700444161e8c8656258ef2d2db2241bec))
+
+
+### Features
+
+* **docs:** added accordion to sidenav on desktop ([b66f36d](https://github.com/gatsbyjs/gatsby-starter-default/commit/b66f36db17b50c26004d9a7d788cce6c10827ad1))
+* **docs:** added Github link ([4ec4366](https://github.com/gatsbyjs/gatsby-starter-default/commit/4ec4366f7f3e5c2b1137c3ec61c84509f8dffcd6))
+* **docs:** adjusted overflow so layout doesn't break on medium size screens ([aa3bad0](https://github.com/gatsbyjs/gatsby-starter-default/commit/aa3bad05da5bf4abacfd06fb3ac8bb87d6614112))
+* **docs:** built out mobile navigation ([ccd9977](https://github.com/gatsbyjs/gatsby-starter-default/commit/ccd9977a6d36ec11e189276833836e7c05df85db))
+* **docs:** can now use multiple environments dev and master ([0541470](https://github.com/gatsbyjs/gatsby-starter-default/commit/0541470681f2ade0fb32758c5e76d993a7d14259))
+* **docs:** made menu size smaller ([d8df130](https://github.com/gatsbyjs/gatsby-starter-default/commit/d8df130d9257a9d7cbc20d8b55362a15db135728))
+* **docs:** moved components back into flat nav structure ([600379a](https://github.com/gatsbyjs/gatsby-starter-default/commit/600379a4f1c8391e6e5dd88d11f3c2d5bce2ff14))
+* **docs:** organizing components by atomic designation ([36fa099](https://github.com/gatsbyjs/gatsby-starter-default/commit/36fa0995dfbda1c6d129c981062fd2fcd8290115))
+* **docs:** started styling docs to look like website ([2394807](https://github.com/gatsbyjs/gatsby-starter-default/commit/23948078087bb90fafc3969e36dff7a6019a3a9d))
+* **docs:** styled home page ([9bbdf42](https://github.com/gatsbyjs/gatsby-starter-default/commit/9bbdf42e18eb805b787795e575bab362ee98d4b5))
+* **docs:** tweaked a few styles and interactions ([9786596](https://github.com/gatsbyjs/gatsby-starter-default/commit/9786596a71b2766e6d37f652557bb8dd674bac5f))
+* **docs:** tweaked code preview to use one highlighter instead of two ([b9c1db1](https://github.com/gatsbyjs/gatsby-starter-default/commit/b9c1db1ff1364d455dc70055bf7204d27b34fb6d))
+* **docs:** updated how we show breadcrumbs or not ([d277f70](https://github.com/gatsbyjs/gatsby-starter-default/commit/d277f7018d5305e3c2ac40c2ff6d00e14632077d))
+* **docs:** updated sidenav active styles ([3ddd1e2](https://github.com/gatsbyjs/gatsby-starter-default/commit/3ddd1e2ee32ad5c06717e5fd65cb2147b16d087f))
+* **docs:** using theme provider around site ([19a62e1](https://github.com/gatsbyjs/gatsby-starter-default/commit/19a62e14ddd9284112984eab00cf357d3edc5afd))
+
+
+
+
+
+## [0.4.2](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.4.1...@mbkit/docs@0.4.2) (2020-03-12)
+
+
+### Bug Fixes
+
+* **docs:** fixed unicode issues in props being displayed ([de8b245](https://github.com/gatsbyjs/gatsby-starter-default/commit/de8b245465aa3e776289a274bf42af97be40aa4b))
+
+
+
+
+
 ## [0.4.1](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.4.0...@mbkit/docs@0.4.1) (2020-02-20)
 
 **Note:** Version bump only for package @mbkit/docs

@@ -1,15 +1,15 @@
 {
     "name": "mindbody",
-    "foreground": "#0B0B0D",
+    "foreground": "#2D2D2D",
     "background": "#ffffff",
     "radius": "3px",
     "neutral": {
-      "1": "#0B0B0D",
-      "2": "#5A5E66",
-      "3": "#8F96A1",
-      "4": "#CBD0D7",
-      "5": "#EAEDF1",
-      "6": "#F8F9FB",
+      "1": "#2D2D2D",
+      "2": "#696C74",
+      "3": "#A0A5AB",
+      "4": "#D5D9DE",
+      "5": "#EFF1F3",
+      "6": "#F8F9FA",
       "7": "#ffffff"
     },
     "primary": {
@@ -18,24 +18,24 @@
       "3": "#FFEEE6"
     },
     "secondary": {
-      "1": "#004C57",
-      "2": "#007485",
+      "1": "#005D6B",
+      "2": "#0A7C8E",
       "3": "#E5F2F4"
     },
     "success": {
-      "1": "#00592E",
-      "2": "#007A3F",
-      "3": "#E5F3EC"
+      "1": "#2F7052",
+      "2": "#4BC58E",
+      "3": "#E5F7ED"
     },
     "warning": {
-      "1": "#8C6600",
-      "2": "#FFD73D",
-      "3": "#FFFBEB"
+      "1": "#8F6600",
+      "2": "#FFD64F",
+      "3": "#FFF3CC"
     },
     "error": {
       "1": "#992D38",
-      "2": "#BD3845",
-      "3": "#FAEBED"
+      "2": "#CE3D4B",
+      "3": "#FAE9EB"
     },
     "focus": "#6096e6bf",
     "font": {
@@ -43,51 +43,61 @@
       "url": "'https://fonts.googleapis.com/css?family=Lato:300,400,700'",
       "spec": {
         "1": {
+          "usage": "'Heading 1'",
           "size": "2.5rem",
           "lineHeight": "3rem",
           "margin": "1rem 0"
         },
         "2": {
+          "usage": "'Heading 2'",
           "size": "2rem",
           "lineHeight": "3rem",
           "margin": "1rem 0"
         },
         "3": {
+          "usage": "'Heading 3'",
           "size": "1.5rem",
           "lineHeight": "2rem",
           "margin": "1rem 0"
         },
         "4": {
+          "usage": "'Heading 4'",
           "size": "1.25rem",
           "lineHeight": "1.5rem",
           "margin": "1rem 0"
         },
         "5": {
+          "usage": "'Heading 5'",
           "size": "1rem",
           "lineHeight": "1.5rem",
           "margin": "1rem 0"
         },
         "6": {
+          "usage": "'Heading 6'",
           "size": ".75rem",
           "lineHeight": "1rem",
           "margin": "1rem 0"
         },
         "7": {
+          "usage": "'Default page text'",
           "size": "1rem",
           "lineHeight": "1.5rem",
           "margin": "1rem 0"
         },
         "8": {
+          "usage": "'Meta text - labels, placeholders, errors'",
           "size": ".75rem",
           "lineHeight": "1.125rem",
           "margin": ".25rem 0"
         },
         "9": {
+          "usage": "'Subhead'",
           "size": "1.25rem",
           "lineHeight": "2rem",
           "margin": "1rem 0"
         },
         "10": {
+          "usage": "'Tool tips, Table headings'",
           "size": ".6875rem",
           "lineHeight": "1rem"
         }

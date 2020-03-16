@@ -4,8 +4,11 @@ import styles from './Toggle.scss';
 
 export type ToggleProps = AllHTMLAttributes<HTMLInputElement> &
     RefAttributes<HTMLInputElement> & {
+        /** Determines whether the toggle is toggled */
         checked: boolean;
+        /** Fires when user presses the toggle */
         onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+        /** Changes the size of the toggle input */
         size?: 1 | 2;
     };
 export const Toggle: FC<ToggleProps> = forwardRef((props: ToggleProps, ref: RefObject<HTMLInputElement>) => {
