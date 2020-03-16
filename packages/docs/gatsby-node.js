@@ -24,7 +24,7 @@ exports.onPreInit = () => {
         }
 
         entries.forEach(entry => {
-            components[entry] = `../../${entry}/dist/${entry}.js`;
+            components[entry] = `../../${entry}/dist/cjs/${entry}.js`;
         });
 
         generateComponentsFile(components);
