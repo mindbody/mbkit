@@ -2,6 +2,7 @@ import React from 'react';
 import MarkdownWithOverrides, { EditorOnly } from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
 import components from '../../generated/components.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { tableContainer } from '../layouts/index.module.scss';
 import SEO from '../components/seo';
 import Component from '@reach/component-component';
 const docsToMarkdown = require('react-docs-markdown');
@@ -79,7 +80,7 @@ const ComponentDocumentation = props => {
                         h2: () => <h3>{name} Props</h3>,
                     }}
                 >
-                    <div styles={{ overflow: 'scroll' }}>{docsParsed}</div>
+                    <div className={tableContainer}>{docsParsed}</div>
                 </MarkdownJsx>
             );
         } catch (e) {
