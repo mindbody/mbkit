@@ -2,8 +2,9 @@
     "name": "@mbkit/select",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/Select.js",
-    "types": "dist/Select/src/index.d.ts",
+    "main": "dist/cjs/Select.js",
+    "module": "dist/esm/Select.js",
+    "types": "dist/cjs/Select/src/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
