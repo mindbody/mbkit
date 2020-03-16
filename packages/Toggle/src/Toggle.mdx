@@ -1,30 +1,36 @@
 # Toggle Usage
 
-Treat the Toggle component as you would a checkbox as that's what it is under the hood. 
+## Basic Usage
+
+Under the hood, Toggle is a checkbox. 
 
 ```tsx
 <>
     <Toggle checked={false} onChange={() => {}} />
     <Toggle checked={false} onChange={() => {}} size={2} />
+
     <br />
+    
     <Toggle checked onChange={() => {}} />
     <Toggle checked onChange={() => {}} size={2} />
 </>
 ```
 
-Disabled states
+## Disabled State
 
 ```tsx
 <>
     <Toggle disabled onChange={() => {}} />
     <Toggle disabled onChange={() => {}} size={2} />
+
     <br />
+    
     <Toggle disabled checked onChange={() => {}} />
     <Toggle disabled checked onChange={() => {}} size={2} />
 </>
 ```
 
-Using a label with the Toggle
+## Label with Toggle
 
 ```tsx
 <>
