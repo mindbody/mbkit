@@ -2,8 +2,9 @@
     "name": "@mbkit/theme",
     "version": "1.2.7",
     "source": "src/index.tsx",
-    "main": "dist/Theme.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/Theme.js",
+    "module": "dist/esm/Theme.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
