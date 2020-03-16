@@ -2,8 +2,9 @@
     "name": "@mbkit/textarea",
     "version": "1.2.5",
     "source": "src/index.tsx",
-    "main": "dist/Textarea.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/cjs/Textarea.js",
+    "module": "dist/esm/Textarea.js",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
