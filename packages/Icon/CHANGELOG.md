@@ -3,12 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.3.1](https://github.com/mindbody/mbkit/compare/@mbkit/icon@1.3.0...@mbkit/icon@1.3.1) (2020-03-17)
+## [1.3.1](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.3.0...@mbkit/icon@1.3.1) (2020-03-17)
 
 
 ### Bug Fixes
 
-* **icon:** fixed issue with spreading props on icon ([6d4bb64](https://github.com/mindbody/mbkit/commit/6d4bb648b8eb197ef6f2be2c33d010a51b44d256))
+* **icon:** fixed issue with spreading props on icon ([6d4bb64](https://github.com/mindbody/design-system/commit/6d4bb648b8eb197ef6f2be2c33d010a51b44d256))
 
 
 

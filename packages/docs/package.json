@@ -2,7 +2,7 @@
   "name": "@mbkit/docs",
   "private": true,
   "description": "Design system documentation for MINDBODY",
-  "version": "0.7.0",
+  "version": "0.6.1",
   "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
   "scripts": {
     "clone:env:file": "yarn copyfiles ../../.env ./docs/.env",
