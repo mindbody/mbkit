@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.2.5...@mbkit/modal@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **modal:** updated to ship cjs and esm packages ([2d3d17e](https://github.com/mindbody/design-system/commit/2d3d17e1c30e4850396f9475b9fe8a500191f324))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.2.4...@mbkit/modal@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/modal

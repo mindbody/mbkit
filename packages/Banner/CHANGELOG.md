@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.2.5...@mbkit/banner@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **banner:** updated support to ship commonjs and esmodules ([89523bb](https://github.com/mindbody/design-system/commit/89523bb7dd356e7a89c76ada09ea130c60c06988))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.2.4...@mbkit/banner@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/banner

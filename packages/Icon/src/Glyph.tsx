@@ -5,12 +5,12 @@ import styles from './Icon.scss';
 
 type ColorOptions = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'meta';
 
-type BaseGlyphProps = AllHTMLAttributes<SVGSVGElement> & {
+type BaseGlyphProps = AllHTMLAttributes<any> & {
     children: ({ id }: { id: string }) => React.ReactNode;
     color?: ColorOptions;
-    forwardedRef: RefObject<SVGSVGElement>;
+    forwardedRef: RefObject<any>;
 };
-type GlyphProps = AllHTMLAttributes<SVGSVGElement> & {
+type GlyphProps = AllHTMLAttributes<any> & {
     /** Sets the color of the glyph */
     color?: ColorOptions;
 };
@@ -22,10 +22,18 @@ const BaseGlyph: React.FC<BaseGlyphProps> = (props: BaseGlyphProps) => {
         [className]: className,
     });
     const id: string = nanoid();
+    const Component: any = 'svg';
     return (
-        <svg {...rest} width={width} height={height} viewBox="0 0 16 16" className={classNames} ref={forwardedRef}>
+        <Component
+            {...rest}
+            width={width}
+            height={height}
+            viewBox="0 0 16 16"
+            className={classNames}
+            ref={forwardedRef}
+        >
             {children({ id })}
-        </svg>
+        </Component>
     );
 };
 

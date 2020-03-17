@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.2.5...@mbkit/textarea@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **textarea:** updated package to publish esm and cjs ([1c366d9](https://github.com/mindbody/design-system/commit/1c366d989efb655adb5171f35cfb1596a1856e30))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.2.4...@mbkit/textarea@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/textarea

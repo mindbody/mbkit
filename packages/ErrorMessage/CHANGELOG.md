@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/error-message@1.2.5...@mbkit/error-message@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **error-message:** package now publishes cjs and esm ([4f9b589](https://github.com/mindbody/design-system/commit/4f9b589453595de1368fc335bb0b31f83b3eace2))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/error-message@1.2.4...@mbkit/error-message@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/error-message

@@ -7,12 +7,19 @@ import autoprefixer from 'autoprefixer';
 const consumerPath = process.cwd();
 const pkg = require(`${consumerPath}/package.json`);
 
+const cjs = pkg.main;
+const esm = pkg.module;
+
 export default {
     input: pkg.source,
     output: [
         {
-            file: `${consumerPath}/${pkg.main}`,
+            file: `${consumerPath}/${esm}`,
             format: 'esm',
+        },
+        {
+            file: `${consumerPath}/${cjs}`,
+            format: 'cjs',
         },
     ],
     external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
@@ -34,6 +41,7 @@ export default {
             tsconfig: `${consumerPath}/tsconfig.json`,
             tsconfigOverride: {
                 compilerOptions: {
+                    declarationDir: `${consumerPath}/dist/types`,
                     typeRoots: [`node_modules/@types`, `${__dirname}/../../typings`],
                 },
             },

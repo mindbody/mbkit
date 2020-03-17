@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.2.5...@mbkit/checkbox@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **checkbox:** updated package to publish cjs and esm ([a52ccbf](https://github.com/mindbody/design-system/commit/a52ccbf7331767a4a823be0dff8946f11c47bcd8))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.2.4...@mbkit/checkbox@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/checkbox

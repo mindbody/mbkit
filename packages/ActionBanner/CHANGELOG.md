@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.1.5...@mbkit/action-banner@1.2.0) (2020-03-16)
+
+
+### Features
+
+* example on updates needed to publish commonjs ([c6308a2](https://github.com/mindbody/design-system/commit/c6308a203b0a27bf940149fa12cbcbe0bc1a3c23))
+
+
+
+
+
 ## [1.1.5](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.1.4...@mbkit/action-banner@1.1.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/action-banner

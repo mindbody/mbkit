@@ -4,10 +4,7 @@ import { AccordionItemContext } from './AccordionItem';
 import { AccordionContext, noop } from './Accordion';
 import styles from './Accordion.scss';
 
-export type AccordionHeaderProps = AllHTMLAttributes<HTMLDivElement> & HTMLProps<HTMLDivElement>;
-
-// TODO replace with icon once they are published
-const ChevronForward = (props: any) => (
+const IconChevronForward = (props: any) => (
     <svg width="18" height="18" viewBox="0 0 32 32" {...props}>
         <g
             id="Icons/UI/Chevron-forward-KR-umQ91SWjw4A2_TX36T"
@@ -24,6 +21,8 @@ const ChevronForward = (props: any) => (
         </g>
     </svg>
 );
+
+export type AccordionHeaderProps = AllHTMLAttributes<HTMLDivElement> & HTMLProps<HTMLDivElement>;
 
 export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: AccordionHeaderProps, ref) => {
     const { children, onKeyDown, onClick = noop, ...rest } = props;
@@ -105,7 +104,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
             data-accordion-header={accordionId}
             className={headerClassNames}
         >
-            <ChevronForward className={chevronClassNames} aria-hidden="true" /> {children}
+            <IconChevronForward width="18" height="18" className={chevronClassNames} aria-hidden="true" /> {children}
         </div>
     );
 });
