@@ -22,7 +22,7 @@ export type AccordionContextValue = {
     accordionId: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export const noop = (args: any) => {};
 
 export const AccordionContext = createContext<AccordionContextValue>({
