@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/mindbody/mbkit/compare/@mbkit/accordion@1.4.0...@mbkit/accordion@1.4.1) (2020-03-17)
+
+
+### Bug Fixes
+
+* **accordion:** fixed types location ([e224aff](https://github.com/mindbody/mbkit/commit/e224aff0e5329a11ea14248a1309bf0275bc208e))
+
+
+
+
+
 # [1.4.0](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.3.5...@mbkit/accordion@1.4.0) (2020-03-16)
 
 
