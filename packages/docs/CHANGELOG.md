@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.6.1...@mbkit/docs@0.7.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **docs:** added map key to home page ([bf4c624](https://github.com/gatsbyjs/gatsby-starter-default/commit/bf4c624fabab10148d8367aa5ac81a801f15e316))
+* **docs:** added scroll to props table ([39c3c84](https://github.com/gatsbyjs/gatsby-starter-default/commit/39c3c845625232ec7a4543cbe073dd1aa72fb694))
+* **docs:** fixed live editor wrapper style bug ([2b1aec2](https://github.com/gatsbyjs/gatsby-starter-default/commit/2b1aec276fee15c19b071b3e70057df3352d75bf))
+* **docs:** updated social share meta info ([f0ae370](https://github.com/gatsbyjs/gatsby-starter-default/commit/f0ae37096be7060512b4ffad933dccc40311fe2c))
+
+
+### Features
+
+* **docs:** added Footer component ([b384b75](https://github.com/gatsbyjs/gatsby-starter-default/commit/b384b75072191f7f312acc10fd71c0b5c9db791c))
+* **docs:** added social card image and minor tweaks ([3afcd42](https://github.com/gatsbyjs/gatsby-starter-default/commit/3afcd42a1743930308b91897e7875cb2ed4c701c))
+
+
+
+
+
 ## [0.6.1](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.6.0...@mbkit/docs@0.6.1) (2020-03-17)
 
 **Note:** Version bump only for package @mbkit/docs
