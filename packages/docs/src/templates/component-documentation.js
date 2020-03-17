@@ -78,6 +78,11 @@ const ComponentDocumentation = props => {
                 <MarkdownJsx
                     overrides={{
                         h2: () => <h3>{name} Props</h3>,
+                        table: props => (
+                            <div styles={{ overflowX: 'scroll' }}>
+                                <table {...props} />
+                            </div>
+                        ),
                     }}
                 >
                     {docsParsed}
