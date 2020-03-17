@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/checkbox",
-    "version": "1.3.1",
+    "version": "1.3.2",
     "source": "src/index.tsx",
     "main": "dist/cjs/Checkbox.js",
     "module": "dist/esm/Checkbox.js",
@@ -22,7 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^1.3.1",
+        "@mbkit/theme": "^1.3.2",
         "classnames": "^2.2.6"
     }
 }

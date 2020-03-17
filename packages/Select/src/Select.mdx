@@ -1,9 +1,12 @@
 # Select Usage
 
-Implicit vs Explicit labeling. Both examples are semantic HTML and will be picked up by a screen reader.  
+## Implicit vs Explicit Labeling 
+
+Both examples are semantic HTML and will be read by a screen reader.  
 
 ```tsx
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16, }}>
+    
     {/* Implicit label */}
     <label>Select your favorite fruit
         <Select value="Apple" onChange={(e) => console.log(e.target.value)}>
@@ -12,6 +15,7 @@ Implicit vs Explicit labeling. Both examples are semantic HTML and will be picke
             <option value="Orange">Orange</option>
         </Select>
     </label>
+    
     <div>
         {/* Explicit label */}
         <label id="fav-fruit-label" htmlFor="fav-fruit">Select your favorite fruit</label>
@@ -24,10 +28,11 @@ Implicit vs Explicit labeling. Both examples are semantic HTML and will be picke
 </div>
 ```
 
-Other states of the select dropdown
+## Invalid and Disabled States
 
 ```tsx
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16, }}>
+    
     <label>Select your favorite fruit
         <Select value="Orange" onChange={(e) => console.log(e.target.value)} invalid>
             <option value="Apple">Apple</option>
@@ -35,6 +40,7 @@ Other states of the select dropdown
             <option value="Orange">Orange</option>
         </Select>
     </label>
+    
     <label>Select your favorite fruit
         <Select value="Orange" onChange={(e) => console.log(e.target.value)} disabled>
             <option value="Apple">Apple</option>
@@ -45,7 +51,7 @@ Other states of the select dropdown
 </div>
 ```
 
-## MultiSelect
+## MultiSelect Dropdown
 
 ```tsx
 <>
@@ -77,5 +83,3 @@ Other states of the select dropdown
     </Component>
 </>
 ```
-
-This is some text below just for demo's purposes. It should not be effected by the dropdown above

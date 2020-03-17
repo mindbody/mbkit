@@ -2,6 +2,7 @@ import React from 'react';
 import MarkdownWithOverrides, { EditorOnly } from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
 import components from '../../generated/components.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { tableContainer } from '../layouts/index.module.scss';
 import SEO from '../components/seo';
 import Component from '@reach/component-component';
 const docsToMarkdown = require('react-docs-markdown');
@@ -12,7 +13,7 @@ const defaultOverrides = {
     h3: props => <h4 {...props} />,
     h4: props => <h5 {...props} />,
     h5: props => <h6 {...props} />,
-    a: props => <a {...props} target="_blank" />,
+    a: props => <a {...props} target="_blank" rel="noopener noreferrer" />,
     Component: props => <Component {...props} />,
 };
 
@@ -77,6 +78,11 @@ const ComponentDocumentation = props => {
                 <MarkdownJsx
                     overrides={{
                         h2: () => <h3>{name} Props</h3>,
+                        table: props => (
+                            <div style={{ overflowX: 'scroll' }}>
+                                <table {...props} />
+                            </div>
+                        ),
                     }}
                 >
                     {docsParsed}
@@ -122,7 +128,11 @@ const ComponentDocumentation = props => {
             <h2>Implementation Details</h2>
 
             <p>
-                <a href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`} target="_blank">
+                <a
+                    href={`https://github.com/mindbody/mbkit/tree/master/packages/${componentName}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Version {pkgJson.version} on GitHub
                 </a>
             </p>
@@ -135,6 +145,7 @@ const ComponentDocumentation = props => {
                                 component.name
                             }.tsx`}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             View line by line code coverage for {component.name}
                         </a>

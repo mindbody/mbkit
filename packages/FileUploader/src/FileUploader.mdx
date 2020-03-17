@@ -1,6 +1,10 @@
 # FileUploader Usage
 
-Basic use case of single file uploader. Use a label for accessibility, examples after the first do not include a label for brevity. 
+## Basic Usage
+
+FileUploader supports single file uploads by default. 
+
+*Note: Please use labels with FileUploader for proper accessibility. For demo purposes, only the first example includes a label.*
 
 ```tsx
 <>
@@ -17,7 +21,9 @@ Basic use case of single file uploader. Use a label for accessibility, examples 
 </>
 ```
 
-Basic use case of multiple file uploader
+## Multiple Files
+
+FileUploader also supports multiple file uploads using the "multiple" prop.
 
 ```tsx
 <FileUploader 
@@ -27,7 +33,7 @@ Basic use case of multiple file uploader
 />
 ```
 
-Using a single file as a value
+## Single File as Value
 
 ```tsx
 <FileUploader 
@@ -36,7 +42,7 @@ Using a single file as a value
 />
 ```
 
-Multiple file value
+## Multiple Files as Value
 
 ```tsx
 <FileUploader 
@@ -46,10 +52,12 @@ Multiple file value
 />
 ```
 
-Different Variations
+## Button Styles
+
+See the <a href="/components/button">Button component documentation</a> for all button style options.
 
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16 }}>
+<div style={{ display: 'grid', gridGap: 16 }}>
     <FileUploader
         variant="primary"  
         value="Primary" 
@@ -73,10 +81,10 @@ Different Variations
 </div>
 ```
 
-Different States
+## Upload States
 
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 16 }}>
+<div style={{ display: 'grid', gridGap: 16 }}>
     <FileUploader
         invalid
         value="Invalid" 

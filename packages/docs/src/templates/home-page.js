@@ -22,7 +22,7 @@ const HomePageTemplate = props => {
                 const linkTo = node.data.uri;
                 if (linkTo.includes('http')) {
                     return (
-                        <a href={linkTo} target="_blank" rel="nofollow">
+                        <a href={linkTo} target="_blank" rel="noopener noreferrer nofollow">
                             {text}
                         </a>
                     );
@@ -40,10 +40,9 @@ const HomePageTemplate = props => {
                     <div className={styles.bannerText}>{documentToReactComponents(description.json, options)}</div>
                 </div>
             </div>
-
             <div className={styles.homeLinks}>
                 {guides.map((guide, index) => (
-                    <div className={styles.card}>
+                    <div key={index} className={styles.card}>
                         <div className={styles.roundImage}>
                             <img src={guideImages[index]} alt={`${guide} logo`} />
                         </div>

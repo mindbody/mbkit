@@ -1,11 +1,11 @@
 # Checkbox Usage
 
-All checkboxes are controlled elements, meaning you must pass the "checked" prop and "onChange" prop. Below are some examples of implementation:
+## Basic Usage
 
-Basic usage
+All checkboxes are controlled elements, meaning you must pass the "checked" prop and "onChange" prop.
 
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '100%', gridGap: 8, padding: '8px 0' }}>
+<div style={{ display: 'grid', gridTemplateColumns: '100%', gridGap: 16 }}>
     <div>
         <Checkbox /> <Checkbox disabled /> Unchecked
     </div>
@@ -21,22 +21,30 @@ Basic usage
 </div>
 ```
 
-As for A11Y tools giving the correct text association for the checkbox, see the live examples. Per the <a href="https://www.w3.org/TR/html401/interact/forms.html#edef-LABEL" target="_blank">W3 documentation</a> there are two types of association: explicit and implicit. Choosing one will depend on your design where sometimes you may not be able to wrap a label around a checkbox. 
+## Implicit vs Explicit Checkbox Labels
+
+To make checkboxes <a href="https://www.w3.org/TR/html401/interact/forms.html#edef-LABEL" target="_blank" rel="noopener noreferrer nofollow">accessible</a>, you must use one of the two label associations: **explicit** or **implicit**. 
+
+**Explicit labels** connect to the input using the htmlFor prop, while **implicit labels** wrap around the input. These associations allow you to toggle the checkbox by clicking the label text.
 
 ```tsx
 <>
-    <div style={{ margin: '1rem 0' }}>
-        {/* Explicit association from the label to the checkbox */}
+    <div style={{ marginBottom: '16px' }}>
+
+        {/* Explicit association with htmlFor and the input's id */}
         <Checkbox id="emailOptIn" aria-labelledby="emailOptInLabel" />
         <label htmlFor="emailOptIn" id="emailOptInLabel">
             {" "}Send me updates on this product
         </label>
+
     </div>
     <div>
-        {/* Implicit association from the label to the checkbox */}
+
+        {/* Implicit association by wrapping the label tag around the input */}
         <label>
             <Checkbox /> I agree to the terms and conditions
         </label>
+
     </div>
 </>
 ```

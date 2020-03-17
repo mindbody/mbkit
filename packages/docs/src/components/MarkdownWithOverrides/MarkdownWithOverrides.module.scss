@@ -1,15 +1,26 @@
 .codeEditorWrapper {
+    padding: 16px;
+    background-color: #EAEDF1;
+    border-radius: 6px;
+
     .codePreview {
-        // padding: 0 16px;
-    }
-    @media screen and (min-width: 769px) {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));;
+        padding: 16px;
+        background-color: white;
+        border-radius: 3px;
+        margin-bottom: 16px;
+
+        h2, h3, h4, h5, h6 {
+          margin-top: initial;
+        }
+
+        @media screen and (min-width: 800px) {
+          padding: 32px;
+        }
     }
 }
 .codeEditor {
     font-size: 14px;
-    margin-right: 16px;
+    margin-top: 16px;
     
     & > div {
         border-radius: 3px;

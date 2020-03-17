@@ -1,43 +1,54 @@
 # Calendar Usage
 
-Basic usage with different locales. Use the "onChange" prop to get the latest selection from the user
+## Basic Usage
+
+Use the "onChange" prop to get the selected date from the user.
 
 ```tsx
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '16px', padding: '16px 0' }}>
-    <Calendar onChange={date => console.log(date)} />
-    <Calendar onChange={date => console.log(date)} locale="es-cl" value={new Date(2017, 11, 28)} />
-    <Calendar onChange={date => console.log(date)} locale="fr-fr" value={new Date(2018, 4, 3)} />
-    <Calendar onChange={date => console.log(date)} locale="de-DE" value={new Date(2019, 9, 17)} />
-</div>
+<Calendar onChange={date => console.log(date)} />
 ```
 
-Example with only being able to choose dates from the past, but no more than 30 days ago
+## Internationalization
+
+Use international calendars with the "locale" prop.
 
 ```tsx
-    <Calendar 
-        onChange={date => console.log(date)}
-        minDate={new Date(new Date().setDate(new Date().getDate() - 31))} 
-        maxDate={new Date(new Date().setDate(new Date().getDate() - 1))} 
-    />
+<Calendar onChange={date => console.log(date)} locale="fr-fr" value={new Date(2018, 4, 3)} />
 ```
 
-Example where user can select the month to zoom out and navigate by month 
+## Choosing Past Dates
+
+Here's an example of choosing a date from the past 30 days.
 
 ```tsx
-    <Calendar 
-        onChange={date => console.log(date)}
-        minDetail="year"
-    />
+<Calendar 
+    onChange={date => console.log(date)}
+    minDate={new Date(new Date().setDate(new Date().getDate() - 31))} 
+    maxDate={new Date(new Date().setDate(new Date().getDate() - 1))} 
+/>
 ```
 
-Example where user can select a date range
+## Navigate by Month
+
+User can select the month to zoom out and navigate by month.
 
 ```tsx
-    <Calendar 
-        onChange={date => console.log(date)}
-        value={[new Date(2019, 11, 23), new Date(2019, 11, 27)]}
-        selectRange={true}
-    />
+<Calendar 
+    onChange={date => console.log(date)}
+    minDetail="year"
+/>
+```
+
+## Date Ranges
+
+Use the "selectRange" prop to support date ranges.
+
+```tsx
+<Calendar 
+    onChange={date => console.log(date)}
+    value={[new Date(2019, 11, 23), new Date(2019, 11, 27)]}
+    selectRange={true}
+/>
 ```
 
 For the underlying calendar props see the <a href="https://github.com/wojtekmaj/react-calendar#readme" target="_blank">react-calendar documentation</a>. 

@@ -41,24 +41,22 @@ const CodeEditorPreview = props => {
     }
     return (
         <>
-            <p>
-                <label className={styles.editorToggle}>
-                    <Toggle
-                        className={styles.toggle}
-                        size={2}
-                        checked={showEditor}
-                        onChange={() => setShowEditor(!showEditor)}
-                    />{' '}
-                    Show Editor
-                </label>
-            </p>
             <div className={styles.codeEditorWrapper}>
                 <LiveProvider code={props.children} scope={props.scope} theme={{ ...theme }}>
-                    {showEditor && <div className={styles.codeEditor}>{<LiveEditor onKeyDown={handleKeyPress} />}</div>}
                     <div className={styles.codePreview}>
                         <LiveError />
                         <LivePreview />
                     </div>
+                    <label className={styles.editorToggle}>
+                        <Toggle
+                            className={styles.toggle}
+                            size={2}
+                            checked={showEditor}
+                            onChange={() => setShowEditor(!showEditor)}
+                        />{' '}
+                        Show Editor
+                    </label>
+                    {showEditor && <div className={styles.codeEditor}>{<LiveEditor onKeyDown={handleKeyPress} />}</div>}
                 </LiveProvider>
             </div>
         </>

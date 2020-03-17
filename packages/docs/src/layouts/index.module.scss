@@ -49,9 +49,6 @@ p {
 
     &:not(.fullPage) {
         overflow: auto;
-        box-shadow: 0 1px 3px 0 rgba(34,36,40, .2);
-        background: $background;
-        border-radius: $radius;
         align-self: start;
     }
 }
@@ -75,9 +72,16 @@ p {
     background: $background;
     color: $foreground;
     border-radius: $radius;
-    padding: 16px;
+    padding: 24px;
     width: 100%;
     margin: 0 auto;
+
+    &:not(.fullPage) {
+      box-shadow: 0 1px 3px 0 rgba(34,36,40, .2);
+      background: $background;
+      border-radius: $radius;
+      margin-bottom: 32px;
+    }
 
     h2, h3, h4, h5, h6 {
       margin-top: 32px;
@@ -169,4 +173,13 @@ table {
           background-color: #fff;
       }
   } 
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 800px) {
+    margin-bottom: 0;
+  }
 }
