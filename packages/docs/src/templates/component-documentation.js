@@ -79,7 +79,7 @@ const ComponentDocumentation = props => {
                     overrides={{
                         h2: () => <h3>{name} Props</h3>,
                         table: props => (
-                            <div styles={{ overflowX: 'scroll' }}>
+                            <div style={{ overflowX: 'scroll' }}>
                                 <table {...props} />
                             </div>
                         ),
