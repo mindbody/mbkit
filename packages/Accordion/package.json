@@ -4,7 +4,7 @@
     "source": "src/index.tsx",
     "main": "dist/cjs/Accordion.js",
     "module": "dist/esm/Accordion.js",
-    "types": "dist/cjs/Accordion/src/index.d.ts",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
