@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.3.5...@mbkit/accordion@1.4.0) (2020-03-16)
+
+
+### Bug Fixes
+
+* **accordion:** consuming mbkit icon ([44451ac](https://github.com/mindbody/design-system/commit/44451acfb4c81401a39db5ac7fa45258e3e94ae0))
+
+
+### Features
+
+* example on updates needed to publish commonjs ([c6308a2](https://github.com/mindbody/design-system/commit/c6308a203b0a27bf940149fa12cbcbe0bc1a3c23))
+
+
+
+
+
 ## [1.3.5](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.3.4...@mbkit/accordion@1.3.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/accordion

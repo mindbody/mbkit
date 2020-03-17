@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.5...@mbkit/toaster@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **toaster:** package now publishes as esm and cjs ([0927c57](https://github.com/mindbody/design-system/commit/0927c57807266458ecdc53c002c492f8e7c48230))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.2.4...@mbkit/toaster@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/toaster

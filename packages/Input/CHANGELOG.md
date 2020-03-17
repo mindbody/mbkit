@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/input@1.2.5...@mbkit/input@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **input:** updated package to publish esm and cjs ([448f6a1](https://github.com/mindbody/design-system/commit/448f6a16714c1e6ac104c1dfa45f90996de2bb89))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/input@1.2.4...@mbkit/input@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/input

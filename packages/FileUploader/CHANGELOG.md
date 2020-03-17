@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.2.5...@mbkit/file-uploader@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **file-uploader:** package publishes both cjs and esm ([24046aa](https://github.com/mindbody/design-system/commit/24046aa3d7546008a397b6fc3111b348932c05d4))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.2.4...@mbkit/file-uploader@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/file-uploader

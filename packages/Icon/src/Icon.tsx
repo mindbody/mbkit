@@ -18,10 +18,18 @@ const BaseIcon: React.FC<BaseIconProps> = (props: BaseIconProps) => {
         [className]: className,
     });
     const id: string = nanoid();
+    const Component: any = 'svg';
     return (
-        <svg {...rest} width={width} height={height} viewBox="0 0 32 32" className={classNames} ref={forwardedRef}>
+        <Component
+            {...rest}
+            width={width}
+            height={height}
+            viewBox="0 0 32 32"
+            className={classNames}
+            ref={forwardedRef}
+        >
             {children({ id })}
-        </svg>
+        </Component>
     );
 };
 

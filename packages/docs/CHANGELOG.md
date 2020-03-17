@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.5.1...@mbkit/docs@0.6.0) (2020-03-16)
+
+
+### Features
+
+* **docs:** updated docs to pull components from updated location ([cbee229](https://github.com/gatsbyjs/gatsby-starter-default/commit/cbee229c27a1bd2432eeed840f74356c447ebd06))
+
+
+
+
+
 ## [0.5.1](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.5.0...@mbkit/docs@0.5.1) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/docs

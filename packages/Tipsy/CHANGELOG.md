@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/tipsy@1.2.5...@mbkit/tipsy@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **tipsy:** package now publishes cjs and esm ([35dd126](https://github.com/mindbody/design-system/commit/35dd1262ad218fcf8e72c0467aff8e1923230517))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/tipsy@1.2.4...@mbkit/tipsy@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/tipsy

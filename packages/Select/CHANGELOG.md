@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.5...@mbkit/select@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **select:** updated package to publish cjs and esm ([69dad76](https://github.com/mindbody/design-system/commit/69dad76ab2b7d0fe20dfd2552fc87bd3acb833b7))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/select@1.2.4...@mbkit/select@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/select

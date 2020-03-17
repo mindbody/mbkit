@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/radio@1.2.5...@mbkit/radio@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **radio:** updated package to publish cjs and esm ([00b562c](https://github.com/mindbody/design-system/commit/00b562c5098ebabfee01fe07877608288c275dd7))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/radio@1.2.4...@mbkit/radio@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/radio

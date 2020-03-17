@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/card@1.2.5...@mbkit/card@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **card:** shipping package with cjs and esm ([cf48383](https://github.com/mindbody/design-system/commit/cf48383a73d34c7b3b8e34c0cfcd3c5d9b53520d))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/card@1.2.4...@mbkit/card@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/card

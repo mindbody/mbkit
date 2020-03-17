@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.2.5...@mbkit/calendar@1.3.0) (2020-03-16)
+
+
+### Features
+
+* **calendar:** shipping package as esm and cjs ([04f7c56](https://github.com/mindbody/design-system/commit/04f7c56c3e4cdcbc73a54250b1c3e2cf4a22e150))
+
+
+
+
+
 ## [1.2.5](https://github.com/mindbody/design-system/compare/@mbkit/calendar@1.2.4...@mbkit/calendar@1.2.5) (2020-03-13)
 
 **Note:** Version bump only for package @mbkit/calendar
