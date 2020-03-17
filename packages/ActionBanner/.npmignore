@@ -3,4 +3,3 @@ node_modules
 .github
 .cache
 docs
-!dist/**/src
