@@ -1,17 +1,29 @@
-name: Gated build
+name: Gated Build
 
 on:
   pull_request:
-    branch: master
+    branches:
+      - master
 
 jobs:
-  gated_build:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-      - run: yarn install
-      - run: yarn test
-      - run: yarn build:modules
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: yarn install, test, and build
+      run: |
+        yarn install
+        yarn test
+        yarn build:modules
+      env:
+        CI: true
