@@ -25,5 +25,3 @@ jobs:
         yarn install
         yarn test
         yarn build:modules
-      env:
-        CI: true
