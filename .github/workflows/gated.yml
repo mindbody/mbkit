@@ -1,17 +1,17 @@
 name: Gated build
 
 on:
-    pull_request:
-        branch: master
+  pull_request:
+    branch: master
 
 jobs:
-    gated-build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-                with:
-                    node-version: '10.x'
-        - run: yarn install
-        - run: yarn test
-        - run: yarn build:modules
+  gated_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: yarn install
+      - run: yarn test
+      - run: yarn build:modules
