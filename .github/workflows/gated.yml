@@ -1,0 +1,19 @@
+name: Gated build
+
+on:
+    pull_request:
+        branch: master
+
+jobs:
+    gated_build:
+        name: Gated build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                node-version: 12
+                registry-url: https://registry.npmjs.org/
+        - run: |
+            npm run test
+            npm run build:modules
