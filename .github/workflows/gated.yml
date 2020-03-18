@@ -12,8 +12,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with:
-                node-version: 12
-                registry-url: https://registry.npmjs.org/
-        - run: |
-            npm run test
-            npm run build:modules
+                node-version: 10
+        - run: npm install
+        - run: npm run test
+        - run: npm run build:modules
