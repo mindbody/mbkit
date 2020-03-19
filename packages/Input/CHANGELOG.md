@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/input@1.3.2...@mbkit/input@1.3.3) (2020-03-19)
+
+
+### Bug Fixes
+
+* **input:** made input full width to match the input with icons ([37d4189](https://github.com/mindbody/design-system/commit/37d418970e7f49c4e1a69c004b847beadaea128d))
+
+
+
+
+
 ## [1.3.2](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.1...@mbkit/input@1.3.2) (2020-03-17)
 
 **Note:** Version bump only for package @mbkit/input
