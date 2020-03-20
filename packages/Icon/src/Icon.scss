@@ -14,33 +14,33 @@
 
 .primaryColor {
     @include svgTargetFill {
-        fill: $primary-1;
+        fill: $primary-base;
     }
 }
 .infoColor {
     @include svgTargetFill {
-        fill: $secondary-2;
+        fill: $secondary-base;
     }
 
 }
 .successColor {
     @include svgTargetFill {
-        fill: $success-1;
+        fill: $success-base;
     }
 
 }
 .warningColor {
     @include svgTargetFill {
-        fill: $warning-1;
+        fill: $warning-base;
     }
 }
 .errorColor {
     @include svgTargetFill {
-        fill: $error-1;
+        fill: $error-base;
     }
 }
 .metaColor {
     @include svgTargetFill {
-        fill: $neutral-2;
+        fill: $neutral-darker;
     }
 }
