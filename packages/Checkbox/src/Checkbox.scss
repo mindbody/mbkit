@@ -25,8 +25,8 @@
     width: 24px;
     height: 24px;
     border-radius: $radius;
-    border: 1px solid $neutral-3;
-    background: $neutral-7;
+    border: 1px solid $neutral-dark;
+    background: $background;
     vertical-align: middle;
     margin: 0;
     transition: box-shadow .1s ease-out;
@@ -47,11 +47,11 @@
         background-size: 55% auto;
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        background-color: $secondary-2;
-        border-color: $secondary-2;
+        background-color: $secondary-base;
+        border-color: $secondary-base;
     }
     &.invalid {
-        border-color: $error-1;
+        border-color: $error-base;
     }
 
     &:not(:disabled) {
@@ -68,16 +68,16 @@
     }
 
     &:disabled {
-        background-color: $neutral-4;
-        border-color: $neutral-4;
+        background-color: $neutral-dark;
+        border-color: $neutral-dark;
         cursor: not-allowed;
 
         &[aria-checked="mixed"] {
-            @include checkmarkIntermediate(#5A5E66);
+            @include checkmarkIntermediate(#696C74);
         }
     
         &:checked {
-            @include checkmarkChecked(#5A5E66);
+            @include checkmarkChecked(#696C74);
         }
     }
 }
