@@ -236,8 +236,8 @@ $iconSize4: 30px;
         @include buttonHover($neutral-7, $primary-1);
     }
     &.secondary {
-        @include buttonStyles($secondary-1);
-        @include buttonHover($neutral-7, $secondary-1);
+        @include buttonStyles($secondary-2);
+        @include buttonHover($neutral-7, $secondary-2);
     }
     &.tertiary {
         @include buttonStyles($neutral-2);
@@ -248,8 +248,8 @@ $iconSize4: 30px;
         @include buttonHover($primary-1, $primary-1, $neutral-7, $neutral-7);
     }
     &.secondaryOutlined {
-        @include buttonStyles($neutral-7, $secondary-1, $neutral-1, $neutral-2);
-        @include buttonHover($secondary-1, $secondary-1, $neutral-7, $neutral-7);
+        @include buttonStyles($neutral-7, $secondary-2, $neutral-1, $neutral-2);
+        @include buttonHover($secondary-2, $secondary-2, $neutral-7, $neutral-7);
     }
     &.tertiaryOutlined {
         @include buttonStyles($neutral-7, $neutral-2, $neutral-1, $neutral-2);
@@ -260,8 +260,8 @@ $iconSize4: 30px;
         @include buttonHover($neutral-2, $neutral-2, $neutral-7, $neutral-7);
     }
     &.iconPrimary {
-        @include buttonStyles($neutral-7, $neutral-7, $secondary-1, $secondary-1);
-        @include buttonHover($secondary-3, $secondary-3, $secondary-1, $secondary-1);
+        @include buttonStyles($neutral-7, $neutral-7, $secondary-2, $secondary-2);
+        @include buttonHover($secondary-3, $secondary-3, $secondary-2, $secondary-2);
         border-radius: 50%;
     }
     &.icon {
@@ -270,8 +270,8 @@ $iconSize4: 30px;
         border-radius: 50%;
     }
     &.simpleText {
-        @include buttonStyles($neutral-7, $neutral-7, $secondary-1, $secondary-1);
-        @include buttonStyles($neutral-7, $neutral-7, $secondary-1, $secondary-1);
+        @include buttonStyles($neutral-7, $neutral-7, $secondary-2, $secondary-2);
+        @include buttonStyles($neutral-7, $neutral-7, $secondary-2, $secondary-2);
         &:hover {
             text-decoration: underline;
         }
