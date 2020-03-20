@@ -232,32 +232,32 @@ $iconSize4: 30px;
     }
 
     &.primary {
-        @include buttonStyles($primary-base, $primary-base, $background, $background);
+        @include buttonStyles($primary-base, $primary-base, $primary-foreground, $primary-foreground);
         @include buttonHover($background, $primary-base, $foreground, $foreground);
     }
     &.secondary {
-        @include buttonStyles($secondary-base, $secondary-base, $background, $background);
+        @include buttonStyles($secondary-base, $secondary-base, $secondary-foreground, $secondary-foreground);
         @include buttonHover($background, $secondary-base, $foreground, $foreground);
     }
     &.tertiary {
-        @include buttonStyles($tertiary-base, $tertiary-base, $background, $background);
+        @include buttonStyles($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
         @include buttonHover($background, $tertiary-base, $foreground, $foreground);
     }
     &.primaryOutlined {
         @include buttonStyles($background, $primary-base, $foreground, $neutral-darker);
-        @include buttonHover($primary-base, $primary-base, $background, $background);
+        @include buttonHover($primary-base, $primary-base, $primary-foreground, $primary-foreground);
     }
     &.secondaryOutlined {
         @include buttonStyles($background, $secondary-base, $foreground, $neutral-darker);
-        @include buttonHover($secondary-base, $secondary-base, $background, $background);
+        @include buttonHover($secondary-base, $secondary-base, $secondary-foreground, $secondary-foreground);
     }
     &.tertiaryOutlined {
         @include buttonStyles($background, $tertiary-base, $foreground, $neutral-darker);
-        @include buttonHover($tertiary-base, $tertiary-base, $background, $background);
+        @include buttonHover($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
     }
     &.offCard {
         @include buttonStyles($background, $background, $foreground, $neutral-darker);
-        @include buttonHover($tertiary-base, $tertiary-base, $background, $background);
+        @include buttonHover($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
     }
     &.iconPrimary {
         @include buttonStyles($background, $background, $secondary-base, $secondary-base);
