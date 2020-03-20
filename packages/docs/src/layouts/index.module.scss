@@ -133,7 +133,7 @@ table {
       font-size: 11px;
       color: $neutral-darker;
       font-weight: 300;
-      background: $neutral-lighter;
+      background: $applicationBackground;
       padding: 8px 16px;
       text-align: left;
       border-bottom: 1px solid $neutral-light;
@@ -147,7 +147,7 @@ table {
       border-bottom: 1px solid $neutral-light;
 
       &:nth-child(even) td {
-          background-color: $neutral-lighter;
+          background-color: $applicationBackground;
       }
       td {
           padding: 8px 16px;
