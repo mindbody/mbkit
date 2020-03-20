@@ -19,7 +19,7 @@
     &:not(:disabled) {
         &:focus {
             box-shadow: 0 0 0 4px $focus;
-            border-color: $secondary-1;
+            border-color: $secondary-2;
         }
         &.invalid {
             border-color: $error-1;
