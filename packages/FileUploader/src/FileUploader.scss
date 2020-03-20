@@ -91,8 +91,8 @@
         width: 100%;
     }
     .placeholder {
-        color: $neutral-3;
-        @include svgFill($neutral-3);
+        color: $neutral-darker;
+        @include svgFill($neutral-darker);
     }
     .value {
         color: $foreground;
@@ -101,9 +101,9 @@
     .displayText {
         line-height: 1.4;
         border-radius: $radius 0 0 $radius;
-        border-top: 1px solid $neutral-3;
-        border-left: 1px solid $neutral-3;
-        border-bottom: 1px solid $neutral-3;
+        border-top: 1px solid $neutral-light;
+        border-left: 1px solid $neutral-light;
+        border-bottom: 1px solid $neutral-light;
         flex: 1;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -133,7 +133,7 @@
         flex: 0 1 auto;
         border: 1px solid transparent;
         border-radius: 0 $radius $radius 0;
-        color: $neutral-7;
+        color: $neutral-lightest;
         padding: 10px 16px;
 
         &.isLoading {
@@ -152,34 +152,34 @@
     }
     &:not(.disabled) .button.variant {
         &primary {
-            @include buttonColor($primary-1, $neutral-7, $primary-1);
-            @include loader($neutral-7, $primary-1);
+            @include buttonColor($primary-base, $primary-foreground, $primary-base);
+            @include loader($primary-foreground, $primary-base);
         }
         &secondary {
-            @include buttonColor($secondary-2, $neutral-7, $secondary-2);
-            @include loader($neutral-7, $secondary-2);
+            @include buttonColor($secondary-base, $secondary-foreground, $secondary-base);
+            @include loader($secondary-foreground, $secondary-base);
         }
         &primaryOutlined {
-            @include buttonColor($neutral-7, $neutral-1, $primary-1);
-            @include loader($primary-1, $neutral-7);
+            @include buttonColor($background, $foreground, $primary-base);
+            @include loader($primary-base, $primary-foreground);
         }
         &secondaryOutlined {
-            @include buttonColor($neutral-7, $neutral-1, $secondary-2);
-            @include loader($secondary-2, $neutral-7);
+            @include buttonColor($secondary-foreground, $foreground, $secondary-base);
+            @include loader($secondary-base, $secondary-foreground);
         }
     }
     &:not(.isLoading):not(.disabled):hover .button.variant {
         &primary {
-            @include buttonColor($neutral-7, $neutral-1, $primary-1);
+            @include buttonColor($background, $foreground, $primary-base);
         }
         &secondary {
-            @include buttonColor($neutral-7, $neutral-1, $secondary-2);
+            @include buttonColor($background, $foreground, $secondary-base);
         }
         &primaryOutlined {
-            @include buttonColor($primary-1, $neutral-7, $primary-1);
+            @include buttonColor($primary-base, $primary-foreground, $primary-base);
         }
         &secondaryOutlined {
-            @include buttonColor($secondary-2, $neutral-7, $secondary-2);
+            @include buttonColor($secondary-base, $secondary-foreground, $secondary-base);
         }
     }
     &.isLoading {
@@ -190,7 +190,7 @@
     &.invalid {
         .displayText,
         .button {
-            border-color: $error-1 !important;
+            border-color: $error-base !important;
         }
     }
     &.disabled {
@@ -199,14 +199,14 @@
         }
 
         .displayText {
-            background: $neutral-4; 
-            color: $neutral-3;
-            border-color: $neutral-4;
-            @include svgFill($neutral-3);
+            background: $neutral-light; 
+            color: $neutral-dark;
+            border-color: $neutral-light;
+            @include svgFill($neutral-dark);
         }
         .button {
-            @include buttonColor($neutral-4, $neutral-3, $neutral-4);
-            @include loader($neutral-3, $neutral-4);
+            @include buttonColor($neutral-dark, $neutral-light, $neutral-dark);
+            @include loader($neutral-dark, $neutral-light);
         }
     }
     &:focus {
