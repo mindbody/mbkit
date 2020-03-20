@@ -64,15 +64,15 @@
     }
 
     &.success {
-        @include bannerColors($success-1, $success-3);
+        @include bannerColors($success-base, $success-light);
     }
     &.error {
-        @include bannerColors($error-1, $error-3);
+        @include bannerColors($error-base, $error-light);
     }
     &.warning {
-        @include bannerColors($warning-1, $warning-3);
+        @include bannerColors($neutral-darkest, $warning-base);
     }
     &.info {
-        @include bannerColors($secondary-2, $secondary-3);
+        @include bannerColors($secondary-base, $secondary-light);
     }
 }
