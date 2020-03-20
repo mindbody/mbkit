@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.3.2...@mbkit/file-uploader@1.3.3) (2020-03-19)
+
+**Note:** Version bump only for package @mbkit/file-uploader
+
+
+
+
+
 ## [1.3.2](https://github.com/mindbody/mbkit/compare/@mbkit/file-uploader@1.3.1...@mbkit/file-uploader@1.3.2) (2020-03-17)
 
 **Note:** Version bump only for package @mbkit/file-uploader
