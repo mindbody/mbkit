@@ -7,12 +7,12 @@
         fill: $fill;
     }
 }
-@mixin bannerColors($fg, $bg) {
+@mixin bannerColors($fg, $bg, $border, $icon) {
     color: $fg;
     background: $bg;
-    border-color: $fg;
+    border-color: $border;
 
-    @include svgTargetFill($fg);
+    @include svgTargetFill($icon);
 
     a {
         color: $fg;
@@ -64,15 +64,15 @@
     }
 
     &.success {
-        @include bannerColors($success-base, $success-light);
+        @include bannerColors($success-lightForeground, $success-light, $success-base, $success-base);
     }
     &.error {
-        @include bannerColors($error-base, $error-light);
+        @include bannerColors($error-lightForeground, $error-light, $error-base, $error-base);
     }
     &.warning {
-        @include bannerColors($neutral-darkest, $warning-base);
+        @include bannerColors($warning-lightForeground, $warning-light, $warning-base, $error-lightForeground);
     }
     &.info {
-        @include bannerColors($secondary-base, $secondary-light);
+        @include bannerColors($neutral-darkest, $secondary-light, $secondary-base, $secondary-base);
     }
 }
