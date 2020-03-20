@@ -35,19 +35,22 @@
       "foreground": "#ffffff"
     },
     "success": {
-      "base": "#2F7052",
-      "light": "#4BC58E",
-      "lighter": "#E5F7ED"
+      "base": "#218323",
+      "light": "#E4F3E4",
+      "baseForeground": "#ffffff",
+      "lightForeground": "#2D2D2D"
     },
     "warning": {
-      "base": "#8F6600",
-      "light": "#FFD64F",
-      "lighter": "#FFF3CC"
+      "base": "#FFC100",
+      "light": "#FFF3CC",
+      "baseForeground": "#ffffff",
+      "lightForeground": "#2D2D2D"
     },
     "error": {
-      "base": "#992D38",
-      "light": "#CE3D4B",
-      "lighter": "#FAE9EB"
+      "base": "#D10F0F",
+      "light": "#FFE8E8",
+      "baseForeground": "#ffffff",
+      "lightForeground": "#2D2D2D"
     },
     "focus": "#6096e6bf",
     "font": {
