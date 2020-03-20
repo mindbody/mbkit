@@ -24,7 +24,7 @@ $iconSize4: 30px;
         @content;
     }
 }
-@mixin buttonStyles($background, $border: $background, $color: $neutral-7, $svg: $neutral-7) {
+@mixin buttonStyles($background, $border: $background, $color: $background, $svg: $background) {
     border-color: $border;
     background: $background;
     color: $color;
@@ -39,7 +39,7 @@ $iconSize4: 30px;
 
     @include loader($color, $background);
 }
-@mixin buttonHover($background, $border: $background, $color: $neutral-1, $svg: $neutral-2) {
+@mixin buttonHover($background, $border: $neutral-light, $color: $background, $svg: $neutral-darker) {
     &:not(.loading):not([disabled]):hover {
         border-color: $border;
         background: $background;
@@ -53,15 +53,15 @@ $iconSize4: 30px;
 @mixin buttonDisabled {
     @include disabled {
         cursor: not-allowed;
-        background: $neutral-4; 
-        border-color: $neutral-4;
-        color: $neutral-3;
+        background: $neutral-dark;
+        border-color: $neutral-dark;
+        color: $neutral-light;
 
         @include svgTargetFill {
-            fill: $neutral-3;
+            fill: $neutral-light;
         }
 
-        @include loader($neutral-3, $neutral-4);
+        @include loader($neutral-light, $neutral-dark);
     }
 }
 /*
@@ -232,46 +232,46 @@ $iconSize4: 30px;
     }
 
     &.primary {
-        @include buttonStyles($primary-1);
-        @include buttonHover($neutral-7, $primary-1);
+        @include buttonStyles($primary-base, $primary-base, $background, $background);
+        @include buttonHover($background, $primary-base, $foreground, $foreground);
     }
     &.secondary {
-        @include buttonStyles($secondary-2);
-        @include buttonHover($neutral-7, $secondary-2);
+        @include buttonStyles($secondary-base, $secondary-base, $background, $background);
+        @include buttonHover($background, $secondary-base, $foreground, $foreground);
     }
     &.tertiary {
-        @include buttonStyles($neutral-2);
-        @include buttonHover($neutral-7, $neutral-2);
+        @include buttonStyles($tertiary-base, $tertiary-base, $background, $background);
+        @include buttonHover($background, $tertiary-base, $foreground, $foreground);
     }
     &.primaryOutlined {
-        @include buttonStyles($neutral-7, $primary-1, $neutral-1, $neutral-2);
-        @include buttonHover($primary-1, $primary-1, $neutral-7, $neutral-7);
+        @include buttonStyles($background, $primary-base, $foreground, $neutral-darker);
+        @include buttonHover($primary-base, $primary-base, $background, $background);
     }
     &.secondaryOutlined {
-        @include buttonStyles($neutral-7, $secondary-2, $neutral-1, $neutral-2);
-        @include buttonHover($secondary-2, $secondary-2, $neutral-7, $neutral-7);
+        @include buttonStyles($background, $secondary-base, $foreground, $neutral-darker);
+        @include buttonHover($secondary-base, $secondary-base, $background, $background);
     }
     &.tertiaryOutlined {
-        @include buttonStyles($neutral-7, $neutral-2, $neutral-1, $neutral-2);
-        @include buttonHover($neutral-2, $neutral-2, $neutral-7, $neutral-7);
+        @include buttonStyles($background, $tertiary-base, $foreground, $neutral-darker);
+        @include buttonHover($tertiary-base, $tertiary-base, $background, $background);
     }
     &.offCard {
-        @include buttonStyles($neutral-7, $neutral-7, $neutral-1, $neutral-2);
-        @include buttonHover($neutral-2, $neutral-2, $neutral-7, $neutral-7);
+        @include buttonStyles($background, $background, $foreground, $neutral-darker);
+        @include buttonHover($tertiary-base, $tertiary-base, $background, $background);
     }
     &.iconPrimary {
-        @include buttonStyles($neutral-7, $neutral-7, $secondary-2, $secondary-2);
-        @include buttonHover($secondary-3, $secondary-3, $secondary-2, $secondary-2);
+        @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+        @include buttonHover($secondary-light, $secondary-light, $secondary-base, $secondary-base);
         border-radius: 50%;
     }
     &.icon {
-        @include buttonStyles($neutral-7, $neutral-7, $neutral-1, $neutral-1);
-        @include buttonHover($neutral-4, $neutral-4, $neutral-1, $neutral-1);
+        @include buttonStyles($background, $background, $foreground, $foreground);
+        @include buttonHover($neutral-light, $neutral-light, $foreground, $foreground);
         border-radius: 50%;
     }
     &.simpleText {
-        @include buttonStyles($neutral-7, $neutral-7, $secondary-2, $secondary-2);
-        @include buttonStyles($neutral-7, $neutral-7, $secondary-2, $secondary-2);
+        @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+        @include buttonStyles($background, $background, $secondary-base, $secondary-base);
         &:hover {
             text-decoration: underline;
         }
