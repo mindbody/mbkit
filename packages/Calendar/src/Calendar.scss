@@ -85,7 +85,7 @@
         position: absolute;
         top: 0;
         height: 100%;
-        background: $secondary-1;
+        background: $secondary-2;
         width: 12px;
     }
     &:before {
@@ -141,7 +141,7 @@
     &:active,
     &[class*="active"],
     &[class*="hasActive"] {
-        background: $secondary-1 !important;
+        background: $secondary-2 !important;
         color: $neutral-7;
     }
 
