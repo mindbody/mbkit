@@ -48,7 +48,7 @@
         box-shadow: 0 0 0 8px $focus;
     }
     &:checked {
-        background: $secondary-1;
+        background: $secondary-2;
 
         &:before {
             left: calc(100% - 29px);
