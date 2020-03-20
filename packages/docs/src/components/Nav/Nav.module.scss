@@ -59,7 +59,7 @@ $navShadow: 0 1px 16px 0 rgba(34, 36, 40, .2);
       top: 8px;
 
       &.active {
-        color: $secondary-2;
+        color: $secondary-base;
 
         &:before {
           content: '';
@@ -69,7 +69,7 @@ $navShadow: 0 1px 16px 0 rgba(34, 36, 40, .2);
           left: -4px;
           width: calc(100% + 8px);
           height: 4px;
-          background: $secondary-2;
+          background: $secondary-base;
         }
       }
     }
@@ -180,13 +180,13 @@ $mobileHeaderHeight: 54px;
           background: $background;
 
           &[aria-current="page"] {
-            color: $secondary-2;
+            color: $secondary-base;
           }
         }
       }
       
       & > ul > li {
-        border-bottom: 1px solid $neutral-5;
+        border-bottom: 1px solid $neutral-light;
 
         ul ul {
           margin-left: 16px;
@@ -274,7 +274,7 @@ $mobileHeaderHeight: 54px;
           background: $background;
   
           &:before {
-            background: $secondary-2;
+            background: $secondary-base;
           }
         }
       }
@@ -312,7 +312,7 @@ $mobileHeaderHeight: 54px;
       border-radius: $radius;
 
       &:hover {
-        color: $secondary-2;
+        color: $secondary-base;
       }
 
       &:before {
@@ -330,9 +330,9 @@ $mobileHeaderHeight: 54px;
     }
 
     &.active > a {
-      color: $secondary-2;
+      color: $secondary-base;
       &:before {
-        background: $secondary-2;
+        background: $secondary-base;
       }
     }
   }

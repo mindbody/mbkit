@@ -1,14 +1,4 @@
-$foreground: var(--foreground, #0B0B0D);
-$background: var(--background, #ffffff);
-$radius: var(--radius, 3px);
-$focus: var(--focus, #6096e6);
-$neutral-1: var(--neutral-1, #0B0B0D);
-$neutral-2: var(--neutral-2, #5A5E66);
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-6: var(--neutral-6, #F8F9FB);
-$neutral-7: var(--neutral-7, #ffffff);
+@import "~@mbkit/theme/dist/theme.scss";
 
 .card {
     box-shadow: 0 1px 3px 0 rgba(34,36,40, .2);
@@ -103,9 +93,9 @@ $neutral-7: var(--neutral-7, #ffffff);
   position: absolute;
   top: 0;
   right: 0;
-  background-color: $neutral-6;
-  border-bottom: 1px solid $neutral-5;
-  border-left: 1px solid $neutral-5;
+  background-color: $applicationBackground;
+  border-bottom: 1px solid $neutral-light;
+  border-left: 1px solid $neutral-light;
   padding: 12px;
   border-radius: 0 3px 0 3px;
 }
