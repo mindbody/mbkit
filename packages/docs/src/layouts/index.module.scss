@@ -1,21 +1,4 @@
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-$radius: var(--radius, 3px);
-$focus: var(--focus, #6096e6bf);
-$foreground: var(--foreground, #0B0B0D);
-$background: var(--background, #ffffff);
-$neutral-1: var(--neutral-1, #0B0B0D);
-$neutral-2: var(--neutral-2, #5A5E66);
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-6: var(--neutral-6, #F8F9FB);
-$neutral-7: var(--neutral-7, #ffffff);
-$primary-1: var(--primary-1, #993100);
-$primary-2: var(--primary-2, #C23E00);
-$primary-3: var(--primary-3, #FFEEE6);
-$secondary-1: var(--secondary-1, #004C57);
-$secondary-2: var(--secondary-2, #007485);
-$secondary-3: var(--secondary-3, #E5F2F4);
+@import "~@mbkit/theme/dist/theme.scss";
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,600');
 * {
