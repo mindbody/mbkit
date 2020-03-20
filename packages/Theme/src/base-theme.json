@@ -2,40 +2,41 @@
     "name": "mindbody",
     "foreground": "#2D2D2D",
     "background": "#ffffff",
+    "applicationBackground": "#F8F9FA",
     "radius": "3px",
     "neutral": {
-      "1": "#2D2D2D",
-      "2": "#696C74",
-      "3": "#A0A5AB",
-      "4": "#D5D9DE",
-      "5": "#EFF1F3",
-      "6": "#F8F9FA",
-      "7": "#ffffff"
+      "darkest": "#2D2D2D",
+      "darker": "#696C74",
+      "dark": "#A0A5AB",
+      "light": "#D5D9DE",
+      "lighter": "#EFF1F3",
+      "lightest": "#F8F9FA"
     },
     "primary": {
-      "1": "#D54400",
-      "2": "#E85815",
-      "3": "#FCECE6"
+      "base": "#D54400",
+      "light": "#FCECE6"
     },
     "secondary": {
-      "1": "#005D6B",
-      "2": "#0A7C8E",
-      "3": "#E5F2F4"
+      "base": "#0A7C8E",
+      "light": "#E5F2F4"
+    },
+    "tertiary": {
+      "base": "#696C74"
     },
     "success": {
-      "1": "#2F7052",
-      "2": "#4BC58E",
-      "3": "#E5F7ED"
+      "base": "#2F7052",
+      "light": "#4BC58E",
+      "lighter": "#E5F7ED"
     },
     "warning": {
-      "1": "#8F6600",
-      "2": "#FFD64F",
-      "3": "#FFF3CC"
+      "base": "#8F6600",
+      "light": "#FFD64F",
+      "lighter": "#FFF3CC"
     },
     "error": {
-      "1": "#992D38",
-      "2": "#CE3D4B",
-      "3": "#FAE9EB"
+      "base": "#992D38",
+      "light": "#CE3D4B",
+      "lighter": "#FAE9EB"
     },
     "focus": "#6096e6bf",
     "font": {

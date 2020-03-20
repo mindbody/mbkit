@@ -6,6 +6,7 @@ export type Theme = {
 
     foreground?: string;
     background?: string;
+    applicationBackground?: string;
     radius?: string;
 
     neutral?: ThemeColors;
