@@ -1,16 +1,16 @@
 {
-    "name": "mindbody",
+    "name": "'mindbody'",
     "foreground": "#2D2D2D",
     "background": "#ffffff",
     "applicationBackground": "#F8F9FA",
     "radius": "3px",
     "neutralUsage": {
-      "darkest": "Use foreground for text/icons. Use this color for building component features.",
-      "darker": "sub headings/meta text",
-      "dark": "disabled text",
-      "light": "borders",
-      "lighter": "backgrounds for hovering of cards when needed",
-      "lightest": "Background on data list rows"
+      "darkest": "'Use foreground for text/icons. Use this color for building component features.'",
+      "darker": "'sub headings/meta text'",
+      "dark": "'disabled text'",
+      "light": "'borders'",
+      "lighter": "'backgrounds for hovering of cards when needed'",
+      "lightest": "'Background on data list rows'"
     },
     "neutral": {
       "darkest": "#2D2D2D",
