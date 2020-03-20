@@ -8,7 +8,7 @@
     height: 152px;
     font-size: $font-spec-7-size;
     font-family: $font-family;
-    border: 1px solid $neutral-3;
+    border: 1px solid $neutral-light;
     border-radius: $radius;
     transition: box-shadow .1s ease-out, border .2s ease-out;
     padding: 8px;
@@ -19,17 +19,17 @@
     &:not(:disabled) {
         &:focus {
             box-shadow: 0 0 0 4px $focus;
-            border-color: $secondary-2;
+            border-color: $secondary-base;
         }
         &.invalid {
-            border-color: $error-1;
+            border-color: $error-base;
         }
     }
     
     &:disabled {
-        background: $neutral-4;
-        border-color: $neutral-4;
-        color: $neutral-2;
+        background: $neutral-light;
+        border-color: $neutral-light;
+        color: $neutral-darker;
         cursor: not-allowed;
     }
 }
