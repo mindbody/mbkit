@@ -1,8 +1,8 @@
 {
-    "name": "'mindbody'",
+    "name": "mindbody",
     "foreground": "#2D2D2D",
     "background": "#ffffff",
-    "applicationBackground": "#F8F9FA",
+    "applicationBackground": "#EFF1F3",
     "radius": "3px",
     "neutralUsage": {
       "darkest": "'Use foreground for text/icons. Use this color for building component features.'",
@@ -22,14 +22,17 @@
     },
     "primary": {
       "base": "#D54400",
-      "light": "#FCECE6"
+      "light": "#FCECE6",
+      "foreground": "#ffffff"
     },
     "secondary": {
       "base": "#0A7C8E",
-      "light": "#E5F2F4"
+      "light": "#E5F2F4",
+      "foreground": "#ffffff"
     },
     "tertiary": {
-      "base": "#696C74"
+      "base": "#696C74",
+      "foreground": "#ffffff"
     },
     "success": {
       "base": "#2F7052",
