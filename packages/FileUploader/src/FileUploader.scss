@@ -156,16 +156,16 @@
             @include loader($neutral-7, $primary-1);
         }
         &secondary {
-            @include buttonColor($secondary-1, $neutral-7, $secondary-1);
-            @include loader($neutral-7, $secondary-1);
+            @include buttonColor($secondary-2, $neutral-7, $secondary-2);
+            @include loader($neutral-7, $secondary-2);
         }
         &primaryOutlined {
             @include buttonColor($neutral-7, $neutral-1, $primary-1);
             @include loader($primary-1, $neutral-7);
         }
         &secondaryOutlined {
-            @include buttonColor($neutral-7, $neutral-1, $secondary-1);
-            @include loader($secondary-1, $neutral-7);
+            @include buttonColor($neutral-7, $neutral-1, $secondary-2);
+            @include loader($secondary-2, $neutral-7);
         }
     }
     &:not(.isLoading):not(.disabled):hover .button.variant {
@@ -173,13 +173,13 @@
             @include buttonColor($neutral-7, $neutral-1, $primary-1);
         }
         &secondary {
-            @include buttonColor($neutral-7, $neutral-1, $secondary-1);
+            @include buttonColor($neutral-7, $neutral-1, $secondary-2);
         }
         &primaryOutlined {
             @include buttonColor($primary-1, $neutral-7, $primary-1);
         }
         &secondaryOutlined {
-            @include buttonColor($secondary-1, $neutral-7, $secondary-1);
+            @include buttonColor($secondary-2, $neutral-7, $secondary-2);
         }
     }
     &.isLoading {
