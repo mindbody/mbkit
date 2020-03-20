@@ -73,6 +73,6 @@
         @include bannerColors($warning-1, $warning-3);
     }
     &.info {
-        @include bannerColors($secondary-1, $secondary-3);
+        @include bannerColors($secondary-2, $secondary-3);
     }
 }
