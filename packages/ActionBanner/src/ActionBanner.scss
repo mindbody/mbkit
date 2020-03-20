@@ -29,10 +29,10 @@ $transitionTime: 400;
     position: relative;
 
     &.warning {
-        background: $warning-3;
+        background: $warning-light;
     }
     &.error {
-        background: $error-3;
+        background: $error-light;
     }
 
     .closeIcon {
