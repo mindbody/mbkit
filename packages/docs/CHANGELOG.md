@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.7.1...@mbkit/docs@0.7.2) (2020-03-21)
+
+
+### Bug Fixes
+
+* **docs:** updated scss variables per theme updates ([b3939d6](https://github.com/gatsbyjs/gatsby-starter-default/commit/b3939d6fe0cd89135449df413caa8b0206251c44))
+* **docs:** updated secondary colors ([abf4478](https://github.com/gatsbyjs/gatsby-starter-default/commit/abf447897a68b99f15bc0c8dd3e98d18e4464255))
+* **docs:** using theme variables for docs site ([d2af3ab](https://github.com/gatsbyjs/gatsby-starter-default/commit/d2af3ab74b993268eef2a970fa1d5a06ecb021d9))
+* **docs:** using theme variables for docs site ([47377b4](https://github.com/gatsbyjs/gatsby-starter-default/commit/47377b4465006bee468cac69297bd60c428379d5))
+
+
+
+
+
 ## [0.7.1](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.7.0...@mbkit/docs@0.7.1) (2020-03-19)
 
 

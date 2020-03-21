@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/tipsy@1.3.3...@mbkit/tipsy@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **tipsy:** updated colors per theme updates ([4935a7c](https://github.com/mindbody/design-system/commit/4935a7c8ef8e1e98f6f4aaaf7ca7fdd3bbdc52de))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/tipsy@1.3.2...@mbkit/tipsy@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/tipsy

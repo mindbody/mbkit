@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.3.3...@mbkit/icon@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **icon:** updated colors per theme updates ([77cf36c](https://github.com/mindbody/design-system/commit/77cf36caac96cef067061de1bcbf035e4d6cd56c))
+* **icon:** updated secondary colors ([c7b113b](https://github.com/mindbody/design-system/commit/c7b113b6e00c1eefe7f6a17f103d33e64d72f1f6))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.3.2...@mbkit/icon@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/icon

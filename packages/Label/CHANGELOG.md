@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/label@1.3.3...@mbkit/label@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **label:** updated colors per theme updates ([c13918f](https://github.com/mindbody/design-system/commit/c13918ff920aacd0fdc2cbba44ef47368a23513d))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/label@1.3.2...@mbkit/label@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/label

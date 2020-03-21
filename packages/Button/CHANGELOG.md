@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/button@1.3.3...@mbkit/button@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **button:** updated button per theme updates ([b087b28](https://github.com/mindbody/design-system/commit/b087b2876c4fdb1baf19e7d473e85cc9ea566bbf))
+* **button:** updated secondary colors ([cc95780](https://github.com/mindbody/design-system/commit/cc95780f510cd8569b3408192e9eb7e28affbdb3))
+* **button:** using foreground colors for primary/secondary/tertiary colors ([8d20c00](https://github.com/mindbody/design-system/commit/8d20c00d6e4325c7196acf6b43b3e849e4f5d394))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/button@1.3.2...@mbkit/button@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/button

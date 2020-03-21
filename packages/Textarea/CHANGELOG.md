@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.3.3...@mbkit/textarea@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **textarea:** updated colors per theme updates ([ecefb68](https://github.com/mindbody/design-system/commit/ecefb68755da4cc0306181795886e2baf98ce786))
+* **textarea:** updated secondary colors ([45a37f2](https://github.com/mindbody/design-system/commit/45a37f2a78fe9ae125af4b0ed0d19c60f2e08b83))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/textarea@1.3.2...@mbkit/textarea@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/textarea

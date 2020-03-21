@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/radio@1.3.3...@mbkit/radio@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **radio:** updated colors per theme updates ([876b6c5](https://github.com/mindbody/design-system/commit/876b6c57ed9c5c60c6095aa5cf42f3b02c403761))
+* **radio:** updated secondary colors ([cf7e136](https://github.com/mindbody/design-system/commit/cf7e13654e09168b1915eae5f83eadeee65eaa33))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/radio@1.3.2...@mbkit/radio@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/radio

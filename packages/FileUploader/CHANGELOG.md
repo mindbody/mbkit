@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.3.3...@mbkit/file-uploader@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **file-uploader:** updated colors from theme updates ([820ce31](https://github.com/mindbody/design-system/commit/820ce31c01944fb6f411020f5479f33ed7a3fa36))
+* **file-uploader:** updated secondary colors ([06e79f2](https://github.com/mindbody/design-system/commit/06e79f2226f806bc21f43144eb755dc88bd401f0))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/file-uploader@1.3.2...@mbkit/file-uploader@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/file-uploader

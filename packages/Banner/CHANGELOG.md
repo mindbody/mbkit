@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.3.3...@mbkit/banner@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **banner:** updated colors per theme changes ([cfa48ca](https://github.com/mindbody/design-system/commit/cfa48cab76581df70bfb427ca2abfa20bce0edd7))
+* **banner:** updated colors per theme updates ([05e1298](https://github.com/mindbody/design-system/commit/05e1298a8fcc0181675571018dae3c9108d895f2))
+* **banner:** updated secondary colors ([5571eb5](https://github.com/mindbody/design-system/commit/5571eb50a2241312d2d38415fa1d69554df46372))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/banner@1.3.2...@mbkit/banner@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/banner

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.2.3...@mbkit/action-banner@1.2.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **accordion:** updated color variables based on theme changes ([340e18d](https://github.com/mindbody/design-system/commit/340e18d582888b9bc6605952dab977e17f3ef9ac))
+
+
+
+
+
 ## [1.2.3](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.2.2...@mbkit/action-banner@1.2.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/action-banner
