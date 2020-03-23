@@ -6,7 +6,7 @@
     vertical-align: middle;
     width: 24px;
     height: 24px;
-    border: 1px solid $neutral-3;
+    border: 1px solid $neutral-light;
     border-radius: 50%;
     position: relative;
     outline: none;
@@ -34,26 +34,26 @@
     }
 
     &:focus {
-        border-color: $secondary-1;
-        box-shadow: 0 0 0 4px var(--focus, rgba(96,150,230,.75));
+        border-color: $secondary-base;
+        box-shadow: 0 0 0 4px $focus;
     }
 
     &.invalid {
-        border-color: $error-1;
+        border-color: $error-base;
     }
 
     &:checked {
         &:before {
-            background: $secondary-1;
+            background: $secondary-base;
         }
     }
 
     &:disabled {
         cursor: not-allowed;
-        border-color: $neutral-5;
-        background: $neutral-5;
+        border-color: $neutral-light;
+        background: $neutral-light;
         &:checked:before {
-            background: $neutral-3;
+            background: $neutral-dark;
         }
     }
 }

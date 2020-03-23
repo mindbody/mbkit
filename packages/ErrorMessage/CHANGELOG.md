@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/error-message@1.3.3...@mbkit/error-message@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **error-message:** updated colors to use theme updates ([d5a5abf](https://github.com/mindbody/design-system/commit/d5a5abf05d3c62052128a52f0399926eabff0588))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/error-message@1.3.2...@mbkit/error-message@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/error-message

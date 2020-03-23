@@ -10,16 +10,16 @@
 
 @mixin disabled {
     cursor: not-allowed;
-    background: $neutral-4;
-    border-color: $neutral-4;
-    color: $neutral-2;
+    background: $neutral-light;
+    border-color: $neutral-light;
+    color: $neutral-dark;
 
     @include svgTargetFill {
-        fill: $neutral-2;
+        fill: $neutral-dark;
     }
 }
 
-$border: 1px solid $neutral-3;
+$border: 1px solid $neutral-light;
 
 .inputContainer {
     display: flex;
@@ -36,7 +36,7 @@ $border: 1px solid $neutral-3;
     &.hasFocus {
         box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
         .beforeInput, .afterInput {
-            border-color: $secondary-2;
+            border-color: $secondary-base;
         }
     }
 
@@ -53,14 +53,14 @@ $border: 1px solid $neutral-3;
 
     &.invalid {
         .beforeInput, .afterInput {
-            border-top-color: $error-1;
-            border-bottom-color: $error-1;
+            border-top-color: $error-base;
+            border-bottom-color: $error-base;
         }
         .beforeInput {
-            border-left-color: $error-1;
+            border-left-color: $error-base;
         }
         .afterInput {
-            border-right-color: $error-1;
+            border-right-color: $error-base;
         }
     }
 
@@ -104,10 +104,10 @@ $border: 1px solid $neutral-3;
     }
     &:focus {
         outline: none;
-        border-color: $secondary-2;
+        border-color: $secondary-base;
     }
     &.invalid {
-        border-color: $error-1;
+        border-color: $error-base;
     }
 
     &:disabled {

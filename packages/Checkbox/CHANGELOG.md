@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.3.3...@mbkit/checkbox@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **checkbox:** updated color to use theme variables ([1abbfbe](https://github.com/mindbody/design-system/commit/1abbfbe12e368411a007628f635e2aea58ba63dd))
+* **checkbox:** updated secondary colors ([4d438b7](https://github.com/mindbody/design-system/commit/4d438b7a27b47168c06f431e34d4320b9904380f))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.3.2...@mbkit/checkbox@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/checkbox

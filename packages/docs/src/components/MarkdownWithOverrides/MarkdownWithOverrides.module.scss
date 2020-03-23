@@ -1,11 +1,13 @@
+@import "~@mbkit/theme/dist/theme.scss";
+
 .codeEditorWrapper {
     padding: 16px;
-    background-color: #EAEDF1;
+    background-color: $applicationBackground;
     border-radius: 6px;
 
     .codePreview {
         padding: 16px;
-        background-color: white;
+        background-color: $background;
         border-radius: 3px;
         margin-bottom: 16px;
 
@@ -29,7 +31,7 @@
         transition: box-shadow .2s ease-out;
     }
     textarea:focus {
-        box-shadow: inset 0 0 0 8px #6096e6;
+        box-shadow: inset 0 0 0 8px $focus;
     }
 }
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.3.3...@mbkit/toggle@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **toaster:** updated secondary colors ([b467c01](https://github.com/mindbody/design-system/commit/b467c01c09d8eb93a26ca799c2209b24a75dd9b5))
+* **toggle:** updated colors per theme updates ([0b3ea13](https://github.com/mindbody/design-system/commit/0b3ea13fe721fa029e2f534030a7ca2be3d81874))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/toggle@1.3.2...@mbkit/toggle@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/toggle

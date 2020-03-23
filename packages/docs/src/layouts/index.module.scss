@@ -1,21 +1,4 @@
-$font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
-$radius: var(--radius, 3px);
-$focus: var(--focus, #6096e6bf);
-$foreground: var(--foreground, #0B0B0D);
-$background: var(--background, #ffffff);
-$neutral-1: var(--neutral-1, #0B0B0D);
-$neutral-2: var(--neutral-2, #5A5E66);
-$neutral-3: var(--neutral-3, #8F96A1);
-$neutral-4: var(--neutral-4, #CBD0D7);
-$neutral-5: var(--neutral-5, #EAEDF1);
-$neutral-6: var(--neutral-6, #F8F9FB);
-$neutral-7: var(--neutral-7, #ffffff);
-$primary-1: var(--primary-1, #993100);
-$primary-2: var(--primary-2, #C23E00);
-$primary-3: var(--primary-3, #FFEEE6);
-$secondary-1: var(--secondary-1, #004C57);
-$secondary-2: var(--secondary-2, #007485);
-$secondary-3: var(--secondary-3, #E5F2F4);
+@import "~@mbkit/theme/dist/theme.scss";
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,600');
 * {
@@ -27,7 +10,7 @@ $secondary-3: var(--secondary-3, #E5F2F4);
 }
 body {
     margin: 0;
-    background: $neutral-5;
+    background: $applicationBackground;
     min-height: 100vh;
     font-family: $font-family;
 }
@@ -96,7 +79,7 @@ p {
     }
 
     a {
-        color: $secondary-2;
+        color: $secondary-base;
         text-decoration: none;
         border-radius: $radius;
         
@@ -104,7 +87,7 @@ p {
             text-decoration: underline;
         }
         &:visited {
-            color: $secondary-1;
+            color: $secondary-base;
         }
     }
 
@@ -148,12 +131,12 @@ table {
   thead th {
       text-transform: uppercase;
       font-size: 11px;
-      color: $neutral-2;
+      color: $neutral-darker;
       font-weight: 300;
-      background: $neutral-6;;
+      background: $applicationBackground;
       padding: 8px 16px;
       text-align: left;
-      border-bottom: 1px solid $neutral-4;
+      border-bottom: 1px solid $neutral-light;
 
       &:first-child, &:last-child {
           border-radius: 3px 3px 0 0;
@@ -161,16 +144,16 @@ table {
   }
 
   tbody tr {
-      border-bottom: 1px solid $neutral-4;
+      border-bottom: 1px solid $neutral-light;
 
       &:nth-child(even) td {
-          background-color: $neutral-6;
+          background-color: $applicationBackground;
       }
       td {
           padding: 8px 16px;
           font-size: 14px;
           font-weight: 400;
-          background-color: #fff;
+          background-color: $background;
       }
   } 
 }

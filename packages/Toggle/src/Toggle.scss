@@ -4,7 +4,7 @@
     appearance: none;
     width: 48px;
     height: 31px;
-    background: $neutral-3;
+    background: $neutral-dark;
     border-radius: 15px;
     outline: none;
     transition: box-shadow .1s ease-out;
@@ -26,7 +26,7 @@
         left: 2px;
         width: 27px;
         height: 27px;
-        background: #fff;
+        background: $secondary-foreground;
         border-radius: 50%;
         transition: left .1s ease-out;
     }
@@ -48,7 +48,7 @@
         box-shadow: 0 0 0 8px $focus;
     }
     &:checked {
-        background: $secondary-1;
+        background: $secondary-base;
 
         &:before {
             left: calc(100% - 29px);
@@ -58,7 +58,7 @@
         }
     }
     &:disabled {
-        background: $neutral-4;
+        background: $neutral-light;
         cursor: not-allowed;
         &:before {
             box-shadow: 0 2px 2px 0 rgba(#000, .2);

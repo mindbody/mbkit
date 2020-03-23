@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.3.3...@mbkit/modal@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **modal:** updated colors per theme updates ([2913918](https://github.com/mindbody/design-system/commit/29139185d6113463903829355faf26368610d703))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.3.2...@mbkit/modal@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/modal

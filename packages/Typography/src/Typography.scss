@@ -54,22 +54,22 @@
     color: $foreground;
 }
 .primaryColor {
-    color: $primary-1;
+    color: $primary-base;
 }
 .infoColor {
-    color: $secondary-1;
+    color: $secondary-base;
 }
 .successColor {
-    color: $success-1;
+    color: $success-base;
 }
 .warningColor {
-    color: $warning-1;
+    color: $warning-base;
 }
 .errorColor {
-    color: $error-1;
+    color: $error-base;
 }
 .metaColor {
-    color: $neutral-2;
+    color: $neutral-darker;
 }
 
 .link {
@@ -78,7 +78,7 @@
     transition: box-shadow .1s ease-out;
     border-radius: 3px;
     cursor: pointer;
-    color: $secondary-1;
+    color: $secondary-base;
     position: relative;
     outline: none;
 
@@ -87,7 +87,7 @@
     }
     &:visited {
         text-decoration: underline;
-        color: $error-2;
+        color: $error-base;
     }
     &:focus {
         box-shadow: 0 0 0 4px $focus;

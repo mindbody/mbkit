@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.3...@mbkit/select@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **select:** updated colors per theme updates ([0cb575b](https://github.com/mindbody/design-system/commit/0cb575b3a2633566464d535d8264e9bce8de89d8))
+* **select:** updated secondary colors ([d9b6f82](https://github.com/mindbody/design-system/commit/d9b6f829a281d866a342750b4273801ddb2b82d5))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.2...@mbkit/select@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/select

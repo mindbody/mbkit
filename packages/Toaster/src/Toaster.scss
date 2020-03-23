@@ -26,8 +26,8 @@ $transitionTime: 500;
     bottom: 0;
     left: 0;
 
-    background: $secondary-1;
-    color: $neutral-7;
+    background: $secondary-base;
+    color: $secondary-foreground;
     padding: 16px;
     border-radius: $radius;
     
@@ -40,14 +40,14 @@ $transitionTime: 500;
     animation-direction: normal;
 
     .icon {
-        @include svgFill($neutral-7);
+        @include svgFill($secondary-foreground);
         vertical-align: middle;
         margin-right: 8px;
         height: 32px;
     }
     .content {
         padding: 4px;
-        color: $neutral-7;
+        color: $secondary-foreground;
         line-height: 1.5;
     }
 

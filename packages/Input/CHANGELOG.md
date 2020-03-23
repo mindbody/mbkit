@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/input@1.3.3...@mbkit/input@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **icon:** updated colors per theme update ([31dc95a](https://github.com/mindbody/design-system/commit/31dc95a250f51d35082f1250ba3e814d3c3b3322))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/input@1.3.2...@mbkit/input@1.3.3) (2020-03-19)
 
 

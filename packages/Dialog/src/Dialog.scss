@@ -86,7 +86,7 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
     border: none;
 
     &:hover {
-        background: $neutral-6;
+        background: $neutral-lightest;
     }
 
     &:focus {

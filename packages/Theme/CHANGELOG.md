@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/mindbody/design-system/compare/@mbkit/theme@1.3.3...@mbkit/theme@2.0.0) (2020-03-21)
+
+
+### Bug Fixes
+
+* **theme:** added foreground colors ([c335d64](https://github.com/mindbody/design-system/commit/c335d64d8d0cd78023c57f24fa000fdbef6b5d89))
+* **theme:** added foreground for primary/secondary/tertiary colors ([400ff9b](https://github.com/mindbody/design-system/commit/400ff9bf1616dfaa9d73b95c5155f7b9aa707fef))
+* **theme:** updated primary colors ([8b09dff](https://github.com/mindbody/design-system/commit/8b09dffc8777a763f1bf0d911e53980dee57afba))
+* **theme:** updated theme names and colors to be more specific and added new field for application background ([732ac5e](https://github.com/mindbody/design-system/commit/732ac5ea8792702a2878314214a48370e4c3becc))
+
+
+### BREAKING CHANGES
+
+* **theme:** renamed keys that are exported for SCSS consumption. Removed some primary/secondary colors as they had no use per UX
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/theme@1.3.2...@mbkit/theme@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/theme

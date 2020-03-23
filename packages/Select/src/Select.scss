@@ -12,7 +12,7 @@
     font-family: $font-family;
     background: $background;
     color: $foreground;
-    border: 1px solid $neutral-3;
+    border: 1px solid $neutral-light;
     border-radius: $radius;
     padding: 8px;
     font-size: $font-spec-5-size;
@@ -21,31 +21,31 @@
     transition: box-shadow .1s ease-out, border .2s ease-out;
     background-repeat: no-repeat;
     background-position: calc(100% - 12px) 50%;
-    @include downChevron(#004C57);
+    @include downChevron(#2D2D2D);
 
     &:not(:disabled) {
         &:focus {
-            border-color: $secondary-1;
-            box-shadow: 0 0 0 4px var(--focus, rgba(96,150,230,.75));
+            border-color: $secondary-base;
+            box-shadow: 0 0 0 4px $focus;
         }
         &.invalid {
-            border-color: $error-1;
+            border-color: $error-base;
         }
     }
     &:disabled {
-        background-color: $neutral-4;
-        border-color: $neutral-4;
-        color: $neutral-2;
+        background-color: $neutral-light;
+        border-color: $neutral-light;
+        color: $neutral-darker;
         cursor: not-allowed;
-        @include downChevron(#5A5E66);
+        @include downChevron(#696C74);
     }
 }
 .multiSelectContainer {
     position: relative;
 
     .select.isOpen {
-        border-color: $secondary-1;
-        border-bottom-color: $neutral-3;
+        border-color: $secondary-base;
+        border-bottom-color: $neutral-lighter;
         border-radius: $radius $radius 0 0;
     }
 }
@@ -59,7 +59,7 @@
     pointer-events: none;
     background: $background;
     visibility: hidden;
-    border: 1px solid $secondary-1;
+    border: 1px solid $secondary-base;
     border-top: none;
     border-radius: 0 0 $radius $radius;
     z-index: 1;
@@ -91,7 +91,7 @@
     }
 }
 .placeholder {
-    color: $neutral-2;
+    color: $neutral-darker;
 }
 .selectPlaceholderLabel {
     overflow: hidden;
@@ -100,7 +100,7 @@
     padding-right: 24px;
 }
 .label {
-    color: $neutral-2;
+    color: $neutral-darker;
     font-size: $font-spec-6-size;
     line-height: 1.5;
     text-indent: 8px;

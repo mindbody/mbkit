@@ -14,7 +14,7 @@ $transitionTime: 200;
     border-radius: $radius;
     color: $foreground;
     font-family: $font-family;
-    border: 1px solid $neutral-3;
+    border: 1px solid $neutral-light;
     border-top: none;
 }
 
@@ -34,12 +34,12 @@ $transitionTime: 200;
         top: 0;
         left: 0;
 
-        border-top: 1px solid $neutral-3;
+        border-top: 1px solid $neutral-light;
         border-bottom: 1px solid transparent;
         pointer-events: none;
     }
     &IsOpen:before {
-        border-bottom: 1px solid $neutral-3;
+        border-bottom: 1px solid $neutral-light;
     }
 
     &:focus {
@@ -57,7 +57,7 @@ $transitionTime: 200;
 }
 .pane {
     overflow: hidden;
-    background: $neutral-5;
+    background: $neutral-lighter;
     transition: all #{$transitionTime}ms ease-out;
     
     .paneContent {

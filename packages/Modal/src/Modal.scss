@@ -43,7 +43,7 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
     }
 
     .header {
-        background: $neutral-5;
+        background: $neutral-lighter;
         text-align: center;
         padding: 16px;
         font-size: $font-spec-2-size;
@@ -61,7 +61,7 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
     .footer {
         box-sizing: border-box; 
         padding: 24px;
-        border-top: 1px solid $neutral-3;
+        border-top: 1px solid $neutral-light;
         display: flex;
         justify-content: flex-end;
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.3.3...@mbkit/typography@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **typography:** updated colors per theme updates ([584a8c9](https://github.com/mindbody/design-system/commit/584a8c92dfb25632afc381806614520fa25a313b))
+* **typography:** updated secondary colors ([f6c510f](https://github.com/mindbody/design-system/commit/f6c510f0733dac5df5299c9b15ec42df846033a2))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.3.2...@mbkit/typography@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/typography

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.4.3...@mbkit/accordion@1.4.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **accordion:** updated neutral colors per theme changes ([b24777b](https://github.com/mindbody/design-system/commit/b24777bc8a170cb084dde69ab6a829393eb2568e))
+
+
+
+
+
 ## [1.4.3](https://github.com/mindbody/design-system/compare/@mbkit/accordion@1.4.2...@mbkit/accordion@1.4.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/accordion

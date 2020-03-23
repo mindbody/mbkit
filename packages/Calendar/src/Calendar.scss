@@ -19,10 +19,10 @@
         margin: 0 16px;
 
         &:not(:disabled) {
-            border: 1px solid $neutral-4;
+            border: 1px solid $neutral-light;
 
             &:hover {
-                background: $neutral-5 !important;
+                background: $neutral-lighter !important;
             }
             &:focus {
                 box-shadow: 0 0 0 4px $focus;
@@ -32,12 +32,12 @@
     [class*="navigation__arrow"] {
         transform-origin: center;
         background: $background !important;
-        border: 1px solid $neutral-4;
+        border: 1px solid $neutral-light;
         border-radius: $radius;
 
         &:not(:disabled) {
             &:hover {
-                background: $neutral-5 !important;
+                background: $neutral-lighter !important;
             }
             &:focus, &:active {
                 background: $background !important;
@@ -46,7 +46,7 @@
         }
         &:disabled {
             cursor: not-allowed;
-            background: $neutral-4 !important;
+            background: $neutral-light !important;
         }
     }
     [class*="month-view__weekdays__weekday"] {
@@ -85,7 +85,7 @@
         position: absolute;
         top: 0;
         height: 100%;
-        background: $secondary-1;
+        background: $secondary-base;
         width: 12px;
     }
     &:before {
@@ -124,15 +124,15 @@
 
     // Single dates that bleed over from previous/next month
     &[class*="day--neighboringMonth"] {
-        color: $neutral-3;
+        color: $neutral-dark;
     }
 
     &.isToday {
-        border: 1px solid $neutral-3;
+        border: 1px solid $neutral-dark;
     }
 
     &:hover {
-        background: $neutral-5 !important;
+        background: $neutral-lighter !important;
     }
     &:focus {
         background: $background !important;
@@ -141,8 +141,8 @@
     &:active,
     &[class*="active"],
     &[class*="hasActive"] {
-        background: $secondary-1 !important;
-        color: $neutral-7;
+        background: $secondary-base !important;
+        color: $neutral-lightest;
     }
 
     &[class*="year-view__months__month"] {
@@ -152,8 +152,8 @@
     }
 
     &:disabled {
-        color: $neutral-3;
-        background: $neutral-4 !important;
+        color: $neutral-dark;
+        background: $neutral-light !important;
         cursor: not-allowed;
     }
 }

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.3.3...@mbkit/toaster@1.3.4) (2020-03-21)
+
+
+### Bug Fixes
+
+* **toaster:** updated colors per theme updates ([288a84a](https://github.com/mindbody/design-system/commit/288a84a6abbcdd30aaff13b6435f8df2efd9ce27))
+* **toggle:** updated secondary colors ([72285ac](https://github.com/mindbody/design-system/commit/72285ac0394396e5a2bbc4defb3a1555b446065c))
+
+
+
+
+
 ## [1.3.3](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.3.2...@mbkit/toaster@1.3.3) (2020-03-19)
 
 **Note:** Version bump only for package @mbkit/toaster
