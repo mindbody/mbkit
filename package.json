@@ -19,7 +19,7 @@
         "build:docs": "yarn build:types && yarn lerna run docs:prod",
         "docs:serve": "yarn lerna run docs:serve",
         "lerna:version": "yarn lerna version --conventional-commits --loglevel=error --yes",
-        "lerna:publish": "yarn lerna publish from-git --no-git-reset --yes",
+        "lerna:publish": "yarn lerna publish from-package --yes",
         "commit": "git-cz"
     },
     "author": "",
