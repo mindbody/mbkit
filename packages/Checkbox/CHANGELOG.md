@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.3.4...@mbkit/checkbox@1.3.5) (2020-03-26)
+
+
+### Bug Fixes
+
+* **checkbox:** updated border color ([eb491e9](https://github.com/mindbody/design-system/commit/eb491e9eb5dfca14663041e134844331fa9a3e6b))
+
+
+
+
+
 ## [1.3.4](https://github.com/mindbody/design-system/compare/@mbkit/checkbox@1.3.3...@mbkit/checkbox@1.3.4) (2020-03-21)
 
 
