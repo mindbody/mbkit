@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.3.5...@mbkit/typography@1.3.6) (2020-04-01)
+
+
+### Bug Fixes
+
+* **typography:** updated types for link element ([4bdbbf3](https://github.com/mindbody/design-system/commit/4bdbbf3e4c83e3c4d4c26dedea02384d780d9948))
+
+
+
+
+
 ## [1.3.5](https://github.com/mindbody/design-system/compare/@mbkit/typography@1.3.4...@mbkit/typography@1.3.5) (2020-03-26)
 
 **Note:** Version bump only for package @mbkit/typography
