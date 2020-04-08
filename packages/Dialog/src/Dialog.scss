@@ -69,9 +69,11 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
         opacity: 0;
     }
 }
+
 .content {
     position: relative;
 }
+
 .closeIcon {
     position: absolute;
     top: 8px;
@@ -96,12 +98,14 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
         box-shadow: 0 0 0 8px $focus;
     }
 }
+
 .header {
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.875rem;
     padding-right: 32px;
 }
+
 .description {
     font-size: .875rem;
     line-height: 1.25rem;
