@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/mindbody/mbkit/compare/@mbkit/dialog@1.3.6...@mbkit/dialog@1.3.7) (2020-04-08)
+
+
+### Bug Fixes
+
+* **dialog:** add spacing ([2a18e0f](https://github.com/mindbody/mbkit/commit/2a18e0f8240b60a1c873520184344aa175bfbfe8))
+
+
+
+
+
 ## [1.3.6](https://github.com/mindbody/design-system/compare/@mbkit/dialog@1.3.5...@mbkit/dialog@1.3.6) (2020-04-01)
 
 **Note:** Version bump only for package @mbkit/dialog
