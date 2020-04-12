@@ -15,7 +15,7 @@ module.exports = {
                 spaceId: '2rb53inahems',
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
                 downloadLocal: true,
-                environment: process.env.NODE_ENV === 'development' ? 'dev' : 'master',
+                environment: process.env.NODE_ENV === 'development' ? 'page-updates' : 'master',
             },
         },
         `@contentful/gatsby-transformer-contentful-richtext`,
