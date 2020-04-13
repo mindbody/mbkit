@@ -1,8 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { INLINES } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 import SEO from '../components/seo';
 import MarkdownWithOverrides from '../components/MarkdownWithOverrides/MarkdownWithOverrides';
 
