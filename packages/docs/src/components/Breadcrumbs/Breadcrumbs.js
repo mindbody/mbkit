@@ -4,8 +4,6 @@ import { Location } from '@reach/router';
 
 export default function Breadcrumbs(props) {
     const { isFullPage } = props;
-    // TODO: refactor component to include page {title}
-    const lowerCaseWords = ['and', 'to', 'for', 'with', 'about'];
     if (isFullPage) {
         return null;
     }
@@ -13,7 +11,8 @@ export default function Breadcrumbs(props) {
         <Location>
             {({ location }) => {
                 let links = [];
-
+                // TODO: refactor component to include page {title}
+                const lowerCaseWords = ['and', 'to', 'for', 'with', 'about'];
                 const crumbs = location.pathname.split('/');
 
                 // If last character is an empty string, remove it
