@@ -18,6 +18,14 @@ const query = graphql`
                 node {
                     id
                     path
+                    context {
+                        componentContext {
+                            componentName
+                        }
+                        page {
+                            title
+                        }
+                    }
                 }
             }
         }
@@ -25,6 +33,7 @@ const query = graphql`
             nodes {
                 order
                 slug
+                title
             }
         }
     }
@@ -62,14 +71,29 @@ const Layout = props => {
         try {
             let sitemap = [];
 
-            // sort for order
-            const itemsSorted = allPages.allSitePage.edges.sort((a, b) => a.node.path.length - b.node.path.length);
-            // removing `node` as key
+            // sort for order, remove `node` as key
+            const itemsSorted = allPages.allSitePage.edges
+                .map(item => item.node)
+                .sort((a, b) => a.path.length - b.path.length);
             const pagesWithOrderFlattened = allPages.allContentfulPage.nodes.map(page => page);
-            const itemsFlattened = itemsSorted.map(item => ({
-                title: getTitleFromPath(item.node.path),
-                path: item.node.path,
-            }));
+
+            const itemsFlattened = itemsSorted.map(item => {
+                let title = '';
+
+                // Use page/component {title} in sidebar nav item
+                if (item.context.page) {
+                    title = item.context.page.title;
+                } else if (item.context.componentContext) {
+                    title = item.context.componentContext.componentName;
+                } else {
+                    title = getTitleFromPath(item.path);
+                }
+
+                return {
+                    title: title,
+                    path: item.path,
+                };
+            });
             // remove 404 pages
             const allPagesExcept404 = itemsFlattened.filter(item => !item.path.includes('404'));
 

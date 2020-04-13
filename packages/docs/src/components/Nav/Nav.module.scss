@@ -308,8 +308,8 @@ $mobileHeaderHeight: 54px;
       align-items: center;
       color: $foreground;
       text-decoration: none;
-      text-transform: capitalize;
       border-radius: $radius;
+      line-height: 1.4;
 
       &:hover {
         color: $secondary-base;
