@@ -180,7 +180,7 @@ const Layout = props => {
                         </main>
                         <footer className={styles.footer}>
                             <Text size={6} color="meta">
-                                Copyright &copy; {new Date().getFullYear()} Mindbody, Inc.
+                                Copyright &copy; {new Date().getFullYear()} MINDBODY Inc.
                             </Text>
                         </footer>
                     </SkipNavContent>
