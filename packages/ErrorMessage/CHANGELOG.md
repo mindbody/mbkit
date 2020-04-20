@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.8](https://github.com/mindbody/mbkit/compare/@mbkit/error-message@1.3.7...@mbkit/error-message@1.3.8) (2020-04-20)
+
+**Note:** Version bump only for package @mbkit/error-message
+
+
+
+
+
 ## [1.3.7](https://github.com/mindbody/mbkit/compare/@mbkit/error-message@1.3.6...@mbkit/error-message@1.3.7) (2020-04-08)
 
 **Note:** Version bump only for package @mbkit/error-message
