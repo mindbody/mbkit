@@ -95,7 +95,7 @@ const MarkdownWithOverrides = ({ children, overrides }) => (
                 a: props => {
                     const text = props.children[0];
                     const linkTo = props.href;
-                    if (linkTo.includes('http')) {
+                    if (linkTo.includes('http') || linkTo.includes('mailto')) {
                         return (
                             <a href={linkTo} target="_blank" rel="noopener noreferrer nofollow">
                                 {text}

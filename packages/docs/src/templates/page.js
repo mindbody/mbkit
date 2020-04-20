@@ -4,12 +4,13 @@ import MarkdownWithOverrides from '../components/MarkdownWithOverrides/MarkdownW
 
 const PageTemplate = props => {
     const { title, content } = props.pageContext.page;
+    const pageContent = content.content || '';
 
     return (
         <>
             <SEO title={title} />
             <h1>{title}</h1>
-            <MarkdownWithOverrides>{content.content}</MarkdownWithOverrides>
+            <MarkdownWithOverrides>{pageContent}</MarkdownWithOverrides>
         </>
     );
 };
