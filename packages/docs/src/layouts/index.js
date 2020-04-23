@@ -73,6 +73,7 @@ const Layout = props => {
 
             // sort for order
             const itemsSorted = allPages.allSitePage.edges.sort((a, b) => a.node.path.length - b.node.path.length);
+            // removing `node` as key
             const pagesWithOrderFlattened = allPages.allContentfulPage.nodes.map(page => page);
 
             const itemsFlattened = itemsSorted.map(item => {
