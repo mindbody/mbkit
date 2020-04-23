@@ -71,32 +71,35 @@ const Layout = props => {
         try {
             let sitemap = [];
 
-            // sort for order
-            const itemsSorted = allPages.allSitePage.edges.sort((a, b) => a.node.path.length - b.node.path.length);
+            // sort for order and remove 404 pages
+            const itemsSorted = allPages.allSitePage.edges
+                .sort((a, b) => a.node.path.length - b.node.path.length)
+                .filter(item => !item.node.path.includes('404'));
+
             // removing `node` as key
             const pagesWithOrderFlattened = allPages.allContentfulPage.nodes.map(page => page);
 
-            const itemsFlattened = itemsSorted.map(item => {
-                let title = '';
+            const itemsFlattened = itemsSorted
+                // trim items down to simple objects
+                .map(item => {
+                    let title = '';
 
-                // Use page/component {title} in sidebar nav item
-                if (item.node.context.page) {
-                    title = item.node.context.page.title;
-                } else if (item.node.context.componentContext) {
-                    title = item.node.context.componentContext.componentName;
-                } else {
-                    title = getTitleFromPath(item.node.path);
-                }
+                    // Use page/component {title} in sidebar nav item
+                    if (item.node.context.page) {
+                        title = item.node.context.page.title;
+                    } else if (item.node.context.componentContext) {
+                        title = item.node.context.componentContext.componentName;
+                    } else {
+                        title = getTitleFromPath(item.node.path);
+                    }
 
-                return {
-                    title: title,
-                    path: item.node.path,
-                };
-            });
-            // remove 404 pages
-            const allPagesExcept404 = itemsFlattened.filter(item => !item.path.includes('404'));
+                    return {
+                        title: title,
+                        path: item.node.path,
+                    };
+                });
 
-            allPagesExcept404.forEach(item => {
+            itemsFlattened.forEach(item => {
                 const isTopLevelNav = item.path.split('/').length === 2;
                 const page = pagesWithOrderFlattened.find(i => i.slug === item.path.replace('/', ''));
                 const order = page && page.order;
@@ -121,7 +124,7 @@ const Layout = props => {
                     return item;
                 }
 
-                return findMatchingChildren(item, allPagesExcept404);
+                return findMatchingChildren(item, itemsFlattened);
             });
 
             setMenuItems(sitemap);
