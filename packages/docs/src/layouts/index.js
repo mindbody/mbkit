@@ -71,27 +71,25 @@ const Layout = props => {
         try {
             let sitemap = [];
 
-            // sort for order, remove `node` as key
-            const itemsSorted = allPages.allSitePage.edges
-                .map(item => item.node)
-                .sort((a, b) => a.path.length - b.path.length);
+            // sort for order
+            const itemsSorted = allPages.allSitePage.edges.sort((a, b) => a.node.path.length - b.node.path.length);
             const pagesWithOrderFlattened = allPages.allContentfulPage.nodes.map(page => page);
 
             const itemsFlattened = itemsSorted.map(item => {
                 let title = '';
 
                 // Use page/component {title} in sidebar nav item
-                if (item.context.page) {
-                    title = item.context.page.title;
-                } else if (item.context.componentContext) {
-                    title = item.context.componentContext.componentName;
+                if (item.node.context.page) {
+                    title = item.node.context.page.title;
+                } else if (item.node.context.componentContext) {
+                    title = item.node.context.componentContext.componentName;
                 } else {
-                    title = getTitleFromPath(item.path);
+                    title = getTitleFromPath(item.node.path);
                 }
 
                 return {
                     title: title,
-                    path: item.path,
+                    path: item.node.path,
                 };
             });
             // remove 404 pages
