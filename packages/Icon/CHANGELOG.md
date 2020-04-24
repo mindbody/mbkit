@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.9](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.3.7...@mbkit/icon@1.3.9) (2020-04-24)
+
+
+### Bug Fixes
+
+* **docs:** copy updates ([0299672](https://github.com/mindbody/design-system/commit/0299672dbcd744c71c9a53cd90bec41e2eb01ddc))
+
+
+
+
+
 ## [1.3.8](https://github.com/mindbody/design-system/compare/@mbkit/icon@1.3.7...@mbkit/icon@1.3.8) (2020-04-24)
 
 

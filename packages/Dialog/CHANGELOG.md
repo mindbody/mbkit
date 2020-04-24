@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.9](https://github.com/mindbody/design-system/compare/@mbkit/dialog@1.3.7...@mbkit/dialog@1.3.9) (2020-04-24)
+
+
+### Bug Fixes
+
+* **dialog:** added clear timeout for animation ([d5e13fb](https://github.com/mindbody/design-system/commit/d5e13fbc5838576885072a5b30d5ae05847d0623))
+
+
+
+
+
 ## [1.3.8](https://github.com/mindbody/design-system/compare/@mbkit/dialog@1.3.7...@mbkit/dialog@1.3.8) (2020-04-24)
 
 
