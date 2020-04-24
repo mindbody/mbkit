@@ -47,7 +47,7 @@ const HomePageTemplate = props => {
                             <img src={guideImages[index]} alt={`${guide} logo`} />
                         </div>
                         {/* TODO: modify/remove when new pages are added */}
-                        {index < 1 ? (
+                        {index < 2 ? (
                             <Link to={guideLinks[index]} className={styles.blockLink} key={guide}>
                                 <h3>{guide}</h3>
                             </Link>

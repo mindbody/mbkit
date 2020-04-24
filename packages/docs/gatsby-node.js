@@ -53,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
                 edges {
                     node {
                         content {
-                            json
+                            content
                         }
                         title
                         slug
