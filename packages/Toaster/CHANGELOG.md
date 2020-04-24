@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.8](https://github.com/mindbody/design-system/compare/@mbkit/toaster@1.3.7...@mbkit/toaster@1.3.8) (2020-04-24)
+
+
+### Bug Fixes
+
+* **toaster:** clearing toasters timeout when effect ends ([535c81d](https://github.com/mindbody/design-system/commit/535c81db0f8465953addc37427bd1fbc25f1396e))
+
+
+
+
+
 ## [1.3.7](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.3.6...@mbkit/toaster@1.3.7) (2020-04-08)
 
 **Note:** Version bump only for package @mbkit/toaster

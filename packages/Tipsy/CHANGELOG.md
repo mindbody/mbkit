@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.8](https://github.com/mindbody/design-system/compare/@mbkit/tipsy@1.3.7...@mbkit/tipsy@1.3.8) (2020-04-24)
+
+**Note:** Version bump only for package @mbkit/tipsy
+
+
+
+
+
 ## [1.3.7](https://github.com/mindbody/mbkit/compare/@mbkit/tipsy@1.3.6...@mbkit/tipsy@1.3.7) (2020-04-08)
 
 **Note:** Version bump only for package @mbkit/tipsy
