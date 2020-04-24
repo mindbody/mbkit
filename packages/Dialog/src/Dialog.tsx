@@ -60,9 +60,13 @@ export const Dialog: FC<DialogProps> = forwardRef((props: DialogProps, ref) => {
         if (show) {
             setInternalShow(show);
         } else {
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
                 setInternalShow(show);
             }, duration);
+
+            return () => {
+                clearTimeout(timeout);
+            };
         }
     }, [show]);
 
