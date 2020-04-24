@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.3.6...@mbkit/modal@1.3.7) (2020-04-24)
+
+
+### Bug Fixes
+
+* **modal:** clearing timeout for animation ([47b19ae](https://github.com/mindbody/design-system/commit/47b19ae92beff9c0fe5c8d6fe1776af78bfef304))
+
+
+
+
+
 ## [1.3.6](https://github.com/mindbody/design-system/compare/@mbkit/modal@1.3.5...@mbkit/modal@1.3.6) (2020-04-01)
 
 **Note:** Version bump only for package @mbkit/modal
