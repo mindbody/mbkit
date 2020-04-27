@@ -52,9 +52,13 @@ export const ActionBanner: FC<ActionBannerProps> = forwardRef(
             } else {
                 setHeight(0);
                 // otherwise allow animation to complete then close it
-                setTimeout(() => {
+                const timeout = setTimeout(() => {
                     setInternalShow(show);
                 }, Number(styles.transitionTime));
+
+                return () => {
+                    clearTimeout(timeout);
+                };
             }
         }, [show]);
         useEffect(() => {

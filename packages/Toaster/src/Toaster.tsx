@@ -34,9 +34,13 @@ export const Toaster: FC<ToasterProps> = forwardRef((props: ToasterProps, ref: R
             setInternalShow(show);
         } else {
             // otherwise allow animation to complete then close it
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
                 setInternalShow(show);
             }, Number(styles.transitionTime));
+
+            return () => {
+                clearTimeout(timeout);
+            };
         }
     }, [show]);
 

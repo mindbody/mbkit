@@ -107,9 +107,13 @@ export const Modal: FC<ModalProps> = forwardRef((props: ModalProps, ref: RefObje
         if (show) {
             setInternalShow(show);
         } else {
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
                 setInternalShow(show);
             }, duration);
+
+            return () => {
+                clearTimeout(timeout);
+            };
         }
     }, [show]);
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.9](https://github.com/mindbody/design-system/compare/@mbkit/input@1.3.7...@mbkit/input@1.3.9) (2020-04-24)
+
+**Note:** Version bump only for package @mbkit/input
+
+
+
+
+
+## [1.3.8](https://github.com/mindbody/design-system/compare/@mbkit/input@1.3.7...@mbkit/input@1.3.8) (2020-04-24)
+
+**Note:** Version bump only for package @mbkit/input
+
+
+
+
+
 ## [1.3.7](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.6...@mbkit/input@1.3.7) (2020-04-08)
 
 **Note:** Version bump only for package @mbkit/input
