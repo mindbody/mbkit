@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.10](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.2.7...@mbkit/action-banner@1.2.10) (2020-04-29)
+
+
+### Bug Fixes
+
+* **action-banner:** added clear timeout for internal animation state ([837ac4e](https://github.com/mindbody/design-system/commit/837ac4ea85cd73f118c7e39381506d897295d212))
+
+
+
+
+
 ## [1.2.9](https://github.com/mindbody/design-system/compare/@mbkit/action-banner@1.2.7...@mbkit/action-banner@1.2.9) (2020-04-24)
 
 
