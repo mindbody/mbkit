@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.7.7...@mbkit/docs@0.8.0) (2020-04-29)
+
+
+### Bug Fixes
+
+* **docs:** attempt to fixed broken pages and link misuse ([85e825f](https://github.com/gatsbyjs/gatsby-starter-default/commit/85e825f91988713dfbf05bbb57b0af3557ee97a5))
+* **docs:** changed prod Contentful env for pre-launch ([69597c3](https://github.com/gatsbyjs/gatsby-starter-default/commit/69597c381e0bd822e5ec9e21a716a52e4e8b4b50))
+* **docs:** modifed itemsSorted array ([6c2a7de](https://github.com/gatsbyjs/gatsby-starter-default/commit/6c2a7dece28abe5b0febb97462f47f14ce7e322a))
+* **docs:** updated nav algorithm to support new page objects ([311484f](https://github.com/gatsbyjs/gatsby-starter-default/commit/311484fab615a908ef7ffee1ea2cc22336bda2ec))
+
+
+### Features
+
+* **docs:** added basic Markdown support for pages ([d837e60](https://github.com/gatsbyjs/gatsby-starter-default/commit/d837e60e6f051561d6d27ff960c5686635600b55))
+* **docs:** added new Contentful env for development ([417c751](https://github.com/gatsbyjs/gatsby-starter-default/commit/417c7514101c71c4ec6ca2b4f43689cc1e0efc16))
+
+
+
+
+
 ## [0.7.7](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.7.5...@mbkit/docs@0.7.7) (2020-04-24)
 
 

@@ -65,11 +65,13 @@
     z-index: 1;
     max-height: 200px;
     overflow: scroll;
+    display: none;
 
     &.isOpen {
         opacity: 1;
         pointer-events: initial;
         visibility: visible;
+        display: block;
     }
 }
 .multiSelectItem {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.10](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.9...@mbkit/select@1.3.10) (2020-04-29)
+
+
+### Bug Fixes
+
+* **select:** updated multi select to use display none so the drawers height isn't drawn when closed ([89a03a3](https://github.com/mindbody/design-system/commit/89a03a31a26c35443c84493a83f62fda1d8798f9))
+
+
+
+
+
 ## [1.3.9](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.7...@mbkit/select@1.3.9) (2020-04-24)
 
 **Note:** Version bump only for package @mbkit/select
