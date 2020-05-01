@@ -4,7 +4,7 @@
     "source": "src/index.tsx",
     "main": "dist/cjs/Select.js",
     "module": "dist/esm/Select.js",
-    "types": "dist/cjs/Select/src/index.d.ts",
+    "types": "dist/cjs/index.d.ts",
     "publishConfig": {
         "access": "public"
     },
