@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.11](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.10...@mbkit/select@1.3.11) (2020-05-04)
+
+
+### Bug Fixes
+
+* **select:** update typings ([9b8fcc4](https://github.com/mindbody/design-system/commit/9b8fcc420a6ac3819bab6cf798a83101c3859a1b))
+
+
+
+
+
 ## [1.3.10](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.9...@mbkit/select@1.3.10) (2020-04-29)
 
 
