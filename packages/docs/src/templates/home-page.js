@@ -46,17 +46,9 @@ const HomePageTemplate = props => {
                         <div className={styles.roundImage}>
                             <img src={guideImages[index]} alt={`${guide} logo`} />
                         </div>
-                        {/* TODO: modify/remove when new pages are added */}
-                        {index < 2 ? (
-                            <Link to={guideLinks[index]} className={styles.blockLink} key={guide}>
-                                <h3>{guide}</h3>
-                            </Link>
-                        ) : (
-                            <>
-                                <div className={styles.comingSoon}>{`Coming soon`}</div>
-                                <h3>{guide}</h3>
-                            </>
-                        )}
+                        <Link to={guideLinks[index]} className={styles.blockLink} key={guide}>
+                            <h3>{guide}</h3>
+                        </Link>
                         <p>{guideDescription[index]}</p>
                     </div>
                 ))}
