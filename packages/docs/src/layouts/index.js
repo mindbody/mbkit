@@ -24,6 +24,7 @@ const query = graphql`
                         }
                         page {
                             title
+                            order
                         }
                     }
                 }
@@ -54,8 +55,7 @@ function findMatchingChildren(currentNavItem, allPages) {
         return matchingPaths && isDirectChild;
     });
 
-    const menu = matchingItems.map(item => ({ title: item.title, to: item.path }));
-
+    const menu = matchingItems.map(item => ({ title: item.title, to: item.path, order: item.order }));
     return {
         ...currentNavItem,
         menu: menu.map(menuItem => findMatchingChildren(menuItem, allPages)),
@@ -83,10 +83,11 @@ const Layout = props => {
                 // trim items down to simple objects
                 .map(item => {
                     let title = '';
-
+                    let order = null;
                     // Use page/component {title} in sidebar nav item
                     if (item.node.context.page) {
                         title = item.node.context.page.title;
+                        order = item.node.context.page.order;
                     } else if (item.node.context.componentContext) {
                         title = item.node.context.componentContext.componentName;
                     } else {
@@ -96,18 +97,20 @@ const Layout = props => {
                     return {
                         title: title,
                         path: item.node.path,
+                        order,
                     };
                 });
 
             itemsFlattened.forEach(item => {
                 const isTopLevelNav = item.path.split('/').length === 2;
                 const page = pagesWithOrderFlattened.find(i => i.slug === item.path.replace('/', ''));
-                const order = page && page.order;
+                const order = page ? page.order : null;
                 if (isTopLevelNav) {
                     if (item.path === '/') {
                         sitemap.push({
                             title: 'Home',
                             to: item.path,
+                            order,
                         });
                         return;
                     }

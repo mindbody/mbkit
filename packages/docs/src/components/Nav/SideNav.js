@@ -35,11 +35,9 @@ export const SideNav = props => {
         <aside>
             <nav className={sideNavClassNames}>
                 <ul>
-                    {subMenu
-                        .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
-                        .map(item => {
-                            return <RecursiveSubNav key={item.to} {...item} path={path} />;
-                        })}
+                    {subMenu.sort(sortByOrderOrAlphabetical).map(item => {
+                        return <RecursiveSubNav key={item.to} {...item} path={path} />;
+                    })}
                 </ul>
             </nav>
         </aside>
@@ -80,14 +78,19 @@ const RecursiveSubNav = props => {
                         <IconChevronDown />
                     </button>
                     <ul className={subnavClassnames}>
-                        {menu
-                            .sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
-                            .map(subMenu => (
-                                <RecursiveSubNav key={subMenu.to} {...subMenu} />
-                            ))}
+                        {menu.sort(sortByOrderOrAlphabetical).map(subMenu => (
+                            <RecursiveSubNav key={subMenu.to} {...subMenu} />
+                        ))}
                     </ul>
                 </>
             )}
         </li>
     );
 };
+
+function sortByOrderOrAlphabetical(a, b) {
+    if (typeof a.order === 'number' && typeof b.order === 'number') {
+        return a.order - b.order;
+    }
+    return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
+}
