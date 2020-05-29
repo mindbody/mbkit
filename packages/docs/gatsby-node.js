@@ -58,6 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
                         title
                         slug
                         id
+                        order
                     }
                 }
             }
@@ -138,6 +139,7 @@ function generatePages({ pageNodes, createPage }) {
             path: p.slug,
             component: path.resolve('src/templates/page.js'),
             context: {
+                order: p.order,
                 page: p,
             },
         });
