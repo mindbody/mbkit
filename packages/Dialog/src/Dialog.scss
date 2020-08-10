@@ -80,6 +80,7 @@ $transitionValue: transform #{$transitionTime}ms cubic-bezier(0,0,1,1), opacity 
     right: 8px;
 
     appearance: none;
+    display: flex;
     margin: 0;
     padding: 4px;
     outline: none;
