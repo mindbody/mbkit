@@ -6,7 +6,7 @@ type ModalExampleProps = ModalProps & {
     renderManyChildren?: boolean;
 };
 export const ModalExample: FC<ModalExampleProps> = (props: ModalExampleProps) => {
-    const { buttonText, renderManyChildren, ...rest } = props;
+    const { show, onClose, label, buttonText, renderManyChildren, ...rest } = props;
     const [showModal, setShowModal] = React.useState(false);
     const btnRef = React.useRef(null);
     return (

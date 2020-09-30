@@ -42,49 +42,55 @@ export const ActionBanner: FC<ActionBannerProps> = forwardRef(
             [className]: className,
         });
 
-        const [height, setHeight] = useState(0);
+        const [height, setHeight] = useState<number | string>('auto');
         const containerRef = useRef<HTMLDivElement>(null);
+        const internalContainerRef = useRef<HTMLDivElement>(null);
 
         useEffect(() => {
+            const current = internalContainerRef.current;
+            if (current) {
+                const containerHeight = current.getBoundingClientRect().height;
+                if (containerHeight !== height) {
+                    setHeight(containerHeight);
+                }
+            } else {
+                if (height <= 0) {
+                    setHeight('auto');
+                }
+            }
+        }, [internalShow]);
+
+        useEffect(() => {
+            let timeout: ReturnType<typeof setTimeout>;
             if (show) {
                 // show right away
                 setInternalShow(show);
             } else {
-                setHeight(0);
                 // otherwise allow animation to complete then close it
-                const timeout = setTimeout(() => {
+                timeout = setTimeout(() => {
                     setInternalShow(show);
                 }, Number(styles.transitionTime));
-
-                return () => {
-                    clearTimeout(timeout);
-                };
             }
+            return () => {
+                clearTimeout(timeout);
+            };
         }, [show]);
-        useEffect(() => {
-            if (show) {
-                if (containerRef.current) {
-                    const child: ChildNode | null = containerRef.current.firstChild;
-                    if (child instanceof HTMLElement) {
-                        setHeight(child.getBoundingClientRect().height);
-                    }
-                }
-            } else {
-                setHeight(0);
-            }
-        }, [internalShow]);
 
-        if (!internalShow) {
-            return null;
-        }
         return (
-            <div style={{ height }} ref={containerRef} className={styles.container}>
-                <Alert {...rest} className={classNames} ref={ref}>
-                    {children}
-                    <button className={styles.closeIcon} onClick={onClose} data-testid="actionBannerCloseIcon">
-                        <CloseIcon />
-                    </button>
-                </Alert>
+            <div
+                style={{ height: show ? height : 0, visibility: internalShow ? 'visible' : 'hidden' }}
+                ref={containerRef}
+                aria-hidden={!internalShow}
+                className={styles.container}
+            >
+                <div ref={internalContainerRef}>
+                    <Alert {...rest} className={classNames} ref={ref} aria-hidden={!internalShow}>
+                        {children}
+                        <button className={styles.closeIcon} onClick={onClose} data-testid="actionBannerCloseIcon">
+                            <CloseIcon />
+                        </button>
+                    </Alert>
+                </div>
             </div>
         );
     },

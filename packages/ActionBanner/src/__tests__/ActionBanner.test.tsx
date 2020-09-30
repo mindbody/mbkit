@@ -13,12 +13,12 @@ describe('ActionBanner', () => {
         expect(container.textContent).toBe('Testing Action Banner');
     });
     it('should not render if show is hidden', () => {
-        const { container } = render(
+        const { container, getByText } = render(
             <ActionBanner show={false} variant={'error'} onClose={onCloseSpy}>
                 Testing Action Banner
             </ActionBanner>,
         );
-        expect(container.textContent).toBe('');
+        expect(getByText('Testing Action Banner')).not.toBeVisible();
     });
     it('should call the onClose callback when user clicks the close icon', () => {
         const { getByTestId } = render(
