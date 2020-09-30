@@ -78,7 +78,7 @@ export const ActionBanner: FC<ActionBannerProps> = forwardRef(
 
         return (
             <div
-                style={{ height: show ? height : 0, visibility: show ? 'visible' : 'hidden' }}
+                style={{ height: show ? height : 0, visibility: internalShow ? 'visible' : 'hidden' }}
                 ref={containerRef}
                 aria-hidden={!internalShow}
                 className={styles.container}
