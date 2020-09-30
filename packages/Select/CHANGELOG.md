@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.12](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.3.11...@mbkit/select@1.3.12) (2020-09-30)
+
+**Note:** Version bump only for package @mbkit/select
+
+
+
+
+
 ## [1.3.11](https://github.com/mindbody/design-system/compare/@mbkit/select@1.3.10...@mbkit/select@1.3.11) (2020-05-04)
 
 
