@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.12](https://github.com/mindbody/mbkit/compare/@mbkit/dialog@1.3.11...@mbkit/dialog@1.3.12) (2020-10-19)
+
+
+### Bug Fixes
+
+* **dialog:** adjust style of button around X ([e46c91f](https://github.com/mindbody/mbkit/commit/e46c91f89c3aedb380ac0b350b6210ec9578c5ed))
+
+
+
+
+
 ## [1.3.11](https://github.com/mindbody/design-system/compare/@mbkit/dialog@1.3.10...@mbkit/dialog@1.3.11) (2020-05-04)
 
 **Note:** Version bump only for package @mbkit/dialog
