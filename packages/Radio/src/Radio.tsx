@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/role-supports-aria-props: 0 */
 import React, { FC, RefObject, forwardRef, AllHTMLAttributes, RefAttributes } from 'react';
 import classnames from 'classnames';
 import styles from './Radio.scss';

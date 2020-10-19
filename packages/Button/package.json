@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/button",
-    "version": "1.3.13",
+    "version": "1.3.12",
     "source": "src/index.tsx",
     "main": "dist/cjs/Button.js",
     "module": "dist/esm/Button.js",
@@ -22,7 +22,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.0.9",
+        "@mbkit/theme": "^2.0.8",
         "classnames": "^2.2.6"
     }
 }

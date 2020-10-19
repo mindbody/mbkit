@@ -3,18 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.10.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.8.1...@mbkit/docs@0.10.0) (2020-10-19)
-
-
-### Features
-
-* **docs:** added support for new Content section ([3274187](https://github.com/gatsbyjs/gatsby-starter-default/commit/32741871e7e0fe7392af47ef087cf257ce17ce2a))
-
-
-
-
-
-# [0.9.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.8.1...@mbkit/docs@0.9.0) (2020-10-19)
+# [0.9.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.8.1...@mbkit/docs@0.9.0) (2020-09-30)
 
 
 ### Features

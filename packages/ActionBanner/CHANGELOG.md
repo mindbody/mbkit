@@ -3,17 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.2.13](https://github.com/mindbody/mbkit/compare/@mbkit/action-banner@1.2.11...@mbkit/action-banner@1.2.13) (2020-10-19)
-
-**Note:** Version bump only for package @mbkit/action-banner
+## [1.2.12](https://github.com/mindbody/mbkit/compare/@mbkit/action-banner@1.2.11...@mbkit/action-banner@1.2.12) (2020-09-30)
 
 
+### Bug Fixes
 
-
-
-## [1.2.12](https://github.com/mindbody/mbkit/compare/@mbkit/action-banner@1.2.11...@mbkit/action-banner@1.2.12) (2020-10-19)
-
-**Note:** Version bump only for package @mbkit/action-banner
+* **action-banner:** fixed issue with action banner when toggled really fast so animation will keep up with prop and never end up out of sync ([766076c](https://github.com/mindbody/mbkit/commit/766076ce950d89eebd4f17b17e6f877cde05fbd4))
 
 
 
