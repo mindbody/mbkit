@@ -244,34 +244,34 @@ $iconSize4: 30px;
         @include buttonHover($background, $tertiary-base, $foreground, $foreground);
     }
     &.primaryOutlined {
-        @include buttonStyles($background, $primary-base, $foreground, $neutral-darker);
+        @include buttonStyles(transparent, $primary-base, $foreground, $neutral-darker);
         @include buttonHover($primary-base, $primary-base, $primary-foreground, $primary-foreground);
     }
     &.secondaryOutlined {
-        @include buttonStyles($background, $secondary-base, $foreground, $neutral-darker);
+        @include buttonStyles(transparent, $secondary-base, $foreground, $neutral-darker);
         @include buttonHover($secondary-base, $secondary-base, $secondary-foreground, $secondary-foreground);
     }
     &.tertiaryOutlined {
-        @include buttonStyles($background, $tertiary-base, $foreground, $neutral-darker);
+        @include buttonStyles(transparent, $tertiary-base, $foreground, $neutral-darker);
         @include buttonHover($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
     }
     &.offCard {
-        @include buttonStyles($background, $background, $foreground, $neutral-darker);
+        @include buttonStyles(transparent, transparent, $foreground, $neutral-darker);
         @include buttonHover($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
     }
     &.iconPrimary {
-        @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+        @include buttonStyles(transparent, transparent, $secondary-base, $secondary-base);
         @include buttonHover($secondary-light, $secondary-light, $secondary-base, $secondary-base);
         border-radius: 50%;
     }
     &.icon {
-        @include buttonStyles($background, $background, $foreground, $foreground);
+        @include buttonStyles(transparent, transparent, $foreground, $foreground);
         @include buttonHover($neutral-light, $neutral-light, $foreground, $foreground);
         border-radius: 50%;
     }
     &.simpleText {
-        @include buttonStyles($background, $background, $secondary-base, $secondary-base);
-        @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+        @include buttonStyles(transparent, transparent, $secondary-base, $secondary-base);
+        @include buttonHover(transparent, transparent, $foreground, $foreground);
         &:hover {
             text-decoration: underline;
         }
