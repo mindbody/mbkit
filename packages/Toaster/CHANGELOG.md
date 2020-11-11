@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.3.13...@mbkit/toaster@1.3.14) (2020-11-11)
+
+**Note:** Version bump only for package @mbkit/toaster
+
+
+
+
+
 ## [1.3.13](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.3.13...@mbkit/toaster@1.3.13) (2020-10-19)
 
 **Note:** Version bump only for package @mbkit/toaster

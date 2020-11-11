@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.13...@mbkit/input@1.3.14) (2020-11-11)
+
+
+### Bug Fixes
+
+* **input:** removing prop-types validation for input field ([d2b6e83](https://github.com/mindbody/mbkit/commit/d2b6e83407d7cfc0a3b1dc8dab9d00270b560043))
+
+
+
+
+
 ## [1.3.13](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.13...@mbkit/input@1.3.13) (2020-10-19)
 
 
