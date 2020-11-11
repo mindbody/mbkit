@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/button@1.3.13...@mbkit/button@1.3.14) (2020-11-11)
+
+
+### Bug Fixes
+
+* **button:** updated button background colors for outlined to be transparent as well as simple text and icons ([473e6a0](https://github.com/mindbody/mbkit/commit/473e6a0af70e51b001440c8a3fd2e104e5583a7c))
+
+
+
+
+
 ## [1.3.13](https://github.com/mindbody/mbkit/compare/@mbkit/button@1.3.13...@mbkit/button@1.3.13) (2020-10-19)
 
 **Note:** Version bump only for package @mbkit/button
