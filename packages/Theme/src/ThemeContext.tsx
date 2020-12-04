@@ -13,6 +13,7 @@ export type Theme = {
     primary?: ThemeColors;
     secondary?: ThemeColors;
     success?: ThemeColors;
+    info?: ThemeColors;
     warning?: ThemeColors;
     error?: ThemeColors;
 
@@ -37,5 +38,31 @@ export type ThemeColors = {
 };
 
 export const baseTheme: Theme = { ...theme };
+export const mindbodyTheme: Theme = { 
+    ...baseTheme,
+    primary: {
+        base: '#D54400',
+        light: '#FFF7F4',
+        foreground: '#ffffff',
+    },
+    secondary: {
+        base: '#D54400',
+        light: '#FFF7F4',
+        foreground: '#ffffff',
+    },
+};
+export const mindbodyBusinessTheme: Theme = { 
+    ...theme,
+    primary: {
+        base: '#0A7C8E',
+        light: '#E5F2F4',
+        foreground: '#ffffff',
+    },
+    secondary: {
+        base: '#0A7C8E',
+        light: '#E5F2F4',
+        foreground: '#ffffff',
+    },
+};
 
 export const ThemeContext: React.Context<{ theme: Theme }> = React.createContext({ theme: baseTheme });

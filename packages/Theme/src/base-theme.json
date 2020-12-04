@@ -22,7 +22,7 @@
     },
     "primary": {
       "base": "#D54400",
-      "light": "#FCECE6",
+      "light": "#FFF7F4",
       "foreground": "#ffffff"
     },
     "secondary": {
@@ -37,6 +37,12 @@
     "success": {
       "base": "#218323",
       "light": "#E4F3E4",
+      "baseForeground": "#ffffff",
+      "lightForeground": "#2D2D2D"
+    },
+    "info": {
+      "base": "#006FBB",
+      "light": "#E6F5FF",
       "baseForeground": "#ffffff",
       "lightForeground": "#2D2D2D"
     },
