@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/mindbody/mbkit/compare/@mbkit/typography@1.3.14...@mbkit/typography@2.0.0) (2020-12-07)
+
+
+### Bug Fixes
+
+* **typography:** updated info colors ([f3f08d2](https://github.com/mindbody/mbkit/commit/f3f08d2376846e737deebbf73238dca20d618374))
+
+
+### Features
+
+* **typography:** added hero type and updated font sizes ([9a5c447](https://github.com/mindbody/mbkit/commit/9a5c4479ca27b17608230603621577e537c444b6))
+
+
+### BREAKING CHANGES
+
+* **typography:** removed some sizes from text component
+
+
+
+
+
 ## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/typography@1.3.13...@mbkit/typography@1.3.14) (2020-11-11)
 
 **Note:** Version bump only for package @mbkit/typography

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.15](https://github.com/mindbody/mbkit/compare/@mbkit/label@1.3.14...@mbkit/label@1.3.15) (2020-12-07)
+
+**Note:** Version bump only for package @mbkit/label
+
+
+
+
+
 ## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/label@1.3.13...@mbkit/label@1.3.14) (2020-11-11)
 
 **Note:** Version bump only for package @mbkit/label
