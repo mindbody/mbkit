@@ -7,7 +7,7 @@ export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
         /** This will be the actual rendered element. Keep your headings and content semantic */
         as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
         /** Use this when you need to render some heading element but it needs to look a different size */
-        size?: 1 | 2 | 3 | 4 | 5 | 6;
+        size?: 'hero' | 1 | 2 | 3 | 4 | 5 | 6;
         /** Sets the text color. By default we use our brand foreground */
         color?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'meta';
     };
@@ -17,6 +17,7 @@ export const Heading: FC<HeadingProps> = forwardRef((props: HeadingProps, ref: R
     const computedSize = size !== undefined ? `h${size}` : as;
 
     const classNames = classnames({
+        [styles.hero]: computedSize === 'hhero',
         [styles.h1]: computedSize === 'h1',
         [styles.h2]: computedSize === 'h2',
         [styles.h3]: computedSize === 'h3',
