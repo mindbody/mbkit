@@ -14,10 +14,10 @@ When you want to use a heading (h1, h2, h3, etc.), consider using the "Heading" 
     <Text size={4}>Size 4</Text>
     <Text size={5}>Size 5</Text>
     <Text size={6}>Size 6</Text>
-    <Text size={7}>Size 7 can be a "sub-heading" for an h1.</Text>
-    <Text>Size 8 is the default paragraph size and default "size" prop</Text>
-    <Text size={9}>Size 9 is used for meta text. This can be a placeholder or error text. (If you show this conditionally, don't forget to add your aria labels!)</Text>
-    <Text size={10}>Size 10 is used in Tipsies or Quicknotes for displaying simple help or directions.</Text>
+    <Text size={'body'}>Size 7 can be a "sub-heading" for an h1.</Text>
+    <Text>Size 'body' is the default paragraph size and default "size" prop</Text>
+    <Text size={'body-small'}>Size 'body-small' is used for meta text, Tipsies, or Quicknotes. This can be a placeholder or error text. (If you show this conditionally, don't forget to add your aria labels!)</Text>
+    <Text size={'pre-heading'}>Size 'pre-heading' is used for displaying secondary headings with large font as body text.</Text>
 </>
 ```
 
@@ -69,7 +69,7 @@ Need h1 sizing but want to render h6? Try using the "size" prop.
 
 ```tsx
 <>
-    <Heading as="h6" size={1}>I'm a big h6</Heading>
+    <Heading as="h6" size={"hero"}>I'm a big h6</Heading>
     <Heading as="h1" size={6}>I'm a small h1</Heading>
 </>
 ```
