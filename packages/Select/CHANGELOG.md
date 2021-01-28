@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.15](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.3.14...@mbkit/select@1.3.15) (2021-01-28)
+
+
+### Bug Fixes
+
+* **select:** fixing typings ([4bcf084](https://github.com/mindbody/mbkit/commit/4bcf084d8893cf78c71ffa1cedf722b5e778b071))
+
+
+
+
+
 ## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.3.13...@mbkit/select@1.3.14) (2020-11-11)
 
 **Note:** Version bump only for package @mbkit/select
