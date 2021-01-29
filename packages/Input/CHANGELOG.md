@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.15](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.14...@mbkit/input@1.3.15) (2021-01-28)
+
+**Note:** Version bump only for package @mbkit/input
+
+
+
+
+
 ## [1.3.14](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.13...@mbkit/input@1.3.14) (2020-11-11)
 
 
