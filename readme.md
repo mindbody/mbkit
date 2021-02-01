@@ -10,9 +10,13 @@ If you'd like to make changes to the components, clone this repo and run `yarn i
 
 ## Updating components
 
-All component packages are found in `packages/*`. Navigate to the component directory and run `yarn dev`. This will create a [Rollup](https://rollupjs.org/guide/en/) instance watching the `Component.tsx` file you want to update along with running the corresponding `Component.mdx` file for the visual example. 
+All component packages are found in `packages/*`. ~Navigate to the component directory and run `yarn dev`. This will create a [Rollup](https://rollupjs.org/guide/en/) instance watching the `Component.tsx` file you want to update along with running the corresponding `Component.mdx` file for the visual example.~ (deprecating)
 
-*Note: The mdx file automatically injects the corresponding component; you don't have to import it directly.* This is done so the documentation can be used in multiple places (docs/local development) and the resolution path can change. 
+~*Note: The mdx file automatically injects the corresponding component; you don't have to import it directly.* This is done so the documentation can be used in multiple places (docs/local development) and the resolution path can change.~
+
+Currently MDX will still be used as code examples; once we get examples of all the components in storybook we will look into integrating that into MBKit's site.
+
+If working on a component use `yarn storybook` at the root level, check to see if the component has a corresponding storybook file; if not create one using the `Modal.stories.tsx` as an example. 
 
 ## Adding a new component
 
@@ -29,7 +33,8 @@ The folder structure for a component should look like:
     - src
         - index.tsx // Always export components as named exports
         - ComponentName.tsx // Component should export as default
-        - ComponentName.mdx // Documentation for viewing live components
+        - ComponentName.mdx (deprecating) // Documentation for viewing live components
+        - ComponentName.stories.tsx // Documentation for viewing live components
         - ComponentName.module.scss // styles using CSS Modules for namespacing
         - __tests__ // tests need to be in test folder so react-docgen can generate types and ignore these files
             - ComponentName.test.tsx // tests written

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.16](https://github.com/mindbody/mbkit/compare/@mbkit/modal@1.3.14...@mbkit/modal@1.3.16) (2021-02-01)
+
+
+### Bug Fixes
+
+* **modal:** pass through of dialog props ([e4800be](https://github.com/mindbody/mbkit/commit/e4800be43f180d883aa0f9a4c94947c349f595f6))
+* **modal:** updated modal dependencies and added storybook example for local dev ([7af42e2](https://github.com/mindbody/mbkit/commit/7af42e285deb20d89ab1ed8fe28eb497d12baf37))
+
+
+
+
+
 ## [1.3.15](https://github.com/mindbody/mbkit/compare/@mbkit/modal@1.3.14...@mbkit/modal@1.3.15) (2021-01-28)
 
 
