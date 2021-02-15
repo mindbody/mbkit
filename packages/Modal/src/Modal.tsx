@@ -141,7 +141,7 @@ export const Modal: FC<ModalProps> = forwardRef((props: ModalProps, ref: RefObje
                     {...reachDialogOverlayProps}
                 >
                     <DialogContent
-                        {...rest}
+                        {...rest as any}
                         aria-label={label}
                         style={{ ...modalTransitions[state], ...style }}
                         className={classNames}
