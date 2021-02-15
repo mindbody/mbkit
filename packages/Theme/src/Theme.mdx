@@ -6,11 +6,11 @@ Start by adding a theme provider as the outermost wrapper. This theme provider w
 
 Inspect the output and find the scoped selector. You'll see the CSS variables scoped there. 
 
-Also exported is the `mindbodyTheme` and `mindbodyBusinessTheme` following UX/UI
+Also exported is the "mindbodyTheme" and "mindbodyBusinessTheme" following UX/UI
 
-```tsx
-import { mindbodyTheme, mindbodyBusinessTheme } from '@mbkit/theme';
-```
+<EditorOnly>
+{`import { mindbodyTheme, mindbodyBusinessTheme } from '@mbkit/theme';`}
+</EditorOnly>
 
 ```tsx
 <>
@@ -46,11 +46,12 @@ import { mindbodyTheme, mindbodyBusinessTheme } from '@mbkit/theme';
 
 ## Loading the font
 
-The theme font family uses `Averta` which is a premium font. You can override this using the theme prop or pull the font family from <a href="https://mindbody-my.sharepoint.com/:f:/g/personal/cameron_zaas_mindbodyonline_com/ElRUyqJUjutEgzRBVgZ8xkIBhnC-sjnnOfv3nXsapx5r6g?e=Oj41iL">Mindbody share point</a> site.
+The theme font family uses "Averta" which is a premium font. You can override this using the theme prop or pull the font family from <a href="https://mindbody-my.sharepoint.com/:f:/g/personal/cameron_zaas_mindbodyonline_com/ElRUyqJUjutEgzRBVgZ8xkIBhnC-sjnnOfv3nXsapx5r6g?e=Oj41iL">Mindbody share point</a> site.
 
 Depending on where you upload the font you'll need to import the font so you can reference it within your app. Here is a CSS example that you will need to add:
 
-```css
+<EditorOnly>
+{`
 @font-face {
   font-family: "Averta";
   src: url("/fonts/Averta-Regular.otf") format("truetype");
@@ -92,7 +93,8 @@ Depending on where you upload the font you'll need to import the font so you can
   font-weight: 500;
   font-style: italic;
 }
-```
+`}
+</EditorOnly>
 
 # FAQ
 
