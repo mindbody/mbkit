@@ -1,5 +1,5 @@
 import React, { AllHTMLAttributes, FC, forwardRef, RefObject, ReactNode, RefAttributes } from 'react';
-import { DialogOverlay, DialogContent } from '@reach/dialog';
+import { DialogOverlay, DialogContent, DialogOverlayProps } from '@reach/dialog';
 import { Transition } from 'react-transition-group';
 import { TransitionStatus } from 'react-transition-group/Transition';
 import classnames from 'classnames';
@@ -23,6 +23,8 @@ export type ModalProps = AllHTMLAttributes<HTMLDivElement> &
         footer?: ReactNode;
         /** Set's initial focused item on passed in ref. Otherwise it will be focused on the first focusable item */
         initialFocusRef?: RefObject<any>;
+        /** Pass through of reach ui dialog overlay props */
+        reachDialogOverlayProps?: Partial<DialogOverlayProps>;
     };
 
 type TransitionValues = {
@@ -98,6 +100,7 @@ export const Modal: FC<ModalProps> = forwardRef((props: ModalProps, ref: RefObje
         footer,
         initialFocusRef,
         size,
+        reachDialogOverlayProps,
         ...rest
     } = props;
 
@@ -135,6 +138,7 @@ export const Modal: FC<ModalProps> = forwardRef((props: ModalProps, ref: RefObje
                     className={veilClassNames}
                     onDismiss={onClose}
                     initialFocusRef={initialFocusRef}
+                    {...reachDialogOverlayProps}
                 >
                     <DialogContent
                         {...rest}

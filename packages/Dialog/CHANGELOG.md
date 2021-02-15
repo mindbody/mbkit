@@ -3,7 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.3.15](https://github.com/mindbody/mbkit/compare/@mbkit/dialog@1.3.14...@mbkit/dialog@1.3.15) (2020-12-07)
+## [1.3.16](https://github.com/mindbody/mbkit/compare/@mbkit/dialog@1.3.14...@mbkit/dialog@1.3.16) (2021-02-01)
+
+**Note:** Version bump only for package @mbkit/dialog
+
+
+
+
+
+## [1.3.15](https://github.com/mindbody/mbkit/compare/@mbkit/dialog@1.3.14...@mbkit/dialog@1.3.15) (2021-01-28)
 
 **Note:** Version bump only for package @mbkit/dialog
 
