@@ -17,7 +17,7 @@ export type TextProps = HTMLAttributes<HTMLElement> &
     };
 
 export const Text: FC<TextProps> = forwardRef((props: TextProps, ref: RefObject<HTMLElement>) => {
-    const { as = 'p' as any, color = 'default', size = 8, bold, italic, className = '', ...rest } = props;
+    const { as = 'p' as any, color = 'default', size = 'body', bold, italic, className = '', ...rest } = props;
     const Component = as;
 
     const classNames = classnames({
