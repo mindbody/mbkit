@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.9.4...@mbkit/docs@0.11.0) (2021-02-17)
+
+
+### Features
+
+* **docs:** added averta font family to repo ([022d910](https://github.com/gatsbyjs/gatsby-starter-default/commit/022d910dece759396c7fed2acf7b243ae81644dc))
+
+
+
+
+
 # [0.10.0](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.9.4...@mbkit/docs@0.10.0) (2021-02-15)
 
 
