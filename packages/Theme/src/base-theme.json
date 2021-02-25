@@ -22,7 +22,7 @@
     },
     "primary": {
       "base": "#D54400",
-      "light": "#FCECE6",
+      "light": "#FFF7F4",
       "foreground": "#ffffff"
     },
     "secondary": {
@@ -40,6 +40,12 @@
       "baseForeground": "#ffffff",
       "lightForeground": "#2D2D2D"
     },
+    "info": {
+      "base": "#006FBB",
+      "light": "#E6F5FF",
+      "baseForeground": "#ffffff",
+      "lightForeground": "#2D2D2D"
+    },
     "warning": {
       "base": "#FFC100",
       "light": "#FFF3CC",
@@ -54,7 +60,7 @@
     },
     "focus": "#6096e6bf",
     "font": {
-      "family": "'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'",
+      "family": "'Averta', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'",
       "url": "'https://fonts.googleapis.com/css?family=Lato:300,400,700'",
       "spec": {
         "1": {

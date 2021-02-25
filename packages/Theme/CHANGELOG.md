@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.0.12...@mbkit/theme@2.2.0) (2021-02-17)
+
+
+### Bug Fixes
+
+* **theme:** export mindbody themes with theme ([258ffb5](https://github.com/mindbody/mbkit/commit/258ffb559270b63c89344207734ef8a938b9a1dd))
+
+
+### Features
+
+* **theme:** updated theme colors and exporting two base themes ([60bd24a](https://github.com/mindbody/mbkit/commit/60bd24a5bb3b9f82ae6ef2fdc164c038161c285b))
+* **theme:** updated theme font family ([d293b6e](https://github.com/mindbody/mbkit/commit/d293b6e4a60dc8bdf9860a031b432a8cfd96d469))
+
+
+
+
+
+# [2.1.0](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.0.12...@mbkit/theme@2.1.0) (2021-02-15)
+
+
+### Features
+
+* **theme:** updated theme colors and exporting two base themes ([60bd24a](https://github.com/mindbody/mbkit/commit/60bd24a5bb3b9f82ae6ef2fdc164c038161c285b))
+* **theme:** updated theme font family ([d293b6e](https://github.com/mindbody/mbkit/commit/d293b6e4a60dc8bdf9860a031b432a8cfd96d469))
+
+
+
+
+
 ## [2.0.12](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.0.11...@mbkit/theme@2.0.12) (2021-02-01)
 
 **Note:** Version bump only for package @mbkit/theme

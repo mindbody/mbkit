@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/mindbody/mbkit/compare/@mbkit/typography@1.3.16...@mbkit/typography@3.0.0) (2021-02-17)
+
+
+### Bug Fixes
+
+* **typography:** updated default size to reflect new string ([cad0538](https://github.com/mindbody/mbkit/commit/cad05381347e5d13c3b5bc260aecf124efa043fe))
+* **typography:** updated info colors ([f3f08d2](https://github.com/mindbody/mbkit/commit/f3f08d2376846e737deebbf73238dca20d618374))
+
+
+### Features
+
+* **typography:** added hero type and updated font sizes ([9a5c447](https://github.com/mindbody/mbkit/commit/9a5c4479ca27b17608230603621577e537c444b6))
+
+
+### BREAKING CHANGES
+
+* **typography:** removed some sizes from text component
+
+
+
+
+
+# [2.0.0](https://github.com/mindbody/mbkit/compare/@mbkit/typography@1.3.16...@mbkit/typography@2.0.0) (2021-02-15)
+
+
+### Bug Fixes
+
+* **typography:** updated default size to reflect new string ([cad0538](https://github.com/mindbody/mbkit/commit/cad05381347e5d13c3b5bc260aecf124efa043fe))
+* **typography:** updated info colors ([f3f08d2](https://github.com/mindbody/mbkit/commit/f3f08d2376846e737deebbf73238dca20d618374))
+
+
+### Features
+
+* **typography:** added hero type and updated font sizes ([9a5c447](https://github.com/mindbody/mbkit/commit/9a5c4479ca27b17608230603621577e537c444b6))
+
+
+### BREAKING CHANGES
+
+* **typography:** removed some sizes from text component
+
+
+
+
+
 ## [1.3.16](https://github.com/mindbody/mbkit/compare/@mbkit/typography@1.3.15...@mbkit/typography@1.3.16) (2021-02-01)
 
 **Note:** Version bump only for package @mbkit/typography

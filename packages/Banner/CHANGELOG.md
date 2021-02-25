@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mindbody/mbkit/compare/@mbkit/banner@1.3.16...@mbkit/banner@1.5.0) (2021-02-17)
+
+
+### Features
+
+* **banner:** updated banner to use info colors ([15c33e1](https://github.com/mindbody/mbkit/commit/15c33e160be558c03e3b4ebe31c10c05eff7bd19))
+
+
+
+
+
+# [1.4.0](https://github.com/mindbody/mbkit/compare/@mbkit/banner@1.3.16...@mbkit/banner@1.4.0) (2021-02-15)
+
+
+### Features
+
+* **banner:** updated banner to use info colors ([15c33e1](https://github.com/mindbody/mbkit/commit/15c33e160be558c03e3b4ebe31c10c05eff7bd19))
+
+
+
+
+
 ## [1.3.16](https://github.com/mindbody/mbkit/compare/@mbkit/banner@1.3.15...@mbkit/banner@1.3.16) (2021-02-01)
 
 **Note:** Version bump only for package @mbkit/banner

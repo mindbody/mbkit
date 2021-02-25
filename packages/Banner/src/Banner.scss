@@ -73,6 +73,6 @@
         @include bannerColors($warning-lightForeground, $warning-light, $warning-base, $error-lightForeground);
     }
     &.info {
-        @include bannerColors($neutral-darkest, $secondary-light, $secondary-base, $secondary-base);
+        @include bannerColors($neutral-darkest, $info-light, $info-base, $info-base);
     }
 }

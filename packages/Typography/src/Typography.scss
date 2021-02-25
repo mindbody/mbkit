@@ -2,52 +2,67 @@
 
 @mixin get-font-spec($spec, $defaultSize, $defaultLineHeight) {
     font-family: $font-family;
-    font-size: var(--font-spec-#{$spec}-size, $defaultSize); 
-    line-height: var(--font-spec-#{$spec}-lineHeight, $defaultLineHeight);
+    font-size: $defaultSize; 
+    line-height: $defaultLineHeight;
     margin: 0;
 }
 
 .bold {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .italic {
     font-style: italic;
 }
+.hero,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.preHeading {
+    font-weight: 500;
+}
 
+.hero {
+    @include get-font-spec(11, 2.5rem, 3rem);
+}
 .h1 {
-    @include get-font-spec(1, 2.5rem, 3rem);
+    @include get-font-spec(1, 2rem, 2.625rem);
 }
 .h2 {
-    @include get-font-spec(2, 2rem, 3rem);
+    @include get-font-spec(2, 1.5rem, 2.25rem);
 }
 .h3 {
-    @include get-font-spec(3, 1.5rem, 2rem);
+    @include get-font-spec(3, 1.25rem, 1.875rem);
 }
 .h4 {
-    @include get-font-spec(4, 1.25rem, 1.5rem);
+    @include get-font-spec(4, 1.25rem, 1.75rem);
 }
 .h5 {
     @include get-font-spec(5, 1rem, 1.5rem);
 }
 .h6 {
-    @include get-font-spec(6, .75rem, 1rem);
+    @include get-font-spec(6, .875rem, 1.375rem);
 }
 
 .paragraph {
     @include get-font-spec(7, 1rem, 1.5rem);
 }
 
-.meta {
+.smallBodyContent {
     @include get-font-spec(8, .75rem, 1.125rem);
 }
 
 .subheading {
-    @include get-font-spec(9, 1.25rem, 2rem);
+    @include get-font-spec(9, 1.125rem, 1.75rem);
 }
 
-.tooltip {
-    @include get-font-spec(10, .6875rem, 1rem);
+.preHeading,
+.tableHeader {
+    @include get-font-spec(9, 1.125rem, 1.125rem);
+    text-transform: uppercase;
 }
 
 .defaultColor {
@@ -57,7 +72,7 @@
     color: $primary-base;
 }
 .infoColor {
-    color: $secondary-base;
+    color: $info-base;
 }
 .successColor {
     color: $success-base;
@@ -93,3 +108,27 @@
         box-shadow: 0 0 0 4px $focus;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .hero {
+        @include get-font-spec(11, 3rem, 4.75rem);
+    }
+    .h1 {
+        @include get-font-spec(1, 2.5rem, 3.75rem);
+    }
+    .h2 {
+        @include get-font-spec(2, 2rem, 3rem);
+    }
+    .h3 {
+        @include get-font-spec(3, 1.5rem, 2.25rem);
+    }
+    .h4 {
+        @include get-font-spec(4, 1.25rem, 1.75rem);
+    }
+    .h5 {
+        @include get-font-spec(5, 1rem, 1.5rem);
+    }
+    .h6 {
+        @include get-font-spec(6, .875rem, 1.25rem);
+    }
+} 

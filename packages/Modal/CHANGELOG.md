@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.18](https://github.com/mindbody/mbkit/compare/@mbkit/modal@1.3.17...@mbkit/modal@1.3.18) (2021-02-17)
+
+
+### Bug Fixes
+
+* **modal:** allow user to pass anything they want using rest param ([6d8126c](https://github.com/mindbody/mbkit/commit/6d8126cfe38fe95b0b2d266ca4668e8bf992ad85))
+
+
+
+
+
+## [1.3.17](https://github.com/mindbody/mbkit/compare/@mbkit/modal@1.3.16...@mbkit/modal@1.3.17) (2021-02-15)
+
+**Note:** Version bump only for package @mbkit/modal
+
+
+
+
+
 ## [1.3.16](https://github.com/mindbody/mbkit/compare/@mbkit/modal@1.3.14...@mbkit/modal@1.3.16) (2021-02-01)
 
 
