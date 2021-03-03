@@ -17207,6 +17207,13 @@ node-object-hash@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-object-hash/-/node-object-hash-2.0.0.tgz#9971fcdb7d254f05016bd9ccf508352bee11116b"
   integrity sha512-VZR0zroAusy1ETZMZiGeLkdu50LGjG5U1KHZqTruqtTyQ2wfWhHG2Ow4nsUbfTFGlaREgNHcCWoM/OzEm6p+NQ==
 
+node-recursive-directory@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/node-recursive-directory/-/node-recursive-directory-1.2.0.tgz#76fe99cc0b6b3a4f9f6837b43cd2a7647ecddd96"
+  integrity sha512-bXNN7lgqqyGHERBSBhAe9sAhnAzrD3I/qX6aHHZTBet6fCPNow3xvUyAIRtQfzBZTc362wr9n89nq4i8wHBvLg==
+  dependencies:
+    glob "^7.1.6"
+
 node-releases@^1.1.52, node-releases@^1.1.70:
   version "1.1.70"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.70.tgz#66e0ed0273aa65666d7fe78febe7634875426a08"
