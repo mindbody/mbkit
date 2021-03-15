@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/theme",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "source": "src/index.tsx",
     "main": "dist/cjs/Theme.js",
     "module": "dist/esm/Theme.js",
