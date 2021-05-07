@@ -9,9 +9,9 @@
         "access": "public"
     },
     "scripts": {
-        "build": "../../shared/build-tools/build-package.js && yarn generate:scss && yarn clone:scss",
+        "build": "../../node_modules/.bin/rollup -c ../../shared/build-tools/rollup.config.js   && yarn generate:scss && yarn clone:scss",
         "dev": "../../shared/build-tools/dev-package.js",
-        "generate:scss": "./src/tools/generate-scss-variables.js",
+        "generate:scss": "node src/tools/generate-scss-variables.js",        
         "clone:scss": "yarn copyfiles src/**/*.scss dist --flat"
     },
     "license": "MIT",
