@@ -8,8 +8,11 @@
     "clone:env:file": "yarn copyfiles ../../.env ./docs/.env",
     "docs:dev": "yarn clean && yarn clone:env:file && gatsby develop",
     "docs:prod": "yarn clean && yarn clone:env:file && gatsby build",
+    "docs:windows:dev": "yarn clean:windows && yarn clone:env:file && gatsby develop",
+    "docs:windows:prod": "yarn clean:windows && yarn clone:env:file && gatsby build",
     "docs:serve": "gatsby serve",
-    "clean": "del -rf .cache",
+    "clean": "rm -rf .cache",
+    "clean:windows": "del -rf .cache",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {

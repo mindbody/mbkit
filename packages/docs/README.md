@@ -8,9 +8,13 @@ This creates a mapping of all components and generates a file for the components
 
 * The build starts in `gatsby-node.js` and pulls in all the documentation described above.
 
+See package.json for OS specific build commands.
+
 ## Working on the site locally
 
 To pull site data from contentful, request a access token from one of the maintainers. You will need to create a `.env` file in the root of this package and set the `CONTENTFUL_ACCESS_TOKEN` variable with the token.
+
+See package.json for OS specific build commands.
 
 ```
 CONTENTFUL_ACCESS_TOKEN={YOUR ACCESS TOKEN TO CONTENTFUL}
