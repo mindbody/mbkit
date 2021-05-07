@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/accordion",
-    "version": "1.4.20",
+    "version": "1.4.21",
     "source": "src/index.tsx",
     "main": "dist/cjs/Accordion.js",
     "module": "dist/esm/Accordion.js",
@@ -24,7 +24,7 @@
     },
     "dependencies": {
         "@mbkit/icon": "1.2.5",
-        "@mbkit/theme": "^2.2.2",
+        "@mbkit/theme": "^2.2.3",
         "classnames": "^2.2.6",
         "nanoid": "^2.1.7"
     }

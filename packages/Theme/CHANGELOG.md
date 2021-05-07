@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.2.2...@mbkit/theme@2.2.3) (2021-05-07)
+
+
+### Bug Fixes
+
+* docs to be compatable for windows ([93c41e4](https://github.com/mindbody/mbkit/commit/93c41e47ccfe99d4f7e851e95e2bb25036988e3e))
+* windows build bug ([3745d12](https://github.com/mindbody/mbkit/commit/3745d1297e1dd7e90e53ba096097f1e97f4e8a99))
+
+
+
+
+
 ## [2.2.2](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.2.1...@mbkit/theme@2.2.2) (2021-03-15)
 
 **Note:** Version bump only for package @mbkit/theme

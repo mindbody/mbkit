@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.3.20...@mbkit/select@1.4.0) (2021-05-07)
+
+
+### Bug Fixes
+
+* windows build bug ([3745d12](https://github.com/mindbody/mbkit/commit/3745d1297e1dd7e90e53ba096097f1e97f4e8a99))
+
+
+### Features
+
+* **select:** updated multi select to accept rendered elements override ([6286b2b](https://github.com/mindbody/mbkit/commit/6286b2b6203d2d877fe53f747c2a368169f17ce6))
+
+
+
+
+
 ## [1.3.20](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.3.19...@mbkit/select@1.3.20) (2021-03-15)
 
 **Note:** Version bump only for package @mbkit/select
