@@ -18,6 +18,8 @@ export type MultiSelectProps = AllHTMLAttributes<HTMLDivElement> & {
     onChange: (option: MultiSelectOption) => void;
     /** Placeholder of multi select input */
     placeholder?: string;
+    /** Override rendered selected elements, useful if you want to have a "All" selection without displaying "All" in the selected field */
+    selectedOptionsLabel?: string;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -31,6 +33,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
         className = '',
         placeholder = 'Select option(s)',
         onClick = noop,
+        selectedOptionsLabel,
         ...rest
     } = props;
 
@@ -183,7 +186,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
         return null;
     });
     const activeDescendants = checkedOptions.map(option => option.id).join(' ');
-    const activeLabels = checkedOptions
+    const activeLabels = selectedOptionsLabel ? selectedOptionsLabel : checkedOptions
         .map((option, index) => {
             const useComma = index + 1 >= checkedOptions.length ? '' : ',';
             return `${option.label}${useComma}`;
@@ -195,7 +198,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
     });
     return (
         <div ref={selectRef} className={styles.multiSelectContainer}>
-            <div id={labelId} className={styles.label}>
+            <div id={labelId} className={styles.label} data-testid="label">
                 {label}
             </div>
             <div
@@ -213,7 +216,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
                 aria-multiselectable="true"
                 {...rest}
             >
-                <div className={placeholderClassNames}>{activeLabels.trim() || placeholder}</div>
+                <div className={placeholderClassNames} data-testid="placeholdOrSelectedOptions">{activeLabels.trim() || placeholder}</div>
                 <div className={selectMenuClassNames} ref={selectItemsRef}>
                     {options.map((option, index) => (
                         <MultiSelectItem
