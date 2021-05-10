@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com/mindbody/mbkit/compare/@mbkit/typography@3.0.2...@mbkit/typography@3.0.3) (2021-05-07)
+
+
+### Bug Fixes
+
+* windows build bug ([3745d12](https://github.com/mindbody/mbkit/commit/3745d1297e1dd7e90e53ba096097f1e97f4e8a99))
+
+
+
+
+
 ## [3.0.2](https://github.com/mindbody/mbkit/compare/@mbkit/typography@3.0.1...@mbkit/typography@3.0.2) (2021-03-15)
 
 **Note:** Version bump only for package @mbkit/typography

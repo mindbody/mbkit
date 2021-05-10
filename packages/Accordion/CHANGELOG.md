@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.21](https://github.com/mindbody/mbkit/compare/@mbkit/accordion@1.4.20...@mbkit/accordion@1.4.21) (2021-05-07)
+
+
+### Bug Fixes
+
+* windows build bug ([3745d12](https://github.com/mindbody/mbkit/commit/3745d1297e1dd7e90e53ba096097f1e97f4e8a99))
+
+
+
+
+
 ## [1.4.20](https://github.com/mindbody/mbkit/compare/@mbkit/accordion@1.4.19...@mbkit/accordion@1.4.20) (2021-03-15)
 
 **Note:** Version bump only for package @mbkit/accordion
