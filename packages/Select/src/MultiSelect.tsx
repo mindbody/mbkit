@@ -51,7 +51,7 @@ export const MultiSelect: FC<MultiSelectProps> = (props: MultiSelectProps) => {
 
     useEffect(() => {
         if (isOpen) {
-            document.addEventListener('click', handleWatchClick);
+            document.addEventListener('click', handleWatchClick, { capture: true });  
             document.addEventListener('keydown', handleWatchKeyDown);
         } else {
             document.removeEventListener('click', handleWatchClick);

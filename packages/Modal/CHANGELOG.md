@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.22](https://github.com/amitkumar4942/mbkit/compare/@mbkit/modal@1.3.21...@mbkit/modal@1.3.22) (2021-05-20)
+
+**Note:** Version bump only for package @mbkit/modal
+
+
+
+
+
+
 ## [1.3.21](https://github.com/mindbody/mbkit/compare/@mbkit/modal@1.3.20...@mbkit/modal@1.3.21) (2021-05-07)
 
 
