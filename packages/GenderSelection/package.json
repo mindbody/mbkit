@@ -14,9 +14,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.2",
-    "react": "^16.9.0",
-    "@types/classnames": "^2.2.9"
+    "react": "^16.9.0"
   },
   "peerDependencies": {
     "react": "^16.9.0"
@@ -24,6 +24,6 @@
   "dependencies": {
     "@mbkit/theme": "^2.2.2",
     "classnames": "^2.2.6",
-    "node-sass": "^6.0.0"
+    "sass": "^1.34.0"
   }
 }

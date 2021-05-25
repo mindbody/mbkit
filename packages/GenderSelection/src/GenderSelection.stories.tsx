@@ -18,16 +18,11 @@ const optionArr = [{
 }]
 const Template: Story<GenderProps> = args => <GenderSelection {...args} />;
 const defaultArgs: GenderProps = {
-    onChange: (selectedItem: any) =>{return console.log('selected item -> ', selectedItem);},
-    placeholder: 'Gender'
+    onChange: (event: any) =>{return console.log('event item -> ', event);},
+    placeholder: 'Select Gender',
+    options:optionArr
 };
 export const ManyChildren = Template.bind({});
 ManyChildren.args = {
     ...defaultArgs,
-};
-
-export const withCustomOption = Template.bind({});
-withCustomOption.args = {
-    ...defaultArgs,
-    customEnable: true,
 };
