@@ -1,10 +1,11 @@
-import React, { useState, AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect} from 'react';
+import React, { useState, AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import styles from './GenderSelection.scss';
 import { Input } from "@mbkit/input";
 import { Select } from "@mbkit/select";
 import { Label } from "@mbkit/label";
-
+import { SelectProps } from "@mbkit/select/dist/cjs/Select/src/Select";
+import { InputProps } from "@mbkit/input/dist/cjs/Input";
 export type SelectOptions = {
     label: string;
     value: string;
@@ -12,14 +13,31 @@ export type SelectOptions = {
 
 export type GenderProps = AllHTMLAttributes<HTMLDivElement> &
     RefAttributes<HTMLDivElement> & {
+
+        /** This will make the selected value */
+        value: string;
+
         // return object on change of selection 
-        onChange: (event: any) => void;
+        onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 
         // options for select 
-        options: SelectOptions;
+        options?: SelectOptions;
 
         // label text Placeholder
         placeholder?: String;
+
+        customGenderValue: string;
+
+        customGenderOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+        // this is called when user pressed enter key on the custom gender input field
+        onEnterKeyPressed: () => void;
+
+        // this is props for select component
+        selectProps?: SelectProps;
+
+        // this is props for input component
+        inputProps?: InputProps;
     };
 
 export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObject<HTMLDivElement>) => {
@@ -29,40 +47,25 @@ export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObj
         onChange,
         className = '',
         placeholder = '',
+        value,
+        customGenderValue,
+        customGenderOnChange,
+        onEnterKeyPressed,
+        selectProps,
+        inputProps,
         ...rest
     } = props;
 
-    const [customGender, setCustomGender] = useState("");
-    const [selectedOption, setSelectedOption] = useState<string>("");
     const customGenderInputRef = useRef<HTMLInputElement>(null);
-    const [selectEvent, setSelectEvent] = useState<React.ChangeEvent<HTMLInputElement> | null>(null);
-    const [optionsArr, setOptions] = useState(options)
 
     useEffect(() => {
-        if (selectedOption === "custom" && customGenderInputRef.current) {
+        if (value === "custom" && customGenderInputRef.current) {
             customGenderInputRef.current.focus();
         }
-    }, [selectedOption, customGenderInputRef]);
-    const setSelected = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedOption(e.target.value)
-        setSelectEvent(e)
-    }
-    useEffect(() => {
-        onChange(selectEvent)
-    }, [selectedOption])
-
-
+    }, [value, customGenderInputRef]);
     const handleInputKeyPress = (event: KeyboardEvent | React.KeyboardEvent<HTMLDivElement>) => {
-        if (event.key === 'Enter' && customGender) {
-            setSelectedOption('')
-            const customEntery = {
-                label: customGender,
-                value: customGender.split(' ').join('-').toLowerCase()
-            }
-            let updatedOptions = [...optionsArr]
-            updatedOptions.splice(updatedOptions.length, 0, customEntery)
-            setCustomGender('')
-            setOptions(updatedOptions)
+        if (event.key === 'Enter') {
+            onEnterKeyPressed()
         }
     }
     return (
@@ -70,34 +73,32 @@ export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObj
         <div className={classnames({ [styles.genderWrapper]: true })} {...rest}>
             <Label htmlFor="gender-select">Gender</Label>
             <Select
-                value={selectedOption}
-                onChange={(e: any) => setSelected(e)}
-                // style={{ maxWidth: 240, margin: "0 0 8px 0" }}
+                {...selectProps}
+                value={value}
+                onChange={onChange}
                 id="gender-select"
             >
                 <option value="" disabled>
                     {placeholder}
                 </option>
-                {optionsArr.map(item => {
+                {options.map(item => {
                     return (
                         <option key={JSON.stringify(item)} value={item.value}> {item.label}  </option>
                     )
                 })}
-                <option value="custom">+ Custom</option>
             </Select>
-            {selectedOption === "custom" && (
+            {value === "custom" && (
                 <Input
+                    {...inputProps}
                     ref={customGenderInputRef}
                     id="custom-gender"
-                    placeholder="Enter your custom gender"
-                    // style={{ maxWidth: 240 }}
-                    value={customGender}
-                    onChange={(e) => setCustomGender(e.target.value)}
+                    placeholder={inputProps?.placeholder || 'Enter your custom gender'}
+                    value={customGenderValue}
+                    onChange={customGenderOnChange}
                     onKeyPress={(e) => handleInputKeyPress(e)}
                 />
             )}
         </div>
     )
 };
-
 GenderSelection.displayName = 'GenderSelection';
