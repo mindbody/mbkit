@@ -1,4 +1,4 @@
-import React, { useState, AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect } from 'react';
+import React, { AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 import styles from './GenderSelection.scss';
 import { Input } from "@mbkit/input";
@@ -24,7 +24,7 @@ export type GenderProps = AllHTMLAttributes<HTMLDivElement> &
         options?: SelectOptions;
 
         // label text Placeholder
-        placeholder?: String;
+        placeholder?: string;
 
         customGenderValue: string;
 
