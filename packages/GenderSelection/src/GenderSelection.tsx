@@ -68,9 +68,13 @@ export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObj
             onEnterKeyPressed()
         }
     }
+    const classNames = classnames({
+        [styles.genderWrapper]: true,
+        [className]: className,
+    });
     return (
 
-        <div className={classnames({ [styles.genderWrapper]: true })} {...rest}>
+        <div className={classNames} {...rest} ref={ref}>
             <Label htmlFor="gender-select">Gender</Label>
             <Select
                 {...selectProps}
