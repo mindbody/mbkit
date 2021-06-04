@@ -1,11 +1,9 @@
 import React, { AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect, forwardRef } from 'react';
 import classnames from 'classnames';
 import styles from './GenderSelection.scss';
-import { Input } from "@mbkit/input";
-import { Select } from "@mbkit/select";
+import { Input, InputProps } from "@mbkit/input";
+import { Select, SelectProps } from "@mbkit/select";
 import { Label } from "@mbkit/label";
-import { SelectProps } from "@mbkit/select/dist/cjs/Select/src/Select";
-import { InputProps } from "@mbkit/input/dist/cjs/Input";
 export type SelectOptions = {
     label: string;
     value: string;
