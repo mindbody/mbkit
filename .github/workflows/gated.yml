@@ -23,6 +23,7 @@ jobs:
     - name: yarn install, test, and build
       run: |
         yarn install
+        yarn postinstall 
         yarn build:types
         yarn build:modules
         yarn test
