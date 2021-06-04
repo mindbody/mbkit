@@ -2,8 +2,9 @@ import React, { AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffe
 import classnames from 'classnames';
 import styles from './GenderSelection.scss';
 import { Input, InputProps } from "@mbkit/input";
-import { Select } from "@mbkit/select";
-import { SelectProps } from '../../Select/src/Select';
+/* eslint-disable */
+import { Select, SelectProps } from "@mbkit/select";
+/* eslint-enable */
 import { Label } from "@mbkit/label";
 export type SelectOptions = {
     label: string;
