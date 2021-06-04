@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect } from 'react';
+import React, { AllHTMLAttributes, FC, RefObject, RefAttributes, useRef, useEffect, forwardRef } from 'react';
 import classnames from 'classnames';
 import styles from './GenderSelection.scss';
 import { Input } from "@mbkit/input";
@@ -40,7 +40,7 @@ export type GenderProps = AllHTMLAttributes<HTMLDivElement> &
         inputProps?: InputProps;
     };
 
-export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObject<HTMLDivElement>) => {
+export const GenderSelection: FC<GenderProps> = forwardRef((props: GenderProps, ref: RefObject<HTMLDivElement>) => {
 
     const {
         options = [],
@@ -74,7 +74,7 @@ export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObj
     });
     return (
 
-        <div className={classNames} {...rest} ref={ref}>
+        <div className={classNames} ref={ref} {...rest}>
             <Label htmlFor="gender-select">Gender</Label>
             <Select
                 {...selectProps}
@@ -104,5 +104,5 @@ export const GenderSelection: FC<GenderProps> = (props: GenderProps, ref: RefObj
             )}
         </div>
     )
-};
+});
 GenderSelection.displayName = 'GenderSelection';
