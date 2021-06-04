@@ -6,7 +6,7 @@
         },
         "declaration": true,
         "target": "es6",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "module": "esnext",
         "strictNullChecks": true,
         "jsx": "react",
