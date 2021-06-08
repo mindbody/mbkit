@@ -23,9 +23,7 @@ jobs:
       - run: npm run build:write-types
       # after writing  back types, also commit them
       - name: Git Auto Commit type changes
-      - uses: stefanzweifel/git-auto-commit-action@v4.11.0
-          with:
-            push_options: --force
+        uses: stefanzweifel/git-auto-commit-action@v4.11.0
       - run: npm run lerna:publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
