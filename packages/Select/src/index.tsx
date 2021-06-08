@@ -1,2 +1,2 @@
-export { Select } from './Select';
-export { MultiSelect } from './MultiSelect';
+export { Select, SelectProps } from './Select';
+export { MultiSelect, MultiSelectProps, MultiSelectOption } from './MultiSelect';
