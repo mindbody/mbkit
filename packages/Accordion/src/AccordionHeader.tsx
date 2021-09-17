@@ -25,7 +25,7 @@ const IconChevronForward = (props: any) => (
 export type AccordionHeaderProps = AllHTMLAttributes<HTMLDivElement> & HTMLProps<HTMLDivElement>;
 
 export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: AccordionHeaderProps, ref) => {
-    const { children, onKeyDown, onClick = noop, ...rest } = props;
+    const { children, onKeyDown, onClick = noop, className = '', ...rest } = props;
     const { onChange, accordionId } = useContext(AccordionContext);
     const { id, isExpanded, index } = useContext(AccordionItemContext);
 
@@ -85,6 +85,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = forwardRef((props: Acco
     const headerClassNames = classnames({
         [styles.header]: true,
         [styles.headerIsOpen]: isExpanded,
+        [className]: className,
     });
     const chevronClassNames = classnames({
         [styles.chevron]: true,
