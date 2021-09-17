@@ -33,10 +33,10 @@ describe('Accordion', () => {
     });
     it('should render props passed through', () => {
         const { getByTestId } = render(
-            <Accordion activePanes={[0]} onChange={changeSpy} className="wrapper" data-testid="wrapper">
+            <Accordion activePanes={[0]} onChange={changeSpy} className="foo" data-testid="wrapper">
                 <AccordionItem>
                     <AccordionHeader
-                        className="header"
+                        className="bar"
                         data-randomattribute="THIS IS A TEST"
                         style={{ background: 'red' }}
                         data-testid="header"
@@ -59,12 +59,12 @@ describe('Accordion', () => {
         const header = getByTestId('header');
         const pane = getByTestId('pane');
 
-        expect(wrapper.classList.contains('wrapper')).toBe(true);
+        expect(wrapper.classList.contains('foo')).toBe(true);
 
-        expect(header.classList.contains('header')).toBe(true);
+        expect(header.classList.contains('bar')).toBe(true);
         expect(header.style.background).toBe('red');
 
-        expect(pane.classList.contains('pane')).toBe(true);
+        expect(pane.classList.contains('tester')).toBe(true);
         expect(pane.style.padding).toBe('24px');
         expect(pane.getAttribute('data-randomattribute')).toBe('THIS IS A TEST');
     });
