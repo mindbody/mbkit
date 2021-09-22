@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.4.0...@mbkit/select@1.4.2) (2021-09-22)
+
+
+### Bug Fixes
+
+* **select:** Added capture true parameter for add click event listener on document ([1f7f8bf](https://github.com/mindbody/mbkit/commit/1f7f8bfc022fbddc6ffc61422180765e8a8f23a5))
+* **select:** exporting types correctly ([20e2563](https://github.com/mindbody/mbkit/commit/20e2563d5cc7db513d98c3eedeeda965fb216637))
+
+
+
+
+
 ## [1.4.1](https://github.com/amitkumar4942/mbkit/compare/@mbkit/select@1.4.0...@mbkit/select@1.4.1) (2021-05-20)
 
 

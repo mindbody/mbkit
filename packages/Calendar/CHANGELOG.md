@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.23](https://github.com/mindbody/mbkit/compare/@mbkit/calendar@1.3.21...@mbkit/calendar@1.3.23) (2021-09-22)
+
+**Note:** Version bump only for package @mbkit/calendar
+
+
+
+
+
 ## [1.3.22](https://github.com/amitkumar4942/mbkit/compare/@mbkit/calendar@1.3.21...@mbkit/calendar@1.3.22) (2021-05-20)
 
 **Note:** Version bump only for package @mbkit/calendar
