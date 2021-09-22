@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/action-banner",
-    "version": "1.2.22",
+    "version": "1.2.23",
     "source": "src/index.tsx",
     "main": "dist/cjs/ActionBanner.js",
     "module": "dist/esm/ActionBanner.js",
@@ -23,7 +23,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.2.4",
+        "@mbkit/theme": "^2.2.5",
         "@reach/alert": "^0.6.2",
         "classnames": "^2.2.6"
     }

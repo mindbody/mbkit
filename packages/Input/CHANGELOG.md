@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.23](https://github.com/mindbody/mbkit/compare/@mbkit/input@1.3.21...@mbkit/input@1.3.23) (2021-09-22)
+
+
+### Bug Fixes
+
+* **input:** exporting input props correctly ([7cbe9cf](https://github.com/mindbody/mbkit/commit/7cbe9cfcaf143ecf327597089a818fd82c79e9f2))
+
+
+
+
+
 ## [1.3.22](https://github.com/amitkumar4942/mbkit/compare/@mbkit/input@1.3.21...@mbkit/input@1.3.22) (2021-05-20)
 
 **Note:** Version bump only for package @mbkit/input

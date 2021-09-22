@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com/mindbody/mbkit/compare/@mbkit/typography@3.0.3...@mbkit/typography@3.0.5) (2021-09-22)
+
+**Note:** Version bump only for package @mbkit/typography
+
+
+
+
+
 ## [3.0.4](https://github.com/amitkumar4942/mbkit/compare/@mbkit/typography@3.0.3...@mbkit/typography@3.0.4) (2021-05-20)
 
 **Note:** Version bump only for package @mbkit/typography
