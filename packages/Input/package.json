@@ -5,6 +5,10 @@
     "main": "dist/cjs/Input.js",
     "module": "dist/esm/Input.js",
     "types": "dist/cjs/index.d.ts",
+    "files": [
+        "dist/cjs/styles.css",
+        "dist/cjs/styles.css"
+    ],
     "publishConfig": {
         "access": "public"
     },
