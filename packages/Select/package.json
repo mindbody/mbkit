@@ -7,7 +7,7 @@
     "types": "dist/cjs/index.d.ts",
     "files": [
         "dist/cjs/styles.css",
-        "dist/cjs/styles.css"
+        "dist/esm/styles.css"
     ],
     "publishConfig": {
         "access": "public"
