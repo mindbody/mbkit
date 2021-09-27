@@ -50,6 +50,7 @@ export default {
             plugins: [autoprefixer()],
             minimize: true,
             namedExports: true,
+            extract: true,
             modules: {
                 camelCase: 'dashesOnly',
                 context: consumerPath,
