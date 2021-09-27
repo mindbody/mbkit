@@ -17,6 +17,7 @@
     "build:types": "yarn make-dir packages/docs/generated && react-docgen packages -x tsx -e index.tsx -i Theme -i docs -i dist -i __tests__ -o packages/docs/generated/component-prop-types.json --pretty --resolver findAllComponentDefinitions && yarn build:write-types",
     "build:write-types": "node shared/build-tools/associate-types-in-packagejson.js",
     "build:modules": "yarn lerna run build",
+    "build:css": "yarn node shared/build-tools/generate-css-from-components.js",
     "build:docs": "yarn build:types && yarn lerna run docs:prod",
     "docs:serve": "yarn lerna run docs:serve",
     "lerna:version": "yarn lerna version --conventional-commits --loglevel=error --yes",

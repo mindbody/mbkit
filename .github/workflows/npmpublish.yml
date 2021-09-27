@@ -20,6 +20,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install
       - run: npm run build:modules
+      - run: npm run build:css
       - run: npm run build:write-types
       # after writing  back types, also commit them
       - name: Git Auto Commit type changes
