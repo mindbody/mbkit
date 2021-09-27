@@ -5,6 +5,10 @@
     "main": "dist/cjs/Radio.js",
     "module": "dist/esm/Radio.js",
     "types": "dist/cjs/index.d.ts",
+    "files": [
+        "dist/cjs/styles.css",
+        "dist/esm/styles.css"
+    ],
     "publishConfig": {
         "access": "public"
     },

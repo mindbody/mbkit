@@ -5,6 +5,10 @@
     "main": "dist/cjs/FileUploader.js",
     "module": "dist/esm/FileUploader.js",
     "types": "dist/cjs/index.d.ts",
+    "files": [
+        "dist/cjs/styles.css",
+        "dist/esm/styles.css"
+    ],
     "publishConfig": {
         "access": "public"
     },

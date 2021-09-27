@@ -26,4 +26,5 @@ jobs:
         yarn postinstall 
         yarn build:types
         yarn build:modules
+        yarn build:css
         yarn test
