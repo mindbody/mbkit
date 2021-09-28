@@ -6,8 +6,7 @@
     "module": "dist/esm/Label.js",
     "types": "dist/cjs/index.d.ts",
     "files": [
-        "dist/cjs/styles.css",
-        "dist/esm/styles.css"
+        "dist"
     ],
     "publishConfig": {
         "access": "public"
