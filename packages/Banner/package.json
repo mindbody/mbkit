@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/banner",
-    "version": "1.5.5",
+    "version": "1.6.0",
     "source": "src/index.tsx",
     "main": "dist/cjs/Banner.js",
     "module": "dist/esm/Banner.js",
@@ -25,7 +25,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.2.5",
+        "@mbkit/theme": "^2.2.6",
         "classnames": "^2.2.6"
     }
 }
