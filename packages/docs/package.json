@@ -2,7 +2,7 @@
   "name": "@mbkit/docs",
   "private": true,
   "description": "Design system documentation for MINDBODY",
-  "version": "0.11.6",
+  "version": "0.11.7",
   "author": "Cameron Zaas <cameron.zaas@mindbodyonline.com>",
   "scripts": {
     "clone:env:file": "yarn copyfiles ../../.env ./docs/.env",
@@ -18,8 +18,8 @@
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
-    "@mbkit/theme": "^2.2.6",
-    "@mbkit/toggle": "^1.4.0",
+    "@mbkit/theme": "^2.2.7",
+    "@mbkit/toggle": "^1.4.1",
     "@mdx-js/react": "^1.4.0",
     "@reach/component-component": "^0.6.2",
     "@reach/skip-nav": "^0.1.3",

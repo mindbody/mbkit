@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/typography",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "source": "src/index.tsx",
     "main": "dist/cjs/Typography.js",
     "module": "dist/esm/Typography.js",
@@ -25,7 +25,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.2.6",
+        "@mbkit/theme": "^2.2.7",
         "classnames": "^2.2.6"
     }
 }
