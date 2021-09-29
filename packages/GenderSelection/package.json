@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/gender-selection",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "source": "src/index.tsx",
     "main": "dist/cjs/GenderSelection.js",
     "module": "dist/esm/GenderSelection.js",
@@ -26,10 +26,10 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/input": "^1.4.1",
-        "@mbkit/label": "^1.4.1",
-        "@mbkit/select": "^1.5.1",
-        "@mbkit/theme": "^2.2.7",
+        "@mbkit/input": "^1.4.2",
+        "@mbkit/label": "^1.4.2",
+        "@mbkit/select": "^1.5.2",
+        "@mbkit/theme": "^2.2.8",
         "classnames": "^2.2.6"
     }
 }
