@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/mindbody/mbkit/compare/@mbkit/action-banner@1.3.0...@mbkit/action-banner@1.3.1) (2021-09-29)
+
+**Note:** Version bump only for package @mbkit/action-banner
+
+
+
+
+
 # [1.3.0](https://github.com/mindbody/mbkit/compare/@mbkit/action-banner@1.2.23...@mbkit/action-banner@1.3.0) (2021-09-28)
 
 

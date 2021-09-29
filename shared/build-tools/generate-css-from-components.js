@@ -19,7 +19,7 @@ async function generateCss() {
             if(~indexOfCss){
                 const cssRaw = file.substring(indexOfCss, indexOfEndOfCss + 3);
                 const groupFolderLocation = fileLocation.substring(0, fileLocation.indexOf('dist'));
-                const css = `${cssRaw.substring(cssRaw.indexOf('"') + 1, cssRaw.indexOf('";'))}`;
+                const css = `${cssRaw.substring(cssRaw.indexOf('"') + 1, cssRaw.indexOf('}";') + 1)}`;
                 fs.writeFileSync(`${groupFolderLocation}/dist/cjs/styles.css`, css);
                 fs.writeFileSync(`${groupFolderLocation}/dist/esm/styles.css`, css);
             }
