@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/radio",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "source": "src/index.tsx",
     "main": "dist/cjs/Radio.js",
     "module": "dist/esm/Radio.js",
@@ -25,7 +25,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.2.7",
+        "@mbkit/theme": "^2.2.8",
         "classnames": "^2.2.6"
     }
 }
