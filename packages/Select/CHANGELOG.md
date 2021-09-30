@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.3](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.5.2...@mbkit/select@1.5.3) (2021-09-30)
+
+
+### Bug Fixes
+
+* add missing mixin ([fecde0f](https://github.com/mindbody/mbkit/commit/fecde0f918452013e67acc4118e5357d17a28729))
+
+
+
+
+
 ## [1.5.2](https://github.com/mindbody/mbkit/compare/@mbkit/select@1.5.1...@mbkit/select@1.5.2) (2021-09-29)
 
 **Note:** Version bump only for package @mbkit/select
