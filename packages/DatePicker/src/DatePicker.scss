@@ -1,0 +1,12 @@
+@import '~@mbkit/theme/dist/theme.scss';
+
+.datePicker {
+   input{
+       width: 360px;
+       margin-bottom: 4px;
+   }
+
+   .placeHolder{     
+        color: $neutral-dark;    
+   }
+}
