@@ -1,7 +1,6 @@
-import React, { AllHTMLAttributes, FC, forwardRef, RefAttributes, RefObject, useState } from 'react';
+import React, { AllHTMLAttributes, ChangeEvent, FC, forwardRef, RefAttributes, RefObject, useState } from 'react';
 import { Input, InputProps } from '@mbkit/input';
 import { Calendar } from '@mbkit/calendar';
-import { CalendarProps } from 'react-calendar';
 
 import styles from './DatePicker.scss';
 import classnames from 'classnames';
@@ -10,22 +9,36 @@ export type DatePickerProps = AllHTMLAttributes<HTMLDivElement> &
     RefAttributes<HTMLDivElement> & {
         /** When the datepicker is set to be displayed, the screen reader will read this to the assistive technology */
         label: string;
+        /** Value that is displayed in text input */
+        value: Date;
+        /** Locale that will determine date format */
+        locale?: string;
+        /** DateTimeFormat options. Ex: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' } */
+        dateFormatOptions?: object;
+        /** Fires when user interacts with value in input field */
+        onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+        /** Adds red border and sets aria-invalid attribute */
+        invalid?: boolean;
         // this is props for input component
         inputProps?: InputProps;
     };
 
 export const DatePicker: FC<DatePickerProps> = forwardRef((props: DatePickerProps, ref: RefObject<HTMLDivElement>) => {
-    const { className = '', inputProps, ...rest } = props;
+    const {
+        className = '',
+        label,
+        locale = 'en-US',
+        dateFormatOptions = {},
+        value = '',
+        onChange,
+        invalid,
+        inputProps,
+        ...rest
+    } = props;
     const [show, setShow] = useState(false);
-    const [date, setDate] = useState('');
-    const showPlaceholder = date === '';
+    const [date, setDate] = useState(value);
 
-    const classNames = classnames({
-        [styles.placeHolder]: showPlaceholder,
-        [className]: className,
-    });
-    console.log(inputProps?.placeholder);
-    function toggleCalendar(date: any) {
+    function toggleCalendar(date) {
         setDate(date);
         setShow(false);
     }
@@ -42,11 +55,11 @@ export const DatePicker: FC<DatePickerProps> = forwardRef((props: DatePickerProp
         >
             <Input
                 {...inputProps}
-                value={date ? new Date(date).toDateString() : ''}
+                value={date ? new Date(date).toLocaleDateString(locale, dateFormatOptions) : ''}
                 placeholder={inputProps?.placeholder}
                 onClick={() => setShow(!show)}
-                onChange={() => {}}
-                className={classNames}
+                onChange={onChange}
+                className={className}
             />
             {show && <Calendar onChange={date => toggleCalendar(date)} />}
         </div>

@@ -13,6 +13,7 @@ const Template: Story<DatePickerProps> = args => <DatePicker {...args} />;
 
 const defaultArgs: DatePickerProps = {
     label: 'Date Picker',
+    dateFormatOptions: { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' },
     inputProps: { placeholder: 'Select date...' },
 };
 
