@@ -23,8 +23,8 @@ DatePickerUS.args = {
     calendarType: 'US',
 };
 
-export const DatePickerAribic = Template.bind({});
-DatePickerAribic.args = {
+export const DatePickerArabic = Template.bind({});
+DatePickerArabic.args = {
     ...defaultArgs,
     calendarType: 'Arabic',
 };
