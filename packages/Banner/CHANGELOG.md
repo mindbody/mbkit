@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.4](https://github.com/mindbody/mbkit/compare/@mbkit/banner@1.6.3...@mbkit/banner@1.6.4) (2021-11-01)
+
+**Note:** Version bump only for package @mbkit/banner
+
+
+
+
+
 ## [1.6.3](https://github.com/mindbody/mbkit/compare/@mbkit/banner@1.6.2...@mbkit/banner@1.6.3) (2021-09-30)
 
 **Note:** Version bump only for package @mbkit/banner

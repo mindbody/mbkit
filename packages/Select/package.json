@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/select",
-    "version": "1.5.3",
+    "version": "1.5.4",
     "source": "src/index.tsx",
     "main": "dist/cjs/Select.js",
     "module": "dist/esm/Select.js",
@@ -26,8 +26,8 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/checkbox": "^1.4.3",
-        "@mbkit/theme": "^2.2.9",
+        "@mbkit/checkbox": "^1.4.4",
+        "@mbkit/theme": "^2.2.10",
         "classnames": "^2.2.6",
         "nanoid": "^2.1.8"
     }

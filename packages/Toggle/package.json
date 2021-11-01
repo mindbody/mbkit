@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/toggle",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "source": "src/index.tsx",
     "main": "dist/cjs/Toggle.js",
     "module": "dist/esm/Toggle.js",
@@ -25,7 +25,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.2.9",
+        "@mbkit/theme": "^2.2.10",
         "classnames": "^2.2.6"
     }
 }
