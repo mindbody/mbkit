@@ -28,6 +28,7 @@ $transitionTime: 500;
 
     background: $secondary-base;
     color: $secondary-foreground;
+
     padding: 16px;
     border-radius: $radius;
     
@@ -58,8 +59,37 @@ $transitionTime: 500;
         max-width: 540px;
     }
 }
+
+.toasterTopCenter {
+    bottom: initial;
+    left: 50%;
+    top: 0;
+    animation-name: slideInTopCenter;
+
+    @media screen and (min-width: $media-sm) {
+        max-width: 540px;
+        top: 16px;
+        transform: translate(-50%, 0);
+        width: auto;
+    }
+}
+
+.defaultColor {
+    background: $secondary-base;
+    color: $secondary-foreground;
+}
+
+.errorColor {
+    background: $success-base;
+    color: $secondary-foreground;
+}
+
 .hideToaster {
     animation-name: slideOut;
+}
+
+.hideToasterTopCenter {
+    animation-name: slideOutTopCenter !important;
 }
 
 @keyframes slideIn {
@@ -77,5 +107,23 @@ $transitionTime: 500;
     }
     to {
         transform: translate3d(0, calc(100% + 16px), 0);
+    }
+}
+
+@keyframes slideInTopCenter {
+    from {
+        transform: translate3d(-50%, -100%, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes slideOutTopCenter {
+    from {
+        transform: translate3d(-50%, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, calc(-100% - 16px), 0);
     }
 }

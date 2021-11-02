@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.4](https://github.com/mindbody/mbkit/compare/@mbkit/accordion@1.5.3...@mbkit/accordion@1.5.4) (2021-11-01)
+
+**Note:** Version bump only for package @mbkit/accordion
+
+
+
+
+
 ## [1.5.3](https://github.com/mindbody/mbkit/compare/@mbkit/accordion@1.5.2...@mbkit/accordion@1.5.3) (2021-09-30)
 
 **Note:** Version bump only for package @mbkit/accordion

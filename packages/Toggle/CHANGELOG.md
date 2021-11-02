@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/mindbody/mbkit/compare/@mbkit/toggle@1.4.3...@mbkit/toggle@1.4.4) (2021-11-01)
+
+**Note:** Version bump only for package @mbkit/toggle
+
+
+
+
+
 ## [1.4.3](https://github.com/mindbody/mbkit/compare/@mbkit/toggle@1.4.2...@mbkit/toggle@1.4.3) (2021-09-30)
 
 **Note:** Version bump only for package @mbkit/toggle

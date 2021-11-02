@@ -10,6 +10,10 @@ export type ToasterProps = AllHTMLAttributes<HTMLDivElement> &
         show: boolean;
         /** Optional icon. By default it uses success icon */
         icon?: ReactNode;
+        /** Optional location. By default it uses bottom-left */
+        location?: 'bottom-left' | 'top-center';
+        /** Optional color. By default it uses default */
+        color?: 'default' | 'success';
     };
 // TODO import and replace once icons are published
 const SuccessIcon = () => (
@@ -24,7 +28,15 @@ const SuccessIcon = () => (
     </svg>
 );
 export const Toaster: FC<ToasterProps> = forwardRef((props: ToasterProps, ref: RefObject<HTMLDivElement>) => {
-    const { show, icon = <SuccessIcon />, className = '', children, ...rest } = props;
+    const {
+        show,
+        icon = <SuccessIcon />,
+        location = 'bottom-left',
+        color = 'default',
+        className = '',
+        children,
+        ...rest
+    } = props;
 
     // Internal show is used to allow transition to complete before completely removing element from screen
     const [internalShow, setInternalShow] = useState(show);
@@ -44,9 +56,13 @@ export const Toaster: FC<ToasterProps> = forwardRef((props: ToasterProps, ref: R
         }
     }, [show]);
 
+    const slideOutAnimation = location === 'top-center' ? 'hideToasterTopCenter' : 'hideToaster';
+
     const classNames = classnames({
         [styles.toaster]: true,
-        [styles.hideToaster]: !show,
+        [styles[slideOutAnimation]]: !show,
+        [styles[`${color}Color`]]: true,
+        [styles.toasterTopCenter]: location === 'top-center',
         [className]: className,
     });
 

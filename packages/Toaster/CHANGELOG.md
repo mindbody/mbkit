@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.4.3...@mbkit/toaster@1.5.0) (2021-11-01)
+
+
+### Features
+
+* adding optional props for location and color ([c779e86](https://github.com/mindbody/mbkit/commit/c779e860c532e5512b66dc32723712846a72e74f))
+
+
+
+
+
 ## [1.4.3](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.4.2...@mbkit/toaster@1.4.3) (2021-09-30)
 
 **Note:** Version bump only for package @mbkit/toaster
