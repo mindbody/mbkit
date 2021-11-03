@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.11](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.11.10...@mbkit/docs@0.11.11) (2021-11-03)
+
+**Note:** Version bump only for package @mbkit/docs
+
+
+
+
+
 ## [0.11.10](https://github.com/gatsbyjs/gatsby-starter-default/compare/@mbkit/docs@0.11.9...@mbkit/docs@0.11.10) (2021-11-01)
 
 **Note:** Version bump only for package @mbkit/docs

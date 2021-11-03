@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.5.0...@mbkit/toaster@1.5.1) (2021-11-03)
+
+
+### Bug Fixes
+
+* adding default color to storybook ([1982624](https://github.com/mindbody/mbkit/commit/1982624779bdc2bdf384271351331ce1bb54ab2a))
+* fixing wrong css class name ([a0ec753](https://github.com/mindbody/mbkit/commit/a0ec7538e5edd3d8c5ca9edb83ce6531b0145e17))
+
+
+
+
+
 # [1.5.0](https://github.com/mindbody/mbkit/compare/@mbkit/toaster@1.4.3...@mbkit/toaster@1.5.0) (2021-11-01)
 
 
