@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/mindbody/mbkit/compare/@mbkit/gender-selection@1.2.4...@mbkit/gender-selection@1.2.5) (2021-11-03)
+
+**Note:** Version bump only for package @mbkit/gender-selection
+
+
+
+
+
 ## [1.2.4](https://github.com/mindbody/mbkit/compare/@mbkit/gender-selection@1.2.3...@mbkit/gender-selection@1.2.4) (2021-11-01)
 
 **Note:** Version bump only for package @mbkit/gender-selection

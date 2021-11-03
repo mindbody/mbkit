@@ -1,6 +1,6 @@
 {
     "name": "@mbkit/tipsy",
-    "version": "1.4.4",
+    "version": "1.4.5",
     "source": "src/index.tsx",
     "main": "dist/cjs/Tipsy.js",
     "module": "dist/esm/Tipsy.js",
@@ -28,7 +28,7 @@
         "react": "^16.9.0"
     },
     "dependencies": {
-        "@mbkit/theme": "^2.2.10",
+        "@mbkit/theme": "^2.2.11",
         "@reach/portal": "^0.4.0",
         "@reach/tooltip": "^0.4.0",
         "classnames": "^2.2.6"

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.11](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.2.10...@mbkit/theme@2.2.11) (2021-11-03)
+
+**Note:** Version bump only for package @mbkit/theme
+
+
+
+
+
 ## [2.2.10](https://github.com/mindbody/mbkit/compare/@mbkit/theme@2.2.9...@mbkit/theme@2.2.10) (2021-11-01)
 
 **Note:** Version bump only for package @mbkit/theme
