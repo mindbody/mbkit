@@ -11,6 +11,7 @@ export default {
 const Template: Story<ToasterProps> = args => <Toaster {...args}>Sample Message</Toaster>;
 
 const defaultArgs: ToasterProps = {
+    color: 'default',
     show: true,
 };
 
