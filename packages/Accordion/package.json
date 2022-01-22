@@ -29,6 +29,6 @@
         "@mbkit/icon": "1.2.5",
         "@mbkit/theme": "^2.2.11",
         "classnames": "^2.2.6",
-        "nanoid": "^2.1.7"
+        "nanoid": "^3.1.31"
     }
 }

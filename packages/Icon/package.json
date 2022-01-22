@@ -28,6 +28,6 @@
     "dependencies": {
         "@mbkit/theme": "^2.2.11",
         "classnames": "^2.2.6",
-        "nanoid": "^2.1.2"
+        "nanoid": "^3.1.31"
     }
 }

@@ -29,6 +29,6 @@
         "@mbkit/checkbox": "^1.4.5",
         "@mbkit/theme": "^2.2.11",
         "classnames": "^2.2.6",
-        "nanoid": "^2.1.8"
+        "nanoid": "^3.1.31"
     }
 }
